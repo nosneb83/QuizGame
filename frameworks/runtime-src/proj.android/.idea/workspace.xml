@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="173d907e-18cf-4cc1-bf3d-391db59449f3" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="C:\Benson\AndroidKeystore.jks" />
+    <option name="KEY_ALIAS" value="key0" />
+    <option name="REMEMBER_PASSWORDS" value="true" />
+    <option name="BUILD_TARGET_KEY" value="apk" />
+  </component>
+  <component name="ProjectId" id="1fJIJYYO4J9e8uX0gVFsUTcOPB7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="AndroidRunProguardForReleaseBuild" value="false" />
+    <property name="ApkExportedModule" value="proj.android" />
+    <property name="ExportedApkPath" value="C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\proj.android.apk" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="173d907e-18cf-4cc1-bf3d-391db59449f3" name="Default Changelist" comment="" />
+      <created>1595929697353</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1595929697353</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="223" y="0" key="#Project_Structure" timestamp="1595988481608">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="223" y="0" key="#Project_Structure/0.0.1280.680/1920.-857.1080.1880@0.0.1280.680" timestamp="1595988481608" />
+    <state x="85" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595987944174">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="85" y="0" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1280.680/1920.-857.1080.1880@0.0.1280.680" timestamp="1595987944174" />
+    <state x="261" y="49" key="#com.intellij.ide.util.ExportDialog" timestamp="1595988796170">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="261" y="49" key="#com.intellij.ide.util.ExportDialog/0.0.1280.680/1920.-857.1080.1880@0.0.1280.680" timestamp="1595988796170" />
+    <state x="411" y="47" key="FileChooserDialogImpl" timestamp="1595990334708">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="411" y="47" key="FileChooserDialogImpl/0.0.1280.680/1920.-857.1080.1880@0.0.1280.680" timestamp="1595990334708" />
+    <state x="211" y="63" key="IDE.errors.dialog" timestamp="1595989097415">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="211" y="63" key="IDE.errors.dialog/0.0.1280.680/1920.-857.1080.1880@0.0.1280.680" timestamp="1595989097415" />
+    <state x="132" y="0" key="SettingsEditor" timestamp="1595990249242">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="132" y="0" key="SettingsEditor/0.0.1280.680/1920.-857.1080.1880@0.0.1280.680" timestamp="1595990249242" />
+    <state x="315" y="144" key="com.intellij.ide.util.TipDialog" timestamp="1595990220376">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="315" y="144" key="com.intellij.ide.util.TipDialog/0.0.1280.680/1920.-857.1080.1880@0.0.1280.680" timestamp="1595990220376" />
+  </component>
+</project>

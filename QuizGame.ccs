@@ -1,0 +1,18 @@
+<Solution>
+  <PropertyGroup Name="QuizGame" Version="3.10.0.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Image Name="guidBg.jpg" />
+        <Image Name="gvgBg.jpg" />
+        <Image Name="HelloWorld.png" />
+        <Project Name="MainScene.csd" Type="Scene" />
+        <TTF Name="msjh.ttc" />
+        <Image Name="paper_bg.png" />
+        <Image Name="status_bg.png" />
+        <Project Name="TestScene.csd" Type="Scene" />
+        <Image Name="transformChooseBg.png" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>
