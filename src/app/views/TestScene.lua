@@ -11,7 +11,9 @@ local qText, qText2, qText3
 local correctAns
 local ansPnlTF, ansPnlCH
 local ansBtnO, ansBtnX, ansBtnA, ansBtnB, ansBtnC, ansBtnD
+local ansBtns = {}
 local feedbackT, feedbackF
+local sfxQues, sfxCorrect, sfxWrong
 
 function TestScene:ctor()
     rootNode = cc.CSLoader:createNode("TestScene.csb")
@@ -37,6 +39,7 @@ function TestScene:ctor()
     ansBtnC:addTouchEventListener(self.answerC)
     ansBtnD = rootNode:getChildByName("Answer_CH"):getChildByName("D"):getChildByName("Button")
     ansBtnD:addTouchEventListener(self.answerD)
+    ansBtns = { ansBtnA, ansBtnB, ansBtnC, ansBtnD }
 
     feedbackT = rootNode:getChildByName("Answer_feedback"):getChildByName("Correct")
     feedbackF = rootNode:getChildByName("Answer_feedback"):getChildByName("Wrong")
@@ -55,6 +58,9 @@ function TestScene:ctor()
     socket:setReceiveCallback(ReceiveCallback)
     -- socket:connect("172.29.18.171", "8888")
     socket:connect("127.0.0.1", "8888")
+
+    -- Random Seed
+    math.randomseed(os.time())
 
     self:scheduleUpdateWithPriorityLua(function(dt) self:update(dt) end, 0)
 end
@@ -75,30 +81,32 @@ function TestScene:nextQuestion()
 end
 
 -- 答題回饋
-local feedbackDuration = 1
+local feedbackDuration = 2
 function TestScene:answerO(type)
-    if type == ccui.TouchEventType.ended then TestScene:answer("O") end
+    if type == ccui.TouchEventType.ended then TestScene:answer(1) end
 end
 function TestScene:answerX(type)
-    if type == ccui.TouchEventType.ended then TestScene:answer("X") end
+    if type == ccui.TouchEventType.ended then TestScene:answer(2) end
 end
 function TestScene:answerA(type)
-    if type == ccui.TouchEventType.ended then TestScene:answer("A") end
+    if type == ccui.TouchEventType.ended then TestScene:answer(1) end
 end
 function TestScene:answerB(type)
-    if type == ccui.TouchEventType.ended then TestScene:answer("B") end
+    if type == ccui.TouchEventType.ended then TestScene:answer(2) end
 end
 function TestScene:answerC(type)
-    if type == ccui.TouchEventType.ended then TestScene:answer("C") end
+    if type == ccui.TouchEventType.ended then TestScene:answer(3) end
 end
 function TestScene:answerD(type)
-    if type == ccui.TouchEventType.ended then TestScene:answer("D") end
+    if type == ccui.TouchEventType.ended then TestScene:answer(4) end
 end
 function TestScene:answer(playerAns)
     if playerAns == correctAns then
         self:showFeedback(feedbackT, feedbackF)
+        cc.SimpleAudioEngine:getInstance():playEffect("SFX/Quiz-Buzzer01-mp3/Quiz-Buzzer01-1.mp3")
     else
         self:showFeedback(feedbackF, feedbackT)
+        cc.SimpleAudioEngine:getInstance():playEffect("SFX/Quiz-Wrong_Buzzer01-mp3/Quiz-Wrong_Buzzer01-1.mp3")
     end
     rootNode:runAction(cc.Sequence:create(cc.DelayTime:create(feedbackDuration), cc.CallFunc:create(self.nextQuestion)))
 end
@@ -124,24 +132,32 @@ function TestScene:handleOp(jsonObj)
             qText:setString(jsonObj["ques"][1])
             qText2:setString("")
             qText3:setString("")
-            correctAns = jsonObj["ans"][1]
+            if jsonObj["ans"][1] == "O" then
+                correctAns = 1
+            else
+                correctAns = 2
+            end
             self:showAnsPnl(ansPnlTF, ansPnlCH)
         elseif jsonObj["qtype"] == "CH" then -- 選擇題
             qText:setString(jsonObj["ques"][1])
             qText2:setString("")
             qText3:setString("")
+            local ansStr = jsonObj["ans"][1]
+            math.shuffle(jsonObj["ans"])
             ansBtnA:setTitleText(jsonObj["ans"][1])
             ansBtnB:setTitleText(jsonObj["ans"][2])
             ansBtnC:setTitleText(jsonObj["ans"][3])
             ansBtnD:setTitleText(jsonObj["ans"][4])
-            correctAns = "A"
+            for k, v in ipairs(jsonObj["ans"]) do
+                if v == ansStr then correctAns = k break end
+            end
             self:showAnsPnl(ansPnlCH, ansPnlTF)
         elseif jsonObj["qtype"] == "CL" then -- 聯想題
-            qText:setString(jsonObj["ques"][1])
+            qText:setString("提示1: " .. jsonObj["ques"][1])
             qText2:setVisible(false)
-            qText2:setString(jsonObj["ques"][2])
+            qText2:setString("提示2: " .. jsonObj["ques"][2])
             qText3:setVisible(false)
-            qText3:setString(jsonObj["ques"][3])
+            qText3:setString("提示3: " .. jsonObj["ques"][3])
             ansBtnA:setTitleText(jsonObj["ans"][1])
             ansBtnB:setTitleText(jsonObj["ans"][2])
             ansBtnC:setTitleText(jsonObj["ans"][3])
@@ -149,7 +165,11 @@ function TestScene:handleOp(jsonObj)
             correctAns = "A"
             self:showAnsPnl(ansPnlCH, ansPnlTF)
             self:showClues(3)
+        else
+            return
         end
+        -- 新題目出現的音效
+        cc.SimpleAudioEngine:getInstance():playEffect("SFX/Quiz-Question02-mp3/Quiz-Question02-1.mp3")
     end
 end
 function TestScene:showClues(delay)
@@ -164,6 +184,12 @@ end
 function TestScene:showAnsPnl(showing, hiding)
     hiding:setVisible(false)
     showing:setVisible(true)
+end
+function TestScene:shuffleAns(list)
+    for i = #list, 2, -1 do
+        local j = math.random(i)
+        list[i], list[j] = list[j], list[i]
+    end
 end
 
 return TestScene

@@ -17,14 +17,6 @@ type QuestionObj struct {
 	Ans    []string
 }
 
-// TFObj 是非題
-type TFObj struct {
-	Domain     string `json:"domain"`
-	Difficulty string `json:"difficulty"`
-	Question   string `json:"question"`
-	Answer     bool   `json:"answer"`
-}
-
 // ReadQuestionsFromCSV ...
 func ReadQuestionsFromCSV() []QuestionObj {
 	csvFile, _ := os.Open("QuestionList.csv")
@@ -64,14 +56,6 @@ func ReadQuestionsFromCSV() []QuestionObj {
 			QType:  line[2],
 			Ques:   q,
 			Ans:    a})
-		// if line[2] != "TF" {
-		// 	continue
-		// }
-		// questions = append(questions, TFObj{
-		// 	Domain:     line[0],
-		// 	Difficulty: line[1],
-		// 	Question:   line[3],
-		// 	Answer:     line[4] == "O"})
 	}
 	return questions
 }
