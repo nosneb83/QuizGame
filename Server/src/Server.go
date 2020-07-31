@@ -222,7 +222,8 @@ func pmID(msg string, targetID int) {
 func main() {
 
 	// TCP 連線
-	listener, _ := net.Listen("tcp", "0.0.0.0:8888")
+	// listener, _ := net.Listen("tcp", "0.0.0.0:8888")
+	listener, _ := net.Listen("tcp", "127.0.0.1:8888")
 
 	// // 製作 play token
 	// token = append(token, 1, 2, 3, 4)

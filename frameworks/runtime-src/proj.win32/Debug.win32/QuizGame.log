@@ -1,0 +1,15 @@
+﻿  SimulatorWin.cpp
+C:\Cocos\Cocos2d-x\cocos2d-x-3.10\cocos\2d\CCParticleSystemQuad.h(1,1): warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
+C:\Cocos\Cocos2d-x\cocos2d-x-3.10\cocos\physics\CCPhysicsBody.h(1,1): warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
+C:\Cocos\Cocos2d-x\cocos2d-x-3.10\cocos\physics\CCPhysicsShape.h(1,1): warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
+C:\Cocos\Cocos2d-x\cocos2d-x-3.10\cocos\platform\CCSAXParser.h(1,1): warning C4819: 檔案含有無法在目前字碼頁 (950) 中表示的字元。請以 Unicode 格式儲存檔案以防止資料遺失
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.win32\SimulatorWin.cpp(398,46): warning C4305: '引數': 從 'double' 轉換為 'float'，是由較大的類型轉換為較小的類型，可能導致資料遺失
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.win32\SimulatorWin.cpp(732,27): warning C4018: '<': signed/unsigned 不相符
+C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(1288,5): warning MSB8012: TargetPath(C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.win32\Debug.win32\QuizGame.exe) 與 Linker 的 OutputFile 屬性值 (C:\Benson\QuizGameProject\QuizGame\simulator\win32\QuizGame.exe) 不相符。這可能會導致您的專案建置不正確。若要改正這種情況，請確認 $(OutDir)、$(TargetName) 和 $(TargetExt) 屬性值必須與 %(Link.OutputFile) 中指定的值相符。
+  已複製 60 個檔案
+  QuizGame.vcxproj -> C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.win32\Debug.win32\QuizGame.exe
+  Performing Custom Build Step
+  已複製 16 個檔案
+  已複製 1 個檔案
+  已複製 0 個檔案
+  已複製 0 個檔案
