@@ -30,4 +30,21 @@ function MainScene:enterTestScene(type)
     end
 end
 
+-- 自己實作字串分割 (相當於Golang的strings.SplitAfter)
+function string.splitAfter(s, sep)
+    local tab = {}
+    while true do
+        local n = string.find(s, sep)
+        if n then
+            local first = string.sub(s, 1, n)
+            s = string.sub(s, n + 1, #s)
+            table.insert(tab, first)
+        else
+            table.insert(tab, s)
+            break
+        end
+    end
+    return tab
+end
+
 return MainScene

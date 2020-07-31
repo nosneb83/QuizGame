@@ -1,8 +1,8 @@
-
 cc.FileUtils:getInstance():setPopupNotify(false)
 cc.FileUtils:getInstance():addSearchPath("src/")
 cc.FileUtils:getInstance():addSearchPath("res/")
 
+require("LuaDebug")("localhost", 7003)
 require "config"
 require "cocos.init"
 

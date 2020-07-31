@@ -13,8 +13,8 @@ CC_DISABLE_GLOBAL = true
 
 -- for module display
 CC_DESIGN_RESOLUTION = {
-    width = 1280,
-    height = 720,
+    width = 720,
+    height = 1280,
     autoscale = "SHOW_ALL",
     callback = function(framesize)
         local ratio = framesize.width / framesize.height
