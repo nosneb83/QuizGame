@@ -74,12 +74,15 @@ func handleConnection(conn net.Conn) {
 			/////////////
 			switch jsonObj["op"] {
 			case "CLIENT_READY":
-				fmt.Println("question list length =", len(questionList))
-				randQuestion := questionList[rand.Intn(3)]
+				// fmt.Println("question list length =", len(questionList))
+				randQuestion := questionList[rand.Intn(len(questionList))]
 				q, _ := json.Marshal(map[string]interface{}{
-					"op":       "SEND_QUESTION",
-					"question": randQuestion.Question,
-					"answer":   randQuestion.Answer})
+					"op":     "SEND_QUESTION",
+					"domain": randQuestion.Domain,
+					"difcty": randQuestion.Difcty,
+					"qtype":  randQuestion.QType,
+					"ques":   randQuestion.Ques,
+					"ans":    randQuestion.Ans})
 				conn.Write([]byte(q))
 			}
 			// if jsonObj["op"] == "CREATE_PLAYER" { // 大廳列表
