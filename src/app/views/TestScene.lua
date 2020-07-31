@@ -7,7 +7,7 @@ require("json")
 
 local rootNode
 local testBtn
-local questionText
+local qText, qText2, qText3
 local correctAns
 local ansPnlTF, ansPnlCH
 local ansBtnO, ansBtnX, ansBtnA, ansBtnB, ansBtnC, ansBtnD
@@ -18,7 +18,9 @@ function TestScene:ctor()
     self:addChild(rootNode)
     testBtn = rootNode:getChildByName("Button_1")
     testBtn:addTouchEventListener(self.testOnclick)
-    questionText = rootNode:getChildByName("Question"):getChildByName("Text")
+    qText = rootNode:getChildByName("Question"):getChildByName("Text")
+    qText2 = rootNode:getChildByName("Question"):getChildByName("Text2")
+    qText3 = rootNode:getChildByName("Question"):getChildByName("Text3")
 
     ansPnlTF = rootNode:getChildByName("Answer_TF")
     ansBtnO = rootNode:getChildByName("Answer_TF"):getChildByName("O"):getChildByName("Button")
@@ -119,11 +121,15 @@ function TestScene:handleOp(jsonObj)
     local op = jsonObj["op"]
     if op == "SEND_QUESTION" then
         if jsonObj["qtype"] == "TF" then -- 是非題
-            questionText:setString(jsonObj["ques"][1])
+            qText:setString(jsonObj["ques"][1])
+            qText2:setString("")
+            qText3:setString("")
             correctAns = jsonObj["ans"][1]
             self:showAnsPnl(ansPnlTF, ansPnlCH)
         elseif jsonObj["qtype"] == "CH" then -- 選擇題
-            questionText:setString(jsonObj["ques"][1])
+            qText:setString(jsonObj["ques"][1])
+            qText2:setString("")
+            qText3:setString("")
             ansBtnA:setTitleText(jsonObj["ans"][1])
             ansBtnB:setTitleText(jsonObj["ans"][2])
             ansBtnC:setTitleText(jsonObj["ans"][3])
@@ -131,15 +137,29 @@ function TestScene:handleOp(jsonObj)
             correctAns = "A"
             self:showAnsPnl(ansPnlCH, ansPnlTF)
         elseif jsonObj["qtype"] == "CL" then -- 聯想題
-            questionText:setString(jsonObj["ques"][1])
+            qText:setString(jsonObj["ques"][1])
+            qText2:setVisible(false)
+            qText2:setString(jsonObj["ques"][2])
+            qText3:setVisible(false)
+            qText3:setString(jsonObj["ques"][3])
             ansBtnA:setTitleText(jsonObj["ans"][1])
             ansBtnB:setTitleText(jsonObj["ans"][2])
             ansBtnC:setTitleText(jsonObj["ans"][3])
             ansBtnD:setTitleText(jsonObj["ans"][4])
             correctAns = "A"
             self:showAnsPnl(ansPnlCH, ansPnlTF)
+            self:showClues(3)
         end
     end
+end
+function TestScene:showClues(delay)
+    local delayAct = cc.DelayTime:create(delay)
+    local delayAct2 = cc.DelayTime:create(delay + delay)
+    local showAct = cc.Show:create()
+    local seq = cc.Sequence:create(delayAct, showAct)
+    local seq2 = cc.Sequence:create(delayAct2, showAct)
+    qText2:runAction(seq)
+    qText3:runAction(seq2)
 end
 function TestScene:showAnsPnl(showing, hiding)
     hiding:setVisible(false)

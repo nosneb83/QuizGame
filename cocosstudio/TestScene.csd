@@ -56,6 +56,30 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
+              <AbstractNodeData Name="Text2" ActionTag="-1167511740" VisibleForFrame="False" Tag="41" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="102.1631" RightMargin="102.1631" TopMargin="187.3390" BottomMargin="14.2029" IsCustomSize="True" FontSize="36" LabelText="" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
+                <Size X="476.7613" Y="231.2984" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="340.5438" Y="129.8521" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.3000" />
+                <PreSize X="0.7000" Y="0.5344" />
+                <FontResource Type="Normal" Path="msjh.ttc" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Text3" ActionTag="145522813" VisibleForFrame="False" Tag="42" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="102.1631" RightMargin="102.1631" TopMargin="230.6230" BottomMargin="-29.0812" IsCustomSize="True" FontSize="36" LabelText="" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
+                <Size X="476.7613" Y="231.2984" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="340.5438" Y="86.5681" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.2000" />
+                <PreSize X="0.7000" Y="0.5344" />
+                <FontResource Type="Normal" Path="msjh.ttc" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="359.9978" Y="704.0000" />
