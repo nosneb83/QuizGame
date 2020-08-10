@@ -3,15 +3,23 @@
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
+        <Image Name="character.png" />
+        <Image Name="chat_bubble.png" />
         <Image Name="guidBg.jpg" />
         <Image Name="gvgBg.jpg" />
         <Image Name="HelloWorld.png" />
+        <Project Name="LoginScene.csd" Type="Scene" />
+        <Image Name="main_bg.png" />
         <Project Name="MainScene.csd" Type="Scene" />
         <TTF Name="msjh.ttc" />
         <Image Name="paper_bg.png" />
+        <Image Name="settings.png" />
         <Image Name="status_bg.png" />
         <Project Name="TestScene.csd" Type="Scene" />
         <Image Name="transformChooseBg.png" />
+        <Folder Name="btn">
+          <Image Name="pvp.png" />
+        </Folder>
       </RootFolder>
     </Group>
   </SolutionFolder>
