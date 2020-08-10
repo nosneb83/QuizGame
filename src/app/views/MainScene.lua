@@ -1,10 +1,12 @@
-local MainScene = class("MainScene", cc.load("mvc").ViewBase)
+local MainScene = class("MainScene", function()
+    return cc.Scene:create()
+end)
 
-MainScene.RESOURCE_FILENAME = "MainScene.csb"
+require("json")
 
 local rootNode
 
-function MainScene:onCreate()
+function MainScene:ctor()
     -- printf("resource node = %s", tostring(self:getResourceNode()))
     --[[ you can create scene with following comment code instead of using csb file.
     -- add background image
@@ -17,9 +19,11 @@ function MainScene:onCreate()
         :move(display.cx, display.cy + 200)
         :addTo(self)
     ]]
-    rootNode = self:getResourceNode()
-    local startBtn = rootNode:getChildByName("StartBtn")
-    startBtn:addTouchEventListener(self.enterTestScene)
+    rootNode = cc.CSLoader:createNode("MainScene.csb")
+    self:addChild(rootNode)
+    
+    local btn_pvp = rootNode:getChildByName("Btn_Pvp")
+    btn_pvp:addTouchEventListener(self.enterTestScene)
 end
 
 function MainScene:enterTestScene(type)
@@ -28,31 +32,6 @@ function MainScene:enterTestScene(type)
         -- 淡入過場
         cc.Director:getInstance():replaceScene(cc.TransitionFade:create(1, scene))
     end
-end
-
--- 自己實作字串分割 (相當於Golang的strings.SplitAfter)
-function string.splitAfter(s, sep)
-    local tab = {}
-    while true do
-        local n = string.find(s, sep)
-        if n then
-            local first = string.sub(s, 1, n)
-            s = string.sub(s, n + 1, #s)
-            table.insert(tab, first)
-        else
-            table.insert(tab, s)
-            break
-        end
-    end
-    return tab
-end
-
--- Fisher-Yates shuffle
-function math.shuffle(list)
-	for i = #list, 2, -1 do
-		local j = math.random(i)
-		list[i], list[j] = list[j], list[i]
-	end
 end
 
 return MainScene

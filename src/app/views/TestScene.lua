@@ -2,7 +2,6 @@ local TestScene = class("TestScene", function()
     return cc.Scene:create()
 end)
 
-socket = require("LuaTcpSocket"):new():init()
 require("json")
 
 local rootNode
@@ -44,7 +43,7 @@ function TestScene:ctor()
     feedbackT = rootNode:getChildByName("Answer_feedback"):getChildByName("Correct")
     feedbackF = rootNode:getChildByName("Answer_feedback"):getChildByName("Wrong")
 
-    -- socket連線
+    -- socket設定
     local function ReceiveCallback(msg)
         -- 把每個{}分割開
         local opStrs = string.splitAfter(msg, "}")
@@ -56,8 +55,6 @@ function TestScene:ctor()
         end
     end
     socket:setReceiveCallback(ReceiveCallback)
-    -- socket:connect("172.29.18.171", "8888")
-    socket:connect("127.0.0.1", "8888")
 
     -- Random Seed
     math.randomseed(os.time())

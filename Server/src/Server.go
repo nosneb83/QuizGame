@@ -1,6 +1,7 @@
 package main
 
 import (
+	"db"
 	"encoding/json"
 	"fmt"
 	"math/rand"
@@ -73,6 +74,8 @@ func handleConnection(conn net.Conn) {
 			// Process //
 			/////////////
 			switch jsonObj["op"] {
+			case "LOGIN":
+				playerLogin(conn, jsonObj["ac"].(string), jsonObj["pw"].(string))
 			case "CLIENT_READY":
 				// fmt.Println("question list length =", len(questionList))
 				randQuestion := questionList[rand.Intn(len(questionList))]
@@ -102,6 +105,20 @@ func handleConnection(conn net.Conn) {
 		case <-haschat:
 		}
 	}
+}
+
+// 玩家登入
+func playerLogin(conn net.Conn, ac string, pw string) {
+	playerExists := db.CheckAccount(ac, pw)
+	var msg []byte
+	if playerExists {
+		msg, _ = json.Marshal(map[string]interface{}{
+			"op": "LOGIN_SUCCESS"})
+	} else {
+		msg, _ = json.Marshal(map[string]interface{}{
+			"op": "LOGIN_FAIL"})
+	}
+	conn.Write(msg)
 }
 
 // 新user加入聊天室
@@ -223,6 +240,10 @@ func pmID(msg string, targetID int) {
 }
 
 func main() {
+	// db init
+	db.InitDB()
+	// db.CreateTablePlayers()
+	// db.RegisterNewPlayer("testAC", "testPW")
 
 	// TCP 連線
 	// listener, _ := net.Listen("tcp", "0.0.0.0:8888")
