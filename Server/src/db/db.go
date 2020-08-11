@@ -71,15 +71,15 @@ func RegisterNewPlayer(ac string, pw string) {
 }
 
 // CheckAccount 確認帳密
-func CheckAccount(ac string, pw string) bool {
+func CheckAccount(ac string, pw string) (bool, int) {
 	sql := `SELECT id FROM players WHERE account = ? AND password = ?`
 	row := db.QueryRow(sql, ac, pw)
 	var id int
 	if err := row.Scan(&id); err != nil {
 		fmt.Printf("%v\n", err)
-		return false
+		return false, 0
 	}
-	return true
+	return true, id
 }
 
 ////////////////////////

@@ -3,6 +3,24 @@
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
+        <Folder Name="BattleMode">
+          <Project Name="BattleModeScene.csd" Type="Scene" />
+          <Image Name="lab.jpg" />
+          <Image Name="backtomenu.png" />
+          <Image Name="backtomenu_2.png" />
+          <Image Name="chara_change.png" />
+          <Image Name="chara_change_2.png" />
+          <Image Name="event.png" />
+          <Image Name="event_2.png" />
+          <Image Name="freebattle.png" />
+          <Image Name="freebattle_2.png" />
+          <Image Name="pve.png" />
+          <Image Name="pve_2.png" />
+          <Image Name="Tournament.png" />
+          <Image Name="tournament_1.png" />
+          <Image Name="tournament_2.png" />
+          <Image Name="UI_PVP_Sample.png" />
+        </Folder>
         <Folder Name="btn">
           <Image Name="battle.png" />
           <Image Name="battle_2.png" />

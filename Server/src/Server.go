@@ -1,6 +1,7 @@
 package main
 
 import (
+	"battle"
 	"db"
 	"encoding/json"
 	"fmt"
@@ -17,6 +18,8 @@ var onlinemap map[string]clientData = make(map[string]clientData)
 var token []int
 
 var chanNum string
+
+var onlinePlayerID []int
 
 // var questionList []questions.QuestionObj
 
@@ -35,6 +38,8 @@ func handleConnection(conn net.Conn) {
 	addr, client := registerNewGuest(conn)
 
 	var haschat = make(chan bool)
+
+	var playerID int
 
 	// 讀取題庫
 	questionList := questions.ReadQuestionsFromCSV()
@@ -75,7 +80,10 @@ func handleConnection(conn net.Conn) {
 			/////////////
 			switch jsonObj["op"] {
 			case "LOGIN":
-				playerLogin(conn, jsonObj["ac"].(string), jsonObj["pw"].(string))
+				playerID = playerLogin(conn, jsonObj["ac"].(string), jsonObj["pw"].(string))
+				fmt.Println("Player ID:", playerID, "Login")
+			case "ENTER_ROOM":
+				battle.EnterRoom(int(jsonObj["room"].(float64)), int(jsonObj["id"].(float64)))
 			case "CLIENT_READY":
 				// fmt.Println("question list length =", len(questionList))
 				randQuestion := questionList[rand.Intn(len(questionList))]
@@ -108,17 +116,19 @@ func handleConnection(conn net.Conn) {
 }
 
 // 玩家登入
-func playerLogin(conn net.Conn, ac string, pw string) {
-	playerExists := db.CheckAccount(ac, pw)
+func playerLogin(conn net.Conn, ac string, pw string) int {
+	playerExists, playerID := db.CheckAccount(ac, pw)
 	var msg []byte
 	if playerExists {
 		msg, _ = json.Marshal(map[string]interface{}{
-			"op": "LOGIN_SUCCESS"})
+			"op":       "LOGIN_SUCCESS",
+			"playerID": playerID})
 	} else {
 		msg, _ = json.Marshal(map[string]interface{}{
 			"op": "LOGIN_FAIL"})
 	}
 	conn.Write(msg)
+	return playerID
 }
 
 // 新user加入聊天室
