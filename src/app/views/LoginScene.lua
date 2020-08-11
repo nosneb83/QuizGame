@@ -8,19 +8,8 @@ local rootNode
 local acInput, pwInput
 
 function LoginScene:onCreate()
-    -- printf("resource node = %s", tostring(self:getResourceNode()))
-    --[[ you can create scene with following comment code instead of using csb file.
-    -- add background image
-    display.newSprite("HelloWorld.png")
-        :move(display.center)
-        :addTo(self)
-
-    -- add HelloWorld label
-    cc.Label:createWithSystemFont("Hello World", "Arial", 40)
-        :move(display.cx, display.cy + 200)
-        :addTo(self)
-    ]]
     rootNode = self:getResourceNode()
+    dump(cc.p(rootNode:getPosition()))
     local startBtn = rootNode:getChildByName("StartBtn")
     startBtn:addTouchEventListener(self.login)
 
@@ -51,10 +40,6 @@ function LoginScene:login(type)
             pw = pwInput:getString()
         }
         socket:send(json.encode(jsonObj))
-
-        -- local scene = require("app/views/TestScene.lua"):create()
-        -- -- 淡入過場
-        -- cc.Director:getInstance():replaceScene(cc.TransitionFade:create(1, scene))
     end
 end
 
@@ -62,8 +47,8 @@ function LoginScene:handleOp(jsonObj)
     dump(jsonObj)
     local op = jsonObj["op"]
     if op == "LOGIN_SUCCESS" then
+        -- 進入主畫面
         local scene = require("app/views/MainScene.lua"):create()
-        -- 淡入過場
         cc.Director:getInstance():replaceScene(cc.TransitionFade:create(1, scene))
     elseif op == "LOGIN_FAIL" then
         print("LOGIN FAIL")

@@ -3,6 +3,22 @@
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
+        <Folder Name="btn">
+          <Image Name="battle.png" />
+          <Image Name="battle_2.png" />
+          <Image Name="kacha.png" />
+          <Image Name="kacha_2.png" />
+          <Image Name="lab.png" />
+          <Image Name="lab_2.png" />
+          <Image Name="player.png" />
+          <Image Name="player_2.png" />
+          <Image Name="story.png" />
+          <Image Name="story_2.png" />
+          <Image Name="arrow_l.png" />
+          <Image Name="arrow_l_2.png" />
+          <Image Name="arrow_r.png" />
+          <Image Name="arrow_r_2.png" />
+        </Folder>
         <Image Name="character.png" />
         <Image Name="chat_bubble.png" />
         <Image Name="guidBg.jpg" />
@@ -17,9 +33,6 @@
         <Image Name="status_bg.png" />
         <Project Name="TestScene.csd" Type="Scene" />
         <Image Name="transformChooseBg.png" />
-        <Folder Name="btn">
-          <Image Name="pvp.png" />
-        </Folder>
       </RootFolder>
     </Group>
   </SolutionFolder>
