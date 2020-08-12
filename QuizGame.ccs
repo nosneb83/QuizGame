@@ -3,54 +3,83 @@
   <SolutionFolder>
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
+        <Folder Name="Battle">
+          <Project Name="BattleScene.csd" Type="Scene" />
+          <Folder Name="opinion">
+            <Image Name="1.png" />
+            <Image Name="2.png" />
+            <Image Name="3.png" />
+            <Image Name="4.png" />
+            <Image Name="background.png" />
+            <Image Name="Lay_botton_2.png" />
+            <Image Name="Layer_botton.png" />
+            <Image Name="opinion.png" />
+            <Image Name="opinion_2.png" />
+          </Folder>
+          <Image Name="bg.png" />
+          <Image Name="HPbar_Green.png" />
+          <Image Name="HPbar_null.png" />
+          <Image Name="HPbar_red.png" />
+          <Image Name="player_1.png" />
+          <Image Name="Player_2.png" />
+          <Image Name="PVP_sample.png" />
+          <Image Name="question_A.png" />
+          <Image Name="Question_B.png" />
+          <Image Name="question_field.png" />
+        </Folder>
         <Folder Name="BattleMode">
           <Project Name="BattleModeScene.csd" Type="Scene" />
           <Image Name="lab.jpg" />
-          <Image Name="backtomenu.png" />
-          <Image Name="backtomenu_2.png" />
-          <Image Name="chara_change.png" />
-          <Image Name="chara_change_2.png" />
-          <Image Name="event.png" />
-          <Image Name="event_2.png" />
-          <Image Name="freebattle.png" />
-          <Image Name="freebattle_2.png" />
-          <Image Name="pve.png" />
-          <Image Name="pve_2.png" />
           <Image Name="Tournament.png" />
-          <Image Name="tournament_1.png" />
-          <Image Name="tournament_2.png" />
           <Image Name="UI_PVP_Sample.png" />
+          <Folder Name="btn">
+            <Image Name="backtomenu.png" />
+            <Image Name="backtomenu_2.png" />
+            <Image Name="chara_change.png" />
+            <Image Name="chara_change_2.png" />
+            <Image Name="event.png" />
+            <Image Name="event_2.png" />
+            <Image Name="freebattle.png" />
+            <Image Name="freebattle_2.png" />
+            <Image Name="pve.png" />
+            <Image Name="pve_2.png" />
+            <Image Name="tournament_1.png" />
+            <Image Name="tournament_2.png" />
+          </Folder>
         </Folder>
         <Folder Name="btn">
-          <Image Name="battle.png" />
-          <Image Name="battle_2.png" />
-          <Image Name="kacha.png" />
-          <Image Name="kacha_2.png" />
-          <Image Name="lab.png" />
-          <Image Name="lab_2.png" />
-          <Image Name="player.png" />
-          <Image Name="player_2.png" />
-          <Image Name="story.png" />
-          <Image Name="story_2.png" />
           <Image Name="arrow_l.png" />
           <Image Name="arrow_l_2.png" />
           <Image Name="arrow_r.png" />
           <Image Name="arrow_r_2.png" />
+          <Image Name="settings.png" />
         </Folder>
         <Image Name="character.png" />
         <Image Name="chat_bubble.png" />
-        <Image Name="guidBg.jpg" />
-        <Image Name="gvgBg.jpg" />
-        <Image Name="HelloWorld.png" />
-        <Project Name="LoginScene.csd" Type="Scene" />
-        <Image Name="main_bg.png" />
-        <Project Name="MainScene.csd" Type="Scene" />
         <TTF Name="msjh.ttc" />
         <Image Name="paper_bg.png" />
-        <Image Name="settings.png" />
-        <Image Name="status_bg.png" />
-        <Project Name="TestScene.csd" Type="Scene" />
-        <Image Name="transformChooseBg.png" />
+        <Folder Name="Login">
+          <Project Name="LoginScene.csd" Type="Scene" />
+          <Image Name="gvgBg.jpg" />
+          <Image Name="transformChooseBg.png" />
+          <Image Name="status_bg.png" />
+        </Folder>
+        <Folder Name="MainScene">
+          <Project Name="MainScene.csd" Type="Scene" />
+          <Image Name="main_bg.png" />
+          <Folder Name="btn">
+            <Image Name="battle.png" />
+            <Image Name="battle_2.png" />
+            <Image Name="kacha.png" />
+            <Image Name="kacha_2.png" />
+            <Image Name="lab.png" />
+            <Image Name="lab_2.png" />
+            <Image Name="player.png" />
+            <Image Name="player_2.png" />
+            <Image Name="story.png" />
+            <Image Name="story_2.png" />
+          </Folder>
+        </Folder>
       </RootFolder>
     </Group>
   </SolutionFolder>

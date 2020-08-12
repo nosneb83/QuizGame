@@ -1,6 +1,6 @@
 local LoginScene = class("LoginScene", cc.load("mvc").ViewBase)
 
-LoginScene.RESOURCE_FILENAME = "LoginScene.csb"
+LoginScene.RESOURCE_FILENAME = "Login/LoginScene.csb"
 
 socket = require("LuaTcpSocket"):new():init()
 

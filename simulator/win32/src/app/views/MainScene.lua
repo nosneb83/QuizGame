@@ -14,7 +14,7 @@ local menuBtnAnimFunc
 function MainScene:ctor(id)
     playerID = id
 
-    rootNode = cc.CSLoader:createNode("MainScene.csb")
+    rootNode = cc.CSLoader:createNode("MainScene/MainScene.csb")
     self:addChild(rootNode)
 
     -- 選單按鈕
@@ -96,15 +96,9 @@ end
 
 function MainScene:enterBattleScene(type)
     if type == ccui.TouchEventType.ended then
-        local jsonObj = {
-            op = "ENTER_ROOM",
-            room = 100,
-            id = playerID
-        }
-        socket:send(json.encode(jsonObj))
-        -- local scene = require("app/views/TestScene.lua"):create()
-        -- -- 淡入過場
-        -- cc.Director:getInstance():replaceScene(cc.TransitionFade:create(1, scene))
+        print("11")
+        local scene = require("app/views/BattleModeScene.lua"):create()
+        cc.Director:getInstance():replaceScene(cc.TransitionFade:create(1, scene))
     end
 end
 
