@@ -54,15 +54,16 @@
           <Image Name="arrow_r_2.png" />
           <Image Name="settings.png" />
         </Folder>
-        <Image Name="character.png" />
-        <Image Name="chat_bubble.png" />
-        <TTF Name="msjh.ttc" />
-        <Image Name="paper_bg.png" />
         <Folder Name="Login">
           <Project Name="LoginScene.csd" Type="Scene" />
-          <Image Name="gvgBg.jpg" />
-          <Image Name="transformChooseBg.png" />
-          <Image Name="status_bg.png" />
+          <Image Name="background.png" />
+          <Image Name="BG.png" />
+          <Image Name="Key_in_box.png" />
+          <Image Name="MuseLab.png" />
+          <Image Name="PASSWORD.png" />
+          <Image Name="Start.png" />
+          <Image Name="Start_2.png" />
+          <Image Name="USERID.png" />
         </Folder>
         <Folder Name="MainScene">
           <Project Name="MainScene.csd" Type="Scene" />
@@ -80,6 +81,10 @@
             <Image Name="story_2.png" />
           </Folder>
         </Folder>
+        <Image Name="character.png" />
+        <Image Name="chat_bubble.png" />
+        <TTF Name="msjh.ttc" />
+        <Image Name="paper_bg.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>

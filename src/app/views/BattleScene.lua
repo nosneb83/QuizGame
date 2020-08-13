@@ -5,7 +5,7 @@ end)
 require("json")
 
 local rootNode
-local testBtn
+-- local testBtn
 local qText, qText2, qText3
 local correctAns
 local ansPnlTF, ansPnlCH
@@ -13,12 +13,17 @@ local ansBtnO, ansBtnX, ansBtnA, ansBtnB, ansBtnC, ansBtnD
 local currentAnsBtns = {}
 local feedbackT, feedbackF
 local sfxQues, sfxCorrect, sfxWrong
+local countdownText
+local countdownNum
+local playerHealthBar, opponentHealthBar
+local healthSelf = 100.0
+local healthOther = 100.0
 
 function BattleScene:ctor()
     rootNode = cc.CSLoader:createNode("Battle/BattleScene.csb")
     self:addChild(rootNode)
-    testBtn = rootNode:getChildByName("Button_1")
-    testBtn:addTouchEventListener(self.testOnclick)
+    -- testBtn = rootNode:getChildByName("Button_1")
+    -- testBtn:addTouchEventListener(self.testOnclick)
     qText = rootNode:getChildByName("Question"):getChildByName("Text")
     qText2 = rootNode:getChildByName("Question"):getChildByName("Text2")
     qText3 = rootNode:getChildByName("Question"):getChildByName("Text3")
@@ -42,6 +47,21 @@ function BattleScene:ctor()
     feedbackT = rootNode:getChildByName("Answer_feedback"):getChildByName("Correct")
     feedbackF = rootNode:getChildByName("Answer_feedback"):getChildByName("Wrong")
 
+    countdownText = rootNode:getChildByName("Answer"):getChildByName("Countdown")
+
+    playerHealthBar = rootNode:getChildByName("PlayerHealth")
+    opponentHealthBar = rootNode:getChildByName("OpponentHealth")
+
+    -- 設定頭像
+    if playerID == 3 then
+        local playerIcon = rootNode:getChildByName("StaticPanel"):getChildByName("PlayerIcon")
+        local opponentIcon = rootNode:getChildByName("StaticPanel"):getChildByName("OpponentIcon")
+        local p1x, p1y = playerIcon:getPosition()
+        local p2x, p2y = opponentIcon:getPosition()
+        playerIcon:setPosition(p2x, p2y)
+        opponentIcon:setPosition(p1x, p1y)
+    end
+
     -- socket設定
     local function ReceiveCallback(msg)
         -- 把每個{}分割開
@@ -55,10 +75,23 @@ function BattleScene:ctor()
     end
     socket:setReceiveCallback(ReceiveCallback)
 
-    -- Random Seed
+    -- 隨機種子
     math.randomseed(os.time())
 
+    -- 註冊Update
     self:scheduleUpdateWithPriorityLua(function(dt) self:update(dt) end, 0)
+
+    -- 場景載入後1秒鐘開始出題
+    local jsonObj = {
+        op = "ENTER_ROOM",
+        room = 100,
+        id = playerID
+    }
+    -- rootNode:runAction(cc.Sequence:create(cc.DelayTime:create(1), cc.CallFunc:create(self.nextQuestion)))
+    rootNode:runAction(cc.Sequence:create(cc.DelayTime:create(1), cc.CallFunc:create(function()
+        socket:send(json.encode(jsonObj))
+        print("send")
+    end)))
 end
 
 function BattleScene:testOnclick(type)
@@ -69,7 +102,10 @@ end
 
 -- 下一題
 function BattleScene:nextQuestion()
-    print("client ready")
+    -- local s = cc.ScaleTo:create(0.5, 1, 0.7)
+    -- local e = cc.EaseInOut:create(s, 3)
+    -- playerHealthBar:runAction(e)
+    -- print("client ready")
     local jsonObj = {
         op = "CLIENT_READY"
     }
@@ -105,7 +141,13 @@ function BattleScene:answer(playerAns)
         self:showFeedback(feedbackF, feedbackT)
         cc.SimpleAudioEngine:getInstance():playEffect("SFX/Quiz-Wrong_Buzzer01-mp3/Quiz-Wrong_Buzzer01-1.mp3")
     end
-    rootNode:runAction(cc.Sequence:create(cc.DelayTime:create(feedbackDuration), cc.CallFunc:create(self.nextQuestion)))
+    -- rootNode:runAction(cc.Sequence:create(cc.DelayTime:create(feedbackDuration), cc.CallFunc:create(self.nextQuestion)))
+    local jsonObj = {
+        op = "ANSWER",
+        id = playerID,
+        cor = playerAns == correctAns
+    }
+    socket:send(json.encode(jsonObj))
 end
 function BattleScene:showFeedback(showing, hiding)
     hiding:stopAllActions()
@@ -116,7 +158,9 @@ end
 
 -- Game Loop
 function BattleScene:update(dt)
-
+    if countdownNum == nil then return end
+    countdownNum = countdownNum - dt
+    countdownText:setString(string.format("%.2f", countdownNum))
 end
 
 -- Handle Server Op
@@ -170,6 +214,22 @@ function BattleScene:handleOp(jsonObj)
         end
         -- 新題目出現的音效
         cc.SimpleAudioEngine:getInstance():playEffect("SFX/Quiz-Question02-mp3/Quiz-Question02-1.mp3")
+        -- 開始倒數
+        countdownNum = 10
+    elseif op == "ANSWER" then
+        if jsonObj["cor"] == false then
+            if jsonObj["id"] == playerID then
+                healthSelf = healthSelf - 10.0
+                local s = cc.ScaleTo:create(0.5, 1, healthSelf / 100.0)
+                local e = cc.EaseInOut:create(s, 3)
+                playerHealthBar:runAction(e)
+            else
+                healthOther = healthOther - 10.0
+                local s = cc.ScaleTo:create(0.5, 1, healthOther / 100.0)
+                local e = cc.EaseInOut:create(s, 3)
+                opponentHealthBar:runAction(e)
+            end
+        end
     end
 end
 function BattleScene:showClues(delay)
