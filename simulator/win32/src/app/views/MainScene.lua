@@ -96,7 +96,6 @@ end
 
 function MainScene:enterBattleScene(type)
     if type == ccui.TouchEventType.ended then
-        print("11")
         local scene = require("app/views/BattleModeScene.lua"):create()
         cc.Director:getInstance():replaceScene(cc.TransitionFade:create(1, scene))
     end

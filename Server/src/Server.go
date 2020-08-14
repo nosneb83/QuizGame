@@ -5,9 +5,8 @@ import (
 	"db"
 	"encoding/json"
 	"fmt"
-	"math/rand"
 	"net"
-	"questions"
+	"sync"
 )
 
 var userNum int = 0 // client流水號
@@ -17,12 +16,15 @@ var onlinePlayerID []int
 
 // var questionList []questions.QuestionObj
 
+var waitingPlayerID int
+var waitingPlayerConn net.Conn = nil
+var waitingPlayerWg sync.WaitGroup
+
 type clientData struct {
-	name     string
-	conn     net.Conn
-	id       int
-	heroType int
-	ready    bool
+	name   string
+	conn   net.Conn
+	id     int
+	health float64
 }
 
 // server為每個client開一個goroutine來handle
@@ -34,8 +36,8 @@ func handleConnection(conn net.Conn) {
 	var playerID int
 
 	// 讀取題庫
-	questionList := questions.ReadQuestionsFromCSV()
-	fmt.Println(questionList)
+	// questionList := questions.ReadQuestionsFromCSV()
+	// fmt.Println(questionList)
 
 	buf := make([]byte, 1024)
 	var msg string
@@ -44,6 +46,7 @@ func handleConnection(conn net.Conn) {
 		if n == 0 { // 離線
 			fmt.Printf("%s [%s] 離線\n", client.name, addr)
 			delete(onlinemap, addr)
+			battle.LeaveRoom(playerID)
 			return
 		}
 
@@ -67,18 +70,31 @@ func handleConnection(conn net.Conn) {
 			playerID = playerLogin(conn, jsonObj["ac"].(string), jsonObj["pw"].(string))
 			fmt.Println("Player ID:", playerID, "Login")
 		case "ENTER_ROOM":
-			battle.EnterRoom(int(jsonObj["room"].(float64)), int(jsonObj["id"].(float64)))
+			// battle.EnterRoom(int(jsonObj["room"].(float64)), int(jsonObj["id"].(float64)))
+			if waitingPlayerConn == nil { // 目前沒有人在等
+				fmt.Println("no one waiting")
+				waitingPlayerID = playerID
+				waitingPlayerConn = conn
+				waitingPlayerWg = sync.WaitGroup{}
+				waitingPlayerWg.Add(1)
+				waitingPlayerWg.Wait()
+			} else { // 有人在等，可出發
+				fmt.Println("go to battle!!")
+				battle.StartBattle(waitingPlayerID, playerID, waitingPlayerConn, conn, &waitingPlayerWg)
+				waitingPlayerID = -1
+				waitingPlayerConn = nil
+			}
 		case "CLIENT_READY":
 			// fmt.Println("question list length =", len(questionList))
-			randQuestion := questionList[rand.Intn(len(questionList))]
-			q, _ := json.Marshal(map[string]interface{}{
-				"op":     "SEND_QUESTION",
-				"domain": randQuestion.Domain,
-				"difcty": randQuestion.Difcty,
-				"qtype":  randQuestion.QType,
-				"ques":   randQuestion.Ques,
-				"ans":    randQuestion.Ans})
-			conn.Write([]byte(q))
+			// randQuestion := questionList[rand.Intn(len(questionList))]
+			// q, _ := json.Marshal(map[string]interface{}{
+			// 	"op":     "SEND_QUESTION",
+			// 	"domain": randQuestion.Domain,
+			// 	"difcty": randQuestion.Difcty,
+			// 	"qtype":  randQuestion.QType,
+			// 	"ques":   randQuestion.Ques,
+			// 	"ans":    randQuestion.Ans})
+			// conn.Write([]byte(q))
 		}
 	}
 }
@@ -102,24 +118,9 @@ func playerLogin(conn net.Conn, ac string, pw string) int {
 // 新user加入聊天室
 func registerNewGuest(conn net.Conn) (string, clientData) {
 	addr := conn.RemoteAddr().String()
-	client := clientData{"User" + fmt.Sprintf("%d", userNum), conn, 0, 0, false}
+	client := clientData{"User" + fmt.Sprintf("%d", userNum), conn, 0, 100.0}
 	userNum++
 	fmt.Printf("%s [%s] 登入\n", client.name, addr)
-
-	// 目前大廳有誰
-	for _, client := range onlinemap {
-		if !client.ready {
-			continue
-		}
-		readyPlayer, err := json.Marshal(map[string]interface{}{
-			"op":         "CREATE_PLAYER",
-			"playerName": client.name,
-			"heroType":   client.heroType})
-		if err != nil {
-			fmt.Println("Marshal err: ", err)
-		}
-		conn.Write([]byte(readyPlayer))
-	}
 
 	// 新client加入server線上列表
 	onlinemap[addr] = client

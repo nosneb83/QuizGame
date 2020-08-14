@@ -13,8 +13,8 @@ function LoginScene:onCreate()
     local startBtn = rootNode:getChildByName("StartBtn")
     startBtn:addTouchEventListener(self.login)
 
-    acInput = rootNode:getChildByName("Account"):getChildByName("Input")
-    pwInput = rootNode:getChildByName("Password"):getChildByName("Input")
+    acInput = rootNode:getChildByName("Input"):getChildByName("UserIDInput")
+    pwInput = rootNode:getChildByName("Input"):getChildByName("PasswordInput")
 
     -- socket設定
     local function ReceiveCallback(msg)

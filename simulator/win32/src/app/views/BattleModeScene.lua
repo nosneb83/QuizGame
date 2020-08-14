@@ -8,10 +8,8 @@ local menuBtnPos = {}
 local menuBtnAnimFunc
 
 function BattleModeScene:ctor()
-    print("22")
     rootNode = cc.CSLoader:createNode("BattleMode/BattleModeScene.csb")
     self:addChild(rootNode)
-    print("33")
 
     -- 選單按鈕
     menuBtns = {

@@ -71,7 +71,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_1" ActionTag="-939224356" Tag="88" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="229.9400" RightMargin="229.9400" TopMargin="100.8883" BottomMargin="1124.8883" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Button_1" ActionTag="-939224356" VisibleForFrame="False" Tag="88" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="229.9400" RightMargin="229.9400" TopMargin="100.8883" BottomMargin="1124.8883" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="260.1200" Y="54.2233" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="360.0000" Y="1152.0000" />
@@ -222,14 +222,14 @@
                 <PreSize X="0.2986" Y="0.9381" />
                 <FileData Type="Normal" Path="Battle/opinion/Layer_botton.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Countdown" ActionTag="1167483369" Tag="141" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="71.9973" RightMargin="533.9867" TopMargin="217.9840" BottomMargin="217.9840" IsCustomSize="True" FontSize="48" LabelText="9:55" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="94.0000" Y="64.0000" />
+              <AbstractNodeData Name="Countdown" ActionTag="1167483369" Tag="141" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="56.9973" RightMargin="518.9867" TopMargin="217.9840" BottomMargin="217.9840" FontSize="48" LabelText="10.00" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="124.0000" Y="64.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="118.9973" Y="249.9840" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="0" G="0" B="0" />
                 <PrePosition X="0.1700" Y="0.5000" />
-                <PreSize X="0.1343" Y="0.1280" />
+                <PreSize X="0.1771" Y="0.1280" />
                 <FontResource Type="Normal" Path="msjh.ttc" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
@@ -247,7 +247,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="TF" ActionTag="2026855644" Tag="150" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="231" RightEage="231" TopEage="165" BottomEage="165" Scale9OriginX="-231" Scale9OriginY="-165" Scale9Width="462" Scale9Height="330" ctype="PanelObjectData">
+              <AbstractNodeData Name="TF" ActionTag="2026855644" VisibleForFrame="False" Tag="150" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="231" RightEage="231" TopEage="165" BottomEage="165" Scale9OriginX="-231" Scale9OriginY="-165" Scale9Width="462" Scale9Height="330" ctype="PanelObjectData">
                 <Size X="699.9840" Y="499.9680" />
                 <Children>
                   <AbstractNodeData Name="O" ActionTag="-613394495" Tag="155" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="236.9894" RightMargin="12.9946" TopMargin="154.9877" BottomMargin="269.9803" TouchEnable="True" FontSize="48" ButtonText="O" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="420" Scale9Height="53" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
@@ -294,7 +294,7 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="CH" ActionTag="-2018952941" Tag="69" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="231" RightEage="231" TopEage="165" BottomEage="165" Scale9OriginX="-231" Scale9OriginY="-165" Scale9Width="462" Scale9Height="330" ctype="PanelObjectData">
+              <AbstractNodeData Name="CH" ActionTag="-2018952941" VisibleForFrame="False" Tag="69" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="231" RightEage="231" TopEage="165" BottomEage="165" Scale9OriginX="-231" Scale9OriginY="-165" Scale9Width="462" Scale9Height="330" ctype="PanelObjectData">
                 <Size X="699.9840" Y="499.9680" />
                 <Children>
                   <AbstractNodeData Name="A" ActionTag="98260602" Tag="71" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="194.9904" RightMargin="54.9936" TopMargin="42.4949" BottomMargin="382.4731" TouchEnable="True" FontSize="36" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="420" Scale9Height="53" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
