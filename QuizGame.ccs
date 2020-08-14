@@ -83,8 +83,10 @@
         </Folder>
         <Image Name="character.png" />
         <Image Name="chat_bubble.png" />
+        <TTF Name="DigitalDisplayRegular-ODEO.ttf" />
         <TTF Name="msjh.ttc" />
         <Image Name="paper_bg.png" />
+        <TTF Name="PLANK___.TTF" />
       </RootFolder>
     </Group>
   </SolutionFolder>

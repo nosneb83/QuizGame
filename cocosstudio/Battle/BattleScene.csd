@@ -222,15 +222,15 @@
                 <PreSize X="0.2986" Y="0.9381" />
                 <FileData Type="Normal" Path="Battle/opinion/Layer_botton.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Countdown" ActionTag="1167483369" Tag="141" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="56.9973" RightMargin="518.9867" TopMargin="217.9840" BottomMargin="217.9840" FontSize="48" LabelText="10.00" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="124.0000" Y="64.0000" />
+              <AbstractNodeData Name="Countdown" ActionTag="1167483369" Tag="141" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="39.9973" RightMargin="501.9867" TopMargin="226.4840" BottomMargin="226.4840" FontSize="72" LabelText="10.00" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="158.0000" Y="47.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="118.9973" Y="249.9840" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="0" G="0" B="0" />
                 <PrePosition X="0.1700" Y="0.5000" />
-                <PreSize X="0.1771" Y="0.1280" />
-                <FontResource Type="Normal" Path="msjh.ttc" Plist="" />
+                <PreSize X="0.2257" Y="0.0940" />
+                <FontResource Type="Normal" Path="DigitalDisplayRegular-ODEO.ttf" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -384,6 +384,18 @@
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="StartCountdown" ActionTag="-1519973396" Alpha="0" Tag="164" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="360.0000" RightMargin="360.0000" TopMargin="640.0000" BottomMargin="640.0000" FontSize="100" LabelText="" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
+            <Size X="0.0000" Y="0.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="360.0000" Y="640.0000" />
+            <Scale ScaleX="5.0000" ScaleY="5.0000" />
+            <CColor A="255" R="255" G="255" B="0" />
+            <PrePosition X="0.5000" Y="0.5000" />
+            <PreSize X="0.0000" Y="0.0000" />
+            <FontResource Type="Normal" Path="PLANK___.TTF" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="255" G="0" B="0" />
           </AbstractNodeData>
           <AbstractNodeData Name="Answer_feedback" ActionTag="-431103969" Tag="66" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="36.0000" RightMargin="36.0000" TopMargin="512.0000" BottomMargin="512.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="648.0000" Y="256.0000" />

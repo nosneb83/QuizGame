@@ -13,11 +13,13 @@ local ansBtnO, ansBtnX, ansBtnA, ansBtnB, ansBtnC, ansBtnD
 local currentAnsBtns = {}
 local feedbackT, feedbackF
 local sfxQues, sfxCorrect, sfxWrong
+local enterCountdownText
 local countdownText
 local countdownNum
 local playerHealthBar, opponentHealthBar
 local healthSelf = 100
 local healthOther = 100
+local isWaiting = false
 
 function BattleScene:ctor()
     rootNode = cc.CSLoader:createNode("Battle/BattleScene.csb")
@@ -47,6 +49,7 @@ function BattleScene:ctor()
     feedbackT = rootNode:getChildByName("Answer_feedback"):getChildByName("Correct")
     feedbackF = rootNode:getChildByName("Answer_feedback"):getChildByName("Wrong")
 
+    enterCountdownText = rootNode:getChildByName("StartCountdown")
     countdownText = rootNode:getChildByName("Answer"):getChildByName("Countdown")
 
     playerHealthBar = rootNode:getChildByName("PlayerHealth")
@@ -83,16 +86,9 @@ function BattleScene:ctor()
     rootNode:pause()
 
     -- 場景載入後1秒鐘開始出題
-    local jsonObj = {
-        op = "ENTER_ROOM",
-        room = 100,
-        id = playerID
-    }
-    -- rootNode:runAction(cc.Sequence:create(cc.DelayTime:create(1), cc.CallFunc:create(self.nextQuestion)))
-    rootNode:runAction(cc.Sequence:create(cc.DelayTime:create(1), cc.CallFunc:create(function()
-        socket:send(json.encode(jsonObj))
-        print("send")
-    end)))
+    rootNode:runAction(cc.Sequence:create(
+    cc.DelayTime:create(1),
+    cc.CallFunc:create(self.enterRoom)))
 end
 
 function BattleScene:testOnclick(type)
@@ -101,12 +97,20 @@ function BattleScene:testOnclick(type)
     end
 end
 
+-- 玩家進入房間
+function BattleScene:enterRoom()
+    local jsonObj = {
+        op = "ENTER_ROOM",
+        room = 100,
+        id = playerID
+    }
+    isWaiting = true
+    socket:send(json.encode(jsonObj))
+    print("send")
+end
+
 -- 下一題
 function BattleScene:nextQuestion()
-    -- local s = cc.ScaleTo:create(0.5, 1, 0.7)
-    -- local e = cc.EaseInOut:create(s, 3)
-    -- playerHealthBar:runAction(e)
-    -- print("client ready")
     local jsonObj = {
         op = "CLIENT_READY"
     }
@@ -158,6 +162,34 @@ function BattleScene:showFeedback(showing, hiding)
     showing:runAction(cc.Sequence:create(cc.Show:create(), cc.DelayTime:create(feedbackDuration), cc.Hide:create()))
 end
 
+-- 進房倒數
+function BattleScene:countDown(jsonObj)
+    -- 數字
+    local initScale = cc.ScaleTo:create(0, 5)
+    local fadeIn = cc.FadeIn:create(0.3)
+    local scaleTo = cc.ScaleTo:create(0.3, 1)
+    local fadeOut = cc.FadeOut:create(0)
+    local count = cc.Sequence:create(initScale, cc.Spawn:create(fadeIn, scaleTo),
+    cc.DelayTime:create(0.5), fadeOut, cc.DelayTime:create(0.2))
+
+    -- 執行動作
+    enterCountdownText:runAction(cc.Sequence:create(
+    cc.CallFunc:create(function() enterCountdownText:setString("3") end),
+    count,
+    cc.CallFunc:create(function() enterCountdownText:setString("2") end),
+    count,
+    cc.CallFunc:create(function() enterCountdownText:setString("1") end),
+    count,
+    cc.CallFunc:create(function() self:showQuestion(jsonObj) end)))
+    
+    -- 播音效
+    local function countSound()
+        cc.SimpleAudioEngine:getInstance():playEffect("SFX/count3.mp3")
+    end
+    local sound = cc.CallFunc:create(countSound)
+    self:runAction(cc.Sequence:create(cc.DelayTime:create(0.01), sound))
+end
+
 -- 答題倒數
 function BattleScene:startCountdown()
     countdownNum = 10
@@ -165,6 +197,7 @@ function BattleScene:startCountdown()
     rootNode:resume()
 end
 function BattleScene:countdownUpdate(dt)
+    if countdownNum == nil then return end
     countdownNum = countdownNum - dt
     countdownText:setString(string.format("%.2f", countdownNum))
     if countdownNum <= 0 then
@@ -172,6 +205,7 @@ function BattleScene:countdownUpdate(dt)
     end
 end
 function BattleScene:stopCountdown()
+    countdownNum = nil
     countdownText:setString("")
     rootNode:pause()
 end
@@ -182,53 +216,14 @@ function BattleScene:handleOp(jsonObj)
     -- 處理指令
     local op = jsonObj["op"]
     if op == "SEND_QUESTION" then
-        if jsonObj["qtype"] == "TF" then -- 是非題
-            qText:setString(jsonObj["ques"][1])
-            qText2:setString("")
-            qText3:setString("")
-            if jsonObj["ans"][1] == "O" then
-                correctAns = 1
-            else
-                correctAns = 2
-            end
-            self:showAnsPnl(ansPnlTF, ansPnlCH)
-            self:setAnsBtnsEnabled(true, ansBtnO, ansBtnX)
-        elseif jsonObj["qtype"] == "CH" then -- 選擇題
-            qText:setString(jsonObj["ques"][1])
-            qText2:setString("")
-            qText3:setString("")
-            local ansStr = jsonObj["ans"][1]
-            math.shuffle(jsonObj["ans"])
-            ansBtnA:setTitleText(jsonObj["ans"][1])
-            ansBtnB:setTitleText(jsonObj["ans"][2])
-            ansBtnC:setTitleText(jsonObj["ans"][3])
-            ansBtnD:setTitleText(jsonObj["ans"][4])
-            for k, v in ipairs(jsonObj["ans"]) do
-                if v == ansStr then correctAns = k break end
-            end
-            self:showAnsPnl(ansPnlCH, ansPnlTF)
-            self:setAnsBtnsEnabled(true, ansBtnA, ansBtnB, ansBtnC, ansBtnD)
-        elseif jsonObj["qtype"] == "CL" then -- 聯想題
-            qText:setString("提示1: " .. jsonObj["ques"][1])
-            qText2:setVisible(false)
-            qText2:setString("提示2: " .. jsonObj["ques"][2])
-            qText3:setVisible(false)
-            qText3:setString("提示3: " .. jsonObj["ques"][3])
-            ansBtnA:setTitleText(jsonObj["ans"][1])
-            ansBtnB:setTitleText(jsonObj["ans"][2])
-            ansBtnC:setTitleText(jsonObj["ans"][3])
-            ansBtnD:setTitleText(jsonObj["ans"][4])
-            correctAns = "A"
-            self:showAnsPnl(ansPnlCH, ansPnlTF)
-            self:setAnsBtnsEnabled(true, ansBtnA, ansBtnB, ansBtnC, ansBtnD)
-            self:showClues(3)
+        if isWaiting then
+            print("is waiting")
+            self:countDown(jsonObj)
+            isWaiting = false
         else
-            return
+            print("not waiting")
+            self:showQuestion(jsonObj)
         end
-        -- 新題目出現的音效
-        cc.SimpleAudioEngine:getInstance():playEffect("SFX/Quiz-Question02-mp3/Quiz-Question02-1.mp3")
-        -- 開始倒數
-        self:startCountdown()
     elseif op == "ANSWER" then
         if jsonObj["cor"] == false then
             if jsonObj["id"] == playerID then
@@ -245,6 +240,59 @@ function BattleScene:handleOp(jsonObj)
         end
     end
 end
+
+-- 顯示題目和選項
+function BattleScene:showQuestion(jsonObj)
+    if jsonObj["qtype"] == "TF" then -- 是非題
+        qText:setString(jsonObj["ques"][1])
+        qText2:setString("")
+        qText3:setString("")
+        if jsonObj["ans"][1] == "O" then
+            correctAns = 1
+        else
+            correctAns = 2
+        end
+        self:showAnsPnl(ansPnlTF, ansPnlCH)
+        self:setAnsBtnsEnabled(true, ansBtnO, ansBtnX)
+    elseif jsonObj["qtype"] == "CH" then -- 選擇題
+        qText:setString(jsonObj["ques"][1])
+        qText2:setString("")
+        qText3:setString("")
+        local ansStr = jsonObj["ans"][1]
+        math.shuffle(jsonObj["ans"])
+        ansBtnA:setTitleText(jsonObj["ans"][1])
+        ansBtnB:setTitleText(jsonObj["ans"][2])
+        ansBtnC:setTitleText(jsonObj["ans"][3])
+        ansBtnD:setTitleText(jsonObj["ans"][4])
+        for k, v in ipairs(jsonObj["ans"]) do
+            if v == ansStr then correctAns = k break end
+        end
+        self:showAnsPnl(ansPnlCH, ansPnlTF)
+        self:setAnsBtnsEnabled(true, ansBtnA, ansBtnB, ansBtnC, ansBtnD)
+    elseif jsonObj["qtype"] == "CL" then -- 聯想題
+        qText:setString("提示1: " .. jsonObj["ques"][1])
+        qText2:setVisible(false)
+        qText2:setString("提示2: " .. jsonObj["ques"][2])
+        qText3:setVisible(false)
+        qText3:setString("提示3: " .. jsonObj["ques"][3])
+        ansBtnA:setTitleText(jsonObj["ans"][1])
+        ansBtnB:setTitleText(jsonObj["ans"][2])
+        ansBtnC:setTitleText(jsonObj["ans"][3])
+        ansBtnD:setTitleText(jsonObj["ans"][4])
+        correctAns = "A"
+        self:showAnsPnl(ansPnlCH, ansPnlTF)
+        self:setAnsBtnsEnabled(true, ansBtnA, ansBtnB, ansBtnC, ansBtnD)
+        self:showClues(3)
+    else
+        return
+    end
+    -- 新題目出現的音效
+    cc.SimpleAudioEngine:getInstance():playEffect("SFX/Quiz-Question02-mp3/Quiz-Question02-1.mp3")
+    -- 開始倒數
+    self:startCountdown()
+end
+
+-- 聯想題顯示提示
 function BattleScene:showClues(delay)
     local delayAct = cc.DelayTime:create(delay)
     local delayAct2 = cc.DelayTime:create(delay + delay)
@@ -254,6 +302,7 @@ function BattleScene:showClues(delay)
     qText2:runAction(seq)
     qText3:runAction(seq2)
 end
+
 function BattleScene:showAnsPnl(showing, hiding)
     hiding:setVisible(false)
     showing:setVisible(true)
