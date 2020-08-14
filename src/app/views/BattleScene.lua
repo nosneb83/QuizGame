@@ -16,8 +16,8 @@ local sfxQues, sfxCorrect, sfxWrong
 local countdownText
 local countdownNum
 local playerHealthBar, opponentHealthBar
-local healthSelf = 100.0
-local healthOther = 100.0
+local healthSelf = 100
+local healthOther = 100
 
 function BattleScene:ctor()
     rootNode = cc.CSLoader:createNode("Battle/BattleScene.csb")
@@ -78,8 +78,9 @@ function BattleScene:ctor()
     -- 隨機種子
     math.randomseed(os.time())
 
-    -- 註冊Update
-    self:scheduleUpdateWithPriorityLua(function(dt) self:update(dt) end, 0)
+    -- 註冊倒數Update
+    rootNode:scheduleUpdateWithPriorityLua(function(dt) self:countdownUpdate(dt) end, 0)
+    rootNode:pause()
 
     -- 場景載入後1秒鐘開始出題
     local jsonObj = {
@@ -134,6 +135,7 @@ function BattleScene:answerD(type)
 end
 function BattleScene:answer(playerAns)
     self:setAnsBtnsEnabled(false)
+    self:stopCountdown()
     if playerAns == correctAns then
         self:showFeedback(feedbackT, feedbackF)
         cc.SimpleAudioEngine:getInstance():playEffect("SFX/Quiz-Buzzer01-mp3/Quiz-Buzzer01-1.mp3")
@@ -156,11 +158,22 @@ function BattleScene:showFeedback(showing, hiding)
     showing:runAction(cc.Sequence:create(cc.Show:create(), cc.DelayTime:create(feedbackDuration), cc.Hide:create()))
 end
 
--- Game Loop
-function BattleScene:update(dt)
-    if countdownNum == nil then return end
+-- 答題倒數
+function BattleScene:startCountdown()
+    countdownNum = 10
+    countdownText:setString(string.format("%.2f", countdownNum))
+    rootNode:resume()
+end
+function BattleScene:countdownUpdate(dt)
     countdownNum = countdownNum - dt
     countdownText:setString(string.format("%.2f", countdownNum))
+    if countdownNum <= 0 then
+        self:answer(5)
+    end
+end
+function BattleScene:stopCountdown()
+    countdownText:setString("")
+    rootNode:pause()
 end
 
 -- Handle Server Op
@@ -215,17 +228,17 @@ function BattleScene:handleOp(jsonObj)
         -- 新題目出現的音效
         cc.SimpleAudioEngine:getInstance():playEffect("SFX/Quiz-Question02-mp3/Quiz-Question02-1.mp3")
         -- 開始倒數
-        countdownNum = 10
+        self:startCountdown()
     elseif op == "ANSWER" then
         if jsonObj["cor"] == false then
             if jsonObj["id"] == playerID then
-                healthSelf = healthSelf - 10.0
-                local s = cc.ScaleTo:create(0.5, 1, healthSelf / 100.0)
+                healthSelf = healthSelf - 10
+                local s = cc.ScaleTo:create(0.5, 1, healthSelf / 100)
                 local e = cc.EaseInOut:create(s, 3)
                 playerHealthBar:runAction(e)
             else
-                healthOther = healthOther - 10.0
-                local s = cc.ScaleTo:create(0.5, 1, healthOther / 100.0)
+                healthOther = healthOther - 10
+                local s = cc.ScaleTo:create(0.5, 1, healthOther / 100)
                 local e = cc.EaseInOut:create(s, 3)
                 opponentHealthBar:runAction(e)
             end

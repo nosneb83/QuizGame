@@ -4,28 +4,6 @@
   Performing Custom Build Step
   已複製 16 個檔案
   已複製 1 個檔案
-  C:\Benson\QuizGameProject\QuizGame\res\Battle\BattleScene.csb -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Battle\BattleScene.csb
-  C:\Benson\QuizGameProject\QuizGame\res\BattleMode\BattleModeScene.csb -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\BattleMode\BattleModeScene.csb
-  C:\Benson\QuizGameProject\QuizGame\res\Login\background.png -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Login\background.png
-  C:\Benson\QuizGameProject\QuizGame\res\Login\BG.png -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Login\BG.png
-  C:\Benson\QuizGameProject\QuizGame\res\Login\Key_in_box.png -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Login\Key_in_box.png
-  C:\Benson\QuizGameProject\QuizGame\res\Login\LoginScene.csb -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Login\LoginScene.csb
-  C:\Benson\QuizGameProject\QuizGame\res\Login\MuseLab.png -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Login\MuseLab.png
-  C:\Benson\QuizGameProject\QuizGame\res\Login\PASSWORD.png -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Login\PASSWORD.png
-  C:\Benson\QuizGameProject\QuizGame\res\Login\Start.png -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Login\Start.png
-  C:\Benson\QuizGameProject\QuizGame\res\Login\Start_2.png -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Login\Start_2.png
-  C:\Benson\QuizGameProject\QuizGame\res\Login\USERID.png -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Login\USERID.png
-  C:\Benson\QuizGameProject\QuizGame\res\MainScene\MainScene.csb -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\MainScene\MainScene.csb
-  C:\Benson\QuizGameProject\QuizGame\res\UI\StartPage_UI\background.png -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\UI\StartPage_UI\background.png
-  C:\Benson\QuizGameProject\QuizGame\res\UI\StartPage_UI\BG.png -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\UI\StartPage_UI\BG.png
-  C:\Benson\QuizGameProject\QuizGame\res\UI\StartPage_UI\Key_in_box.png -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\UI\StartPage_UI\Key_in_box.png
-  C:\Benson\QuizGameProject\QuizGame\res\UI\StartPage_UI\MuseLab.png -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\UI\StartPage_UI\MuseLab.png
-  C:\Benson\QuizGameProject\QuizGame\res\UI\StartPage_UI\PASSWORD.png -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\UI\StartPage_UI\PASSWORD.png
-  C:\Benson\QuizGameProject\QuizGame\res\UI\StartPage_UI\Start.png -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\UI\StartPage_UI\Start.png
-  C:\Benson\QuizGameProject\QuizGame\res\UI\StartPage_UI\StartPage_Sample.png -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\UI\StartPage_UI\StartPage_Sample.png
-  C:\Benson\QuizGameProject\QuizGame\res\UI\StartPage_UI\Start_2.png -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\UI\StartPage_UI\Start_2.png
-  C:\Benson\QuizGameProject\QuizGame\res\UI\StartPage_UI\USERID.png -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\UI\StartPage_UI\USERID.png
-  已複製 21 個檔案
+  已複製 0 個檔案
   C:\Benson\QuizGameProject\QuizGame\src\app\views\BattleScene.lua -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\src\app\views\BattleScene.lua
-  C:\Benson\QuizGameProject\QuizGame\src\app\views\LoginScene.lua -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\src\app\views\LoginScene.lua
-  已複製 2 個檔案
+  已複製 1 個檔案
