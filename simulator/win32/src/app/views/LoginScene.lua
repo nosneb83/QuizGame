@@ -6,6 +6,9 @@ socket = require("LuaTcpSocket"):new():init()
 
 local rootNode
 local acInput, pwInput
+local promptPanel, promptText
+local regPanel, regYesBtn, regNoBtn
+local regDupPanel, regDupBtn
 
 function LoginScene:onCreate()
     rootNode = self:getResourceNode()
@@ -15,6 +18,20 @@ function LoginScene:onCreate()
 
     acInput = rootNode:getChildByName("Input"):getChildByName("UserIDInput")
     pwInput = rootNode:getChildByName("Input"):getChildByName("PasswordInput")
+
+    promptPanel = rootNode:getChildByName("Prompt")
+    promptText = promptPanel:getChildByName("Text")
+    promptPanel:getChildByName("Y"):addTouchEventListener(function()
+        promptPanel:setVisible(false)
+    end)
+
+    regPanel = rootNode:getChildByName("Confirm")
+    regYesBtn = regPanel:getChildByName("Y")
+    regYesBtn:addTouchEventListener(self.register)
+    regNoBtn = regPanel:getChildByName("N")
+    regNoBtn:addTouchEventListener(function()
+        regPanel:setVisible(false)
+    end)
 
     -- socket設定
     local function ReceiveCallback(msg)
@@ -43,15 +60,29 @@ function LoginScene:login(type)
     end
 end
 
+function LoginScene:register(type)
+    if type == ccui.TouchEventType.ended then
+        local jsonObj = {
+            op = "REGISTER",
+            ac = acInput:getString(),
+            pw = pwInput:getString()
+        }
+        socket:send(json.encode(jsonObj))
+        regPanel:setVisible(false)
+    end
+end
+
 function LoginScene:handleOp(jsonObj)
     dump(jsonObj)
     local op = jsonObj["op"]
     if op == "LOGIN_SUCCESS" then
         -- 進入主畫面
-        local scene = require("app/views/MainScene.lua"):create(jsonObj["playerID"])
+        local scene = require("app/views/MainScene.lua"):create(jsonObj["id"])
         cc.Director:getInstance():replaceScene(cc.TransitionFade:create(1, scene))
-    elseif op == "LOGIN_FAIL" then
-        print("LOGIN FAIL")
+    elseif op == "WRONG_PW" then
+        promptPanel:setVisible(true)
+    elseif op == "ACCOUNT_NOT_FOUND" then
+        regPanel:setVisible(true)
     end
 end
 

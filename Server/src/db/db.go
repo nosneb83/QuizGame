@@ -3,10 +3,13 @@ package db
 import (
 	"database/sql"
 	"fmt"
+	"player"
 	"time"
 
 	_ "github.com/go-sql-driver/mysql"
 )
+
+type p = *player.Player
 
 // DB連線資訊
 const (
@@ -48,10 +51,48 @@ func InitDB() {
 // CreateTablePlayers 建立玩家資料表
 func CreateTablePlayers() {
 	sql := `CREATE TABLE IF NOT EXISTS players(
-		id INT NOT NULL AUTO_INCREMENT,
-		account VARCHAR(64) NULL,
-		password VARCHAR(64) NULL,
-		name VARCHAR(64) NULL,
+		id 				INT NOT NULL AUTO_INCREMENT,
+		account 		VARCHAR(20) NOT NULL DEFAULT '',
+		password 		VARCHAR(20) NOT NULL DEFAULT '',
+		name 			VARCHAR(20) NOT NULL DEFAULT '',
+		lastlogin 		TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+		logindays 		INT NOT NULL DEFAULT 0,
+		pvpwins 		INT NOT NULL DEFAULT 0,
+		pvptotal 		INT NOT NULL DEFAULT 0,
+		alcorr 			INT NOT NULL DEFAULT 0,
+		altotal 		INT NOT NULL DEFAULT 0,
+		sccorr 			INT NOT NULL DEFAULT 0,
+		sctotal 		INT NOT NULL DEFAULT 0,
+		licorr 			INT NOT NULL DEFAULT 0,
+		litotal 		INT NOT NULL DEFAULT 0,
+		necorr 			INT NOT NULL DEFAULT 0,
+		netotal 		INT NOT NULL DEFAULT 0,
+		accorr 			INT NOT NULL DEFAULT 0,
+		actotal 		INT NOT NULL DEFAULT 0,
+		arcorr 			INT NOT NULL DEFAULT 0,
+		artotal 		INT NOT NULL DEFAULT 0,
+		socorr 			INT NOT NULL DEFAULT 0,
+		sototal 		INT NOT NULL DEFAULT 0,
+		spcorr 			INT NOT NULL DEFAULT 0,
+		sptotal 		INT NOT NULL DEFAULT 0,
+		mainstory 		INT NOT NULL DEFAULT 0,
+		char1unlock		TINYINT(1) NOT NULL DEFAULT 0,
+		char1relat 		INT NOT NULL DEFAULT 0,
+		char1story 		INT NOT NULL DEFAULT 0,
+		char2unlock 	TINYINT(1) NOT NULL DEFAULT 0,
+		char2relat 		INT NOT NULL DEFAULT 0,
+		char2story 		INT NOT NULL DEFAULT 0,
+		char3unlock 	TINYINT(1) NOT NULL DEFAULT 0,
+		char3relat 		INT NOT NULL DEFAULT 0,
+		char3story 		INT NOT NULL DEFAULT 0,
+		char4unlock 	TINYINT(1) NOT NULL DEFAULT 0,
+		char4relat 		INT NOT NULL DEFAULT 0,
+		char4story 		INT NOT NULL DEFAULT 0,
+		bookmark 		INT NOT NULL DEFAULT 0,
+		bookmarkPrem 	INT NOT NULL DEFAULT 0,
+		token 			INT NOT NULL DEFAULT 0,
+		vipstamp 		INT NOT NULL DEFAULT 0,
+		vipexpire 		TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 		PRIMARY KEY (id))`
 	if _, err := db.Exec(sql); err != nil {
 		fmt.Println("Create table failed:", err)
@@ -70,16 +111,45 @@ func RegisterNewPlayer(ac string, pw string) {
 	fmt.Println("Insert data succeeded")
 }
 
-// CheckAccount 確認帳密
-func CheckAccount(ac string, pw string) (bool, int) {
-	sql := `SELECT id FROM players WHERE account = ? AND password = ?`
-	row := db.QueryRow(sql, ac, pw)
-	var id int
-	if err := row.Scan(&id); err != nil {
-		fmt.Printf("%v\n", err)
-		return false, 0
+// NewAccountDuplicate 檢查新帳號是否重複
+func NewAccountDuplicate(ac string) bool {
+	sql := `SELECT account FROM players WHERE account = ?`
+	row := db.QueryRow(sql, ac)
+	var account string
+	if err := row.Scan(&account); err != nil {
+		return false
 	}
-	return true, id
+	return true
+}
+
+// CheckAccount 確認帳密 (return 0:正確 1:無帳號 2:密碼錯誤)
+func CheckAccount(ac string, pw string) int {
+	sql := `SELECT password FROM players WHERE account = ?`
+	row := db.QueryRow(sql, ac)
+	var password string
+	if err := row.Scan(&password); err != nil {
+		fmt.Printf("%v\n", err)
+		return 1
+	}
+	if pw != password {
+		return 2
+	}
+	return 0
+}
+
+// FetchPlayerData 從DB讀取玩家資料
+func FetchPlayerData(ac string, player p) {
+	sql := `SELECT id, name, token FROM players WHERE account = ?`
+	row := db.QueryRow(sql, ac)
+	var id, token int
+	var name string
+	if err := row.Scan(&id, &name, &token); err != nil {
+		fmt.Println("讀取玩家資料失敗")
+		return
+	}
+	player.ID = id
+	player.Name = name
+	player.Token = token
 }
 
 ////////////////////////
