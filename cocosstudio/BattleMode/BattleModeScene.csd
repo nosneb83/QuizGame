@@ -27,7 +27,7 @@
                 <CColor A="255" R="0" G="0" B="0" />
                 <PrePosition X="0.4660" Y="0.5227" />
                 <PreSize X="0.5341" Y="0.2398" />
-                <FontResource Type="Normal" Path="msjh.ttc" Plist="" />
+                <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>

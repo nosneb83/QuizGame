@@ -57,7 +57,7 @@
                 <CColor A="255" R="0" G="0" B="0" />
                 <PrePosition X="0.5000" Y="0.6500" />
                 <PreSize X="0.8500" Y="0.1250" />
-                <FontResource Type="Normal" Path="msjh.ttc" Plist="" />
+                <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
               </AbstractNodeData>
               <AbstractNodeData Name="PasswordTitle" ActionTag="1563862029" Tag="160" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-37.5007" RightMargin="237.5007" TopMargin="202.5000" BottomMargin="122.5000" LeftEage="99" RightEage="99" TopEage="24" BottomEage="24" Scale9OriginX="99" Scale9OriginY="24" Scale9Width="102" Scale9Height="27" ctype="ImageViewObjectData">
                 <Size X="300.0000" Y="75.0000" />
@@ -87,7 +87,7 @@
                 <CColor A="255" R="0" G="0" B="0" />
                 <PrePosition X="0.5000" Y="0.2000" />
                 <PreSize X="0.8500" Y="0.1250" />
-                <FontResource Type="Normal" Path="msjh.ttc" Plist="" />
+                <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -109,7 +109,7 @@
                 <CColor A="255" R="0" G="0" B="0" />
                 <PrePosition X="0.5000" Y="0.6000" />
                 <PreSize X="0.4745" Y="0.2500" />
-                <FontResource Type="Normal" Path="msjh.ttc" Plist="" />
+                <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="255" G="255" B="255" />
               </AbstractNodeData>
@@ -121,7 +121,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.2000" />
                 <PreSize X="0.4000" Y="0.2500" />
-                <FontResource Type="Normal" Path="msjh.ttc" Plist="" />
+                <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
                 <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
@@ -152,7 +152,7 @@
                 <CColor A="255" R="0" G="0" B="0" />
                 <PrePosition X="0.5000" Y="0.6400" />
                 <PreSize X="0.7000" Y="0.5000" />
-                <FontResource Type="Normal" Path="msjh.ttc" Plist="" />
+                <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="255" G="255" B="255" />
               </AbstractNodeData>
@@ -164,7 +164,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.3000" Y="0.2000" />
                 <PreSize X="0.3000" Y="0.2500" />
-                <FontResource Type="Normal" Path="msjh.ttc" Plist="" />
+                <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
                 <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
@@ -180,7 +180,7 @@
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.7000" Y="0.2000" />
                 <PreSize X="0.3000" Y="0.2500" />
-                <FontResource Type="Normal" Path="msjh.ttc" Plist="" />
+                <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
                 <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
@@ -200,6 +200,69 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
+          <AbstractNodeData Name="InputPrompt" ActionTag="579076423" VisibleForFrame="False" Tag="185" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="144.0000" RightMargin="144.0000" TopMargin="640.0000" BottomMargin="281.6000" TouchEnable="True" ClipAble="False" BackColorAlpha="204" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+            <Size X="432.0000" Y="358.4000" />
+            <Children>
+              <AbstractNodeData Name="Text" ActionTag="-1519352007" Tag="186" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="119.5000" RightMargin="119.5000" TopMargin="57.6000" BottomMargin="236.8000" IsCustomSize="True" FontSize="48" LabelText="取個名字" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
+                <Size X="193.0000" Y="64.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="216.0000" Y="268.8000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="0" G="0" B="0" />
+                <PrePosition X="0.5000" Y="0.7500" />
+                <PreSize X="0.4468" Y="0.1786" />
+                <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="255" G="255" B="255" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="NameBg" ActionTag="-1092116451" Tag="190" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="21.6000" RightMargin="21.6000" TopMargin="156.8000" BottomMargin="156.8000" LeftEage="99" RightEage="99" TopEage="24" BottomEage="24" Scale9OriginX="99" Scale9OriginY="24" Scale9Width="282" Scale9Height="2" ctype="ImageViewObjectData">
+                <Size X="388.8000" Y="44.8000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="216.0000" Y="179.2000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.5000" />
+                <PreSize X="0.9000" Y="0.1250" />
+                <FileData Type="Normal" Path="Login/Key_in_box.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="NameInput" ActionTag="18492719" Tag="189" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="53.9997" RightMargin="54.0003" TopMargin="161.2000" BottomMargin="161.2000" TouchEnable="True" FontSize="36" IsCustomSize="True" LabelText="" PlaceHolderText="" MaxLengthText="10" ctype="TextFieldObjectData">
+                <Size X="324.0000" Y="36.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="215.9997" Y="179.2000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="0" G="0" B="0" />
+                <PrePosition X="0.5000" Y="0.5000" />
+                <PreSize X="0.7500" Y="0.1004" />
+                <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Y" ActionTag="196767603" Tag="191" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="129.6000" RightMargin="129.6000" TopMargin="241.9200" BottomMargin="26.8800" TouchEnable="True" FontSize="48" ButtonText="確認" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="172.8000" Y="89.6000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="216.0000" Y="71.6800" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.2000" />
+                <PreSize X="0.4000" Y="0.2500" />
+                <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+                <NormalFileData Type="Default" Path="Default/Button_Normal.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+            </Children>
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="360.0000" Y="460.8000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.3600" />
+            <PreSize X="0.6000" Y="0.2800" />
+            <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
           <AbstractNodeData Name="StartBtn" ActionTag="-164653542" Tag="46" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="135.0000" RightMargin="135.0000" TopMargin="1028.0000" BottomMargin="132.0000" TouchEnable="True" FontSize="48" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="420" Scale9Height="98" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="450.0000" Y="120.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -208,9 +271,9 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.1500" />
             <PreSize X="0.6250" Y="0.0938" />
-            <FontResource Type="Normal" Path="msjh.ttc" Plist="" />
+            <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
             <TextColor A="255" R="255" G="255" B="255" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+            <DisabledFileData Type="Normal" Path="Login/Start.png" Plist="" />
             <PressedFileData Type="Normal" Path="Login/Start_2.png" Plist="" />
             <NormalFileData Type="Normal" Path="Login/Start.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />

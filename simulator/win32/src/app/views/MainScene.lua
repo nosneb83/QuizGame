@@ -7,15 +7,30 @@ require("json")
 cc.exports.playerID = -1
 
 local rootNode
+local nameText, premText, coinText
+local bmBtns = {}
 local menuBtns = {}
 local menuBtnPos = {}
 local menuBtnAnimFunc
 
 function MainScene:ctor(id)
     playerID = id
+    print("player id = " .. id)
 
     rootNode = cc.CSLoader:createNode("MainScene/MainScene.csb")
     self:addChild(rootNode)
+
+    local statusBar = rootNode:getChildByName("StatusBar")
+    nameText = statusBar:getChildByName("NameText")
+    premText = statusBar:getChildByName("PremText")
+    coinText = statusBar:getChildByName("CoinText")
+    bmBtns = {
+        statusBar:getChildByName("Bookmark1"),
+        statusBar:getChildByName("Bookmark2"),
+        statusBar:getChildByName("Bookmark3"),
+        statusBar:getChildByName("Bookmark4"),
+        statusBar:getChildByName("Bookmark5")
+    }
 
     -- 選單按鈕
     menuBtns = {
@@ -80,6 +95,18 @@ function MainScene:ctor(id)
     menuLeftBtn:addTouchEventListener(self.menuLeft)
     local menuRightBtn = rootNode:getChildByName("Btns"):getChildByName("Btn_right")
     menuRightBtn:addTouchEventListener(self.menuRight)
+
+    -- 更新UI
+    self:updateUI()
+end
+
+function MainScene:updateUI()
+    nameText:setString(player.name)
+    premText:setString("+" .. tostring(math.min(999, player.bmp)))
+    coinText:setString(string.comma_value(tostring(player.coin)))
+    for i = 1, #bmBtns do
+        bmBtns[i]:setEnabled(i <= player.bm)
+    end
 end
 
 function MainScene:enterPlayerScene(type)

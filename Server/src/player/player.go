@@ -21,9 +21,9 @@ type Player struct {
 	Char4unlock  int         //
 	Char4relat   int         //
 	Char4story   int         //
-	Bookmark     int         //
-	BookmarkPrem int         //
-	Token        int         // 代幣
+	Bookmark     int         // 無償書籤
+	BookmarkPrem int         // 有償書籤
+	Coin         int         // 代幣
 	Vipstamp     int         //
 	Vipexpire    int         //
 

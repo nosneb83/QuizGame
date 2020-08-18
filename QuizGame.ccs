@@ -54,6 +54,12 @@
           <Image Name="arrow_r_2.png" />
           <Image Name="settings.png" />
         </Folder>
+        <Folder Name="font">
+          <TTF Name="DigitalDisplayRegular-ODEO.ttf" />
+          <TTF Name="msjh.ttc" />
+          <TTF Name="PLANK___.TTF" />
+          <TTF Name="Cooper Black Regular.ttf" />
+        </Folder>
         <Folder Name="Login">
           <Project Name="LoginScene.csd" Type="Scene" />
           <Image Name="background.png" />
@@ -80,13 +86,18 @@
             <Image Name="story.png" />
             <Image Name="story_2.png" />
           </Folder>
+          <Folder Name="statusBar">
+            <Image Name="bookmark.png" />
+            <Image Name="bookmark_2.png" />
+            <Image Name="Coin_BG.png" />
+            <Image Name="Coin_icon.png" />
+            <Image Name="Status_BG.png" />
+            <Image Name="Name_BG.png" />
+          </Folder>
         </Folder>
         <Image Name="character.png" />
         <Image Name="chat_bubble.png" />
-        <TTF Name="DigitalDisplayRegular-ODEO.ttf" />
-        <TTF Name="msjh.ttc" />
         <Image Name="paper_bg.png" />
-        <TTF Name="PLANK___.TTF" />
       </RootFolder>
     </Group>
   </SolutionFolder>

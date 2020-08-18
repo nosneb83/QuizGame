@@ -3,17 +3,19 @@ local LoginScene = class("LoginScene", cc.load("mvc").ViewBase)
 LoginScene.RESOURCE_FILENAME = "Login/LoginScene.csb"
 
 socket = require("LuaTcpSocket"):new():init()
+cc.exports.player = require("player.lua"):create()
 
 local rootNode
+local startBtn
 local acInput, pwInput
 local promptPanel, promptText
-local regPanel, regYesBtn, regNoBtn
-local regDupPanel, regDupBtn
+local regPanel
+local namePanel, nameInput
 
 function LoginScene:onCreate()
     rootNode = self:getResourceNode()
-    dump(cc.p(rootNode:getPosition()))
-    local startBtn = rootNode:getChildByName("StartBtn")
+
+    startBtn = rootNode:getChildByName("StartBtn")
     startBtn:addTouchEventListener(self.login)
 
     acInput = rootNode:getChildByName("Input"):getChildByName("UserIDInput")
@@ -23,15 +25,22 @@ function LoginScene:onCreate()
     promptText = promptPanel:getChildByName("Text")
     promptPanel:getChildByName("Y"):addTouchEventListener(function()
         promptPanel:setVisible(false)
+        startBtn:setEnabled(true)
     end)
 
     regPanel = rootNode:getChildByName("Confirm")
-    regYesBtn = regPanel:getChildByName("Y")
-    regYesBtn:addTouchEventListener(self.register)
-    regNoBtn = regPanel:getChildByName("N")
-    regNoBtn:addTouchEventListener(function()
+    regPanel:getChildByName("Y"):addTouchEventListener(function()
         regPanel:setVisible(false)
+        namePanel:setVisible(true)
     end)
+    regPanel:getChildByName("N"):addTouchEventListener(function()
+        regPanel:setVisible(false)
+        startBtn:setEnabled(true)
+    end)
+
+    namePanel = rootNode:getChildByName("InputPrompt")
+    nameInput = namePanel:getChildByName("NameInput")
+    namePanel:getChildByName("Y"):addTouchEventListener(self.nickname)
 
     -- socket設定
     local function ReceiveCallback(msg)
@@ -51,6 +60,7 @@ end
 
 function LoginScene:login(type)
     if type == ccui.TouchEventType.ended then
+        startBtn:setEnabled(false)
         local jsonObj = {
             op = "LOGIN",
             ac = acInput:getString(),
@@ -62,13 +72,20 @@ end
 
 function LoginScene:register(type)
     if type == ccui.TouchEventType.ended then
+        regPanel:setVisible(false)
+    end
+end
+
+function LoginScene:nickname(type)
+    if type == ccui.TouchEventType.ended then
         local jsonObj = {
             op = "REGISTER",
             ac = acInput:getString(),
-            pw = pwInput:getString()
+            pw = pwInput:getString(),
+            name = nameInput:getString()
         }
-        socket:send(json.encode(jsonObj))
         regPanel:setVisible(false)
+        socket:send(json.encode(jsonObj))
     end
 end
 
@@ -77,12 +94,17 @@ function LoginScene:handleOp(jsonObj)
     local op = jsonObj["op"]
     if op == "LOGIN_SUCCESS" then
         -- 進入主畫面
-        local scene = require("app/views/MainScene.lua"):create(jsonObj["id"])
+        player:loginInit(jsonObj)
+        local scene = require("app/views/MainScene.lua"):create(player.id)
         cc.Director:getInstance():replaceScene(cc.TransitionFade:create(1, scene))
     elseif op == "WRONG_PW" then
+        promptText:setString("密碼錯誤!")
         promptPanel:setVisible(true)
     elseif op == "ACCOUNT_NOT_FOUND" then
         regPanel:setVisible(true)
+    elseif op == "ALREADY_LOGIN" then
+        promptText:setString("此帳號目前登入中!")
+        promptPanel:setVisible(true)
     end
 end
 
@@ -101,6 +123,19 @@ function string.splitAfter(s, sep)
         end
     end
     return tab
+end
+
+-- 把int每三位數用逗號隔開 (傳入string)
+function string.comma_value(amount)
+    local formatted = amount
+    local k
+    while true do
+        formatted, k = string.gsub(formatted, "^(-?%d+)(%d%d%d)", '%1,%2')
+        if (k == 0) then
+            break
+        end
+    end
+    return formatted
 end
 
 -- Fisher-Yates shuffle

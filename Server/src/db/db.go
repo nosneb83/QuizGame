@@ -55,6 +55,11 @@ func CreateTablePlayers() {
 		account 		VARCHAR(20) NOT NULL DEFAULT '',
 		password 		VARCHAR(20) NOT NULL DEFAULT '',
 		name 			VARCHAR(20) NOT NULL DEFAULT '',
+		bookmark 		INT NOT NULL DEFAULT 0,
+		bookmarkprem 	INT NOT NULL DEFAULT 0,
+		coin 			INT NOT NULL DEFAULT 0,
+		vipstamp 		INT NOT NULL DEFAULT 0,
+		vipexpire 		TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 		lastlogin 		TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 		logindays 		INT NOT NULL DEFAULT 0,
 		pvpwins 		INT NOT NULL DEFAULT 0,
@@ -88,11 +93,6 @@ func CreateTablePlayers() {
 		char4unlock 	TINYINT(1) NOT NULL DEFAULT 0,
 		char4relat 		INT NOT NULL DEFAULT 0,
 		char4story 		INT NOT NULL DEFAULT 0,
-		bookmark 		INT NOT NULL DEFAULT 0,
-		bookmarkPrem 	INT NOT NULL DEFAULT 0,
-		token 			INT NOT NULL DEFAULT 0,
-		vipstamp 		INT NOT NULL DEFAULT 0,
-		vipexpire 		TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 		PRIMARY KEY (id))`
 	if _, err := db.Exec(sql); err != nil {
 		fmt.Println("Create table failed:", err)
@@ -102,9 +102,9 @@ func CreateTablePlayers() {
 }
 
 // RegisterNewPlayer 註冊新帳號
-func RegisterNewPlayer(ac string, pw string) {
-	sql := `INSERT INTO players (account, password) VALUES (?, ?)`
-	if _, err := db.Exec(sql, ac, pw); err != nil {
+func RegisterNewPlayer(ac string, pw string, name string) {
+	sql := `INSERT INTO players (account, password, name) VALUES (?, ?, ?)`
+	if _, err := db.Exec(sql, ac, pw, name); err != nil {
 		fmt.Println("Insert data failed:", err)
 		return
 	}
@@ -134,22 +134,30 @@ func CheckAccount(ac string, pw string) int {
 	if pw != password {
 		return 2
 	}
+
+	// 更新最後登入時間
+	sql = `UPDATE players SET lastlogin = CURRENT_TIMESTAMP WHERE account = ?`
+	if _, err := db.Exec(sql, ac); err != nil {
+		fmt.Println("Update failed:", err)
+	}
 	return 0
 }
 
 // FetchPlayerData 從DB讀取玩家資料
 func FetchPlayerData(ac string, player p) {
-	sql := `SELECT id, name, token FROM players WHERE account = ?`
+	sql := `SELECT id, name, bookmark, bookmarkprem, coin FROM players WHERE account = ?`
 	row := db.QueryRow(sql, ac)
-	var id, token int
+	var id, bm, bmp, coin int
 	var name string
-	if err := row.Scan(&id, &name, &token); err != nil {
+	if err := row.Scan(&id, &name, &bm, &bmp, &coin); err != nil {
 		fmt.Println("讀取玩家資料失敗")
 		return
 	}
 	player.ID = id
 	player.Name = name
-	player.Token = token
+	player.Bookmark = bm
+	player.BookmarkPrem = bmp
+	player.Coin = coin
 }
 
 ////////////////////////

@@ -80,7 +80,7 @@ func handleConnection(conn net.Conn) {
 		/////////////
 		switch jsonObj["op"] {
 		case "REGISTER":
-			db.RegisterNewPlayer(jsonObj["ac"].(string), jsonObj["pw"].(string))
+			db.RegisterNewPlayer(jsonObj["ac"].(string), jsonObj["pw"].(string), jsonObj["name"].(string))
 			playerLogin(jsonObj["ac"].(string), jsonObj["pw"].(string), player)
 		case "LOGIN":
 			playerLogin(jsonObj["ac"].(string), jsonObj["pw"].(string), player)
@@ -111,11 +111,19 @@ func playerLogin(ac string, pw string, player p) {
 	switch result {
 	case 0: // 帳密正確
 		db.FetchPlayerData(ac, player)
+		if _, ok := Players[player.ID]; ok { // 已在線上
+			msgSend, _ = json.Marshal(map[string]interface{}{
+				"op": "ALREADY_LOGIN"})
+			player.Ch <- string(msgSend)
+			break
+		}
 		msgSend, _ = json.Marshal(map[string]interface{}{
-			"op":    "LOGIN_SUCCESS",
-			"id":    player.ID,
-			"name":  player.Name,
-			"token": player.Token})
+			"op":   "LOGIN_SUCCESS",
+			"id":   player.ID,
+			"name": player.Name,
+			"bm":   player.Bookmark,
+			"bmp":  player.BookmarkPrem,
+			"coin": player.Coin})
 		player.Ch <- string(msgSend)
 		Players[player.ID] = player
 		fmt.Println("Player", player.Name, "(ID:", player.ID, ") 登入, 目前線上有", len(Players), "名玩家")
@@ -128,11 +136,6 @@ func playerLogin(ac string, pw string, player p) {
 			"op": "WRONG_PW"})
 		player.Ch <- string(msgSend)
 	}
-}
-
-// 從DB讀取玩家資料
-func fetchPlayerData(player p) {
-
 }
 
 // 玩家登出
