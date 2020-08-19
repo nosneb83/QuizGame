@@ -10,6 +10,7 @@ local menuBtnAnimFunc
 function BattleModeScene:ctor()
     rootNode = cc.CSLoader:createNode("BattleMode/BattleModeScene.csb")
     self:addChild(rootNode)
+    rootNode:getChildByName("Btn_return"):addTouchEventListener(self.returnMain)
 
     -- 選單按鈕
     menuBtns = {
@@ -76,6 +77,13 @@ function BattleModeScene:ctor()
     menuRightBtn:addTouchEventListener(self.menuRight)
 end
 
+function BattleModeScene:returnMain(type)
+    if type == ccui.TouchEventType.ended then
+        local scene = require("app/views/MainScene.lua"):create()
+        cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
+    end
+end
+
 function BattleModeScene:enter1(type)
     if type == ccui.TouchEventType.ended then
         print("活動")
@@ -91,8 +99,7 @@ end
 function BattleModeScene:enterBattle(type)
     if type == ccui.TouchEventType.ended then
         local scene = require("app/views/BattleScene.lua"):create()
-        -- 淡入過場
-        cc.Director:getInstance():replaceScene(cc.TransitionFade:create(1, scene))
+        cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
     end
 end
 

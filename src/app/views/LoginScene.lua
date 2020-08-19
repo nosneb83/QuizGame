@@ -4,6 +4,7 @@ LoginScene.RESOURCE_FILENAME = "Login/LoginScene.csb"
 
 socket = require("LuaTcpSocket"):new():init()
 cc.exports.player = require("player.lua"):new()
+cc.exports.sceneTransTime = 0.7
 
 local rootNode
 local startBtn
@@ -96,7 +97,7 @@ function LoginScene:handleOp(jsonObj)
         -- 進入主畫面
         player:loginInit(jsonObj)
         local scene = require("app/views/MainScene.lua"):create()
-        cc.Director:getInstance():replaceScene(cc.TransitionFade:create(1, scene))
+        cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
     elseif op == "WRONG_PW" then
         promptText:setString("密碼錯誤!")
         promptPanel:setVisible(true)

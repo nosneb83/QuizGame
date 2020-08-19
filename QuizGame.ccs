@@ -4,7 +4,6 @@
     <Group ctype="ResourceGroup">
       <RootFolder Name=".">
         <Folder Name="Battle">
-          <Project Name="BattleScene.csd" Type="Scene" />
           <Folder Name="opinion">
             <Image Name="1.png" />
             <Image Name="2.png" />
@@ -16,6 +15,7 @@
             <Image Name="opinion.png" />
             <Image Name="opinion_2.png" />
           </Folder>
+          <Project Name="BattleScene.csd" Type="Scene" />
           <Image Name="bg.png" />
           <Image Name="HPbar_Green.png" />
           <Image Name="HPbar_null.png" />
@@ -28,10 +28,6 @@
           <Image Name="question_field.png" />
         </Folder>
         <Folder Name="BattleMode">
-          <Project Name="BattleModeScene.csd" Type="Scene" />
-          <Image Name="lab.jpg" />
-          <Image Name="Tournament.png" />
-          <Image Name="UI_PVP_Sample.png" />
           <Folder Name="btn">
             <Image Name="backtomenu.png" />
             <Image Name="backtomenu_2.png" />
@@ -46,6 +42,10 @@
             <Image Name="tournament_1.png" />
             <Image Name="tournament_2.png" />
           </Folder>
+          <Project Name="BattleModeScene.csd" Type="Scene" />
+          <Image Name="lab.jpg" />
+          <Image Name="Tournament.png" />
+          <Image Name="UI_PVP_Sample.png" />
         </Folder>
         <Folder Name="btn">
           <Image Name="arrow_l.png" />
@@ -54,17 +54,23 @@
           <Image Name="arrow_r_2.png" />
           <Image Name="settings.png" />
         </Folder>
+        <Folder Name="Default">
+          <Image Name="Button_Disable.png" />
+          <Image Name="Button_Normal.png" />
+          <Image Name="Button_Press.png" />
+          <Image Name="ImageFile.png" />
+        </Folder>
         <Folder Name="font">
-          <TTF Name="DigitalDisplayRegular-ODEO.ttf" />
+          <TTF Name="Cooper Black Regular.ttf" />
           <TTF Name="msjh.ttc" />
           <TTF Name="PLANK___.TTF" />
-          <TTF Name="Cooper Black Regular.ttf" />
+          <TTF Name="DigitalDisplayRegular-ODEO.ttf" />
         </Folder>
         <Folder Name="Login">
-          <Project Name="LoginScene.csd" Type="Scene" />
           <Image Name="background.png" />
           <Image Name="BG.png" />
           <Image Name="Key_in_box.png" />
+          <Project Name="LoginScene.csd" Type="Scene" />
           <Image Name="MuseLab.png" />
           <Image Name="PASSWORD.png" />
           <Image Name="Start.png" />
@@ -72,8 +78,6 @@
           <Image Name="USERID.png" />
         </Folder>
         <Folder Name="MainScene">
-          <Project Name="MainScene.csd" Type="Scene" />
-          <Image Name="main_bg.png" />
           <Folder Name="btn">
             <Image Name="battle.png" />
             <Image Name="battle_2.png" />
@@ -91,13 +95,14 @@
             <Image Name="bookmark_2.png" />
             <Image Name="Coin_BG.png" />
             <Image Name="Coin_icon.png" />
-            <Image Name="Status_BG.png" />
             <Image Name="Name_BG.png" />
+            <Image Name="Status_BG.png" />
           </Folder>
+          <Image Name="main_bg.png" />
+          <Project Name="MainScene.csd" Type="Scene" />
         </Folder>
         <Image Name="character.png" />
         <Image Name="chat_bubble.png" />
-        <Image Name="paper_bg.png" />
       </RootFolder>
     </Group>
   </SolutionFolder>

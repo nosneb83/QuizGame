@@ -19,10 +19,10 @@
           <AbstractNodeData Name="Bubble" ActionTag="1368241853" Tag="87" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-0.0360" RightMargin="364.2840" TopMargin="147.1360" BottomMargin="865.9839" LeftEage="211" RightEage="211" TopEage="211" BottomEage="211" Scale9OriginX="211" Scale9OriginY="211" Scale9Width="218" Scale9Height="218" ctype="ImageViewObjectData">
             <Size X="355.7520" Y="266.8800" />
             <Children>
-              <AbstractNodeData Name="Text" ActionTag="1666590398" Tag="88" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="70.7767" RightMargin="94.9753" TopMargin="95.3818" BottomMargin="107.4982" FontSize="48" LabelText="定孤支喇" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="Text" ActionTag="1666590398" Tag="88" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="70.7804" RightMargin="94.9716" TopMargin="95.3818" BottomMargin="107.4982" FontSize="48" LabelText="定孤支喇" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="190.0000" Y="64.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="165.7767" Y="139.4982" />
+                <Position X="165.7804" Y="139.4982" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="0" G="0" B="0" />
                 <PrePosition X="0.4660" Y="0.5227" />
@@ -49,6 +49,21 @@
             <PrePosition X="0.6650" Y="0.4893" />
             <PreSize X="0.6699" Y="0.8929" />
             <FileData Type="Normal" Path="character.png" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Btn_return" ActionTag="135784883" Tag="76" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="17.9772" RightMargin="608.0228" TopMargin="15.5679" BottomMargin="1193.4321" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="64" Scale9Height="49" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="94.0000" Y="71.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="64.9772" Y="1228.9321" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.0902" Y="0.9601" />
+            <PreSize X="0.1306" Y="0.0555" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <DisabledFileData Type="Normal" Path="BattleMode/btn/event.png" Plist="" />
+            <PressedFileData Type="Normal" Path="BattleMode/btn/backtomenu_2.png" Plist="" />
+            <NormalFileData Type="Normal" Path="BattleMode/btn/backtomenu.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
           <AbstractNodeData Name="Btns" ActionTag="-1588204742" Tag="90" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="260.0000" RightMargin="260.0000" TopMargin="988.0000" BottomMargin="92.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="200.0000" Y="200.0000" />
