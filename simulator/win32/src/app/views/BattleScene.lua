@@ -3,15 +3,18 @@ local BattleScene = class("BattleScene", function()
 end)
 
 require("json")
+local opponent = require("player.lua"):new()
 
 local rootNode
 -- local testBtn
+local domainText
 local qText, qText2, qText3
 local correctAns
 local ansPnlTF, ansPnlCH
 local ansBtnO, ansBtnX, ansBtnA, ansBtnB, ansBtnC, ansBtnD
 local currentAnsBtns = {}
 local feedbackT, feedbackF
+local winText, loseText
 local sfxQues, sfxCorrect, sfxWrong
 local enterCountdownText
 local countdownText
@@ -26,6 +29,7 @@ function BattleScene:ctor()
     self:addChild(rootNode)
     -- testBtn = rootNode:getChildByName("Button_1")
     -- testBtn:addTouchEventListener(self.testOnclick)
+    domainText = rootNode:getChildByName("Question"):getChildByName("DomainText")
     qText = rootNode:getChildByName("Question"):getChildByName("Text")
     qText2 = rootNode:getChildByName("Question"):getChildByName("Text2")
     qText3 = rootNode:getChildByName("Question"):getChildByName("Text3")
@@ -49,6 +53,9 @@ function BattleScene:ctor()
     feedbackT = rootNode:getChildByName("Answer_feedback"):getChildByName("Correct")
     feedbackF = rootNode:getChildByName("Answer_feedback"):getChildByName("Wrong")
 
+    winText = rootNode:getChildByName("Gameover"):getChildByName("Win")
+    loseText = rootNode:getChildByName("Gameover"):getChildByName("Lose")
+
     enterCountdownText = rootNode:getChildByName("StartCountdown")
     countdownText = rootNode:getChildByName("Answer"):getChildByName("Countdown")
 
@@ -56,7 +63,7 @@ function BattleScene:ctor()
     opponentHealthBar = rootNode:getChildByName("OpponentHealth")
 
     -- 設定頭像
-    if playerID == 3 then
+    if player.id == 2 then
         local playerIcon = rootNode:getChildByName("StaticPanel"):getChildByName("PlayerIcon")
         local opponentIcon = rootNode:getChildByName("StaticPanel"):getChildByName("OpponentIcon")
         local p1x, p1y = playerIcon:getPosition()
@@ -102,7 +109,7 @@ function BattleScene:enterRoom()
     local jsonObj = {
         op = "ENTER_ROOM",
         room = 100,
-        id = playerID
+        id = player.id
     }
     isWaiting = true
     socket:send(json.encode(jsonObj))
@@ -139,7 +146,7 @@ function BattleScene:answerD(type)
 end
 function BattleScene:answer(playerAns)
     self:setAnsBtnsEnabled(false)
-    self:stopCountdown()
+    local timeUsed = self:stopCountdown()
     if playerAns == correctAns then
         self:showFeedback(feedbackT, feedbackF)
         cc.SimpleAudioEngine:getInstance():playEffect("SFX/Quiz-Buzzer01-mp3/Quiz-Buzzer01-1.mp3")
@@ -150,8 +157,9 @@ function BattleScene:answer(playerAns)
     -- rootNode:runAction(cc.Sequence:create(cc.DelayTime:create(feedbackDuration), cc.CallFunc:create(self.nextQuestion)))
     local jsonObj = {
         op = "ANSWER",
-        id = playerID,
-        cor = playerAns == correctAns
+        id = player.id,
+        cor = playerAns == correctAns,
+        time = timeUsed
     }
     socket:send(json.encode(jsonObj))
 end
@@ -164,6 +172,9 @@ end
 
 -- 進房倒數
 function BattleScene:countDown(jsonObj)
+    -- 血量初始化
+    player.health = 60
+    opponent.health = 60
     -- 數字
     local initScale = cc.ScaleTo:create(0, 5)
     local fadeIn = cc.FadeIn:create(0.3)
@@ -181,7 +192,7 @@ function BattleScene:countDown(jsonObj)
     cc.CallFunc:create(function() enterCountdownText:setString("1") end),
     count,
     cc.CallFunc:create(function() self:showQuestion(jsonObj) end)))
-    
+
     -- 播音效
     local function countSound()
         cc.SimpleAudioEngine:getInstance():playEffect("SFX/count3.mp3")
@@ -198,16 +209,52 @@ function BattleScene:startCountdown()
 end
 function BattleScene:countdownUpdate(dt)
     if countdownNum == nil then return end
-    countdownNum = countdownNum - dt
+    countdownNum = math.max(0, countdownNum - dt)
+    -- 倒數數字
     countdownText:setString(string.format("%.2f", countdownNum))
-    if countdownNum <= 0 then
+    -- 血條隨時間慢慢遞減
+    local tempHealth = math.max(0, player.health - 10 + countdownNum)
+    playerHealthBar:setScaleY(tempHealth / 60)
+    -- 血量歸零直接gameover
+    if tempHealth == 0 then
+        self:surrender()
+        return
+    end
+    -- 時間用盡時視為答錯
+    if countdownNum == 0 then
         self:answer(5)
     end
 end
 function BattleScene:stopCountdown()
+    local timeUsed = nil
+    if countdownNum ~= nil then timeUsed = 10 - countdownNum end
     countdownNum = nil
     countdownText:setString("")
     rootNode:pause()
+    return timeUsed
+end
+
+-- 提前結束 (投降 or 時間用盡)
+function BattleScene:surrender()
+    self:setAnsBtnsEnabled(false)
+    local timeUsed = self:stopCountdown()
+    local jsonObj = {
+        op = "SURRENDER",
+        id = player.id,
+        time = timeUsed
+    }
+    socket:send(json.encode(jsonObj))
+end
+
+-- 戰鬥結束
+function BattleScene:gameover(win)
+    self:setAnsBtnsEnabled(false)
+    self:stopCountdown()
+    if win then
+        winText:setVisible(true)
+    else
+        loseText:setVisible(true)
+    end
 end
 
 -- Handle Server Op
@@ -226,7 +273,7 @@ function BattleScene:handleOp(jsonObj)
         end
     elseif op == "ANSWER" then
         if jsonObj["cor"] == false then
-            if jsonObj["id"] == playerID then
+            if jsonObj["id"] == player.id then
                 healthSelf = healthSelf - 10
                 local s = cc.ScaleTo:create(0.5, 1, healthSelf / 100)
                 local e = cc.EaseInOut:create(s, 3)
@@ -238,12 +285,28 @@ function BattleScene:handleOp(jsonObj)
                 opponentHealthBar:runAction(e)
             end
         end
+    elseif op == "BATTLE_RESULT" then
+        if jsonObj["id"] == player.id then
+            player.health = jsonObj["health"]
+            local s = cc.ScaleTo:create(0.7, 1, player.health / 60)
+            local e = cc.EaseInOut:create(s, 3)
+            playerHealthBar:runAction(e)
+        else
+            local s = cc.ScaleTo:create(0.7, 1, jsonObj["health"] / 60)
+            local e = cc.EaseInOut:create(s, 3)
+            opponentHealthBar:runAction(e)
+        end
+    elseif op == "BATTLE_OVER" then
+        self:gameover(jsonObj["win"])
     end
 end
 
 -- 顯示題目和選項
 function BattleScene:showQuestion(jsonObj)
+    local qType, domain
+    -- 題型
     if jsonObj["qtype"] == "TF" then -- 是非題
+        qType = "是非題"
         qText:setString(jsonObj["ques"][1])
         qText2:setString("")
         qText3:setString("")
@@ -255,6 +318,7 @@ function BattleScene:showQuestion(jsonObj)
         self:showAnsPnl(ansPnlTF, ansPnlCH)
         self:setAnsBtnsEnabled(true, ansBtnO, ansBtnX)
     elseif jsonObj["qtype"] == "CH" then -- 選擇題
+        qType = "選擇題"
         qText:setString(jsonObj["ques"][1])
         qText2:setString("")
         qText3:setString("")
@@ -270,6 +334,7 @@ function BattleScene:showQuestion(jsonObj)
         self:showAnsPnl(ansPnlCH, ansPnlTF)
         self:setAnsBtnsEnabled(true, ansBtnA, ansBtnB, ansBtnC, ansBtnD)
     elseif jsonObj["qtype"] == "CL" then -- 聯想題
+        qType = "聯想題"
         qText:setString("提示1: " .. jsonObj["ques"][1])
         qText2:setVisible(false)
         qText2:setString("提示2: " .. jsonObj["ques"][2])
@@ -283,9 +348,18 @@ function BattleScene:showQuestion(jsonObj)
         self:showAnsPnl(ansPnlCH, ansPnlTF)
         self:setAnsBtnsEnabled(true, ansBtnA, ansBtnB, ansBtnC, ansBtnD)
         self:showClues(3)
-    else
-        return
-    end
+    else qType = "" return end
+    -- 題目領域
+    if jsonObj["domain"] == "AL" then domain = "雜學"
+    elseif jsonObj["domain"] == "SC" then domain = "理科"
+    elseif jsonObj["domain"] == "LI" then domain = "文科"
+    elseif jsonObj["domain"] == "NE" then domain = "時事"
+    elseif jsonObj["domain"] == "AC" then domain = "ACG"
+    elseif jsonObj["domain"] == "AR" then domain = "藝術"
+    elseif jsonObj["domain"] == "SO" then domain = "社會"
+    elseif jsonObj["domain"] == "SP" then domain = "運動"
+    else domain = "" return end
+    domainText:setString(qType .. " / " .. domain)
     -- 新題目出現的音效
     cc.SimpleAudioEngine:getInstance():playEffect("SFX/Quiz-Question02-mp3/Quiz-Question02-1.mp3")
     -- 開始倒數

@@ -3,7 +3,7 @@ local LoginScene = class("LoginScene", cc.load("mvc").ViewBase)
 LoginScene.RESOURCE_FILENAME = "Login/LoginScene.csb"
 
 socket = require("LuaTcpSocket"):new():init()
-cc.exports.player = require("player.lua"):create()
+cc.exports.player = require("player.lua"):new()
 
 local rootNode
 local startBtn
@@ -54,8 +54,8 @@ function LoginScene:onCreate()
         end
     end
     socket:setReceiveCallback(ReceiveCallback)
-    -- socket:connect("172.29.18.171", "8888")
-    socket:connect("127.0.0.1", "8888")
+    socket:connect("172.29.18.171", "8888")
+    -- socket:connect("127.0.0.1", "8888")
 end
 
 function LoginScene:login(type)
@@ -95,7 +95,7 @@ function LoginScene:handleOp(jsonObj)
     if op == "LOGIN_SUCCESS" then
         -- 進入主畫面
         player:loginInit(jsonObj)
-        local scene = require("app/views/MainScene.lua"):create(player.id)
+        local scene = require("app/views/MainScene.lua"):create()
         cc.Director:getInstance():replaceScene(cc.TransitionFade:create(1, scene))
     elseif op == "WRONG_PW" then
         promptText:setString("密碼錯誤!")

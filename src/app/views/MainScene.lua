@@ -4,8 +4,6 @@ end)
 
 require("json")
 
-cc.exports.playerID = -1
-
 local rootNode
 local nameText, premText, coinText
 local bmBtns = {}
@@ -13,10 +11,7 @@ local menuBtns = {}
 local menuBtnPos = {}
 local menuBtnAnimFunc
 
-function MainScene:ctor(id)
-    playerID = id
-    print("player id = " .. id)
-
+function MainScene:ctor()
     rootNode = cc.CSLoader:createNode("MainScene/MainScene.csb")
     self:addChild(rootNode)
 

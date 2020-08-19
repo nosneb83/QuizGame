@@ -90,12 +90,6 @@ end
 
 function BattleModeScene:enterBattle(type)
     if type == ccui.TouchEventType.ended then
-        -- local jsonObj = {
-        --     op = "ENTER_ROOM",
-        --     room = 100,
-        --     id = playerID
-        -- }
-        -- socket:send(json.encode(jsonObj))
         local scene = require("app/views/BattleScene.lua"):create()
         -- 淡入過場
         cc.Director:getInstance():replaceScene(cc.TransitionFade:create(1, scene))

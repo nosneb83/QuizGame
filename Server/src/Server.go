@@ -39,7 +39,9 @@ func handleConnection(conn net.Conn) {
 
 	// addr, client := registerNewGuest(conn)
 
+	// 玩家instance
 	player := new(player.Player)
+	isLogin := false
 
 	// 開一個goroutine來傳訊息給client
 	player.Ch = make(chan string, 8)
@@ -49,6 +51,9 @@ func handleConnection(conn net.Conn) {
 		}
 	}(player, conn)
 
+	// 這個channel用來傳訊息給戰鬥goroutine
+	var battleCh chan map[string]interface{}
+
 	// 接收&處理訊息
 	buf := make([]byte, 1024)
 	var msgRecv string
@@ -57,8 +62,10 @@ func handleConnection(conn net.Conn) {
 		if n == 0 { // 離線
 			// fmt.Printf("%s [%s] 離線\n", client.name, addr)
 			// delete(onlinemap, addr)
-			playerLogout(player)
-			battle.LeaveRoom(player.ID)
+			if isLogin {
+				playerLogout(player)
+			}
+			// battle.LeaveRoom(player.ID)
 			return
 		}
 
@@ -81,30 +88,34 @@ func handleConnection(conn net.Conn) {
 		switch jsonObj["op"] {
 		case "REGISTER":
 			db.RegisterNewPlayer(jsonObj["ac"].(string), jsonObj["pw"].(string), jsonObj["name"].(string))
-			playerLogin(jsonObj["ac"].(string), jsonObj["pw"].(string), player)
+			isLogin = playerLogin(jsonObj["ac"].(string), jsonObj["pw"].(string), player)
 		case "LOGIN":
-			playerLogin(jsonObj["ac"].(string), jsonObj["pw"].(string), player)
+			isLogin = playerLogin(jsonObj["ac"].(string), jsonObj["pw"].(string), player)
 		case "ENTER_ROOM":
-			// battle.EnterRoom(int(jsonObj["room"].(float64)), int(jsonObj["id"].(float64)))
-			if waitingPlayerConn == nil { // 目前沒有人在等
-				fmt.Println("no one waiting")
-				waitingPlayerID = player.ID
-				waitingPlayerConn = conn
-				waitingPlayerWg = sync.WaitGroup{}
-				waitingPlayerWg.Add(1)
-				waitingPlayerWg.Wait()
-			} else { // 有人在等，可出發
-				fmt.Println("go to battle!!")
-				battle.StartBattle(waitingPlayerID, player.ID, waitingPlayerConn, conn, &waitingPlayerWg)
-				waitingPlayerID = -1
-				waitingPlayerConn = nil
-			}
+			// if waitingPlayerConn == nil { // 目前沒有人在等
+			// 	fmt.Println("no one waiting")
+			// 	waitingPlayerID = player.ID
+			// 	waitingPlayerConn = conn
+			// 	waitingPlayerWg = sync.WaitGroup{}
+			// 	waitingPlayerWg.Add(1)
+			// 	waitingPlayerWg.Wait()
+			// } else { // 有人在等，可出發
+			// 	fmt.Println("go to battle!!")
+			// 	battle.StartBattle(waitingPlayerID, player.ID, waitingPlayerConn, conn, &waitingPlayerWg)
+			// 	waitingPlayerID = -1
+			// 	waitingPlayerConn = nil
+			// }
+			battleCh = battle.Join1V1(player)
+		case "ANSWER":
+			battleCh <- jsonObj
+		case "SURRENDER":
+			battleCh <- jsonObj
 		}
 	}
 }
 
 // 玩家登入
-func playerLogin(ac string, pw string, player p) {
+func playerLogin(ac string, pw string, player p) bool {
 	result := db.CheckAccount(ac, pw)
 
 	var msgSend []byte
@@ -115,7 +126,7 @@ func playerLogin(ac string, pw string, player p) {
 			msgSend, _ = json.Marshal(map[string]interface{}{
 				"op": "ALREADY_LOGIN"})
 			player.Ch <- string(msgSend)
-			break
+			return false
 		}
 		msgSend, _ = json.Marshal(map[string]interface{}{
 			"op":   "LOGIN_SUCCESS",
@@ -127,14 +138,19 @@ func playerLogin(ac string, pw string, player p) {
 		player.Ch <- string(msgSend)
 		Players[player.ID] = player
 		fmt.Println("Player", player.Name, "(ID:", player.ID, ") 登入, 目前線上有", len(Players), "名玩家")
+		return true
 	case 1: // 無帳號
 		msgSend, _ = json.Marshal(map[string]interface{}{
 			"op": "ACCOUNT_NOT_FOUND"})
 		player.Ch <- string(msgSend)
+		return false
 	case 2: // 密碼錯誤
 		msgSend, _ = json.Marshal(map[string]interface{}{
 			"op": "WRONG_PW"})
 		player.Ch <- string(msgSend)
+		return false
+	default:
+		return false
 	}
 }
 
@@ -194,7 +210,8 @@ func main() {
 	// db.CreateTablePlayers()
 
 	// TCP 連線
-	listener, _ := net.Listen("tcp", "127.0.0.1:8888")
+	listener, _ := net.Listen("tcp", "0.0.0.0:8888")
+	// listener, _ := net.Listen("tcp", "127.0.0.1:8888")
 	defer listener.Close()
 
 	for {
