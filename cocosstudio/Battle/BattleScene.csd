@@ -71,33 +71,18 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Button_1" ActionTag="-939224356" VisibleForFrame="False" Tag="88" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="229.9400" RightMargin="229.9400" TopMargin="100.8883" BottomMargin="1124.8883" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="16" Scale9Height="14" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="260.1200" Y="54.2233" />
-            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="360.0000" Y="1152.0000" />
+          <AbstractNodeData Name="PlayerHealth" ActionTag="377843005" Tag="133" IconVisible="False" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="11.0200" RightMargin="659.0120" TopMargin="210.8120" BottomMargin="569.2200" LeftEage="16" RightEage="16" TopEage="54" BottomEage="54" Scale9OriginX="16" Scale9OriginY="54" Scale9Width="18" Scale9Height="392" ctype="ImageViewObjectData">
+            <Size X="49.9680" Y="499.9680" />
+            <AnchorPoint />
+            <Position X="11.0200" Y="569.2200" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.9000" />
-            <PreSize X="0.3613" Y="0.0424" />
-            <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-            <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
-            <NormalFileData Type="Default" Path="Default/Button_Normal.png" Plist="" />
-            <OutlineColor A="255" R="255" G="0" B="0" />
-            <ShadowColor A="255" R="110" G="110" B="110" />
-          </AbstractNodeData>
-          <AbstractNodeData Name="PlayerHealth" ActionTag="377843005" Tag="133" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="11.0000" RightMargin="659.0000" TopMargin="210.7839" BottomMargin="569.2160" LeftEage="16" RightEage="16" TopEage="54" BottomEage="54" Scale9OriginX="16" Scale9OriginY="54" Scale9Width="18" Scale9Height="392" ctype="ImageViewObjectData">
-            <Size X="50.0000" Y="500.0000" />
-            <AnchorPoint ScaleX="0.5000" />
-            <Position X="36.0000" Y="569.2160" />
-            <Scale ScaleX="1.0000" ScaleY="1.0000" />
-            <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0500" Y="0.4447" />
+            <PrePosition X="0.0153" Y="0.4447" />
             <PreSize X="0.0694" Y="0.3906" />
             <FileData Type="Normal" Path="Battle/HPbar_Green.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="OpponentHealth" ActionTag="-86118251" Tag="132" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="659.0000" RightMargin="11.0000" TopMargin="210.7839" BottomMargin="569.2160" LeftEage="16" RightEage="16" TopEage="54" BottomEage="54" Scale9OriginX="16" Scale9OriginY="54" Scale9Width="18" Scale9Height="392" ctype="ImageViewObjectData">
-            <Size X="50.0000" Y="500.0000" />
+          <AbstractNodeData Name="OpponentHealth" ActionTag="-86118251" Tag="132" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="659.0160" RightMargin="11.0160" TopMargin="210.7839" BottomMargin="569.2160" LeftEage="16" RightEage="16" TopEage="54" BottomEage="54" Scale9OriginX="16" Scale9OriginY="54" Scale9Width="18" Scale9Height="392" ctype="ImageViewObjectData">
+            <Size X="49.9680" Y="500.0000" />
             <AnchorPoint ScaleX="0.5000" />
             <Position X="684.0000" Y="569.2160" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -199,6 +184,16 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
+          <AbstractNodeData Name="SkillCooldownMark" ActionTag="-2069653697" VisibleForFrame="False" Tag="107" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="74.0711" RightMargin="613.7823" TopMargin="198.6222" BottomMargin="1049.2365" LeftEage="16" RightEage="16" TopEage="16" BottomEage="16" Scale9OriginX="16" Scale9OriginY="16" Scale9Width="17" Scale9Height="17" ctype="ImageViewObjectData">
+            <Size X="32.1466" Y="32.1413" />
+            <AnchorPoint ScaleY="0.5000" />
+            <Position X="74.0711" Y="1065.3071" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.1029" Y="0.8323" />
+            <PreSize X="0.0446" Y="0.0251" />
+            <FileData Type="Normal" Path="Battle/arrow.png" Plist="" />
+          </AbstractNodeData>
           <AbstractNodeData Name="Answer" ActionTag="485522159" Tag="115" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="10.0080" RightMargin="10.0080" TopMargin="742.0160" BottomMargin="38.0160" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="231" RightEage="231" TopEage="165" BottomEage="165" Scale9OriginX="-231" Scale9OriginY="-165" Scale9Width="462" Scale9Height="330" ctype="PanelObjectData">
             <Size X="699.9840" Y="499.9680" />
             <Children>
@@ -221,31 +216,6 @@
                 <PrePosition X="0.1700" Y="0.5000" />
                 <PreSize X="0.2986" Y="0.9381" />
                 <FileData Type="Normal" Path="Battle/opinion/Layer_botton.png" Plist="" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="Countdown" ActionTag="1167483369" Tag="141" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="39.9973" RightMargin="501.9867" TopMargin="226.4840" BottomMargin="226.4840" FontSize="72" LabelText="10.00" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="158.0000" Y="47.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="118.9973" Y="249.9840" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="0" G="0" B="0" />
-                <PrePosition X="0.1700" Y="0.5000" />
-                <PreSize X="0.2257" Y="0.0940" />
-                <FontResource Type="Normal" Path="font/DigitalDisplayRegular-ODEO.ttf" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="SkillButton" ActionTag="-807271328" Tag="117" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="18.9973" RightMargin="480.9867" TopMargin="149.9840" BottomMargin="149.9840" TouchEnable="True" FontSize="36" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="-15" Scale9OriginY="-11" Scale9Width="30" Scale9Height="22" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="200.0000" Y="200.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="118.9973" Y="249.9840" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1700" Y="0.5000" />
-                <PreSize X="0.2857" Y="0.4000" />
-                <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
-                <TextColor A="255" R="65" G="65" B="70" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
               <AbstractNodeData Name="TF" ActionTag="2026855644" VisibleForFrame="False" Tag="150" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="231" RightEage="231" TopEage="165" BottomEage="165" Scale9OriginX="-231" Scale9OriginY="-165" Scale9Width="462" Scale9Height="330" ctype="PanelObjectData">
                 <Size X="699.9840" Y="499.9680" />
@@ -373,6 +343,33 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
+              <AbstractNodeData Name="SkillButton" ActionTag="-807271328" Tag="117" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="43.9973" RightMargin="505.9867" TopMargin="173.7341" BottomMargin="176.2339" TouchEnable="True" FontSize="36" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="120" Scale9Height="128" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="150.0000" Y="150.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="118.9973" Y="251.2339" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="0" />
+                <PrePosition X="0.1700" Y="0.5025" />
+                <PreSize X="0.2143" Y="0.3000" />
+                <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <PressedFileData Type="Normal" Path="Battle/cir_2.png" Plist="" />
+                <NormalFileData Type="Normal" Path="Battle/cir.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Countdown" ActionTag="1167483369" Tag="141" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="55.9973" RightMargin="517.9867" TopMargin="226.4840" BottomMargin="226.4840" FontSize="72" LabelText="9.99" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="126.0000" Y="47.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="118.9973" Y="249.9840" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="0" G="0" B="0" />
+                <PrePosition X="0.1700" Y="0.5000" />
+                <PreSize X="0.1800" Y="0.0940" />
+                <FontResource Type="Normal" Path="font/DigitalDisplayRegular-ODEO.ttf" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="360.0000" Y="288.0000" />
@@ -436,7 +433,7 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Gameover" ActionTag="-954240783" Tag="73" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="46.0001" RightMargin="25.9999" TopMargin="521.9999" BottomMargin="502.0001" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="Gameover" ActionTag="-954240783" Tag="73" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="36.0000" RightMargin="36.0000" TopMargin="512.0000" BottomMargin="512.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="648.0000" Y="256.0000" />
             <Children>
               <AbstractNodeData Name="Win" ActionTag="-1338427363" VisibleForFrame="False" Tag="74" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" IsCustomSize="True" FontSize="72" LabelText="你贏惹 !!" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" OutlineEnabled="True" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
@@ -465,10 +462,10 @@
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="370.0001" Y="630.0001" />
+            <Position X="360.0000" Y="640.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5139" Y="0.4922" />
+            <PrePosition X="0.5000" Y="0.5000" />
             <PreSize X="0.9000" Y="0.2000" />
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />

@@ -19,16 +19,17 @@ local sfxQues, sfxCorrect, sfxWrong
 local enterCountdownText
 local countdownText
 local countdownNum
-local playerHealthBar, opponentHealthBar
+local playerHealthBar, opponentHealthBar, healthRec
 local healthSelf = 100
 local healthOther = 100
 local isWaiting = false
+local skillBtn
+local skillMark
+local isBehind = false
 
 function BattleScene:ctor()
     rootNode = cc.CSLoader:createNode("Battle/BattleScene.csb")
     self:addChild(rootNode)
-    -- testBtn = rootNode:getChildByName("Button_1")
-    -- testBtn:addTouchEventListener(self.testOnclick)
     domainText = rootNode:getChildByName("Question"):getChildByName("DomainText")
     qText = rootNode:getChildByName("Question"):getChildByName("Text")
     qText2 = rootNode:getChildByName("Question"):getChildByName("Text2")
@@ -58,9 +59,13 @@ function BattleScene:ctor()
 
     enterCountdownText = rootNode:getChildByName("StartCountdown")
     countdownText = rootNode:getChildByName("Answer"):getChildByName("Countdown")
+    skillBtn = rootNode:getChildByName("Answer"):getChildByName("SkillButton")
+    skillBtn:addTouchEventListener(self.skillOnClick)
+    skillMark = rootNode:getChildByName("SkillCooldownMark")
 
     playerHealthBar = rootNode:getChildByName("PlayerHealth")
     opponentHealthBar = rootNode:getChildByName("OpponentHealth")
+    healthRec = playerHealthBar:getBoundingBox()
 
     -- 設定頭像
     if player.id == 2 then
@@ -96,12 +101,6 @@ function BattleScene:ctor()
     rootNode:runAction(cc.Sequence:create(
     cc.DelayTime:create(1),
     cc.CallFunc:create(self.enterRoom)))
-end
-
-function BattleScene:testOnclick(type)
-    if type == ccui.TouchEventType.ended then
-        BattleScene:nextQuestion()
-    end
 end
 
 -- 玩家進入房間
@@ -175,6 +174,8 @@ function BattleScene:countDown(jsonObj)
     -- 血量初始化
     player.health = 60
     opponent.health = 60
+    self:setSkillCDMarkPos()
+
     -- 數字
     local initScale = cc.ScaleTo:create(0, 5)
     local fadeIn = cc.FadeIn:create(0.3)
@@ -201,6 +202,22 @@ function BattleScene:countDown(jsonObj)
     self:runAction(cc.Sequence:create(cc.DelayTime:create(0.01), sound))
 end
 
+-- 設定技能CD箭頭位置
+function BattleScene:setSkillCDMarkPos()
+    if player.tempHealth == nil then
+        player.skillReadyTime = player.health - player.skillCD
+    else
+        player.skillReadyTime = math.min(player.health, player.tempHealth) - player.skillCD
+    end
+    if player.skillReadyTime < 0 then
+        skillMark:setVisible(false)
+        return
+    end
+    local skillMarkX = healthRec.x + healthRec.width
+    local skillMarkY = healthRec.y + healthRec.height * player.skillReadyTime / 60
+    skillMark:setVisible(true):setPosition(skillMarkX, skillMarkY)
+end
+
 -- 答題倒數
 function BattleScene:startCountdown()
     countdownNum = 10
@@ -213,10 +230,11 @@ function BattleScene:countdownUpdate(dt)
     -- 倒數數字
     countdownText:setString(string.format("%.2f", countdownNum))
     -- 血條隨時間慢慢遞減
-    local tempHealth = math.max(0, player.health - 10 + countdownNum)
-    playerHealthBar:setScaleY(tempHealth / 60)
+    player.tempHealth = math.max(0, player.health - 10 + countdownNum)
+    playerHealthBar:setScaleY(player.tempHealth / 60)
+    skillBtn:setEnabled(player:isSkillReady())
     -- 血量歸零直接gameover
-    if tempHealth == 0 then
+    if player.tempHealth == 0 then
         self:surrender()
         return
     end
@@ -232,6 +250,37 @@ function BattleScene:stopCountdown()
     countdownText:setString("")
     rootNode:pause()
     return timeUsed
+end
+
+-- 技能
+function BattleScene:skillOnClick(type)
+    if type == ccui.TouchEventType.ended then
+        skillBtn:setEnabled(false)
+        BattleScene:setSkillCDMarkPos()
+        -- 顯示答案選項
+        ansBtnO:setVisible(correctAns == 1)
+        ansBtnX:setVisible(correctAns == 2)
+        ansBtnA:setVisible(correctAns == 1)
+        ansBtnB:setVisible(correctAns == 2)
+        ansBtnC:setVisible(correctAns == 3)
+        ansBtnD:setVisible(correctAns == 4)
+        -- 領先時多顯示一個選項
+        if isBehind == false then
+            local rand = math.random(3)
+            if rand == correctAns then rand = 4 end
+            if rand == 1 then
+                ansBtnO:setVisible(true)
+                ansBtnA:setVisible(true)
+            elseif rand == 2 then
+                ansBtnX:setVisible(true)
+                ansBtnB:setVisible(true)
+            elseif rand == 3 then
+                ansBtnC:setVisible(true)
+            elseif rand == 4 then
+                ansBtnD:setVisible(true)
+            end
+        end
+    end
 end
 
 -- 提前結束 (投降 or 時間用盡)
@@ -255,6 +304,13 @@ function BattleScene:gameover(win)
     else
         loseText:setVisible(true)
     end
+    -- 5秒後返回戰鬥模式畫面
+    rootNode:runAction(cc.Sequence:create(
+    cc.DelayTime:create(5),
+    cc.CallFunc:create(function()
+        local scene = require("app/views/BattleModeScene.lua"):create()
+        cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
+    end)))
 end
 
 -- Handle Server Op
@@ -292,7 +348,8 @@ function BattleScene:handleOp(jsonObj)
             local e = cc.EaseInOut:create(s, 3)
             playerHealthBar:runAction(e)
         else
-            local s = cc.ScaleTo:create(0.7, 1, jsonObj["health"] / 60)
+            opponent.health = jsonObj["health"]
+            local s = cc.ScaleTo:create(0.7, 1, opponent.health / 60)
             local e = cc.EaseInOut:create(s, 3)
             opponentHealthBar:runAction(e)
         end
@@ -364,6 +421,11 @@ function BattleScene:showQuestion(jsonObj)
     cc.SimpleAudioEngine:getInstance():playEffect("SFX/Quiz-Question02-mp3/Quiz-Question02-1.mp3")
     -- 開始倒數
     self:startCountdown()
+    -- 偵測是否落後
+    isBehind = player.health < opponent.health
+    print("player.health = " .. tostring(player.health))
+    print("opponent.health = " .. tostring(opponent.health))
+    print("isBehind = " .. tostring(isBehind))
 end
 
 -- 聯想題顯示提示
@@ -386,11 +448,12 @@ function BattleScene:setAnsBtnsEnabled(enabled, ...)
         currentAnsBtns = { ... }
     end
     if #currentAnsBtns > 0 then
-        print("# of btn = " .. #currentAnsBtns)
+        -- print("# of btn = " .. #currentAnsBtns)
         for _, v in ipairs(currentAnsBtns) do
-            v:setEnabled(enabled)
+            v:setVisible(true):setEnabled(enabled)
         end
     end
+    skillBtn:setEnabled(player.isSkillReady())
 end
 function BattleScene:shuffleAns(list)
     for i = #list, 2, -1 do

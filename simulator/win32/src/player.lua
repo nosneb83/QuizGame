@@ -10,7 +10,17 @@ function Player:loginInit(jsonObj)
     self.bm = jsonObj["bm"]
     self.bmp = jsonObj["bmp"]
     self.coin = jsonObj["coin"]
+    self.skillCD = 15
     -- print("login init success")
+end
+
+function Player:isSkillReady()
+    if self == nil then return false end
+    if self.health <= self.skillReadyTime then
+        return true
+    elseif self.tempHealth <= self.skillReadyTime then
+        return true
+    else return false end
 end
 
 return Player

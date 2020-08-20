@@ -26,6 +26,9 @@
           <Image Name="question_A.png" />
           <Image Name="Question_B.png" />
           <Image Name="question_field.png" />
+          <Image Name="arrow.png" />
+          <Image Name="cir.png" />
+          <Image Name="cir_2.png" />
         </Folder>
         <Folder Name="BattleMode">
           <Folder Name="btn">

@@ -57,6 +57,7 @@ func Battle1V1(players map[int]p, ch chan map[string]interface{}) {
 	}
 	// 出題
 	questionList = questions.ReadQuestionsFromCSV()
+	rand.Seed(time.Now().UTC().UnixNano())
 	sendQuestion(players)
 	// 接收玩家答案
 	receivedAnswer := make([]map[string]interface{}, 0, 2)
