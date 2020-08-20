@@ -50,18 +50,17 @@
             <PreSize X="0.6699" Y="0.8929" />
             <FileData Type="Normal" Path="character.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Btn_return" ActionTag="135784883" Tag="76" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="17.9772" RightMargin="608.0228" TopMargin="15.5679" BottomMargin="1193.4321" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="64" Scale9Height="49" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="Btn_return" ActionTag="135784883" Tag="76" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="17.8000" RightMargin="608.2000" TopMargin="15.7001" BottomMargin="1193.2999" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="64" Scale9Height="49" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="94.0000" Y="71.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="64.9772" Y="1228.9321" />
+            <Position X="64.8000" Y="1228.7999" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0902" Y="0.9601" />
+            <PrePosition X="0.0900" Y="0.9600" />
             <PreSize X="0.1306" Y="0.0555" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Normal" Path="BattleMode/btn/event.png" Plist="" />
-            <PressedFileData Type="Normal" Path="BattleMode/btn/backtomenu_2.png" Plist="" />
-            <NormalFileData Type="Normal" Path="BattleMode/btn/backtomenu.png" Plist="" />
+            <PressedFileData Type="Normal" Path="Default/backtomenu_2.png" Plist="" />
+            <NormalFileData Type="Normal" Path="Default/backtomenu.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
@@ -98,7 +97,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Btn_freebattle" ActionTag="1823184587" Alpha="204" Tag="93" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-25.0000" RightMargin="-25.0000" TopMargin="-25.0000" BottomMargin="-25.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="220" Scale9Height="228" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Btn_1v1" ActionTag="1823184587" Alpha="204" Tag="93" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-25.0000" RightMargin="-25.0000" TopMargin="-25.0000" BottomMargin="-25.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="220" Scale9Height="228" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="250.0000" Y="250.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="100.0000" Y="100.0000" />
@@ -113,7 +112,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Btn_freebattle2" ActionTag="-923243563" Alpha="204" Tag="94" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="185.0000" RightMargin="-235.0000" TopMargin="-25.0000" BottomMargin="-25.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="220" Scale9Height="228" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Btn_room" ActionTag="-923243563" Alpha="204" Tag="94" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="185.0000" RightMargin="-235.0000" TopMargin="-25.0000" BottomMargin="-25.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="220" Scale9Height="228" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="250.0000" Y="250.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="310.0000" Y="100.0000" />
@@ -122,9 +121,9 @@
                 <PrePosition X="1.5500" Y="0.5000" />
                 <PreSize X="1.2500" Y="1.2500" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Normal" Path="BattleMode/btn/freebattle.png" Plist="" />
-                <PressedFileData Type="Normal" Path="BattleMode/btn/freebattle_2.png" Plist="" />
-                <NormalFileData Type="Normal" Path="BattleMode/btn/freebattle.png" Plist="" />
+                <DisabledFileData Type="Normal" Path="BattleMode/btn/roombattle.png" Plist="" />
+                <PressedFileData Type="Normal" Path="BattleMode/btn/roombattle_2.png" Plist="" />
+                <NormalFileData Type="Normal" Path="BattleMode/btn/roombattle.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -153,8 +152,8 @@
                 <PreSize X="0.3250" Y="0.7583" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <PressedFileData Type="Normal" Path="btn/arrow_l_2.png" Plist="" />
-                <NormalFileData Type="Normal" Path="btn/arrow_l.png" Plist="" />
+                <PressedFileData Type="Normal" Path="Default/arrow_l_2.png" Plist="" />
+                <NormalFileData Type="Normal" Path="Default/arrow_l.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -168,8 +167,8 @@
                 <PreSize X="0.3250" Y="0.7583" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <PressedFileData Type="Normal" Path="btn/arrow_r_2.png" Plist="" />
-                <NormalFileData Type="Normal" Path="btn/arrow_r.png" Plist="" />
+                <PressedFileData Type="Normal" Path="Default/arrow_r_2.png" Plist="" />
+                <NormalFileData Type="Normal" Path="Default/arrow_r.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>

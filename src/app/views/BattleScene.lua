@@ -88,9 +88,9 @@ function BattleScene:ctor()
     rootNode:addChild(defLayer)
 
     -- 設定等待畫面
-    waitLayer = cc.CSLoader:createNode("WaitingRoom/WaitingLayer.csb")
+    waitLayer = cc.CSLoader:createNode("Battle/WaitingRoom/WaitingLayer.csb")
     rootNode:addChild(waitLayer)
-    waitLayer:getChildByName("Bg"):runAction(cc.RepeatForever:create(cc.RotateBy:create(10, 360)))
+    waitLayer:getChildByName("Bg"):runAction(cc.RepeatForever:create(cc.RotateBy:create(40, 360)))
 
     -- 設定頭像
     if player.id == 2 then

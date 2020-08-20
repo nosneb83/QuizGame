@@ -138,8 +138,8 @@
                 <PreSize X="0.3250" Y="0.7583" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <PressedFileData Type="Normal" Path="btn/arrow_l_2.png" Plist="" />
-                <NormalFileData Type="Normal" Path="btn/arrow_l.png" Plist="" />
+                <PressedFileData Type="Normal" Path="Default/arrow_l_2.png" Plist="" />
+                <NormalFileData Type="Normal" Path="Default/arrow_l.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -153,8 +153,8 @@
                 <PreSize X="0.3250" Y="0.7583" />
                 <TextColor A="255" R="65" G="65" B="70" />
                 <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
-                <PressedFileData Type="Normal" Path="btn/arrow_r_2.png" Plist="" />
-                <NormalFileData Type="Normal" Path="btn/arrow_r.png" Plist="" />
+                <PressedFileData Type="Normal" Path="Default/arrow_r_2.png" Plist="" />
+                <NormalFileData Type="Normal" Path="Default/arrow_r.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
@@ -178,7 +178,7 @@
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.0700" Y="0.9600" />
             <PreSize X="0.1139" Y="0.0641" />
-            <FileData Type="Normal" Path="btn/settings.png" Plist="" />
+            <FileData Type="Normal" Path="Default/settings.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="StatusBar" ActionTag="1300640000" Tag="176" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="114.4440" RightMargin="6.4440" TopMargin="10.7521" BottomMargin="1141.5040" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="181" RightEage="181" TopEage="23" BottomEage="23" Scale9OriginX="-181" Scale9OriginY="-23" Scale9Width="362" Scale9Height="46" ctype="PanelObjectData">
             <Size X="599.1120" Y="127.7440" />

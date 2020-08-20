@@ -16,14 +16,14 @@ function BattleModeScene:ctor()
     menuBtns = {
         rootNode:getChildByName("Btns"):getChildByName("Btn_event"),
         rootNode:getChildByName("Btns"):getChildByName("Btn_pve"),
-        rootNode:getChildByName("Btns"):getChildByName("Btn_freebattle"),
-        rootNode:getChildByName("Btns"):getChildByName("Btn_freebattle2"),
+        rootNode:getChildByName("Btns"):getChildByName("Btn_1v1"),
+        rootNode:getChildByName("Btns"):getChildByName("Btn_room"),
         rootNode:getChildByName("Btns"):getChildByName("Btn_tournament")
     }
     menuBtns[1]:addTouchEventListener(self.enter1)
     menuBtns[2]:addTouchEventListener(self.enter2)
     menuBtns[3]:addTouchEventListener(self.enterBattle)
-    menuBtns[4]:addTouchEventListener(self.enterBattle)
+    menuBtns[4]:addTouchEventListener(self.enter4)
     menuBtns[5]:addTouchEventListener(self.enter5)
     menuBtnPos = {
         cc.p(menuBtns[1]:getPosition()),
@@ -103,6 +103,12 @@ function BattleModeScene:enterBattle(type)
     end
 end
 
+function BattleModeScene:enter4(type)
+    if type == ccui.TouchEventType.ended then
+        print("約戰")
+    end
+end
+
 function BattleModeScene:enter5(type)
     if type == ccui.TouchEventType.ended then
         print("錦標賽")
@@ -112,18 +118,18 @@ end
 function BattleModeScene:menuLeft(type)
     if type == ccui.TouchEventType.ended then
         for i = 1, 5 do
-            menuBtnAnimFunc(menuBtns[i], (i - 2) % 5 + 1)
+            menuBtnAnimFunc(menuBtns[i], i % 5 + 1)
         end
-        table.insert(menuBtns, table.remove(menuBtns, 1))
+        table.insert(menuBtns, 1, table.remove(menuBtns))
     end
 end
 
 function BattleModeScene:menuRight(type)
     if type == ccui.TouchEventType.ended then
         for i = 1, 5 do
-            menuBtnAnimFunc(menuBtns[i], i % 5 + 1)
+            menuBtnAnimFunc(menuBtns[i], (i - 2) % 5 + 1)
         end
-        table.insert(menuBtns, 1, table.remove(menuBtns))
+        table.insert(menuBtns, table.remove(menuBtns, 1))
     end
 end
 

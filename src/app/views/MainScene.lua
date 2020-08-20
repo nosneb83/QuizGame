@@ -125,31 +125,33 @@ end
 
 function MainScene:enterKachaScene(type)
     if type == ccui.TouchEventType.ended then
-        print("轉蛋")
+        local scene = require("app/views/ShopScene.lua"):create()
+        cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
     end
 end
 
 function MainScene:enterStoryScene(type)
     if type == ccui.TouchEventType.ended then
-        print("圖書館")
+        local scene = require("app/views/StoryMenuScene.lua"):create()
+        cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
     end
 end
 
 function MainScene:menuLeft(type)
     if type == ccui.TouchEventType.ended then
         for i = 1, 5 do
-            menuBtnAnimFunc(menuBtns[i], (i - 2) % 5 + 1)
+            menuBtnAnimFunc(menuBtns[i], i % 5 + 1)
         end
-        table.insert(menuBtns, table.remove(menuBtns, 1))
+        table.insert(menuBtns, 1, table.remove(menuBtns))
     end
 end
 
 function MainScene:menuRight(type)
     if type == ccui.TouchEventType.ended then
         for i = 1, 5 do
-            menuBtnAnimFunc(menuBtns[i], i % 5 + 1)
+            menuBtnAnimFunc(menuBtns[i], (i - 2) % 5 + 1)
         end
-        table.insert(menuBtns, 1, table.remove(menuBtns))
+        table.insert(menuBtns, table.remove(menuBtns, 1))
     end
 end
 
