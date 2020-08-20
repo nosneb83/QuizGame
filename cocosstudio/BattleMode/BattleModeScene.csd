@@ -19,14 +19,14 @@
           <AbstractNodeData Name="Bubble" ActionTag="1368241853" Tag="87" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-0.0360" RightMargin="364.2840" TopMargin="147.1360" BottomMargin="865.9839" LeftEage="211" RightEage="211" TopEage="211" BottomEage="211" Scale9OriginX="211" Scale9OriginY="211" Scale9Width="218" Scale9Height="218" ctype="ImageViewObjectData">
             <Size X="355.7520" Y="266.8800" />
             <Children>
-              <AbstractNodeData Name="Text" ActionTag="1666590398" Tag="88" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="70.7804" RightMargin="94.9716" TopMargin="95.3818" BottomMargin="107.4982" FontSize="48" LabelText="定孤支喇" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="190.0000" Y="64.0000" />
+              <AbstractNodeData Name="Text" ActionTag="1666590398" Tag="88" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="55.6717" RightMargin="79.8628" TopMargin="68.9653" BottomMargin="81.0816" IsCustomSize="True" FontSize="40" LabelText="因為洋芋片在打折。" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="220.2175" Y="116.8331" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="165.7804" Y="139.4982" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="0" G="0" B="0" />
                 <PrePosition X="0.4660" Y="0.5227" />
-                <PreSize X="0.5341" Y="0.2398" />
+                <PreSize X="0.6190" Y="0.4378" />
                 <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />

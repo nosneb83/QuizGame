@@ -29,6 +29,23 @@
           <Image Name="arrow.png" />
           <Image Name="cir.png" />
           <Image Name="cir_2.png" />
+          <Folder Name="Gameover">
+            <Folder Name="Victory">
+              <Image Name="Background.png" />
+              <Image Name="bga.png" />
+              <Image Name="botton_BG.png" />
+              <Image Name="botton_BG_2.png" />
+              <Image Name="Victory.png" />
+              <Image Name="Victory_sample.png" />
+              <Project Name="VictoryLayer.csd" Type="Layer" />
+            </Folder>
+            <Folder Name="Defeat">
+              <Image Name="defeat.png" />
+              <Image Name="Defeat_sample.png" />
+              <Image Name="Defeat_word.png" />
+              <Project Name="DefeatLayer.csd" Type="Layer" />
+            </Folder>
+          </Folder>
         </Folder>
         <Folder Name="BattleMode">
           <Folder Name="btn">

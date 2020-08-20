@@ -6,26 +6,23 @@ require("json")
 local opponent = require("player.lua"):new()
 
 local rootNode
--- local testBtn
-local domainText
-local qText, qText2, qText3
-local correctAns
-local ansPnlTF, ansPnlCH
-local ansBtnO, ansBtnX, ansBtnA, ansBtnB, ansBtnC, ansBtnD
-local currentAnsBtns = {}
-local feedbackT, feedbackF
-local winText, loseText
-local sfxQues, sfxCorrect, sfxWrong
-local enterCountdownText
-local countdownText
-local countdownNum
-local playerHealthBar, opponentHealthBar, healthRec
-local healthSelf = 100
-local healthOther = 100
-local isWaiting = false
-local skillBtn
-local skillMark
-local isBehind = false
+local domainText -- 題目類型&領域
+local qText, qText2, qText3 -- 題目文字
+local correctAns -- 當前題目的正確答案
+local ansPnlTF, ansPnlCH -- 選項panel
+local ansBtnO, ansBtnX, ansBtnA, ansBtnB, ansBtnC, ansBtnD -- 選項按鈕
+local currentAnsBtns = {} -- 當前這一題的選項按鈕們
+local feedbackT, feedbackF -- 答對答錯文字
+local sfxQues, sfxCorrect, sfxWrong -- 答題音效
+local enterCountdownText -- 開場倒數文字
+local countdownText -- 倒數文字
+local countdownNum -- 倒數秒數
+local playerHealthBar, opponentHealthBar, healthRec -- 血條
+local isWaiting = false -- 是否正在等待另一名玩家
+local skillBtn -- 開技能的按鈕
+local skillMark -- 技能CD標示
+local isBehind = false -- 玩家是否正在落後
+local vicLayer, defLayer -- 勝負結算畫面
 
 function BattleScene:ctor()
     rootNode = cc.CSLoader:createNode("Battle/BattleScene.csb")
@@ -54,9 +51,6 @@ function BattleScene:ctor()
     feedbackT = rootNode:getChildByName("Answer_feedback"):getChildByName("Correct")
     feedbackF = rootNode:getChildByName("Answer_feedback"):getChildByName("Wrong")
 
-    winText = rootNode:getChildByName("Gameover"):getChildByName("Win")
-    loseText = rootNode:getChildByName("Gameover"):getChildByName("Lose")
-
     enterCountdownText = rootNode:getChildByName("StartCountdown")
     countdownText = rootNode:getChildByName("Answer"):getChildByName("Countdown")
     skillBtn = rootNode:getChildByName("Answer"):getChildByName("SkillButton")
@@ -66,6 +60,22 @@ function BattleScene:ctor()
     playerHealthBar = rootNode:getChildByName("PlayerHealth")
     opponentHealthBar = rootNode:getChildByName("OpponentHealth")
     healthRec = playerHealthBar:getBoundingBox()
+
+    vicLayer = cc.CSLoader:createNode("Battle/Gameover/Victory/VictoryLayer.csb")
+    vicLayer:getChildByName("Layout"):getChildByName("Button_again")
+    :addTouchEventListener(self.playAgain)
+    vicLayer:getChildByName("Layout"):getChildByName("Button_return")
+    :addTouchEventListener(self.returnMain)
+    vicLayer:setVisible(false)
+    rootNode:addChild(vicLayer)
+
+    defLayer = cc.CSLoader:createNode("Battle/Gameover/Defeat/DefeatLayer.csb")
+    defLayer:getChildByName("Layout"):getChildByName("Button_again")
+    :addTouchEventListener(self.playAgain)
+    defLayer:getChildByName("Layout"):getChildByName("Button_return")
+    :addTouchEventListener(self.returnMain)
+    defLayer:setVisible(false)
+    rootNode:addChild(defLayer)
 
     -- 設定頭像
     if player.id == 2 then
@@ -153,7 +163,6 @@ function BattleScene:answer(playerAns)
         self:showFeedback(feedbackF, feedbackT)
         cc.SimpleAudioEngine:getInstance():playEffect("SFX/Quiz-Wrong_Buzzer01-mp3/Quiz-Wrong_Buzzer01-1.mp3")
     end
-    -- rootNode:runAction(cc.Sequence:create(cc.DelayTime:create(feedbackDuration), cc.CallFunc:create(self.nextQuestion)))
     local jsonObj = {
         op = "ANSWER",
         id = player.id,
@@ -173,6 +182,7 @@ end
 function BattleScene:countDown(jsonObj)
     -- 血量初始化
     player.health = 60
+    player.tempHealth = 60
     opponent.health = 60
     self:setSkillCDMarkPos()
 
@@ -300,17 +310,22 @@ function BattleScene:gameover(win)
     self:setAnsBtnsEnabled(false)
     self:stopCountdown()
     if win then
-        winText:setVisible(true)
+        vicLayer:setVisible(true)
     else
-        loseText:setVisible(true)
+        defLayer:setVisible(true)
     end
-    -- 5秒後返回戰鬥模式畫面
-    rootNode:runAction(cc.Sequence:create(
-    cc.DelayTime:create(5),
-    cc.CallFunc:create(function()
+end
+function BattleScene:playAgain(type)
+    if type == ccui.TouchEventType.ended then
+        local scene = require("app/views/BattleScene.lua"):create()
+        cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
+    end
+end
+function BattleScene:returnMain(type)
+    if type == ccui.TouchEventType.ended then
         local scene = require("app/views/BattleModeScene.lua"):create()
         cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
-    end)))
+    end
 end
 
 -- Handle Server Op
@@ -326,20 +341,6 @@ function BattleScene:handleOp(jsonObj)
         else
             print("not waiting")
             self:showQuestion(jsonObj)
-        end
-    elseif op == "ANSWER" then
-        if jsonObj["cor"] == false then
-            if jsonObj["id"] == player.id then
-                healthSelf = healthSelf - 10
-                local s = cc.ScaleTo:create(0.5, 1, healthSelf / 100)
-                local e = cc.EaseInOut:create(s, 3)
-                playerHealthBar:runAction(e)
-            else
-                healthOther = healthOther - 10
-                local s = cc.ScaleTo:create(0.5, 1, healthOther / 100)
-                local e = cc.EaseInOut:create(s, 3)
-                opponentHealthBar:runAction(e)
-            end
         end
     elseif op == "BATTLE_RESULT" then
         if jsonObj["id"] == player.id then
@@ -397,11 +398,15 @@ function BattleScene:showQuestion(jsonObj)
         qText2:setString("提示2: " .. jsonObj["ques"][2])
         qText3:setVisible(false)
         qText3:setString("提示3: " .. jsonObj["ques"][3])
+        local ansStr = jsonObj["ans"][1]
+        math.shuffle(jsonObj["ans"])
         ansBtnA:setTitleText(jsonObj["ans"][1])
         ansBtnB:setTitleText(jsonObj["ans"][2])
         ansBtnC:setTitleText(jsonObj["ans"][3])
         ansBtnD:setTitleText(jsonObj["ans"][4])
-        correctAns = "A"
+        for k, v in ipairs(jsonObj["ans"]) do
+            if v == ansStr then correctAns = k break end
+        end
         self:showAnsPnl(ansPnlCH, ansPnlTF)
         self:setAnsBtnsEnabled(true, ansBtnA, ansBtnB, ansBtnC, ansBtnD)
         self:showClues(3)
@@ -423,9 +428,6 @@ function BattleScene:showQuestion(jsonObj)
     self:startCountdown()
     -- 偵測是否落後
     isBehind = player.health < opponent.health
-    print("player.health = " .. tostring(player.health))
-    print("opponent.health = " .. tostring(opponent.health))
-    print("isBehind = " .. tostring(isBehind))
 end
 
 -- 聯想題顯示提示
