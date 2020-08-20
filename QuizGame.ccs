@@ -121,6 +121,19 @@
           <Image Name="main_bg.png" />
           <Project Name="MainScene.csd" Type="Scene" />
         </Folder>
+        <Folder Name="WaitingRoom">
+          <Image Name="BG_sample.png" />
+          <Image Name="Mazu.png" />
+          <Image Name="Ready.png" />
+          <Image Name="Ready_2.png" />
+          <Image Name="Start.png" />
+          <Image Name="Start_2.png" />
+          <Image Name="Tatayu.png" />
+          <Image Name="Waitingroom_fake.png" />
+          <Project Name="WaitingLayer.csd" Type="Layer" />
+          <Image Name="Waiting.png" />
+          <Image Name="Bg_cut.png" />
+        </Folder>
         <Image Name="character.png" />
         <Image Name="chat_bubble.png" />
       </RootFolder>

@@ -6,6 +6,7 @@ require("json")
 local opponent = require("player.lua"):new()
 
 local rootNode
+local quesLayout, ansLayout -- layout
 local domainText -- 題目類型&領域
 local qText, qText2, qText3 -- 題目文字
 local correctAns -- 當前題目的正確答案
@@ -23,22 +24,27 @@ local skillBtn -- 開技能的按鈕
 local skillMark -- 技能CD標示
 local isBehind = false -- 玩家是否正在落後
 local vicLayer, defLayer -- 勝負結算畫面
+local waitLayer -- 等待畫面
 
 function BattleScene:ctor()
     rootNode = cc.CSLoader:createNode("Battle/BattleScene.csb")
     self:addChild(rootNode)
-    domainText = rootNode:getChildByName("Question"):getChildByName("DomainText")
-    qText = rootNode:getChildByName("Question"):getChildByName("Text")
-    qText2 = rootNode:getChildByName("Question"):getChildByName("Text2")
-    qText3 = rootNode:getChildByName("Question"):getChildByName("Text3")
+    quesLayout = rootNode:getChildByName("Question")
+    domainText = quesLayout:getChildByName("DomainText")
+    qText = quesLayout:getChildByName("Text")
+    qText2 = quesLayout:getChildByName("Text2")
+    qText3 = quesLayout:getChildByName("Text3")
 
-    ansPnlTF = rootNode:getChildByName("Answer"):getChildByName("TF")
+    quesLayout:setVisible(false) -- 隱藏題目layout
+
+    ansLayout = rootNode:getChildByName("Answer")
+    ansPnlTF = ansLayout:getChildByName("TF")
     ansBtnO = ansPnlTF:getChildByName("O")
     ansBtnO:addTouchEventListener(self.answerO)
     ansBtnX = ansPnlTF:getChildByName("X")
     ansBtnX:addTouchEventListener(self.answerX)
 
-    ansPnlCH = rootNode:getChildByName("Answer"):getChildByName("CH")
+    ansPnlCH = ansLayout:getChildByName("CH")
     ansBtnA = ansPnlCH:getChildByName("A")
     ansBtnA:addTouchEventListener(self.answerA)
     ansBtnB = ansPnlCH:getChildByName("B")
@@ -52,14 +58,18 @@ function BattleScene:ctor()
     feedbackF = rootNode:getChildByName("Answer_feedback"):getChildByName("Wrong")
 
     enterCountdownText = rootNode:getChildByName("StartCountdown")
-    countdownText = rootNode:getChildByName("Answer"):getChildByName("Countdown")
-    skillBtn = rootNode:getChildByName("Answer"):getChildByName("SkillButton")
+    countdownText = ansLayout:getChildByName("Countdown")
+    skillBtn = ansLayout:getChildByName("SkillButton")
     skillBtn:addTouchEventListener(self.skillOnClick)
     skillMark = rootNode:getChildByName("SkillCooldownMark")
 
+    ansLayout:setVisible(false) -- 隱藏答案layout
+
     playerHealthBar = rootNode:getChildByName("PlayerHealth")
     opponentHealthBar = rootNode:getChildByName("OpponentHealth")
-    healthRec = playerHealthBar:getBoundingBox()
+    healthRec = playerHealthBar:getBoundingBox() -- 取得血條BoundingBox
+    playerHealthBar:setScaleY(0)
+    opponentHealthBar:setScaleY(0)
 
     vicLayer = cc.CSLoader:createNode("Battle/Gameover/Victory/VictoryLayer.csb")
     vicLayer:getChildByName("Layout"):getChildByName("Button_again")
@@ -76,6 +86,11 @@ function BattleScene:ctor()
     :addTouchEventListener(self.returnMain)
     defLayer:setVisible(false)
     rootNode:addChild(defLayer)
+
+    -- 設定等待畫面
+    waitLayer = cc.CSLoader:createNode("WaitingRoom/WaitingLayer.csb")
+    rootNode:addChild(waitLayer)
+    waitLayer:getChildByName("Bg"):runAction(cc.RepeatForever:create(cc.RotateBy:create(10, 360)))
 
     -- 設定頭像
     if player.id == 2 then
@@ -180,29 +195,38 @@ end
 
 -- 進房倒數
 function BattleScene:countDown(jsonObj)
+    waitLayer:setVisible(false)
+
     -- 血量初始化
     player.health = 60
     player.tempHealth = 60
     opponent.health = 60
-    self:setSkillCDMarkPos()
 
     -- 數字
     local initScale = cc.ScaleTo:create(0, 5)
     local fadeIn = cc.FadeIn:create(0.3)
-    local scaleTo = cc.ScaleTo:create(0.3, 1)
+    local scaleTo = cc.ScaleTo:create(0.3, 2)
     local fadeOut = cc.FadeOut:create(0)
     local count = cc.Sequence:create(initScale, cc.Spawn:create(fadeIn, scaleTo),
     cc.DelayTime:create(0.5), fadeOut, cc.DelayTime:create(0.2))
 
     -- 執行動作
+    playerHealthBar:runAction(cc.ScaleTo:create(2, 1, 1))
+    opponentHealthBar:runAction(cc.ScaleTo:create(2, 1, 1))
     enterCountdownText:runAction(cc.Sequence:create(
+    cc.DelayTime:create(0.5),
     cc.CallFunc:create(function() enterCountdownText:setString("3") end),
     count,
     cc.CallFunc:create(function() enterCountdownText:setString("2") end),
     count,
     cc.CallFunc:create(function() enterCountdownText:setString("1") end),
     count,
-    cc.CallFunc:create(function() self:showQuestion(jsonObj) end)))
+    cc.CallFunc:create(function()
+        quesLayout:setVisible(true)
+        ansLayout:setVisible(true)
+        self:setSkillCDMarkPos()
+        self:showQuestion(jsonObj)
+    end)))
 
     -- 播音效
     local function countSound()
