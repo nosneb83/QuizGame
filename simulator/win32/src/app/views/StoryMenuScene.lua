@@ -50,7 +50,10 @@ function StoryMenuScene:mainStory(type)
 end
 function StoryMenuScene:chap0(type)
     if type == ccui.TouchEventType.ended then
-        local scene = require("app/views/StorySectionScene.lua"):create("MainStory", "MainStory_0")
+        local scene = require("app/views/StorySectionScene.lua"):create({
+            "MainStory", -- 劇情
+            "MainStory_0" -- 章節
+        })
         cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
     end
 end

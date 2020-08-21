@@ -41,14 +41,14 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Text" ActionTag="504929962" Tag="414" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="48.9079" RightMargin="48.9079" TopMargin="72.5460" BottomMargin="72.5460" IsCustomSize="True" FontSize="36" LabelText="Text Label" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="557.7497" Y="150.6585" />
+              <AbstractNodeData Name="Text" ActionTag="504929962" Tag="414" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="48.9079" RightMargin="48.9079" TopMargin="57.7517" BottomMargin="28.1766" IsCustomSize="True" FontSize="32" LabelText="Text Label" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="557.7497" Y="209.8222" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="327.7827" Y="147.8752" />
+                <Position X="327.7827" Y="133.0877" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="0" G="0" B="0" />
-                <PrePosition X="0.5000" Y="0.5000" />
-                <PreSize X="0.8508" Y="0.5094" />
+                <PrePosition X="0.5000" Y="0.4500" />
+                <PreSize X="0.8508" Y="0.7095" />
                 <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />

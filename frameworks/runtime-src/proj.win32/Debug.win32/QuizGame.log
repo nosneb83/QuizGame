@@ -17,27 +17,9 @@
   C:\Benson\QuizGameProject\QuizGame\res\Story\Menu\MenuLayer.csb -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Story\Menu\MenuLayer.csb
   C:\Benson\QuizGameProject\QuizGame\res\Story\Menu\StoryMenuScene.csb -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Story\Menu\StoryMenuScene.csb
   C:\Benson\QuizGameProject\QuizGame\res\Story\Story\StoryScene.csb -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Story\Story\StoryScene.csb
-  C:\Benson\QuizGameProject\QuizGame\res\Story\Story\Story_space.png -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Story\Story\Story_space.png
   C:\Benson\QuizGameProject\QuizGame\res\Story\Story\Bg\BgRoomLayer.csb -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Story\Story\Bg\BgRoomLayer.csb
-  C:\Benson\QuizGameProject\QuizGame\res\Story\Story\Bg\Black_BG.png -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Story\Story\Bg\Black_BG.png
-  C:\Benson\QuizGameProject\QuizGame\res\Story\Story\Bg\room.png -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Story\Story\Bg\room.png
-  已複製 17 個檔案
-  C:\Benson\QuizGameProject\QuizGame\src\app\views\LoginScene.lua -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\src\app\views\LoginScene.lua
+  已複製 14 個檔案
+  C:\Benson\QuizGameProject\QuizGame\src\app\views\StoryMenuScene.lua -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\src\app\views\StoryMenuScene.lua
   C:\Benson\QuizGameProject\QuizGame\src\app\views\StoryScene.lua -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\src\app\views\StoryScene.lua
   C:\Benson\QuizGameProject\QuizGame\src\app\views\StorySectionScene.lua -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\src\app\views\StorySectionScene.lua
-  C:\Benson\QuizGameProject\QuizGame\src\lua-csv\AUTHORS -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\src\lua-csv\AUTHORS
-  C:\Benson\QuizGameProject\QuizGame\src\lua-csv\LICENSE -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\src\lua-csv\LICENSE
-  C:\Benson\QuizGameProject\QuizGame\src\lua-csv\makefile -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\src\lua-csv\makefile
-  C:\Benson\QuizGameProject\QuizGame\src\lua-csv\README.md -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\src\lua-csv\README.md
-  C:\Benson\QuizGameProject\QuizGame\src\lua-csv\lua\config.ld -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\src\lua-csv\lua\config.ld
-  C:\Benson\QuizGameProject\QuizGame\src\lua-csv\lua\csv.lua -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\src\lua-csv\lua\csv.lua
-  C:\Benson\QuizGameProject\QuizGame\src\lua-csv\lua\test.lua -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\src\lua-csv\lua\test.lua
-  C:\Benson\QuizGameProject\QuizGame\src\lua-csv\rockspecs\csv-1-1.rockspec -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\src\lua-csv\rockspecs\csv-1-1.rockspec
-  C:\Benson\QuizGameProject\QuizGame\src\lua-csv\rockspecs\csv-scm-1.rockspec -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\src\lua-csv\rockspecs\csv-scm-1.rockspec
-  C:\Benson\QuizGameProject\QuizGame\src\lua-csv\test-data\bars.txt -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\src\lua-csv\test-data\bars.txt
-  C:\Benson\QuizGameProject\QuizGame\src\lua-csv\test-data\blank-line.csv -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\src\lua-csv\test-data\blank-line.csv
-  C:\Benson\QuizGameProject\QuizGame\src\lua-csv\test-data\BOM.csv -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\src\lua-csv\test-data\BOM.csv
-  C:\Benson\QuizGameProject\QuizGame\src\lua-csv\test-data\embedded-newlines.csv -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\src\lua-csv\test-data\embedded-newlines.csv
-  C:\Benson\QuizGameProject\QuizGame\src\lua-csv\test-data\embedded-quotes.csv -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\src\lua-csv\test-data\embedded-quotes.csv
-  C:\Benson\QuizGameProject\QuizGame\src\lua-csv\test-data\header.csv -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\src\lua-csv\test-data\header.csv
-  已複製 18 個檔案
+  已複製 3 個檔案

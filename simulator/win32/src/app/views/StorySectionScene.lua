@@ -3,15 +3,13 @@ local StorySectionScene = class("StorySectionScene", function()
 end)
 
 local rootNode
-local currentStory -- 目前所在劇情
-local currentChap -- 目前所在章節
+local currentChap -- 當前所在章節
 local premText
 local bmBtns = {}
 
-function StorySectionScene:ctor(story, chapter)
-    currentStory = story
-    currentChap = chapter
-    rootNode = cc.CSLoader:createNode("Story/ChooseSection/" .. currentChap .. ".csb")
+function StorySectionScene:ctor(chap)
+    currentChap = chap
+    rootNode = cc.CSLoader:createNode("Story/ChooseSection/" .. currentChap[2] .. ".csb")
     self:addChild(rootNode)
     rootNode:getChildByName("Btn_return")
     :addTouchEventListener(self.backToStory)
@@ -47,13 +45,14 @@ function StorySectionScene:mainPage(type)
 end
 function StorySectionScene:backToStory(type)
     if type == ccui.TouchEventType.ended then
-        local scene = require("app/views/StoryMenuScene.lua"):create("MainStory")
+        local scene = require("app/views/StoryMenuScene.lua"):create(currentChap[1])
         cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
     end
 end
 function StorySectionScene:sect1(type)
     if type == ccui.TouchEventType.ended then
-        local scene = require("app/views/StoryScene.lua"):create("MainStory")
+        table.insert(currentChap, "0_1") -- 段落
+        local scene = require("app/views/StoryScene.lua"):create(currentChap)
         cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
     end
 end

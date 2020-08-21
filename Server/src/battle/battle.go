@@ -88,7 +88,7 @@ func Battle1V1(players map[int]p, ch chan map[string]interface{}) {
 				players[int(v["id"].(float64))].Health -= v["time"].(float64)
 				// 答錯扣血
 				if !v["cor"].(bool) {
-					players[int(v["id"].(float64))].Health -= 10.0
+					players[int(v["id"].(float64))].Health -= 7.0
 					bothCorrect = false
 				}
 				// 找出答比較慢的人
