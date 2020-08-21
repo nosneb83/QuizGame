@@ -32,6 +32,10 @@ function StorySectionScene:ctor(story, chapter)
     for i = 1, #bmBtns do
         bmBtns[i]:setEnabled(i <= player.bm)
     end
+
+    -- 段落按鈕
+    rootNode:getChildByName("SectionBtns"):getChildByName("Btn_Sect1")
+    :addTouchEventListener(self.sect1)
 end
 
 -- 按鈕callbacks
@@ -44,6 +48,12 @@ end
 function StorySectionScene:backToStory(type)
     if type == ccui.TouchEventType.ended then
         local scene = require("app/views/StoryMenuScene.lua"):create("MainStory")
+        cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
+    end
+end
+function StorySectionScene:sect1(type)
+    if type == ccui.TouchEventType.ended then
+        local scene = require("app/views/StoryScene.lua"):create("MainStory")
         cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
     end
 end

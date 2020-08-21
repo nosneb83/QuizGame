@@ -210,8 +210,8 @@ func main() {
 	// db.CreateTablePlayers()
 
 	// TCP 連線
-	// listener, _ := net.Listen("tcp", "0.0.0.0:8888")
-	listener, _ := net.Listen("tcp", "127.0.0.1:8888")
+	listener, _ := net.Listen("tcp", "0.0.0.0:8888")
+	// listener, _ := net.Listen("tcp", "127.0.0.1:8888")
 	defer listener.Close()
 
 	for {

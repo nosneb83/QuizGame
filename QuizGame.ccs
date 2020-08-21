@@ -186,6 +186,17 @@
             <Image Name="UI_Story_path_sample.png" />
             <Image Name="UP_bar.png" />
           </Folder>
+          <Folder Name="Story">
+            <Project Name="StoryScene.csd" Type="Scene" />
+            <Image Name="Story_space.png" />
+            <Folder Name="Bg">
+              <Image Name="room.png" />
+              <Image Name="rouka.png" />
+              <Image Name="Black_BG.png" />
+              <Project Name="BgRoomLayer.csd" Type="Layer" />
+            </Folder>
+            <Image Name="Story_Sample.png" />
+          </Folder>
         </Folder>
         <Image Name="character.png" />
         <Image Name="chat_bubble.png" />
