@@ -196,6 +196,15 @@
               <Project Name="BgRoomLayer.csd" Type="Layer" />
             </Folder>
             <Image Name="Story_Sample.png" />
+            <Folder Name="Text">
+              <Image Name="hero.png" />
+              <Image Name="Luluta.png" />
+              <Image Name="Normal.png" />
+              <Image Name="Palung.png" />
+              <Image Name="Same.png" />
+              <Image Name="Teko.png" />
+              <Image Name="W.png" />
+            </Folder>
           </Folder>
         </Folder>
         <Image Name="character.png" />

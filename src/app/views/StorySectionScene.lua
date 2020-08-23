@@ -51,7 +51,7 @@ function StorySectionScene:backToStory(type)
 end
 function StorySectionScene:sect1(type)
     if type == ccui.TouchEventType.ended then
-        table.insert(currentChap, "0_1") -- 段落
+        table.insert(currentChap, "0_1_2") -- 段落
         local scene = require("app/views/StoryScene.lua"):create(currentChap)
         cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
     end

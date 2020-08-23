@@ -3,28 +3,52 @@ local StoryScene = class("StoryScene", function()
 end)
 
 local csv = require("lua-csv/lua/csv.lua")
+local utf8 = require 'lua-utf8'
 
 local rootNode
+local scheduler = cc.Director:getInstance():getScheduler()
 local currentSect -- 當前所在段落
+local dialogBg, dialogBgList -- 對話框背景
 local speakerLabel -- 說話者名字的文字
 local textLabel -- 說話內容文字
+local currentText -- 當前文字
 local csvFile -- 劇本文檔csv
 local parsedScript -- 該段落的逐行劇本
+local typewriterTime
+local typewritingSpd = 0.025
 
 function StoryScene:ctor(sect)
     currentSect = sect
     rootNode = cc.CSLoader:createNode("Story/Story/StoryScene.csb")
     self:addChild(rootNode)
 
-    speakerLabel = rootNode:getChildByName("TextBg"):getChildByName("Speaker")
-    speakerLabel:setString("test name")
-    textLabel = rootNode:getChildByName("TextBg"):getChildByName("Text")
-    textLabel:setString("test string")
+    dialogBg = rootNode:getChildByName("Dialog"):getChildByName("Bg")
+    dialogBgList = {
+        dialogBg:getChildByName("Player"),
+        dialogBg:getChildByName("Luluta"),
+        dialogBg:getChildByName("Normal"),
+        dialogBg:getChildByName("Palung"),
+        dialogBg:getChildByName("Same"),
+        dialogBg:getChildByName("Teko"),
+        dialogBg:getChildByName("Text")
+    }
+
+    speakerLabel = rootNode:getChildByName("Dialog"):getChildByName("Speaker")
+    speakerLabel:setString("")
+    textLabel = rootNode:getChildByName("Dialog"):getChildByName("Text")
+    textLabel:setString("")
     rootNode:getChildByName("Btn_next"):addTouchEventListener(self.next)
 
     csvFile = csv.open(cc.FileUtils:getInstance():getWritablePath() .. "Server/Story.csv")
     parsedScript = self:parseStoryScript(currentSect[3])
-    self:nextDialog()
+    rootNode:runAction(cc.Sequence:create(
+    cc.DelayTime:create(sceneTransTime + 0.25),
+    cc.CallFunc:create(self.nextDialog)))
+
+    -- 打字機效果
+    self:scheduleUpdateWithPriorityLua(function(dt)
+        self:typewriting(dt)
+    end, 0)
 end
 
 -- 按鈕callbacks
@@ -36,7 +60,11 @@ function StoryScene:mainPage(type)
 end
 function StoryScene:next(type)
     if type == ccui.TouchEventType.ended then
-        StoryScene:nextDialog()
+        if typewriterTime == nil then
+            StoryScene:nextDialog()
+        else
+            typewriterTime = 100
+        end
     end
 end
 
@@ -53,7 +81,7 @@ function StoryScene:parseStoryScript(sect)
                 speakerID = fields[2]
                 speakerName = fields[3]
                 if speakerName == "" then -- 使用預設名稱
-                    speakerName = self:getSpeakerName(fields[2])
+                    speakerName = self:getSpeakerName(speakerID)
                 end
                 text = fields[4]
             elseif fields[1] == "" then -- 同speaker繼續講話
@@ -71,6 +99,21 @@ function StoryScene:parseStoryScript(sect)
             end
         end
     end
+end
+function StoryScene:changeDialogBg(id)
+    for _, v in ipairs(dialogBgList) do
+        v:setVisible(false)
+    end
+    if id == "" then dialogBgList[3]:setVisible(true)
+    elseif id == "0" then dialogBgList[1]:setVisible(true)
+    elseif id == "100" then dialogBgList[3]:setVisible(true)
+    elseif id == "101" then dialogBgList[3]:setVisible(true)
+    elseif id == "1" then dialogBgList[6]:setVisible(true)
+    elseif id == "2" then dialogBgList[5]:setVisible(true)
+    elseif id == "3" then dialogBgList[2]:setVisible(true)
+    elseif id == "4" then dialogBgList[4]:setVisible(true)
+    end
+    dialogBgList[7]:setVisible(true)
 end
 function StoryScene:getSpeakerName(id)
     if id == "" then return ""
@@ -92,9 +135,23 @@ function StoryScene:nextDialog()
         cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
         return
     end
-    speakerLabel:setString(parsedScript[1][2])
-    textLabel:setString(parsedScript[1][3])
+    StoryScene:changeDialogBg(parsedScript[1][1])
+    speakerLabel:setString(parsedScript[1][2]) -- 說話者
+    currentText = parsedScript[1][3] -- 講的話
     table.remove(parsedScript, 1)
+    -- 打字機效果歸零
+    typewriterTime = 0
+end
+
+-- 打字機效果
+function StoryScene:typewriting(dt)
+    if typewriterTime == nil then return end
+    typewriterTime = typewriterTime + dt
+    local showStrLen = math.min(utf8.len(currentText), typewriterTime / typewritingSpd)
+    textLabel:setString(utf8.sub(currentText, 1, showStrLen))
+    if showStrLen == utf8.len(currentText) then
+        typewriterTime = nil
+    end
 end
 
 return StoryScene
