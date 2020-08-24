@@ -78,8 +78,8 @@ function StorySectionScene:sect(type)
             op = "PAY_BOOKMARK",
             id = player.id
         }
-        socket:send(json.encode(jsonObj))
-        player.bm = player.bm - 1
+        -- socket:send(json.encode(jsonObj))
+        -- player.bm = player.bm - 1
         -- 進入劇情
         local sectStr = "0_1_" .. tostring(self:getTag())
         table.insert(currentChap, sectStr) -- 段落6

@@ -4,7 +4,21 @@
   Performing Custom Build Step
   已複製 16 個檔案
   已複製 1 個檔案
-  已複製 0 個檔案
+  C:\Benson\QuizGameProject\QuizGame\res\Battle\BattleScene.csb -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Battle\BattleScene.csb
+  C:\Benson\QuizGameProject\QuizGame\res\Battle\Gameover\Defeat\DefeatLayer.csb -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Battle\Gameover\Defeat\DefeatLayer.csb
+  C:\Benson\QuizGameProject\QuizGame\res\Battle\Gameover\Victory\VictoryLayer.csb -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Battle\Gameover\Victory\VictoryLayer.csb
+  C:\Benson\QuizGameProject\QuizGame\res\Battle\WaitingRoom\WaitingLayer.csb -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Battle\WaitingRoom\WaitingLayer.csb
+  C:\Benson\QuizGameProject\QuizGame\res\BattleMode\BattleModeScene.csb -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\BattleMode\BattleModeScene.csb
+  C:\Benson\QuizGameProject\QuizGame\res\Char\CharScene.csb -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Char\CharScene.csb
+  C:\Benson\QuizGameProject\QuizGame\res\Login\LoginScene.csb -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Login\LoginScene.csb
+  C:\Benson\QuizGameProject\QuizGame\res\MainScene\MainScene.csb -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\MainScene\MainScene.csb
+  C:\Benson\QuizGameProject\QuizGame\res\Shop\ShopScene.csb -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Shop\ShopScene.csb
+  C:\Benson\QuizGameProject\QuizGame\res\Story\ChooseSection\MainStory_0.csb -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Story\ChooseSection\MainStory_0.csb
+  C:\Benson\QuizGameProject\QuizGame\res\Story\Menu\MainStoryLayer.csb -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Story\Menu\MainStoryLayer.csb
+  C:\Benson\QuizGameProject\QuizGame\res\Story\Menu\MenuLayer.csb -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Story\Menu\MenuLayer.csb
+  C:\Benson\QuizGameProject\QuizGame\res\Story\Menu\StoryMenuScene.csb -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Story\Menu\StoryMenuScene.csb
+  C:\Benson\QuizGameProject\QuizGame\res\Story\Story\StoryScene.csb -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\res\Story\Story\StoryScene.csb
+  已複製 14 個檔案
   C:\Benson\QuizGameProject\QuizGame\src\app\views\StoryScene.lua -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\src\app\views\StoryScene.lua
   C:\Benson\QuizGameProject\QuizGame\src\app\views\StorySectionScene.lua -> C:\Benson\QuizGameProject\QuizGame\simulator\win32\src\app\views\StorySectionScene.lua
   已複製 2 個檔案

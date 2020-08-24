@@ -7,9 +7,10 @@ local utf8 = require 'lua-utf8'
 
 local rootNode
 local scheduler = cc.Director:getInstance():getScheduler()
-local storyBgs
 local currentSect, nextSectStr -- 當前所在段落, 下一段落
 local btnNext -- 下一句
+local storyBgs -- 劇情背景
+local speakerImgs -- 角色立繪
 local dialogBg, dialogBgList -- 對話框背景
 local speakerLabel -- 說話者名字的文字
 local textLabel -- 說話內容文字
@@ -43,6 +44,16 @@ function StoryScene:ctor(sect)
         storyBgRoot:getChildByName("13"),
         storyBgRoot:getChildByName("14"),
         storyBgRoot:getChildByName("15")
+    }
+
+    local speakerImgRoot = rootNode:getChildByName("Dialog"):getChildByName("CharImgs")
+    speakerImgs = {
+        speakerImgRoot:getChildByName("Teko"),
+        speakerImgRoot:getChildByName("Same"),
+        speakerImgRoot:getChildByName("Luluta"),
+        speakerImgRoot:getChildByName("Palung"),
+        speakerImgRoot:getChildByName("UharaP"),
+        speakerImgRoot:getChildByName("YangP")
     }
 
     dialogBg = rootNode:getChildByName("Dialog"):getChildByName("Bg")
@@ -100,6 +111,9 @@ end
 -- UI初始化
 function StoryScene:initUI()
     rootNode:stopAllActions()
+    for _, v in ipairs(speakerImgs) do
+        v:setVisible(false)
+    end
     for _, v in ipairs(dialogBgList) do
         v:setVisible(false)
     end
@@ -134,8 +148,8 @@ function StoryScene:nextSect(type)
                 op = "PAY_BOOKMARK",
                 id = player.id
             }
-            socket:send(json.encode(jsonObj))
-            player.bm = player.bm - 1
+            -- socket:send(json.encode(jsonObj))
+            -- player.bm = player.bm - 1
             -- 播下一段劇情
             btnNext:setEnabled(true)
             currentSect[3] = nextSectStr
@@ -203,13 +217,25 @@ function StoryScene:parseStoryScript(sect)
     local scene = require("app/views/StorySectionScene.lua"):create(currentSect)
     cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
 end
-function StoryScene:changeStoryBg(bgID)
+function StoryScene:changeStoryBg(bgID) -- 改變背景
     for _, v in ipairs(storyBgs) do
         v:setVisible(false)
     end
     storyBgs[tonumber(bgID)]:setVisible(true)
 end
-function StoryScene:changeDialogBg(id)
+function StoryScene:changeCharImg(id) -- 改變立繪
+    for _, v in ipairs(speakerImgs) do
+        v:setVisible(false)
+    end
+    if id == "100" then speakerImgs[5]:setVisible(true)
+    elseif id == "101" then speakerImgs[6]:setVisible(true)
+    elseif id == "1" then speakerImgs[1]:setVisible(true)
+    elseif id == "2" then speakerImgs[2]:setVisible(true)
+    elseif id == "3" then speakerImgs[3]:setVisible(true)
+    elseif id == "4" then speakerImgs[4]:setVisible(true)
+    end
+end
+function StoryScene:changeDialogBg(id) -- 改變對話框
     for _, v in ipairs(dialogBgList) do
         v:setVisible(false)
     end
@@ -249,6 +275,7 @@ function StoryScene:nextDialog()
         return
     end
     StoryScene:changeStoryBg(parsedScript[1][4])
+    StoryScene:changeCharImg(parsedScript[1][1])
     StoryScene:changeDialogBg(parsedScript[1][1])
     speakerLabel:setString(parsedScript[1][2]) -- 說話者
     currentText = parsedScript[1][3] -- 講的話
