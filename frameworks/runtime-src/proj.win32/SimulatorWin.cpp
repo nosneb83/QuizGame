@@ -370,7 +370,7 @@ int SimulatorWin::run()
 
         if (frameScale < 0.25f) frameScale = 0.25f;
     }
-    frameScale = 0.7f;
+    // frameScale = 0.7f;
     _project.setFrameScale(frameScale);
     CCLOG("FRAME SCALE = %0.2f", frameScale);
 

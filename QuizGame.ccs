@@ -80,6 +80,59 @@
           <Image Name="Tournament.png" />
           <Image Name="UI_PVP_Sample.png" />
         </Folder>
+        <Folder Name="Char">
+          <Folder Name="Chara_UI_kitsuna">
+            <Image Name="bar.png" />
+            <Image Name="bottom.png" />
+            <Image Name="botton_2.png" />
+            <Image Name="greenbar.png" />
+            <Image Name="Kitsuna_LV_BG.png" />
+            <Image Name="PLUS.png" />
+          </Folder>
+          <Folder Name="Chara_UI_Main">
+            <Image Name="About_BG.png" />
+            <Image Name="Name_BG.png" />
+            <Image Name="Small_BG.png" />
+          </Folder>
+          <Folder Name="Chara_UI_Skill">
+            <Image Name="botton.png" />
+            <Image Name="botton_2.png" />
+            <Image Name="W_BG_Big.png" />
+            <Image Name="W_BG_Skill_name.png" />
+            <Image Name="W_BG_Small.png" />
+          </Folder>
+          <Folder Name="Down">
+            <Image Name="arrow_L.png" />
+            <Image Name="arrow_r.png" />
+            <Image Name="BG.png" />
+            <Image Name="Lady.png" />
+            <Image Name="Lady_2.png" />
+          </Folder>
+          <Folder Name="Up_bar">
+            <Image Name="1.png" />
+            <Image Name="2.png" />
+            <Image Name="3.png" />
+            <Image Name="BG.png" />
+          </Folder>
+          <Image Name="Chara_Main_kitsuna.png" />
+          <Image Name="Chara_Main_sample.png" />
+          <Image Name="Chara_Skill_sample.png" />
+          <Image Name="Teko.png" />
+          <Project Name="CharScene.csd" Type="Scene" />
+          <Folder Name="Img">
+            <Image Name="LULUTA.png" />
+            <Image Name="LULUTA_S.png" />
+            <Image Name="Palung.png" />
+            <Image Name="Palung_S.png" />
+            <Image Name="Same.png" />
+            <Image Name="Same_S.png" />
+            <Image Name="Teko.png" />
+            <Image Name="Teko_S.png" />
+            <Image Name="uharaP.png" />
+            <Image Name="YangP.png" />
+            <Image Name="YangP_S.png" />
+          </Folder>
+        </Folder>
         <Folder Name="Default">
           <Image Name="Button_Disable.png" />
           <Image Name="Button_Normal.png" />
@@ -190,10 +243,21 @@
             <Project Name="StoryScene.csd" Type="Scene" />
             <Image Name="Story_space.png" />
             <Folder Name="Bg">
-              <Image Name="room.png" />
-              <Image Name="rouka.png" />
-              <Image Name="Black_BG.png" />
-              <Project Name="BgRoomLayer.csd" Type="Layer" />
+              <Image Name="01_Detabase.png" />
+              <Image Name="02_lab.png" />
+              <Image Name="03_lab_2.png" />
+              <Image Name="04_lab_map.png" />
+              <Image Name="05_professor_room.png" />
+              <Image Name="06_roof.png" />
+              <Image Name="07_room_2.png" />
+              <Image Name="08_room_3.png" />
+              <Image Name="09_room_4.png" />
+              <Image Name="10_rouka.png" />
+              <Image Name="11_studio.png" />
+              <Image Name="12_85.png" />
+              <Image Name="13_entrence.png" />
+              <Image Name="14_door.png" />
+              <Image Name="15_library.png" />
             </Folder>
             <Image Name="Story_Sample.png" />
             <Folder Name="Text">

@@ -12,13 +12,6 @@ import (
 
 type p = *player.Player
 
-// var userNum int = 0 // client流水號
-// var onlinemap map[string]clientData = make(map[string]clientData)
-
-// var onlinePlayerID []int
-
-// var questionList []questions.QuestionObj
-
 var waitingPlayerID int
 var waitingPlayerConn net.Conn = nil
 var waitingPlayerWg sync.WaitGroup
@@ -36,8 +29,6 @@ var Players map[int]p = make(map[int]p)
 // server為每個client開一個goroutine來handle
 func handleConnection(conn net.Conn) {
 	defer conn.Close()
-
-	// addr, client := registerNewGuest(conn)
 
 	// 玩家instance
 	player := new(player.Player)
@@ -60,17 +51,13 @@ func handleConnection(conn net.Conn) {
 	for {
 		n, _ := conn.Read(buf)
 		if n == 0 { // 離線
-			// fmt.Printf("%s [%s] 離線\n", client.name, addr)
-			// delete(onlinemap, addr)
 			if isLogin {
 				playerLogout(player)
 			}
-			// battle.LeaveRoom(player.ID)
 			return
 		}
 
 		msgRecv = string(buf[:n])
-		// fmt.Printf("%s : %s\n", client.name, msg) // server印出訊息
 		fmt.Println(msgRecv) // server印出訊息
 
 		///////////////
@@ -92,24 +79,25 @@ func handleConnection(conn net.Conn) {
 		case "LOGIN":
 			isLogin = playerLogin(jsonObj["ac"].(string), jsonObj["pw"].(string), player)
 		case "ENTER_ROOM":
-			// if waitingPlayerConn == nil { // 目前沒有人在等
-			// 	fmt.Println("no one waiting")
-			// 	waitingPlayerID = player.ID
-			// 	waitingPlayerConn = conn
-			// 	waitingPlayerWg = sync.WaitGroup{}
-			// 	waitingPlayerWg.Add(1)
-			// 	waitingPlayerWg.Wait()
-			// } else { // 有人在等，可出發
-			// 	fmt.Println("go to battle!!")
-			// 	battle.StartBattle(waitingPlayerID, player.ID, waitingPlayerConn, conn, &waitingPlayerWg)
-			// 	waitingPlayerID = -1
-			// 	waitingPlayerConn = nil
-			// }
 			battleCh = battle.Join1V1(player)
 		case "ANSWER":
 			battleCh <- jsonObj
 		case "SURRENDER":
 			battleCh <- jsonObj
+		case "PAY_BOOKMARK":
+			if player.Bookmark > 0 { // 書籤還有
+				player.Bookmark--
+				db.UpdateBookmark(player)
+				msgSend, _ := json.Marshal(map[string]interface{}{
+					"op": "PLAY_STORY",
+					"bm": player.Bookmark})
+				player.Ch <- string(msgSend)
+			} else { // 書籤沒了
+				msgSend, _ := json.Marshal(map[string]interface{}{
+					"op": "OUT_OF_BOOKMARK",
+					"bm": player.Bookmark})
+				player.Ch <- string(msgSend)
+			}
 		}
 	}
 }
@@ -156,53 +144,10 @@ func playerLogin(ac string, pw string, player p) bool {
 
 // 玩家登出
 func playerLogout(player p) {
+	battle.LeaveWaitingRoom(player.ID)
 	delete(Players, player.ID)
 	fmt.Println("Player", player.Name, "(ID:", player.ID, ") 離線, 目前線上有", len(Players), "名玩家")
 }
-
-// 新user加入聊天室
-// func registerNewGuest(conn net.Conn) (string, clientData) {
-// 	addr := conn.RemoteAddr().String()
-// 	client := clientData{"User" + fmt.Sprintf("%d", userNum), conn, 0, 100.0}
-// 	userNum++
-// 	fmt.Printf("%s [%s] 登入\n", client.name, addr)
-
-// 	// 新client加入server線上列表
-// 	onlinemap[addr] = client
-
-// 	return addr, client
-// }
-
-// 廣播
-// func broadcast(msg string, currentUserAddr string) {
-// 	for addr, client := range onlinemap {
-// 		if addr == currentUserAddr {
-// 			continue // 排除講話的人本身
-// 		}
-// 		client.conn.Write([]byte(msg))
-// 	}
-// }
-// func broadcastIncludeSelf(msg string) {
-// 	for _, client := range onlinemap {
-// 		client.conn.Write([]byte(msg))
-// 	}
-// }
-
-// // 密語
-// func privatemsg(msg string, targetUserName string) {
-// 	for _, client := range onlinemap {
-// 		if client.name == targetUserName {
-// 			client.conn.Write([]byte(msg))
-// 		}
-// 	}
-// }
-// func pmID(msg string, targetID int) {
-// 	for _, client := range onlinemap {
-// 		if client.id == targetID {
-// 			client.conn.Write([]byte(msg))
-// 		}
-// 	}
-// }
 
 func main() {
 	// 連接 MySQL DB

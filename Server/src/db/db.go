@@ -160,6 +160,14 @@ func FetchPlayerData(ac string, player p) {
 	player.Coin = coin
 }
 
+// UpdateBookmark 更新玩家書籤數量
+func UpdateBookmark(player p) {
+	sql := `UPDATE players SET bookmark = ? WHERE id = ?`
+	if _, err := db.Exec(sql, player.Bookmark, player.ID); err != nil {
+		fmt.Println("Update failed:", err)
+	}
+}
+
 ////////////////////////
 // from xuchao's blog //
 ////////////////////////

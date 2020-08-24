@@ -33,7 +33,28 @@ function StorySectionScene:ctor(chap)
 
     -- 段落按鈕
     rootNode:getChildByName("SectionBtns"):getChildByName("Btn_Sect1")
-    :addTouchEventListener(self.sect1)
+    :addTouchEventListener(self.sect)
+    rootNode:getChildByName("SectionBtns"):getChildByName("Btn_Sect2")
+    :addTouchEventListener(self.sect)
+    rootNode:getChildByName("SectionBtns"):getChildByName("Btn_Sect3")
+    :addTouchEventListener(self.sect)
+    rootNode:getChildByName("SectionBtns"):getChildByName("Btn_Sect4")
+    :addTouchEventListener(self.sect)
+    rootNode:getChildByName("SectionBtns"):getChildByName("Btn_Sect5")
+    :addTouchEventListener(self.sect)
+
+    -- socket設定
+    local function ReceiveCallback(msg)
+        -- 把每個{}分割開
+        local opStrs = string.splitAfter(msg, "}")
+        table.remove(opStrs, #opStrs)
+        -- 一個一個輪流decode
+        for i = 1, #opStrs do
+            local jsonObj = json.decode(opStrs[i])
+            self:handleOp(jsonObj)
+        end
+    end
+    socket:setReceiveCallback(ReceiveCallback)
 end
 
 -- 按鈕callbacks
@@ -49,12 +70,27 @@ function StorySectionScene:backToStory(type)
         cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
     end
 end
-function StorySectionScene:sect1(type)
+function StorySectionScene:sect(type)
     if type == ccui.TouchEventType.ended then
-        table.insert(currentChap, "0_1_2") -- 段落
+        if player.bm == 0 then return end
+        -- 叫server扣書籤
+        local jsonObj = {
+            op = "PAY_BOOKMARK",
+            id = player.id
+        }
+        socket:send(json.encode(jsonObj))
+        player.bm = player.bm - 1
+        -- 進入劇情
+        local sectStr = "0_1_" .. tostring(self:getTag())
+        table.insert(currentChap, sectStr) -- 段落6
         local scene = require("app/views/StoryScene.lua"):create(currentChap)
         cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
     end
+end
+
+-- Handle Server Op
+function StorySectionScene:handleOp(jsonObj)
+    dump(jsonObj)
 end
 
 return StorySectionScene

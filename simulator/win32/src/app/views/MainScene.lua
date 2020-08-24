@@ -112,7 +112,8 @@ end
 
 function MainScene:enterLabScene(type)
     if type == ccui.TouchEventType.ended then
-        print("研究室")
+        local scene = require("app/views/CharScene.lua"):create()
+        cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
     end
 end
 

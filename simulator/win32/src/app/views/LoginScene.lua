@@ -21,6 +21,7 @@ function LoginScene:onCreate()
 
     acInput = rootNode:getChildByName("Input"):getChildByName("UserIDInput")
     pwInput = rootNode:getChildByName("Input"):getChildByName("PasswordInput")
+    pwInput:setPasswordEnabled(true)
 
     promptPanel = rootNode:getChildByName("Prompt")
     promptText = promptPanel:getChildByName("Text")
