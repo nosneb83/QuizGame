@@ -31,6 +31,7 @@
             <Image Name="Layer_botton.png" />
             <Image Name="opinion.png" />
             <Image Name="opinion_2.png" />
+            <Image Name="ring.png" />
           </Folder>
           <Folder Name="WaitingRoom">
             <Image Name="Bg_cut.png" />

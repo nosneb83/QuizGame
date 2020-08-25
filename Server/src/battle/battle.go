@@ -83,7 +83,7 @@ func Battle1V1(players map[int]p, ch chan map[string]interface{}) {
 					playerCor[int(v["id"].(float64))] = true
 				} else {
 					playerCor[int(v["id"].(float64))] = false
-					players[int(v["id"].(float64))].Health -= 57.0
+					players[int(v["id"].(float64))].Health -= 7.0
 					bothCorrect = false
 				}
 				// 找出答比較慢的人

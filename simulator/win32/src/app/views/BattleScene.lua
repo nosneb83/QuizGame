@@ -13,6 +13,7 @@ local qText, qText2, qText3 -- 題目文字
 local correctAns -- 當前題目的正確答案
 local ansPnlTF, ansPnlCH -- 選項panel
 local ansBtnO, ansBtnX, ansBtnA, ansBtnB, ansBtnC, ansBtnD -- 選項按鈕
+local selects = {} -- 選項選擇框
 local currentAnsBtns = {} -- 當前這一題的選項按鈕們
 local feedbackT, feedbackF -- 答對答錯文字
 local sfxQues, sfxCorrect, sfxWrong -- 答題音效
@@ -58,6 +59,16 @@ function BattleScene:ctor()
 
     feedbackT = rootNode:getChildByName("Answer_feedback"):getChildByName("Correct")
     feedbackF = rootNode:getChildByName("Answer_feedback"):getChildByName("Wrong")
+
+    -- 選項選擇框
+    selects = {
+        ansBtnO:getChildByName("Selected"),
+        ansBtnX:getChildByName("Selected"),
+        ansBtnA:getChildByName("Selected"),
+        ansBtnB:getChildByName("Selected"),
+        ansBtnC:getChildByName("Selected"),
+        ansBtnD:getChildByName("Selected")
+    }
 
     enterCountdownText = rootNode:getChildByName("StartCountdown")
     -- countdownText = ansLayout:getChildByName("Countdown")
@@ -165,22 +176,40 @@ end
 -- 答題回饋
 local feedbackDuration = 2
 function BattleScene:answerO(type)
-    if type == ccui.TouchEventType.ended then BattleScene:answer(1) end
+    if type == ccui.TouchEventType.ended then
+        selects[1]:setVisible(true)
+        BattleScene:answer(1)
+    end
 end
 function BattleScene:answerX(type)
-    if type == ccui.TouchEventType.ended then BattleScene:answer(2) end
+    if type == ccui.TouchEventType.ended then
+        selects[2]:setVisible(true)
+        BattleScene:answer(2)
+    end
 end
 function BattleScene:answerA(type)
-    if type == ccui.TouchEventType.ended then BattleScene:answer(1) end
+    if type == ccui.TouchEventType.ended then
+        selects[3]:setVisible(true)
+        BattleScene:answer(1)
+    end
 end
 function BattleScene:answerB(type)
-    if type == ccui.TouchEventType.ended then BattleScene:answer(2) end
+    if type == ccui.TouchEventType.ended then
+        selects[4]:setVisible(true)
+        BattleScene:answer(2)
+    end
 end
 function BattleScene:answerC(type)
-    if type == ccui.TouchEventType.ended then BattleScene:answer(3) end
+    if type == ccui.TouchEventType.ended then
+        selects[5]:setVisible(true)
+        BattleScene:answer(3)
+    end
 end
 function BattleScene:answerD(type)
-    if type == ccui.TouchEventType.ended then BattleScene:answer(4) end
+    if type == ccui.TouchEventType.ended then
+        selects[6]:setVisible(true)
+        BattleScene:answer(4)
+    end
 end
 function BattleScene:answer(playerAns)
     self:setAnsBtnsEnabled(false)
@@ -435,8 +464,12 @@ end
 
 -- 顯示題目和選項
 function BattleScene:showQuestion(jsonObj)
-    local qType, domain
+    -- 隱藏選項框
+    for _, v in ipairs(selects) do
+        v:setVisible(false)
+    end
     -- 題型
+    local qType, domain
     if jsonObj["qtype"] == "TF" then -- 是非題
         qType = "是非題"
         qText:setString(jsonObj["ques"][1])

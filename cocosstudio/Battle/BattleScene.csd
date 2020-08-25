@@ -328,6 +328,18 @@
                 <Children>
                   <AbstractNodeData Name="O" ActionTag="-613394495" Tag="155" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="234.0058" RightMargin="12.8218" TopMargin="125.4400" BottomMargin="232.9600" TouchEnable="True" FontSize="48" ButtonText="O" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="420" Scale9Height="53" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="444.3725" Y="89.6000" />
+                    <Children>
+                      <AbstractNodeData Name="Selected" ActionTag="842607054" VisibleForFrame="False" Tag="139" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-4.9992" RightMargin="-4.9992" TopMargin="-4.9997" BottomMargin="-4.9997" LeftEage="148" RightEage="148" TopEage="24" BottomEage="24" Scale9OriginX="148" Scale9OriginY="24" Scale9Width="154" Scale9Height="27" ctype="ImageViewObjectData">
+                        <Size X="454.3708" Y="99.5993" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="222.1862" Y="44.8000" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.5000" Y="0.5000" />
+                        <PreSize X="1.0225" Y="1.1116" />
+                        <FileData Type="Normal" Path="Battle/opinion/ring.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="456.1920" Y="277.7600" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -344,6 +356,18 @@
                   </AbstractNodeData>
                   <AbstractNodeData Name="X" ActionTag="-1524281949" Tag="156" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="234.0058" RightMargin="12.8218" TopMargin="232.9600" BottomMargin="125.4400" TouchEnable="True" FontSize="48" ButtonText="X" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="420" Scale9Height="53" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="444.3725" Y="89.6000" />
+                    <Children>
+                      <AbstractNodeData Name="Selected" ActionTag="-1869473877" VisibleForFrame="False" Tag="144" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-4.9992" RightMargin="-4.9992" TopMargin="-4.9997" BottomMargin="-4.9997" LeftEage="148" RightEage="148" TopEage="24" BottomEage="24" Scale9OriginX="148" Scale9OriginY="24" Scale9Width="154" Scale9Height="27" ctype="ImageViewObjectData">
+                        <Size X="454.3708" Y="99.5993" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="222.1862" Y="44.8000" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.5000" Y="0.5000" />
+                        <PreSize X="1.0225" Y="1.1116" />
+                        <FileData Type="Normal" Path="Battle/opinion/ring.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="456.1920" Y="170.2400" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -370,11 +394,23 @@
                 <EndColor A="255" R="255" G="255" B="255" />
                 <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
-              <AbstractNodeData Name="CH" ActionTag="-2018952941" Tag="69" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="231" RightEage="231" TopEage="165" BottomEage="165" Scale9OriginX="-231" Scale9OriginY="-165" Scale9Width="462" Scale9Height="330" ctype="PanelObjectData">
+              <AbstractNodeData Name="CH" ActionTag="-2018952941" VisibleForFrame="False" Tag="69" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="231" RightEage="231" TopEage="165" BottomEage="165" Scale9OriginX="-231" Scale9OriginY="-165" Scale9Width="462" Scale9Height="330" ctype="PanelObjectData">
                 <Size X="691.2000" Y="448.0000" />
                 <Children>
                   <AbstractNodeData Name="A" ActionTag="98260602" Tag="71" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="192.5338" RightMargin="54.2938" TopMargin="17.9200" BottomMargin="340.4800" TouchEnable="True" FontSize="36" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="420" Scale9Height="53" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="444.3725" Y="89.6000" />
+                    <Children>
+                      <AbstractNodeData Name="Selected" ActionTag="-1632722225" VisibleForFrame="False" Tag="140" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-4.9992" RightMargin="-4.9992" TopMargin="-4.9997" BottomMargin="-4.9997" LeftEage="148" RightEage="148" TopEage="24" BottomEage="24" Scale9OriginX="148" Scale9OriginY="24" Scale9Width="154" Scale9Height="27" ctype="ImageViewObjectData">
+                        <Size X="454.3708" Y="99.5993" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="222.1862" Y="44.8000" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.5000" Y="0.5000" />
+                        <PreSize X="1.0225" Y="1.1116" />
+                        <FileData Type="Normal" Path="Battle/opinion/ring.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="414.7200" Y="385.2800" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -391,6 +427,18 @@
                   </AbstractNodeData>
                   <AbstractNodeData Name="B" ActionTag="-1330155836" Tag="145" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="234.0058" RightMargin="12.8218" TopMargin="125.4400" BottomMargin="232.9600" TouchEnable="True" FontSize="36" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="420" Scale9Height="53" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="444.3725" Y="89.6000" />
+                    <Children>
+                      <AbstractNodeData Name="Selected" ActionTag="204153555" VisibleForFrame="False" Tag="141" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-4.9992" RightMargin="-4.9992" TopMargin="-4.9997" BottomMargin="-4.9997" LeftEage="148" RightEage="148" TopEage="24" BottomEage="24" Scale9OriginX="148" Scale9OriginY="24" Scale9Width="154" Scale9Height="27" ctype="ImageViewObjectData">
+                        <Size X="454.3708" Y="99.5993" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="222.1862" Y="44.8000" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.5000" Y="0.5000" />
+                        <PreSize X="1.0225" Y="1.1116" />
+                        <FileData Type="Normal" Path="Battle/opinion/ring.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="456.1920" Y="277.7600" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -407,6 +455,18 @@
                   </AbstractNodeData>
                   <AbstractNodeData Name="C" ActionTag="1745751741" Tag="146" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="234.0058" RightMargin="12.8218" TopMargin="232.9600" BottomMargin="125.4400" TouchEnable="True" FontSize="36" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="420" Scale9Height="53" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="444.3725" Y="89.6000" />
+                    <Children>
+                      <AbstractNodeData Name="Selected" ActionTag="531548334" VisibleForFrame="False" Tag="142" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-4.9992" RightMargin="-4.9992" TopMargin="-4.9997" BottomMargin="-4.9997" LeftEage="148" RightEage="148" TopEage="24" BottomEage="24" Scale9OriginX="148" Scale9OriginY="24" Scale9Width="154" Scale9Height="27" ctype="ImageViewObjectData">
+                        <Size X="454.3708" Y="99.5993" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="222.1862" Y="44.8000" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.5000" Y="0.5000" />
+                        <PreSize X="1.0225" Y="1.1116" />
+                        <FileData Type="Normal" Path="Battle/opinion/ring.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="456.1920" Y="170.2400" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
@@ -423,6 +483,18 @@
                   </AbstractNodeData>
                   <AbstractNodeData Name="D" ActionTag="-1242555771" Tag="147" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="192.5338" RightMargin="54.2938" TopMargin="340.4800" BottomMargin="17.9200" TouchEnable="True" FontSize="36" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="420" Scale9Height="53" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                     <Size X="444.3725" Y="89.6000" />
+                    <Children>
+                      <AbstractNodeData Name="Selected" ActionTag="-227590612" VisibleForFrame="False" Tag="143" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-4.9992" RightMargin="-4.9992" TopMargin="-4.9997" BottomMargin="-4.9997" LeftEage="148" RightEage="148" TopEage="24" BottomEage="24" Scale9OriginX="148" Scale9OriginY="24" Scale9Width="154" Scale9Height="27" ctype="ImageViewObjectData">
+                        <Size X="454.3708" Y="99.5993" />
+                        <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                        <Position X="222.1862" Y="44.8000" />
+                        <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                        <CColor A="255" R="255" G="255" B="255" />
+                        <PrePosition X="0.5000" Y="0.5000" />
+                        <PreSize X="1.0225" Y="1.1116" />
+                        <FileData Type="Normal" Path="Battle/opinion/ring.png" Plist="" />
+                      </AbstractNodeData>
+                    </Children>
                     <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                     <Position X="414.7200" Y="62.7200" />
                     <Scale ScaleX="1.0000" ScaleY="1.0000" />
