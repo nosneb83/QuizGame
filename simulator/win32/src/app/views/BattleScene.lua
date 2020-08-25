@@ -7,6 +7,7 @@ local opponent = require("player.lua"):new()
 
 local rootNode
 local quesLayout, ansLayout -- layout
+local playerO, playerX, opponentO, opponentX -- 雙方頭像OX
 local domainText -- 題目類型&領域
 local qText, qText2, qText3 -- 題目文字
 local correctAns -- 當前題目的正確答案
@@ -16,15 +17,16 @@ local currentAnsBtns = {} -- 當前這一題的選項按鈕們
 local feedbackT, feedbackF -- 答對答錯文字
 local sfxQues, sfxCorrect, sfxWrong -- 答題音效
 local enterCountdownText -- 開場倒數文字
-local countdownText -- 倒數文字
+local countdownText, timeBar -- 倒數文字
 local countdownNum -- 倒數秒數
 local playerHealthBar, opponentHealthBar, healthRec -- 血條
 local isWaiting = false -- 是否正在等待另一名玩家
-local skillBtn -- 開技能的按鈕
-local skillMark -- 技能CD標示
+local skillBtn, skillBtnMask -- 開技能的按鈕, 遮罩
+-- local skillMark -- 技能CD標示
 local isBehind = false -- 玩家是否正在落後
 local vicLayer, defLayer -- 勝負結算畫面
 local waitLayer -- 等待畫面
+local dmgSpd, easeAmount = 1.5, 3 -- 扣血動畫速度, 平滑度
 
 function BattleScene:ctor()
     rootNode = cc.CSLoader:createNode("Battle/BattleScene.csb")
@@ -58,13 +60,18 @@ function BattleScene:ctor()
     feedbackF = rootNode:getChildByName("Answer_feedback"):getChildByName("Wrong")
 
     enterCountdownText = rootNode:getChildByName("StartCountdown")
-    countdownText = ansLayout:getChildByName("Countdown")
+    -- countdownText = ansLayout:getChildByName("Countdown")
+    countdownText = quesLayout:getChildByName("TimeText")
+    timeBar = quesLayout:getChildByName("TimeBar")
     skillBtn = ansLayout:getChildByName("SkillButton")
+    skillBtn:setZoomScale(-0.1)
+    skillBtn:setPressedActionEnabled(true)
     skillBtn:addTouchEventListener(self.skillOnClick)
-    skillMark = rootNode:getChildByName("SkillCooldownMark")
-
+    -- skillMark = rootNode:getChildByName("SkillCooldownMark")
+    skillBtnMask = ansLayout:getChildByName("SkillBtnMask")
     ansLayout:setVisible(false) -- 隱藏答案layout
 
+    -- 血條
     playerHealthBar = rootNode:getChildByName("PlayerHealth")
     opponentHealthBar = rootNode:getChildByName("OpponentHealth")
     healthRec = playerHealthBar:getBoundingBox() -- 取得血條BoundingBox
@@ -92,14 +99,21 @@ function BattleScene:ctor()
     rootNode:addChild(waitLayer)
     waitLayer:getChildByName("Bg"):runAction(cc.RepeatForever:create(cc.RotateBy:create(40, 360)))
 
+    -- 頭像答對答錯OX
+    local staticPanel = rootNode:getChildByName("StaticPanel")
+    playerO = staticPanel:getChildByName("PlayerO")
+    playerX = staticPanel:getChildByName("PlayerX")
+    opponentO = staticPanel:getChildByName("OpponentO")
+    opponentX = staticPanel:getChildByName("OpponentX")
+
     -- 設定頭像
     if player.id == 2 then
-        local playerIcon = rootNode:getChildByName("StaticPanel"):getChildByName("PlayerIcon")
-        local opponentIcon = rootNode:getChildByName("StaticPanel"):getChildByName("OpponentIcon")
-        local p1x, p1y = playerIcon:getPosition()
-        local p2x, p2y = opponentIcon:getPosition()
-        playerIcon:setPosition(p2x, p2y)
-        opponentIcon:setPosition(p1x, p1y)
+        -- local playerIcon = rootNode:getChildByName("StaticPanel"):getChildByName("PlayerIcon")
+        -- local opponentIcon = rootNode:getChildByName("StaticPanel"):getChildByName("OpponentIcon")
+        -- local p1x, p1y = playerIcon:getPosition()
+        -- local p2x, p2y = opponentIcon:getPosition()
+        -- playerIcon:setPosition(p2x, p2y)
+        -- opponentIcon:setPosition(p1x, p1y)
     end
 
     -- socket設定
@@ -171,13 +185,13 @@ end
 function BattleScene:answer(playerAns)
     self:setAnsBtnsEnabled(false)
     local timeUsed = self:stopCountdown()
-    if playerAns == correctAns then
-        self:showFeedback(feedbackT, feedbackF)
-        cc.SimpleAudioEngine:getInstance():playEffect("SFX/Quiz-Buzzer01-mp3/Quiz-Buzzer01-1.mp3")
-    else
-        self:showFeedback(feedbackF, feedbackT)
-        cc.SimpleAudioEngine:getInstance():playEffect("SFX/Quiz-Wrong_Buzzer01-mp3/Quiz-Wrong_Buzzer01-1.mp3")
-    end
+    -- if playerAns == correctAns then
+    --     self:showFeedback(feedbackT, feedbackF)
+    --     cc.SimpleAudioEngine:getInstance():playEffect("SFX/Quiz-Buzzer01-mp3/Quiz-Buzzer01-1.mp3")
+    -- else
+    --     self:showFeedback(feedbackF, feedbackT)
+    --     cc.SimpleAudioEngine:getInstance():playEffect("SFX/Quiz-Wrong_Buzzer01-mp3/Quiz-Wrong_Buzzer01-1.mp3")
+    -- end
     local jsonObj = {
         op = "ANSWER",
         id = player.id,
@@ -193,6 +207,23 @@ function BattleScene:showFeedback(showing, hiding)
     showing:runAction(cc.Sequence:create(cc.Show:create(), cc.DelayTime:create(feedbackDuration), cc.Hide:create()))
 end
 
+-- 顯示頭像OX
+function BattleScene:showOX(id, cor)
+    if id == player.id then
+        if cor then playerO:setVisible(true)
+        else playerX:setVisible(true) end
+    else
+        if cor then opponentO:setVisible(true)
+        else opponentX:setVisible(true) end
+    end
+end
+function BattleScene:hideOX()
+    playerO:setVisible(false)
+    playerX:setVisible(false)
+    opponentO:setVisible(false)
+    opponentX:setVisible(false)
+end
+
 -- 進房倒數
 function BattleScene:countDown(jsonObj)
     waitLayer:setVisible(false)
@@ -201,6 +232,9 @@ function BattleScene:countDown(jsonObj)
     player.health = 60
     player.tempHealth = 60
     opponent.health = 60
+
+    -- 技能初始化
+    player.skillGauge = 0
 
     -- 數字
     local initScale = cc.ScaleTo:create(0, 5)
@@ -224,7 +258,7 @@ function BattleScene:countDown(jsonObj)
     cc.CallFunc:create(function()
         quesLayout:setVisible(true)
         ansLayout:setVisible(true)
-        self:setSkillCDMarkPos()
+        -- self:setSkillCDMarkPos()
         self:showQuestion(jsonObj)
     end)))
 
@@ -237,25 +271,25 @@ function BattleScene:countDown(jsonObj)
 end
 
 -- 設定技能CD箭頭位置
-function BattleScene:setSkillCDMarkPos()
-    if player.tempHealth == nil then
-        player.skillReadyTime = player.health - player.skillCD
-    else
-        player.skillReadyTime = math.min(player.health, player.tempHealth) - player.skillCD
-    end
-    if player.skillReadyTime < 0 then
-        skillMark:setVisible(false)
-        return
-    end
-    local skillMarkX = healthRec.x + healthRec.width
-    local skillMarkY = healthRec.y + healthRec.height * player.skillReadyTime / 60
-    skillMark:setVisible(true):setPosition(skillMarkX, skillMarkY)
-end
-
+-- function BattleScene:setSkillCDMarkPos()
+-- if player.tempHealth == nil then
+--     player.skillReadyTime = player.health - player.skillCD
+-- else
+--     player.skillReadyTime = math.min(player.health, player.tempHealth) - player.skillCD
+-- end
+-- if player.skillReadyTime < 0 then
+--     skillMark:setVisible(false)
+--     return
+-- end
+-- local skillMarkX = healthRec.x + healthRec.width
+-- local skillMarkY = healthRec.y + healthRec.height * player.skillReadyTime / 60
+-- skillMark:setVisible(true):setPosition(skillMarkX, skillMarkY)
+-- end
 -- 答題倒數
 function BattleScene:startCountdown()
     countdownNum = 10
     countdownText:setString(string.format("%.2f", countdownNum))
+    timeBar:setScaleX(1)
     rootNode:resume()
 end
 function BattleScene:countdownUpdate(dt)
@@ -263,15 +297,16 @@ function BattleScene:countdownUpdate(dt)
     countdownNum = math.max(0, countdownNum - dt)
     -- 倒數數字
     countdownText:setString(string.format("%.2f", countdownNum))
-    -- 血條隨時間慢慢遞減
-    player.tempHealth = math.max(0, player.health - 10 + countdownNum)
-    playerHealthBar:setScaleY(player.tempHealth / 60)
-    skillBtn:setEnabled(player:isSkillReady())
-    -- 血量歸零直接gameover
-    if player.tempHealth == 0 then
-        self:surrender()
-        return
-    end
+    timeBar:setScaleX(math.max(0, countdownNum / 10))
+    -- -- 血條隨時間慢慢遞減
+    -- player.tempHealth = math.max(0, player.health - 10 + countdownNum)
+    -- playerHealthBar:setScaleY(player.tempHealth / 60)
+    -- skillBtn:setEnabled(player:isSkillReady())
+    -- -- 血量歸零直接gameover
+    -- if player.tempHealth == 0 then
+    --     self:surrender()
+    --     return
+    -- end
     -- 時間用盡時視為答錯
     if countdownNum == 0 then
         self:answer(5)
@@ -282,6 +317,7 @@ function BattleScene:stopCountdown()
     if countdownNum ~= nil then timeUsed = 10 - countdownNum end
     countdownNum = nil
     countdownText:setString("")
+    timeBar:setScaleX(0)
     rootNode:pause()
     return timeUsed
 end
@@ -289,8 +325,9 @@ end
 -- 技能
 function BattleScene:skillOnClick(type)
     if type == ccui.TouchEventType.ended then
-        skillBtn:setEnabled(false)
-        BattleScene:setSkillCDMarkPos()
+        player.skillGauge = 0
+        BattleScene:setSkillBtnGauge(0)
+        BattleScene:setSkillBtnEnabled(false)
         -- 顯示答案選項
         ansBtnO:setVisible(correctAns == 1)
         ansBtnX:setVisible(correctAns == 2)
@@ -354,10 +391,9 @@ end
 
 -- Handle Server Op
 function BattleScene:handleOp(jsonObj)
-    dump(jsonObj)
     -- 處理指令
     local op = jsonObj["op"]
-    if op == "SEND_QUESTION" then
+    if op == "SEND_QUESTION" then -- 出題
         if isWaiting then
             print("is waiting")
             self:countDown(jsonObj)
@@ -366,19 +402,33 @@ function BattleScene:handleOp(jsonObj)
             print("not waiting")
             self:showQuestion(jsonObj)
         end
-    elseif op == "BATTLE_RESULT" then
+    elseif op == "BATTLE_INIT" then -- 設定雙方暱稱
+        local staticPanel = rootNode:getChildByName("StaticPanel")
         if jsonObj["id"] == player.id then
+            staticPanel:getChildByName("PlayerName"):setString(jsonObj["name"])
+        else
+            staticPanel:getChildByName("OpponentName"):setString(jsonObj["name"])
+        end
+    elseif op == "BATTLE_RESULT" then -- 演出雙方扣血
+        dump(jsonObj)
+        self:showOX(jsonObj["id"], jsonObj["cor"])
+        if jsonObj["id"] == player.id then
+            local dmg = player.health - jsonObj["health"]
             player.health = jsonObj["health"]
-            local s = cc.ScaleTo:create(0.7, 1, player.health / 60)
-            local e = cc.EaseInOut:create(s, 3)
+            local s = cc.ScaleTo:create(dmgSpd, 1, player.health / 60)
+            local e = cc.EaseInOut:create(s, easeAmount)
             playerHealthBar:runAction(e)
+            -- 累積技能能量
+            player.skillGauge = player.skillGauge + dmg
+            self:setSkillBtnGauge()
         else
             opponent.health = jsonObj["health"]
-            local s = cc.ScaleTo:create(0.7, 1, opponent.health / 60)
-            local e = cc.EaseInOut:create(s, 3)
+            local s = cc.ScaleTo:create(dmgSpd, 1, opponent.health / 60)
+            local e = cc.EaseInOut:create(s, easeAmount)
             opponentHealthBar:runAction(e)
         end
-    elseif op == "BATTLE_OVER" then
+    elseif op == "BATTLE_OVER" then -- 演出勝負
+        dump(jsonObj)
         self:gameover(jsonObj["win"])
     end
 end
@@ -448,6 +498,8 @@ function BattleScene:showQuestion(jsonObj)
     domainText:setString(qType .. " / " .. domain)
     -- 新題目出現的音效
     cc.SimpleAudioEngine:getInstance():playEffect("SFX/Quiz-Question02-mp3/Quiz-Question02-1.mp3")
+    -- 隱藏頭像OX
+    self:hideOX()
     -- 開始倒數
     self:startCountdown()
     -- 偵測是否落後
@@ -465,10 +517,13 @@ function BattleScene:showClues(delay)
     qText3:runAction(seq2)
 end
 
+-- 切換顯示選擇題與是非題選項
 function BattleScene:showAnsPnl(showing, hiding)
     hiding:setVisible(false)
     showing:setVisible(true)
 end
+
+-- 選項按鈕切換可按/不可按
 function BattleScene:setAnsBtnsEnabled(enabled, ...)
     if select('#', ...) > 0 then
         currentAnsBtns = { ... }
@@ -479,8 +534,32 @@ function BattleScene:setAnsBtnsEnabled(enabled, ...)
             v:setVisible(true):setEnabled(enabled)
         end
     end
-    skillBtn:setEnabled(player.isSkillReady())
+    -- 是否能使用技能
+    self:setSkillBtnEnabled(enabled)
 end
+
+-- 設定技能按鈕狀態
+function BattleScene:setSkillBtnGauge(time) -- 設定遮罩
+    if time == nil then time = dmgSpd end
+    local s = cc.ScaleTo:create(time, 1, 1 - math.min(1, player.skillGauge / player.skillCD))
+    local e = cc.EaseInOut:create(s, easeAmount)
+    skillBtnMask:runAction(e)
+end
+function BattleScene:setSkillBtnEnabled(enabled) -- 設定可不可用
+    if enabled == false then skillBtn:setEnabled(false) return end
+    if player.skillGauge >= player.skillCD then
+        if isBehind then -- 落後時按鈕為紅色
+            skillBtn:loadTextureNormal("Battle/Skill/Cir_red.png")
+        else
+            skillBtn:loadTextureNormal("Battle/Skill/Cir_Orange.png")
+        end
+        skillBtn:setEnabled(true)
+    else
+        skillBtn:setEnabled(false)
+    end
+end
+
+-- 打亂選項
 function BattleScene:shuffleAns(list)
     for i = #list, 2, -1 do
         local j = math.random(i)

@@ -12,25 +12,6 @@ import (
 
 type p *player.Player
 
-// type room1V1 struct {
-// 	ID      int         // 房號
-// 	State   int         // 房間狀態 0:等待中 1:戰鬥中
-// 	Ch      chan string // 玩家答題等等訊息從這傳入
-// 	Players map[int]p
-// }
-
-// func (r *room1V1) Join(player p) {
-// 	r.Players[player.ID] = player
-// 	if len(r.Players) == 2 {
-// 		go r.StartBattle()
-// 		r.Players = make(map[int]p)
-// 	}
-// }
-
-// func (r *room1V1) StartBattle() {
-
-// }
-
 var waitingRoom1V1 map[int]p = make(map[int]p) // k:id, v:playerObj
 var waitingRoomCh chan map[string]interface{} = make(chan map[string]interface{})
 
@@ -51,6 +32,16 @@ var questionList []questions.QuestionObj
 
 // Battle1V1 開始1V1戰鬥
 func Battle1V1(players map[int]p, ch chan map[string]interface{}) {
+	// 廣播雙方暱稱
+	for _, v := range players {
+		msgSend, _ := json.Marshal(map[string]interface{}{
+			"op":   "BATTLE_INIT",
+			"id":   v.ID,
+			"name": v.Name})
+		for _, vv := range players {
+			vv.Ch <- string(msgSend)
+		}
+	}
 	// 玩家血量初始化
 	for _, v := range players {
 		v.Health = 60.0
@@ -83,12 +74,16 @@ func Battle1V1(players map[int]p, ch chan map[string]interface{}) {
 			bothCorrect := true
 			slowestAns := make(map[string]interface{})
 			slowestAns["time"] = float64(-1.0)
+			playerCor := make(map[int]bool) // 記錄玩家答對答錯
 			for _, v := range receivedAnswer {
 				// 扣掉消耗的時間
 				players[int(v["id"].(float64))].Health -= v["time"].(float64)
 				// 答錯扣血
-				if !v["cor"].(bool) {
-					players[int(v["id"].(float64))].Health -= 7.0
+				if v["cor"].(bool) {
+					playerCor[int(v["id"].(float64))] = true
+				} else {
+					playerCor[int(v["id"].(float64))] = false
+					players[int(v["id"].(float64))].Health -= 57.0
 					bothCorrect = false
 				}
 				// 找出答比較慢的人
@@ -103,12 +98,17 @@ func Battle1V1(players map[int]p, ch chan map[string]interface{}) {
 			// 處理完畢, 通知client演出
 			loser := &player.Player{ID: -1, Health: 0.0}
 			for _, v := range players {
-				if v.Health <= loser.Health {
-					loser = v
+				if v.Health <= 0.0 {
+					if loser.ID != -1 && loser.Health == v.Health { // 平手
+						loser = &player.Player{ID: -2, Health: 0.0}
+					} else {
+						loser = v
+					}
 				}
 				msgSend, _ := json.Marshal(map[string]interface{}{
 					"op":     "BATTLE_RESULT",
 					"id":     v.ID,
+					"cor":    playerCor[v.ID],
 					"health": math.Max(0.0, v.Health)})
 				for _, vv := range players {
 					vv.Ch <- string(msgSend)
@@ -132,7 +132,7 @@ func Battle1V1(players map[int]p, ch chan map[string]interface{}) {
 					fmt.Println("Player ID:", v.ID, ", Health:", v.Health)
 				}
 				// 出下一題
-				time.Sleep(2 * time.Second)
+				time.Sleep(4 * time.Second)
 				sendQuestion(players)
 			}
 		}

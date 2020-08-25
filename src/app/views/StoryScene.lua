@@ -20,7 +20,7 @@ local parsedScript -- 該段落的逐行劇本
 local contPanel, outOfBMPanel -- 繼續觀看panel, 書籤沒了panel
 -- 打字機效果
 local typewriterTime
-local typewritingSpd = 0.03
+local typewritingSpd = 0.04
 
 function StoryScene:ctor(sect)
     currentSect = sect
@@ -82,7 +82,7 @@ function StoryScene:ctor(sect)
     outOfBMPanel:getChildByName("Y")
     :addTouchEventListener(self.backToSect)
 
-    csvFile = csv.open(cc.FileUtils:getInstance():getWritablePath() .. "Server/Story.csv")
+    csvFile = csv.open(cc.FileUtils:getInstance():fullPathForFilename("Story.csv"))
     parsedScript = self:parseStoryScript(currentSect[3])
     StoryScene:changeStoryBg(parsedScript[1][4])
     rootNode:runAction(cc.Sequence:create(

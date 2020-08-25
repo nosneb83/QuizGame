@@ -19,43 +19,127 @@
                 <PreSize X="1.0384" Y="1.0001" />
                 <FileData Type="Normal" Path="Battle/bg.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="PlayerIcon" ActionTag="77535611" Tag="125" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="10.6000" RightMargin="543.4000" TopMargin="19.4000" BottomMargin="1094.6000" LeftEage="54" RightEage="54" TopEage="54" BottomEage="54" Scale9OriginX="54" Scale9OriginY="54" Scale9Width="58" Scale9Height="58" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="PlayerIcon" ActionTag="77535611" Tag="125" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="81.1600" RightMargin="472.8400" TopMargin="27.0801" BottomMargin="1086.9199" LeftEage="54" RightEage="54" TopEage="54" BottomEage="54" Scale9OriginX="54" Scale9OriginY="54" Scale9Width="58" Scale9Height="58" ctype="ImageViewObjectData">
                 <Size X="166.0000" Y="166.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="93.6000" Y="1177.6000" />
+                <Position X="164.1600" Y="1169.9199" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.1300" Y="0.9200" />
+                <PrePosition X="0.2280" Y="0.9140" />
                 <PreSize X="0.2306" Y="0.1297" />
                 <FileData Type="Normal" Path="Battle/Player_2.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="OpponentIcon" ActionTag="913892806" Tag="126" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="543.9000" RightMargin="11.1000" TopMargin="19.9000" BottomMargin="1095.1000" LeftEage="54" RightEage="54" TopEage="54" BottomEage="54" Scale9OriginX="54" Scale9OriginY="54" Scale9Width="57" Scale9Height="57" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="PlayerO" ActionTag="1218660698" VisibleForFrame="False" Alpha="204" Tag="135" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="81.6600" RightMargin="473.3400" TopMargin="27.5801" BottomMargin="1087.4199" LeftEage="54" RightEage="54" TopEage="54" BottomEage="54" Scale9OriginX="54" Scale9OriginY="54" Scale9Width="57" Scale9Height="57" ctype="ImageViewObjectData">
                 <Size X="165.0000" Y="165.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="626.4000" Y="1177.6000" />
+                <Position X="164.1600" Y="1169.9199" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.8700" Y="0.9200" />
+                <PrePosition X="0.2280" Y="0.9140" />
                 <PreSize X="0.2292" Y="0.1289" />
-                <FileData Type="Normal" Path="Battle/player_1.png" Plist="" />
+                <FileData Type="Normal" Path="Battle/O.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="PlayerHealthBg" ActionTag="278828490" Tag="130" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="11.0000" RightMargin="659.0000" TopMargin="210.8000" BottomMargin="569.2000" LeftEage="16" RightEage="16" TopEage="54" BottomEage="54" Scale9OriginX="16" Scale9OriginY="54" Scale9Width="18" Scale9Height="392" ctype="ImageViewObjectData">
-                <Size X="50.0000" Y="500.0000" />
+              <AbstractNodeData Name="PlayerX" ActionTag="1253339996" VisibleForFrame="False" Alpha="204" Tag="136" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="81.6600" RightMargin="473.3400" TopMargin="27.5801" BottomMargin="1087.4199" LeftEage="54" RightEage="54" TopEage="54" BottomEage="54" Scale9OriginX="54" Scale9OriginY="54" Scale9Width="57" Scale9Height="57" ctype="ImageViewObjectData">
+                <Size X="165.0000" Y="165.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="36.0000" Y="819.2000" />
+                <Position X="164.1600" Y="1169.9199" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.0500" Y="0.6400" />
+                <PrePosition X="0.2280" Y="0.9140" />
+                <PreSize X="0.2292" Y="0.1289" />
+                <FileData Type="Normal" Path="Battle/X.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="PlayerNameBg" ActionTag="-579139781" Tag="110" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="18.1800" RightMargin="409.8032" TopMargin="192.5999" BottomMargin="1037.4001" LeftEage="16" RightEage="16" TopEage="16" BottomEage="16" Scale9OriginX="16" Scale9OriginY="16" Scale9Width="168" Scale9Height="18" ctype="ImageViewObjectData">
+                <Size X="292.0168" Y="50.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="164.1884" Y="1062.4001" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.2280" Y="0.8300" />
+                <PreSize X="0.4056" Y="0.0391" />
+                <FileData Type="Normal" Path="Battle/nametag.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="PlayerName" ActionTag="1129643088" Tag="112" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="93.1600" RightMargin="484.8400" TopMargin="199.1000" BottomMargin="1043.9000" FontSize="28" LabelText="困哈星教授" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="142.0000" Y="37.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="164.1600" Y="1062.4000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="0" G="0" B="0" />
+                <PrePosition X="0.2280" Y="0.8300" />
+                <PreSize X="0.1972" Y="0.0289" />
+                <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="PlayerHealthBg" ActionTag="278828490" Tag="130" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="18.2160" RightMargin="651.8160" TopMargin="262.0161" BottomMargin="518.0159" LeftEage="16" RightEage="16" TopEage="54" BottomEage="54" Scale9OriginX="16" Scale9OriginY="54" Scale9Width="18" Scale9Height="392" ctype="ImageViewObjectData">
+                <Size X="49.9680" Y="499.9680" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="43.2000" Y="767.9999" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.0600" Y="0.6000" />
                 <PreSize X="0.0694" Y="0.3906" />
                 <FileData Type="Normal" Path="Battle/HPbar_null.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="OpponentHealthBg" ActionTag="690566889" Tag="131" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="659.0000" RightMargin="11.0000" TopMargin="210.8000" BottomMargin="569.2000" LeftEage="16" RightEage="16" TopEage="54" BottomEage="54" Scale9OriginX="16" Scale9OriginY="54" Scale9Width="18" Scale9Height="392" ctype="ImageViewObjectData">
-                <Size X="50.0000" Y="500.0000" />
+              <AbstractNodeData Name="OpponentIcon" ActionTag="913892806" Tag="126" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="473.3400" RightMargin="81.6600" TopMargin="27.5801" BottomMargin="1087.4199" LeftEage="54" RightEage="54" TopEage="54" BottomEage="54" Scale9OriginX="54" Scale9OriginY="54" Scale9Width="57" Scale9Height="57" ctype="ImageViewObjectData">
+                <Size X="165.0000" Y="165.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="684.0000" Y="819.2000" />
+                <Position X="555.8400" Y="1169.9199" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.9500" Y="0.6400" />
+                <PrePosition X="0.7720" Y="0.9140" />
+                <PreSize X="0.2292" Y="0.1289" />
+                <FileData Type="Normal" Path="Battle/player_1.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="OpponentO" ActionTag="969197720" VisibleForFrame="False" Alpha="204" Tag="138" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="473.3400" RightMargin="81.6600" TopMargin="27.5801" BottomMargin="1087.4199" LeftEage="54" RightEage="54" TopEage="54" BottomEage="54" Scale9OriginX="54" Scale9OriginY="54" Scale9Width="57" Scale9Height="57" ctype="ImageViewObjectData">
+                <Size X="165.0000" Y="165.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="555.8400" Y="1169.9199" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.7720" Y="0.9140" />
+                <PreSize X="0.2292" Y="0.1289" />
+                <FileData Type="Normal" Path="Battle/O.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="OpponentX" ActionTag="-950974755" VisibleForFrame="False" Alpha="204" Tag="137" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="473.3400" RightMargin="81.6600" TopMargin="27.5801" BottomMargin="1087.4199" LeftEage="54" RightEage="54" TopEage="54" BottomEage="54" Scale9OriginX="54" Scale9OriginY="54" Scale9Width="57" Scale9Height="57" ctype="ImageViewObjectData">
+                <Size X="165.0000" Y="165.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="555.8400" Y="1169.9199" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.7720" Y="0.9140" />
+                <PreSize X="0.2292" Y="0.1289" />
+                <FileData Type="Normal" Path="Battle/X.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="OpponentNameBg" ActionTag="-386804703" Tag="111" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="409.8240" RightMargin="18.1440" TopMargin="192.6000" BottomMargin="1037.4000" LeftEage="16" RightEage="16" TopEage="16" BottomEage="16" Scale9OriginX="16" Scale9OriginY="16" Scale9Width="168" Scale9Height="18" ctype="ImageViewObjectData">
+                <Size X="292.0320" Y="50.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="555.8400" Y="1062.4000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.7720" Y="0.8300" />
+                <PreSize X="0.4056" Y="0.0391" />
+                <FileData Type="Normal" Path="Battle/nametag.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="OpponentName" ActionTag="-1603807788" Tag="113" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="429.3400" RightMargin="37.6600" TopMargin="199.1000" BottomMargin="1043.9000" FontSize="28" LabelText="三十公分超巨大寶劍" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="253.0000" Y="37.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="555.8400" Y="1062.4000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="0" G="0" B="0" />
+                <PrePosition X="0.7720" Y="0.8300" />
+                <PreSize X="0.3514" Y="0.0289" />
+                <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="OpponentHealthBg" ActionTag="690566889" Tag="131" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="651.8160" RightMargin="18.2160" TopMargin="262.0161" BottomMargin="518.0159" LeftEage="16" RightEage="16" TopEage="54" BottomEage="54" Scale9OriginX="16" Scale9OriginY="54" Scale9Width="18" Scale9Height="392" ctype="ImageViewObjectData">
+                <Size X="49.9680" Y="499.9680" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="676.8000" Y="767.9999" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.9400" Y="0.6000" />
                 <PreSize X="0.0694" Y="0.3906" />
                 <FileData Type="Normal" Path="Battle/HPbar_null.png" Plist="" />
               </AbstractNodeData>
@@ -71,46 +155,46 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="PlayerHealth" ActionTag="377843005" Tag="133" IconVisible="False" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="11.0200" RightMargin="659.0120" TopMargin="210.8120" BottomMargin="569.2200" LeftEage="16" RightEage="16" TopEage="54" BottomEage="54" Scale9OriginX="16" Scale9OriginY="54" Scale9Width="18" Scale9Height="392" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="PlayerHealth" ActionTag="377843005" Tag="133" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="18.2160" RightMargin="651.8160" TopMargin="262.0160" BottomMargin="518.0160" LeftEage="16" RightEage="16" TopEage="54" BottomEage="54" Scale9OriginX="16" Scale9OriginY="54" Scale9Width="18" Scale9Height="392" ctype="ImageViewObjectData">
             <Size X="49.9680" Y="499.9680" />
-            <AnchorPoint />
-            <Position X="11.0200" Y="569.2200" />
+            <AnchorPoint ScaleX="0.5000" />
+            <Position X="43.2000" Y="518.0160" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.0153" Y="0.4447" />
+            <PrePosition X="0.0600" Y="0.4047" />
             <PreSize X="0.0694" Y="0.3906" />
             <FileData Type="Normal" Path="Battle/HPbar_Green.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="OpponentHealth" ActionTag="-86118251" Tag="132" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="659.0160" RightMargin="11.0160" TopMargin="210.7839" BottomMargin="569.2160" LeftEage="16" RightEage="16" TopEage="54" BottomEage="54" Scale9OriginX="16" Scale9OriginY="54" Scale9Width="18" Scale9Height="392" ctype="ImageViewObjectData">
-            <Size X="49.9680" Y="500.0000" />
+          <AbstractNodeData Name="OpponentHealth" ActionTag="-86118251" Tag="132" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="651.8160" RightMargin="18.2160" TopMargin="262.0160" BottomMargin="518.0160" LeftEage="16" RightEage="16" TopEage="54" BottomEage="54" Scale9OriginX="16" Scale9OriginY="54" Scale9Width="18" Scale9Height="392" ctype="ImageViewObjectData">
+            <Size X="49.9680" Y="499.9680" />
             <AnchorPoint ScaleX="0.5000" />
-            <Position X="684.0000" Y="569.2160" />
+            <Position X="676.8000" Y="518.0160" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.9500" Y="0.4447" />
+            <PrePosition X="0.9400" Y="0.4047" />
             <PreSize X="0.0694" Y="0.3906" />
             <FileData Type="Normal" Path="Battle/HPbar_red.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Question" ActionTag="-1719310201" Tag="83" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="19.4400" RightMargin="19.4400" TopMargin="295.5520" BottomMargin="551.5520" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="Question" ActionTag="-1719310201" Tag="83" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="19.4400" RightMargin="19.4400" TopMargin="324.3521" BottomMargin="522.7520" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="681.1200" Y="432.8960" />
             <Children>
-              <AbstractNodeData Name="DomainBg" ActionTag="737857215" Tag="142" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="140.5491" RightMargin="140.5491" TopMargin="-82.9645" BottomMargin="440.8397" LeftEage="116" RightEage="116" TopEage="24" BottomEage="24" Scale9OriginX="116" Scale9OriginY="24" Scale9Width="168" Scale9Height="27" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="DomainBg" ActionTag="737857215" Tag="142" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="140.5491" RightMargin="140.5491" TopMargin="-69.3221" BottomMargin="427.1972" LeftEage="116" RightEage="116" TopEage="24" BottomEage="24" Scale9OriginX="116" Scale9OriginY="24" Scale9Width="168" Scale9Height="27" ctype="ImageViewObjectData">
                 <Size X="400.0218" Y="75.0209" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="340.5600" Y="478.3501" />
+                <Position X="340.5600" Y="464.7076" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="1.1050" />
+                <PrePosition X="0.5000" Y="1.0735" />
                 <PreSize X="0.5873" Y="0.1733" />
                 <FileData Type="Normal" Path="Battle/question_field.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="DomainText" ActionTag="-1591039787" Tag="143" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="186.5588" RightMargin="186.5588" TopMargin="-79.6096" BottomMargin="448.5235" IsCustomSize="True" FontSize="48" LabelText="題目類型/領域" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="DomainText" ActionTag="-1591039787" Tag="143" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="186.5588" RightMargin="186.5588" TopMargin="-65.9667" BottomMargin="434.8806" IsCustomSize="True" FontSize="48" LabelText="題目類型/領域" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="308.0025" Y="63.9820" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="340.5600" Y="480.5146" />
+                <Position X="340.5600" Y="466.8717" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="0" G="0" B="0" />
-                <PrePosition X="0.5000" Y="1.1100" />
+                <PrePosition X="0.5000" Y="1.0785" />
                 <PreSize X="0.4522" Y="0.1478" />
                 <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
@@ -172,211 +256,242 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
+              <AbstractNodeData Name="TimeBg" ActionTag="-339755250" Tag="107" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="65.5599" RightMargin="65.5601" TopMargin="429.7118" BottomMargin="-37.8158" LeftEage="16" RightEage="16" TopEage="13" BottomEage="13" Scale9OriginX="16" Scale9OriginY="13" Scale9Width="518" Scale9Height="15" ctype="ImageViewObjectData">
+                <Size X="550.0000" Y="41.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="340.5599" Y="-17.3158" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="-0.0400" />
+                <PreSize X="0.8075" Y="0.0947" />
+                <FileData Type="Normal" Path="Battle/Time/timebar_2.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="TimeBar" ActionTag="1369667107" Tag="108" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="65.5599" RightMargin="65.5601" TopMargin="429.7118" BottomMargin="-37.8158" LeftEage="16" RightEage="16" TopEage="13" BottomEage="13" Scale9OriginX="16" Scale9OriginY="13" Scale9Width="518" Scale9Height="15" ctype="ImageViewObjectData">
+                <Size X="550.0000" Y="41.0000" />
+                <AnchorPoint ScaleY="0.5000" />
+                <Position X="65.5599" Y="-17.3158" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.0963" Y="-0.0400" />
+                <PreSize X="0.8075" Y="0.0947" />
+                <FileData Type="Normal" Path="Battle/Time/timebar.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="TimeText" ActionTag="-509095772" Tag="109" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="293.5598" RightMargin="293.5602" TopMargin="433.3763" BottomMargin="-38.4803" FontSize="42" LabelText="9.99" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+                <Size X="94.0000" Y="38.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="340.5598" Y="-19.4803" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="0" G="0" B="0" />
+                <PrePosition X="0.5000" Y="-0.0450" />
+                <PreSize X="0.1380" Y="0.0878" />
+                <FontResource Type="Normal" Path="font/chintzy.ttf" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="360.0000" Y="768.0000" />
+            <Position X="360.0000" Y="739.2000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.6000" />
+            <PrePosition X="0.5000" Y="0.5775" />
             <PreSize X="0.9460" Y="0.3382" />
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="SkillCooldownMark" ActionTag="-2069653697" VisibleForFrame="False" Tag="107" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="74.0711" RightMargin="613.7823" TopMargin="198.6222" BottomMargin="1049.2365" LeftEage="16" RightEage="16" TopEage="16" BottomEage="16" Scale9OriginX="16" Scale9OriginY="16" Scale9Width="17" Scale9Height="17" ctype="ImageViewObjectData">
-            <Size X="32.1466" Y="32.1413" />
+          <AbstractNodeData Name="SkillCooldownMark" ActionTag="-2069653697" VisibleForFrame="False" Tag="107" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="74.0880" RightMargin="613.8000" TopMargin="198.5920" BottomMargin="1049.2800" LeftEage="16" RightEage="16" TopEage="16" BottomEage="16" Scale9OriginX="16" Scale9OriginY="16" Scale9Width="17" Scale9Height="17" ctype="ImageViewObjectData">
+            <Size X="32.1120" Y="32.1280" />
             <AnchorPoint ScaleY="0.5000" />
-            <Position X="74.0711" Y="1065.3071" />
+            <Position X="74.0880" Y="1065.3440" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.1029" Y="0.8323" />
             <PreSize X="0.0446" Y="0.0251" />
             <FileData Type="Normal" Path="Battle/arrow.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Answer" ActionTag="485522159" Tag="115" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="10.0080" RightMargin="10.0080" TopMargin="742.0160" BottomMargin="38.0160" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="231" RightEage="231" TopEage="165" BottomEage="165" Scale9OriginX="-231" Scale9OriginY="-165" Scale9Width="462" Scale9Height="330" ctype="PanelObjectData">
-            <Size X="699.9840" Y="499.9680" />
+          <AbstractNodeData Name="Answer" ActionTag="485522159" Tag="115" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="14.3999" RightMargin="14.4000" TopMargin="809.6000" BottomMargin="22.4000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="231" RightEage="231" TopEage="165" BottomEage="165" Scale9OriginX="-231" Scale9OriginY="-165" Scale9Width="462" Scale9Height="330" ctype="PanelObjectData">
+            <Size X="691.2000" Y="448.0000" />
             <Children>
-              <AbstractNodeData Name="Bg" ActionTag="276075422" Tag="124" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TopMargin="-0.0250" BottomMargin="-0.0250" LeftEage="231" RightEage="231" TopEage="165" BottomEage="165" Scale9OriginX="231" Scale9OriginY="165" Scale9Width="238" Scale9Height="170" ctype="ImageViewObjectData">
-                <Size X="699.9840" Y="500.0180" />
+              <AbstractNodeData Name="Bg" ActionTag="276075422" Tag="124" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TopMargin="-0.0224" BottomMargin="-0.0224" LeftEage="231" RightEage="231" TopEage="165" BottomEage="165" Scale9OriginX="231" Scale9OriginY="165" Scale9Width="238" Scale9Height="170" ctype="ImageViewObjectData">
+                <Size X="691.2000" Y="448.0448" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="349.9920" Y="249.9840" />
+                <Position X="345.6000" Y="224.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5000" Y="0.5000" />
                 <PreSize X="1.0000" Y="1.0001" />
                 <FileData Type="Normal" Path="Battle/opinion/background.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="CountdownBg" ActionTag="-1362456791" Tag="140" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="14.4897" RightMargin="476.4791" TopMargin="15.4740" BottomMargin="15.4740" LeftEage="68" RightEage="68" TopEage="165" BottomEage="165" Scale9OriginX="68" Scale9OriginY="165" Scale9Width="73" Scale9Height="139" ctype="ImageViewObjectData">
-                <Size X="209.0152" Y="469.0200" />
+              <AbstractNodeData Name="TF" ActionTag="2026855644" VisibleForFrame="False" Tag="150" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="231" RightEage="231" TopEage="165" BottomEage="165" Scale9OriginX="-231" Scale9OriginY="-165" Scale9Width="462" Scale9Height="330" ctype="PanelObjectData">
+                <Size X="691.2000" Y="448.0000" />
+                <Children>
+                  <AbstractNodeData Name="O" ActionTag="-613394495" Tag="155" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="234.0058" RightMargin="12.8218" TopMargin="125.4400" BottomMargin="232.9600" TouchEnable="True" FontSize="48" ButtonText="O" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="420" Scale9Height="53" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                    <Size X="444.3725" Y="89.6000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="456.1920" Y="277.7600" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.6600" Y="0.6200" />
+                    <PreSize X="0.6429" Y="0.2000" />
+                    <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
+                    <TextColor A="255" R="65" G="65" B="70" />
+                    <DisabledFileData Type="Normal" Path="Battle/opinion/opinion.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="Battle/opinion/opinion_2.png" Plist="" />
+                    <NormalFileData Type="Normal" Path="Battle/opinion/opinion.png" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="X" ActionTag="-1524281949" Tag="156" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="234.0058" RightMargin="12.8218" TopMargin="232.9600" BottomMargin="125.4400" TouchEnable="True" FontSize="48" ButtonText="X" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="420" Scale9Height="53" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                    <Size X="444.3725" Y="89.6000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="456.1920" Y="170.2400" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.6600" Y="0.3800" />
+                    <PreSize X="0.6429" Y="0.2000" />
+                    <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
+                    <TextColor A="255" R="65" G="65" B="70" />
+                    <DisabledFileData Type="Normal" Path="Battle/opinion/opinion.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="Battle/opinion/opinion_2.png" Plist="" />
+                    <NormalFileData Type="Normal" Path="Battle/opinion/opinion.png" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="118.9973" Y="249.9840" />
+                <Position X="345.6000" Y="224.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.5000" />
+                <PreSize X="1.0000" Y="1.0000" />
+                <SingleColor A="255" R="150" G="200" B="255" />
+                <FirstColor A="255" R="150" G="200" B="255" />
+                <EndColor A="255" R="255" G="255" B="255" />
+                <ColorVector ScaleY="1.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="CH" ActionTag="-2018952941" Tag="69" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="231" RightEage="231" TopEage="165" BottomEage="165" Scale9OriginX="-231" Scale9OriginY="-165" Scale9Width="462" Scale9Height="330" ctype="PanelObjectData">
+                <Size X="691.2000" Y="448.0000" />
+                <Children>
+                  <AbstractNodeData Name="A" ActionTag="98260602" Tag="71" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="192.5338" RightMargin="54.2938" TopMargin="17.9200" BottomMargin="340.4800" TouchEnable="True" FontSize="36" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="420" Scale9Height="53" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                    <Size X="444.3725" Y="89.6000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="414.7200" Y="385.2800" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.6000" Y="0.8600" />
+                    <PreSize X="0.6429" Y="0.2000" />
+                    <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
+                    <TextColor A="255" R="65" G="65" B="70" />
+                    <DisabledFileData Type="Normal" Path="Battle/opinion/opinion.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="Battle/opinion/opinion_2.png" Plist="" />
+                    <NormalFileData Type="Normal" Path="Battle/opinion/opinion.png" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="B" ActionTag="-1330155836" Tag="145" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="234.0058" RightMargin="12.8218" TopMargin="125.4400" BottomMargin="232.9600" TouchEnable="True" FontSize="36" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="420" Scale9Height="53" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                    <Size X="444.3725" Y="89.6000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="456.1920" Y="277.7600" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.6600" Y="0.6200" />
+                    <PreSize X="0.6429" Y="0.2000" />
+                    <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
+                    <TextColor A="255" R="65" G="65" B="70" />
+                    <DisabledFileData Type="Normal" Path="Battle/opinion/opinion.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="Battle/opinion/opinion_2.png" Plist="" />
+                    <NormalFileData Type="Normal" Path="Battle/opinion/opinion.png" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="C" ActionTag="1745751741" Tag="146" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="234.0058" RightMargin="12.8218" TopMargin="232.9600" BottomMargin="125.4400" TouchEnable="True" FontSize="36" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="420" Scale9Height="53" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                    <Size X="444.3725" Y="89.6000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="456.1920" Y="170.2400" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.6600" Y="0.3800" />
+                    <PreSize X="0.6429" Y="0.2000" />
+                    <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
+                    <TextColor A="255" R="65" G="65" B="70" />
+                    <DisabledFileData Type="Normal" Path="Battle/opinion/opinion.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="Battle/opinion/opinion_2.png" Plist="" />
+                    <NormalFileData Type="Normal" Path="Battle/opinion/opinion.png" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="D" ActionTag="-1242555771" Tag="147" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="192.5338" RightMargin="54.2938" TopMargin="340.4800" BottomMargin="17.9200" TouchEnable="True" FontSize="36" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="420" Scale9Height="53" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                    <Size X="444.3725" Y="89.6000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="414.7200" Y="62.7200" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.6000" Y="0.1400" />
+                    <PreSize X="0.6429" Y="0.2000" />
+                    <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
+                    <TextColor A="255" R="65" G="65" B="70" />
+                    <DisabledFileData Type="Normal" Path="Battle/opinion/opinion.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="Battle/opinion/opinion_2.png" Plist="" />
+                    <NormalFileData Type="Normal" Path="Battle/opinion/opinion.png" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                </Children>
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="345.6000" Y="224.0000" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.5000" />
+                <PreSize X="1.0000" Y="1.0000" />
+                <SingleColor A="255" R="150" G="200" B="255" />
+                <FirstColor A="255" R="150" G="200" B="255" />
+                <EndColor A="255" R="255" G="255" B="255" />
+                <ColorVector ScaleY="1.0000" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="SkillBtnBg" ActionTag="80661267" Tag="114" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="12.5040" RightMargin="468.6960" TopMargin="119.0000" BottomMargin="119.0000" LeftEage="69" RightEage="69" TopEage="69" BottomEage="69" Scale9OriginX="69" Scale9OriginY="69" Scale9Width="72" Scale9Height="72" ctype="ImageViewObjectData">
+                <Size X="210.0000" Y="210.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="117.5040" Y="224.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1700" Y="0.5000" />
-                <PreSize X="0.2986" Y="0.9381" />
-                <FileData Type="Normal" Path="Battle/opinion/Layer_botton.png" Plist="" />
+                <PreSize X="0.3038" Y="0.4688" />
+                <FileData Type="Normal" Path="Battle/Skill/Skill_BG.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="TF" ActionTag="2026855644" VisibleForFrame="False" Tag="150" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="231" RightEage="231" TopEage="165" BottomEage="165" Scale9OriginX="-231" Scale9OriginY="-165" Scale9Width="462" Scale9Height="330" ctype="PanelObjectData">
-                <Size X="699.9840" Y="499.9680" />
-                <Children>
-                  <AbstractNodeData Name="O" ActionTag="-613394495" Tag="155" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="236.9796" RightMargin="12.9847" TopMargin="154.9901" BottomMargin="269.9827" TouchEnable="True" FontSize="48" ButtonText="O" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="420" Scale9Height="53" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                    <Size X="450.0197" Y="74.9952" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="461.9895" Y="307.4803" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.6600" Y="0.6150" />
-                    <PreSize X="0.6429" Y="0.1500" />
-                    <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
-                    <TextColor A="255" R="65" G="65" B="70" />
-                    <DisabledFileData Type="Normal" Path="Battle/opinion/opinion.png" Plist="" />
-                    <PressedFileData Type="Normal" Path="Battle/opinion/opinion_2.png" Plist="" />
-                    <NormalFileData Type="Normal" Path="Battle/opinion/opinion.png" Plist="" />
-                    <OutlineColor A="255" R="255" G="0" B="0" />
-                    <ShadowColor A="255" R="110" G="110" B="110" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="X" ActionTag="-1524281949" Tag="156" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="236.9796" RightMargin="12.9847" TopMargin="269.9827" BottomMargin="154.9901" TouchEnable="True" FontSize="48" ButtonText="X" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="420" Scale9Height="53" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                    <Size X="450.0197" Y="74.9952" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="461.9895" Y="192.4877" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.6600" Y="0.3850" />
-                    <PreSize X="0.6429" Y="0.1500" />
-                    <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
-                    <TextColor A="255" R="65" G="65" B="70" />
-                    <DisabledFileData Type="Normal" Path="Battle/opinion/opinion.png" Plist="" />
-                    <PressedFileData Type="Normal" Path="Battle/opinion/opinion_2.png" Plist="" />
-                    <NormalFileData Type="Normal" Path="Battle/opinion/opinion.png" Plist="" />
-                    <OutlineColor A="255" R="255" G="0" B="0" />
-                    <ShadowColor A="255" R="110" G="110" B="110" />
-                  </AbstractNodeData>
-                </Children>
+              <AbstractNodeData Name="SkillButton" ActionTag="-807271328" Tag="117" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="50.5040" RightMargin="506.6960" TopMargin="157.0000" BottomMargin="157.0000" TouchEnable="True" FontSize="36" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="104" Scale9Height="112" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="134.0000" Y="134.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="349.9920" Y="249.9840" />
+                <Position X="117.5040" Y="224.0000" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="0.5000" />
-                <PreSize X="1.0000" Y="1.0000" />
-                <SingleColor A="255" R="150" G="200" B="255" />
-                <FirstColor A="255" R="150" G="200" B="255" />
-                <EndColor A="255" R="255" G="255" B="255" />
-                <ColorVector ScaleY="1.0000" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="CH" ActionTag="-2018952941" VisibleForFrame="False" Tag="69" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="231" RightEage="231" TopEage="165" BottomEage="165" Scale9OriginX="-231" Scale9OriginY="-165" Scale9Width="462" Scale9Height="330" ctype="PanelObjectData">
-                <Size X="699.9840" Y="499.9680" />
-                <Children>
-                  <AbstractNodeData Name="A" ActionTag="98260602" Tag="71" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="194.9806" RightMargin="54.9838" TopMargin="42.4973" BottomMargin="382.4755" TouchEnable="True" FontSize="36" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="420" Scale9Height="53" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                    <Size X="450.0197" Y="74.9952" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="419.9904" Y="419.9731" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.6000" Y="0.8400" />
-                    <PreSize X="0.6429" Y="0.1500" />
-                    <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
-                    <TextColor A="255" R="65" G="65" B="70" />
-                    <DisabledFileData Type="Normal" Path="Battle/opinion/opinion.png" Plist="" />
-                    <PressedFileData Type="Normal" Path="Battle/opinion/opinion_2.png" Plist="" />
-                    <NormalFileData Type="Normal" Path="Battle/opinion/opinion.png" Plist="" />
-                    <OutlineColor A="255" R="255" G="0" B="0" />
-                    <ShadowColor A="255" R="110" G="110" B="110" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="B" ActionTag="-1330155836" Tag="145" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="236.9796" RightMargin="12.9847" TopMargin="154.9901" BottomMargin="269.9827" TouchEnable="True" FontSize="36" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="420" Scale9Height="53" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                    <Size X="450.0197" Y="74.9952" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="461.9895" Y="307.4803" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.6600" Y="0.6150" />
-                    <PreSize X="0.6429" Y="0.1500" />
-                    <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
-                    <TextColor A="255" R="65" G="65" B="70" />
-                    <DisabledFileData Type="Normal" Path="Battle/opinion/opinion.png" Plist="" />
-                    <PressedFileData Type="Normal" Path="Battle/opinion/opinion_2.png" Plist="" />
-                    <NormalFileData Type="Normal" Path="Battle/opinion/opinion.png" Plist="" />
-                    <OutlineColor A="255" R="255" G="0" B="0" />
-                    <ShadowColor A="255" R="110" G="110" B="110" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="C" ActionTag="1745751741" Tag="146" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="236.9796" RightMargin="12.9847" TopMargin="269.9827" BottomMargin="154.9901" TouchEnable="True" FontSize="36" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="420" Scale9Height="53" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                    <Size X="450.0197" Y="74.9952" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="461.9895" Y="192.4877" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.6600" Y="0.3850" />
-                    <PreSize X="0.6429" Y="0.1500" />
-                    <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
-                    <TextColor A="255" R="65" G="65" B="70" />
-                    <DisabledFileData Type="Normal" Path="Battle/opinion/opinion.png" Plist="" />
-                    <PressedFileData Type="Normal" Path="Battle/opinion/opinion_2.png" Plist="" />
-                    <NormalFileData Type="Normal" Path="Battle/opinion/opinion.png" Plist="" />
-                    <OutlineColor A="255" R="255" G="0" B="0" />
-                    <ShadowColor A="255" R="110" G="110" B="110" />
-                  </AbstractNodeData>
-                  <AbstractNodeData Name="D" ActionTag="-1242555771" Tag="147" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="194.9806" RightMargin="54.9838" TopMargin="382.4755" BottomMargin="42.4973" TouchEnable="True" FontSize="36" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="420" Scale9Height="53" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                    <Size X="450.0197" Y="74.9952" />
-                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                    <Position X="419.9904" Y="79.9949" />
-                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                    <CColor A="255" R="255" G="255" B="255" />
-                    <PrePosition X="0.6000" Y="0.1600" />
-                    <PreSize X="0.6429" Y="0.1500" />
-                    <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
-                    <TextColor A="255" R="65" G="65" B="70" />
-                    <DisabledFileData Type="Normal" Path="Battle/opinion/opinion.png" Plist="" />
-                    <PressedFileData Type="Normal" Path="Battle/opinion/opinion_2.png" Plist="" />
-                    <NormalFileData Type="Normal" Path="Battle/opinion/opinion.png" Plist="" />
-                    <OutlineColor A="255" R="255" G="0" B="0" />
-                    <ShadowColor A="255" R="110" G="110" B="110" />
-                  </AbstractNodeData>
-                </Children>
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="349.9920" Y="249.9840" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
-                <PrePosition X="0.5000" Y="0.5000" />
-                <PreSize X="1.0000" Y="1.0000" />
-                <SingleColor A="255" R="150" G="200" B="255" />
-                <FirstColor A="255" R="150" G="200" B="255" />
-                <EndColor A="255" R="255" G="255" B="255" />
-                <ColorVector ScaleY="1.0000" />
-              </AbstractNodeData>
-              <AbstractNodeData Name="SkillButton" ActionTag="-807271328" Tag="117" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="43.9973" RightMargin="505.9867" TopMargin="173.7341" BottomMargin="176.2339" TouchEnable="True" FontSize="36" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="120" Scale9Height="128" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="150.0000" Y="150.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="118.9973" Y="251.2339" />
-                <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="0" />
-                <PrePosition X="0.1700" Y="0.5025" />
-                <PreSize X="0.2143" Y="0.3000" />
+                <PrePosition X="0.1700" Y="0.5000" />
+                <PreSize X="0.1939" Y="0.2991" />
                 <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <PressedFileData Type="Normal" Path="Battle/cir_2.png" Plist="" />
-                <NormalFileData Type="Normal" Path="Battle/cir.png" Plist="" />
+                <DisabledFileData Type="Normal" Path="Battle/Skill/Cir_Orange_2.png" Plist="" />
+                <PressedFileData Type="Normal" Path="Battle/Skill/Cir_Orange_2.png" Plist="" />
+                <NormalFileData Type="Normal" Path="Battle/Skill/Cir_Orange.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Countdown" ActionTag="1167483369" Tag="141" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="55.9973" RightMargin="517.9867" TopMargin="226.4840" BottomMargin="226.4840" FontSize="72" LabelText="9.99" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-                <Size X="126.0000" Y="47.0000" />
-                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="118.9973" Y="249.9840" />
+              <AbstractNodeData Name="SkillBtnMask" Visible="False" ActionTag="-1390909660" Tag="115" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="50.5040" RightMargin="506.6960" TopMargin="156.9999" BottomMargin="157.0001" LeftEage="44" RightEage="44" TopEage="44" BottomEage="44" Scale9OriginX="44" Scale9OriginY="44" Scale9Width="46" Scale9Height="46" ctype="ImageViewObjectData">
+                <Size X="134.0000" Y="134.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="1.0000" />
+                <Position X="117.5040" Y="291.0001" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="0" G="0" B="0" />
-                <PrePosition X="0.1700" Y="0.5000" />
-                <PreSize X="0.1800" Y="0.0940" />
-                <FontResource Type="Normal" Path="font/DigitalDisplayRegular-ODEO.ttf" Plist="" />
-                <OutlineColor A="255" R="255" G="0" B="0" />
-                <ShadowColor A="255" R="110" G="110" B="110" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.1700" Y="0.6496" />
+                <PreSize X="0.1939" Y="0.2991" />
+                <FileData Type="Normal" Path="Battle/Skill/mask.png" Plist="" />
               </AbstractNodeData>
             </Children>
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-            <Position X="360.0000" Y="288.0000" />
+            <Position X="359.9999" Y="246.4000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
-            <PrePosition X="0.5000" Y="0.2250" />
-            <PreSize X="0.9722" Y="0.3906" />
+            <PrePosition X="0.5000" Y="0.1925" />
+            <PreSize X="0.9600" Y="0.3500" />
             <SingleColor A="255" R="150" G="200" B="255" />
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />

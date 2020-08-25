@@ -16,10 +16,12 @@ end
 
 function Player:isSkillReady()
     if self == nil then return false end
-    if self.health <= self.skillReadyTime then
-        return true
-    elseif self.tempHealth <= self.skillReadyTime then
-        return true
+    -- if self.health <= self.skillReadyTime then
+    --     return true
+    -- elseif self.tempHealth <= self.skillReadyTime then
+    --     return true
+    -- else return false end
+    if self.skillGauge >= self.skillCD then return true
     else return false end
 end
 
