@@ -73,17 +73,23 @@ func handleConnection(conn net.Conn) {
 		// Process //
 		/////////////
 		switch jsonObj["op"] {
+
+		// 註冊、登入
 		case "REGISTER":
 			db.RegisterNewPlayer(jsonObj["ac"].(string), jsonObj["pw"].(string), jsonObj["name"].(string))
 			isLogin = playerLogin(jsonObj["ac"].(string), jsonObj["pw"].(string), player)
 		case "LOGIN":
 			isLogin = playerLogin(jsonObj["ac"].(string), jsonObj["pw"].(string), player)
+
+		// 戰鬥
 		case "ENTER_ROOM":
 			battleCh = battle.Join1V1(player)
 		case "ANSWER":
 			battleCh <- jsonObj
 		case "SURRENDER":
 			battleCh <- jsonObj
+
+		// 劇情
 		case "PAY_BOOKMARK":
 			if player.Bookmark > 0 { // 書籤還有
 				player.Bookmark--
@@ -97,6 +103,12 @@ func handleConnection(conn net.Conn) {
 					"op": "OUT_OF_BOOKMARK",
 					"bm": player.Bookmark})
 				player.Ch <- string(msgSend)
+			}
+
+		// 聊天
+		case "CHAT":
+			for _, v := range Players {
+				v.Ch <- msgRecv
 			}
 		}
 	}

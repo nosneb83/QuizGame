@@ -29,10 +29,10 @@
           <AbstractNodeData Name="Bubble" ActionTag="821917731" Tag="74" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-0.0360" RightMargin="364.2840" TopMargin="147.1360" BottomMargin="865.9839" LeftEage="211" RightEage="211" TopEage="211" BottomEage="211" Scale9OriginX="211" Scale9OriginY="211" Scale9Width="218" Scale9Height="218" ctype="ImageViewObjectData">
             <Size X="355.7520" Y="266.8800" />
             <Children>
-              <AbstractNodeData Name="Text" ActionTag="-254071307" Tag="76" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="37.2123" RightMargin="61.4034" TopMargin="63.1849" BottomMargin="75.3010" IsCustomSize="True" FontSize="40" LabelText="今天的風兒&#xA;好喧囂啊。" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="Text" ActionTag="-254071307" Tag="76" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="37.2123" RightMargin="61.4034" TopMargin="63.1847" BottomMargin="75.3011" IsCustomSize="True" FontSize="40" LabelText="今天的風兒&#xA;好喧囂啊。" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="257.1363" Y="128.3942" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="165.7804" Y="139.4980" />
+                <Position X="165.7804" Y="139.4982" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="0" G="0" B="0" />
                 <PrePosition X="0.4660" Y="0.5227" />
@@ -50,7 +50,7 @@
             <PreSize X="0.4941" Y="0.2085" />
             <FileData Type="Normal" Path="chat_bubble.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Btns" ActionTag="326969823" Tag="78" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="260.0000" RightMargin="260.0000" TopMargin="988.0000" BottomMargin="92.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ComboBoxIndex="1" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+          <AbstractNodeData Name="Btns" ActionTag="326969823" Tag="78" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="260.0000" RightMargin="260.0000" TopMargin="988.0000" BottomMargin="92.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="200.0000" Y="200.0000" />
             <Children>
               <AbstractNodeData Name="Btn_player" ActionTag="119389346" Alpha="0" Tag="77" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-345.0000" RightMargin="295.0000" TopMargin="-25.0000" BottomMargin="-25.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="220" Scale9Height="228" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
@@ -170,6 +170,21 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
+          <AbstractNodeData Name="ChatroomBtn" ActionTag="-282916256" Tag="175" IconVisible="False" LeftMargin="620.3333" RightMargin="19.6667" TopMargin="152.6122" BottomMargin="1047.3878" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="50" Scale9Height="58" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="80.0000" Y="80.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="660.3333" Y="1087.3878" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.9171" Y="0.8495" />
+            <PreSize X="0.1111" Y="0.0625" />
+            <TextColor A="255" R="65" G="65" B="70" />
+            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+            <PressedFileData Type="Normal" Path="MainScene/Chatroom_icon.png" Plist="" />
+            <NormalFileData Type="Normal" Path="MainScene/Chatroom_icon.png" Plist="" />
+            <OutlineColor A="255" R="255" G="0" B="0" />
+            <ShadowColor A="255" R="110" G="110" B="110" />
+          </AbstractNodeData>
           <AbstractNodeData Name="Settings" ActionTag="-968040086" Tag="75" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="9.3960" RightMargin="628.5960" TopMargin="10.1760" BottomMargin="1187.7759" LeftEage="27" RightEage="27" TopEage="27" BottomEage="27" Scale9OriginX="27" Scale9OriginY="27" Scale9Width="28" Scale9Height="28" ctype="ImageViewObjectData">
             <Size X="82.0080" Y="82.0480" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
@@ -183,20 +198,20 @@
           <AbstractNodeData Name="StatusBar" ActionTag="1300640000" Tag="176" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="114.4440" RightMargin="6.4440" TopMargin="10.7521" BottomMargin="1141.5040" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="181" RightEage="181" TopEage="23" BottomEage="23" Scale9OriginX="-181" Scale9OriginY="-23" Scale9Width="362" Scale9Height="46" ctype="PanelObjectData">
             <Size X="599.1120" Y="127.7440" />
             <Children>
-              <AbstractNodeData Name="TitleBg" ActionTag="-936584145" Tag="192" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="1.2175" RightMargin="60.9881" TopMargin="4.9374" BottomMargin="70.0935" LeftEage="75" RightEage="75" TopEage="12" BottomEage="12" Scale9OriginX="75" Scale9OriginY="12" Scale9Width="400" Scale9Height="46" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="TitleBg" ActionTag="-936584145" Tag="192" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="1.2071" RightMargin="60.9985" TopMargin="4.9407" BottomMargin="70.0902" LeftEage="75" RightEage="75" TopEage="12" BottomEage="12" Scale9OriginX="75" Scale9OriginY="12" Scale9Width="400" Scale9Height="46" ctype="ImageViewObjectData">
                 <Size X="536.9064" Y="52.7131" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="269.6707" Y="96.4500" />
+                <Position X="269.6603" Y="96.4467" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4501" Y="0.7550" />
                 <PreSize X="0.8962" Y="0.4126" />
                 <FileData Type="Normal" Path="MainScene/statusBar/Status_BG.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="TitleText" ActionTag="51388094" Tag="196" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="53.8400" RightMargin="431.2720" TopMargin="12.7940" BottomMargin="77.9500" FontSize="28" LabelText="新手狼師" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="TitleText" ActionTag="51388094" Tag="196" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="53.8357" RightMargin="431.2763" TopMargin="12.7973" BottomMargin="77.9467" FontSize="28" LabelText="新手狼師" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="114.0000" Y="37.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="110.8400" Y="96.4500" />
+                <Position X="110.8357" Y="96.4467" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="0" G="0" B="0" />
                 <PrePosition X="0.1850" Y="0.7550" />
@@ -205,20 +220,20 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="NameBg" ActionTag="-360564111" Tag="197" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="198.4810" RightMargin="78.6310" TopMargin="10.2940" BottomMargin="75.4500" LeftEage="75" RightEage="75" TopEage="12" BottomEage="12" Scale9OriginX="75" Scale9OriginY="12" Scale9Width="172" Scale9Height="18" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="NameBg" ActionTag="-360564111" Tag="197" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="198.4672" RightMargin="78.6448" TopMargin="10.2973" BottomMargin="75.4467" LeftEage="75" RightEage="75" TopEage="12" BottomEage="12" Scale9OriginX="75" Scale9OriginY="12" Scale9Width="172" Scale9Height="18" ctype="ImageViewObjectData">
                 <Size X="322.0000" Y="42.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="359.4810" Y="96.4500" />
+                <Position X="359.4672" Y="96.4467" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.6000" Y="0.7550" />
                 <PreSize X="0.5375" Y="0.3288" />
                 <FileData Type="Normal" Path="MainScene/statusBar/Name_BG.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="NameText" ActionTag="459667279" Tag="198" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="232.9810" RightMargin="113.1310" TopMargin="12.7940" BottomMargin="77.9500" FontSize="28" LabelText="三十公分超巨大寶劍" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="NameText" ActionTag="459667279" Tag="198" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="232.9672" RightMargin="113.1448" TopMargin="12.7973" BottomMargin="77.9467" FontSize="28" LabelText="三十公分超巨大寶劍" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="253.0000" Y="37.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="359.4810" Y="96.4500" />
+                <Position X="359.4672" Y="96.4467" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="0" G="0" B="0" />
                 <PrePosition X="0.6000" Y="0.7550" />
@@ -227,20 +242,20 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="NumberBg" ActionTag="1749174478" Tag="193" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="47.1549" RightMargin="1.9571" TopMargin="57.6341" BottomMargin="0.1099" LeftEage="75" RightEage="75" TopEage="12" BottomEage="12" Scale9OriginX="75" Scale9OriginY="12" Scale9Width="400" Scale9Height="46" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="NumberBg" ActionTag="1749174478" Tag="193" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="47.1425" RightMargin="1.9695" TopMargin="57.6399" BottomMargin="0.1041" LeftEage="75" RightEage="75" TopEage="12" BottomEage="12" Scale9OriginX="75" Scale9OriginY="12" Scale9Width="400" Scale9Height="46" ctype="ImageViewObjectData">
                 <Size X="550.0000" Y="70.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="322.1549" Y="35.1099" />
+                <Position X="322.1425" Y="35.1041" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5377" Y="0.2748" />
                 <PreSize X="0.9180" Y="0.5480" />
                 <FileData Type="Normal" Path="MainScene/statusBar/Status_BG.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Bookmark1" ActionTag="-349178855" Tag="177" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="89.9521" RightMargin="484.1599" TopMargin="67.6341" BottomMargin="10.1099" FontSize="14" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="9" Scale9Height="28" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Bookmark1" ActionTag="-349178855" Tag="177" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="89.9482" RightMargin="484.1638" TopMargin="67.6399" BottomMargin="10.1041" FontSize="14" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="9" Scale9Height="28" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="25.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="102.4521" Y="35.1099" />
+                <Position X="102.4482" Y="35.1041" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1710" Y="0.2748" />
@@ -252,10 +267,10 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Bookmark2" ActionTag="1271045969" Tag="178" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="119.9088" RightMargin="454.2032" TopMargin="67.6341" BottomMargin="10.1099" FontSize="14" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="9" Scale9Height="28" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Bookmark2" ActionTag="1271045969" Tag="178" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="119.9037" RightMargin="454.2083" TopMargin="67.6399" BottomMargin="10.1041" FontSize="14" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="9" Scale9Height="28" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="25.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="132.4088" Y="35.1099" />
+                <Position X="132.4037" Y="35.1041" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.2210" Y="0.2748" />
@@ -267,10 +282,10 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Bookmark3" ActionTag="-891935498" Tag="179" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="149.8656" RightMargin="424.2464" TopMargin="67.6341" BottomMargin="10.1099" FontSize="14" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="9" Scale9Height="28" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Bookmark3" ActionTag="-891935498" Tag="179" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="149.8593" RightMargin="424.2527" TopMargin="67.6399" BottomMargin="10.1041" FontSize="14" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="9" Scale9Height="28" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="25.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="162.3656" Y="35.1099" />
+                <Position X="162.3593" Y="35.1041" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.2710" Y="0.2748" />
@@ -282,10 +297,10 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Bookmark4" ActionTag="810632582" Tag="180" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="179.8223" RightMargin="394.2897" TopMargin="67.6341" BottomMargin="10.1099" FontSize="14" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="9" Scale9Height="28" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Bookmark4" ActionTag="810632582" Tag="180" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="179.8150" RightMargin="394.2971" TopMargin="67.6399" BottomMargin="10.1041" FontSize="14" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="9" Scale9Height="28" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="25.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="192.3223" Y="35.1099" />
+                <Position X="192.3150" Y="35.1041" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.3210" Y="0.2748" />
@@ -297,10 +312,10 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Bookmark5" ActionTag="1475665288" Tag="181" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="209.7791" RightMargin="364.3329" TopMargin="67.6341" BottomMargin="10.1099" FontSize="14" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="9" Scale9Height="28" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Bookmark5" ActionTag="1475665288" Tag="181" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="209.7706" RightMargin="364.3414" TopMargin="67.6399" BottomMargin="10.1041" FontSize="14" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="9" Scale9Height="28" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="25.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="222.2791" Y="35.1099" />
+                <Position X="222.2706" Y="35.1041" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.3710" Y="0.2748" />
@@ -312,20 +327,20 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="BookmarkPremBg" ActionTag="191425130" Tag="194" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="239.5999" RightMargin="284.5121" TopMargin="67.6341" BottomMargin="10.1099" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="16" BottomEage="16" Scale9OriginX="8" Scale9OriginY="16" Scale9Width="9" Scale9Height="18" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="BookmarkPremBg" ActionTag="191425130" Tag="194" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="239.5893" RightMargin="284.5227" TopMargin="67.6399" BottomMargin="10.1041" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="16" BottomEage="16" Scale9OriginX="8" Scale9OriginY="16" Scale9Width="9" Scale9Height="18" ctype="ImageViewObjectData">
                 <Size X="75.0000" Y="50.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="277.0999" Y="35.1099" />
+                <Position X="277.0893" Y="35.1041" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.4625" Y="0.2748" />
                 <PreSize X="0.1252" Y="0.3914" />
                 <FileData Type="Normal" Path="MainScene/statusBar/bookmark.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="PremText" ActionTag="920529211" Tag="195" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="244.8189" RightMargin="288.2931" TopMargin="76.3564" BottomMargin="21.3876" FontSize="26" LabelText="+999" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="PremText" ActionTag="920529211" Tag="195" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="244.8082" RightMargin="288.3038" TopMargin="76.3625" BottomMargin="21.3815" FontSize="26" LabelText="+999" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="66.0000" Y="30.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="277.8189" Y="36.3876" />
+                <Position X="277.8082" Y="36.3815" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="0" G="0" B="0" />
                 <PrePosition X="0.4637" Y="0.2848" />
@@ -334,30 +349,30 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="CoinBg" ActionTag="1872640583" Tag="182" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="333.2379" RightMargin="18.0698" TopMargin="72.1633" BottomMargin="14.6391" LeftEage="75" RightEage="75" TopEage="12" BottomEage="12" Scale9OriginX="75" Scale9OriginY="12" Scale9Width="80" Scale9Height="14" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="CoinBg" ActionTag="1872640583" Tag="182" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="333.2203" RightMargin="18.0874" TopMargin="72.1691" BottomMargin="14.6333" LeftEage="75" RightEage="75" TopEage="12" BottomEage="12" Scale9OriginX="75" Scale9OriginY="12" Scale9Width="80" Scale9Height="14" ctype="ImageViewObjectData">
                 <Size X="247.8043" Y="40.9416" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="457.1400" Y="35.1099" />
+                <Position X="457.1225" Y="35.1041" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.7630" Y="0.2748" />
                 <PreSize X="0.4136" Y="0.3205" />
                 <FileData Type="Normal" Path="MainScene/statusBar/Coin_BG.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="CoinIcon" ActionTag="-1185478051" Tag="183" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="344.2827" RightMargin="226.8293" TopMargin="77.6341" BottomMargin="20.1099" LeftEage="9" RightEage="9" TopEage="9" BottomEage="9" Scale9OriginX="9" Scale9OriginY="9" Scale9Width="10" Scale9Height="12" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="CoinIcon" ActionTag="-1185478051" Tag="183" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="344.2690" RightMargin="226.8430" TopMargin="77.6399" BottomMargin="20.1041" LeftEage="9" RightEage="9" TopEage="9" BottomEage="9" Scale9OriginX="9" Scale9OriginY="9" Scale9Width="10" Scale9Height="12" ctype="ImageViewObjectData">
                 <Size X="28.0000" Y="30.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="358.2827" Y="35.1099" />
+                <Position X="358.2690" Y="35.1041" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.5980" Y="0.2748" />
                 <PreSize X="0.0467" Y="0.2348" />
                 <FileData Type="Normal" Path="MainScene/statusBar/Coin_icon.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="CoinText" ActionTag="-1044982381" Tag="184" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="388.1227" RightMargin="48.9893" TopMargin="76.3564" BottomMargin="21.3876" FontSize="26" LabelText="123,456,789" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+              <AbstractNodeData Name="CoinText" ActionTag="-1044982381" Tag="184" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="388.1047" RightMargin="49.0073" TopMargin="76.3625" BottomMargin="21.3815" FontSize="26" LabelText="123,456,789" HorizontalAlignmentType="HT_Right" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="162.0000" Y="30.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
-                <Position X="469.1227" Y="36.3876" />
+                <Position X="469.1047" Y="36.3815" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="0" G="0" B="0" />
                 <PrePosition X="0.7830" Y="0.2848" />
