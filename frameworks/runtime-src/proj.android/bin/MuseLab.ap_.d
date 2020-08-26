@@ -222,6 +222,7 @@ C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\sr
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\src\main.lua \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\src\packages \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\src\player.lua \
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\src\utf8_simple.lua \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\src\app\MyApp.lua \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\src\app\views \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\src\app\views\BattleModeScene.lua \

@@ -7,6 +7,7 @@ import (
 	"fmt"
 	"net"
 	"player"
+	"story"
 	"sync"
 )
 
@@ -90,6 +91,11 @@ func handleConnection(conn net.Conn) {
 			battleCh <- jsonObj
 
 		// 劇情
+		case "FETCH_STORY":
+			msgSend, _ := json.Marshal(map[string]interface{}{
+				"op":   "STORY_FILE",
+				"file": story.File})
+			player.Ch <- string(msgSend)
 		case "PAY_BOOKMARK":
 			if player.Bookmark > 0 { // 書籤還有
 				player.Bookmark--
@@ -110,6 +116,10 @@ func handleConnection(conn net.Conn) {
 			for _, v := range Players {
 				v.Ch <- msgRecv
 			}
+
+		// 測試
+		case "TEST":
+			// test here
 		}
 	}
 }
@@ -165,6 +175,9 @@ func main() {
 	// 連接 MySQL DB
 	db.InitDB()
 	// db.CreateTablePlayers()
+
+	// 劇情
+	story.ReadStoryFromCSV()
 
 	// TCP 連線
 	listener, _ := net.Listen("tcp", "0.0.0.0:8888")

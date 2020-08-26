@@ -27,9 +27,7 @@ function StorySectionScene:ctor(chap)
         bmBar:getChildByName("Bookmark4"),
         bmBar:getChildByName("Bookmark5")
     }
-    for i = 1, #bmBtns do
-        bmBtns[i]:setEnabled(i <= player.bm)
-    end
+    self:updateUI()
 
     -- 段落按鈕
     rootNode:getChildByName("SectionBtns"):getChildByName("Btn_Sect1")
@@ -57,6 +55,13 @@ function StorySectionScene:ctor(chap)
     socket:setReceiveCallback(ReceiveCallback)
 end
 
+-- 更新書籤UI
+function StorySectionScene:updateUI()
+    for i = 1, #bmBtns do
+        bmBtns[i]:setEnabled(i <= player.bm)
+    end
+end
+
 -- 按鈕callbacks
 function StorySectionScene:mainPage(type)
     if type == ccui.TouchEventType.ended then
@@ -73,15 +78,17 @@ end
 function StorySectionScene:sect(type)
     if type == ccui.TouchEventType.ended then
         if player.bm == 0 then return end
+        local sectStr = "0_1_" .. tostring(self:getTag())
         -- 叫server扣書籤
-        local jsonObj = {
-            op = "PAY_BOOKMARK",
-            id = player.id
-        }
+        -- local jsonObj = {
+        --     op = "PAY_BOOKMARK",
+        --     id = player.id,
+        --     sect = sectStr
+        -- }
         -- socket:send(json.encode(jsonObj))
         -- player.bm = player.bm - 1
+        -- self:updateUI()
         -- 進入劇情
-        local sectStr = "0_1_" .. tostring(self:getTag())
         table.insert(currentChap, sectStr) -- 段落6
         local scene = require("app/views/StoryScene.lua"):create(currentChap)
         cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))

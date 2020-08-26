@@ -3,6 +3,7 @@ local MainScene = class("MainScene", function()
 end)
 
 require("json")
+cc.exports.storyFile = {}
 
 local rootNode
 local nameText, premText, coinText
@@ -126,6 +127,14 @@ function MainScene:ctor()
 
     -- 更新UI
     self:updateUI()
+
+    -- 跟server要劇情檔
+    if #storyFile == 0 then
+        local jsonObj = {
+            op = "FETCH_STORY"
+        }
+        socket:send(json.encode(jsonObj))
+    end
 end
 
 -- 更新UI
@@ -229,9 +238,9 @@ end
 
 -- 處理server訊息
 function MainScene:handleOp(jsonObj)
-    dump(jsonObj)
     local op = jsonObj["op"]
     if op == "CHAT" then -- 顯示聊天訊息
+        dump(jsonObj)
         if isChatting == false then
             hasNewMsg = true
             self:setChatIcon()
@@ -240,6 +249,8 @@ function MainScene:handleOp(jsonObj)
         local msgItem = msgPrefab:clone()
         msgItem:getChildByName("Msg"):setString(msg)
         msgList:pushBackCustomItem(msgItem)
+    elseif op == "STORY_FILE" then -- 劇情檔
+        storyFile = jsonObj["file"]
     end
 end
 

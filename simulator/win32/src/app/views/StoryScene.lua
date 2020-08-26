@@ -2,8 +2,9 @@ local StoryScene = class("StoryScene", function()
     return cc.Scene:create()
 end)
 
-local csv = require("lua-csv/lua/csv.lua")
-local utf8 = require 'lua-utf8'
+-- local csv = require("lua-csv/lua/csv.lua")
+-- local utf8 = require 'lua-utf8'
+local utf8 = require('utf8_simple')
 
 local rootNode
 local scheduler = cc.Director:getInstance():getScheduler()
@@ -15,7 +16,7 @@ local dialogBg, dialogBgList -- 對話框背景
 local speakerLabel -- 說話者名字的文字
 local textLabel -- 說話內容文字
 local currentText -- 當前文字
-local csvFile -- 劇本文檔csv
+-- local csvFile -- 劇本文檔csv
 local parsedScript -- 該段落的逐行劇本
 local contPanel, outOfBMPanel -- 繼續觀看panel, 書籤沒了panel
 -- 打字機效果
@@ -82,7 +83,8 @@ function StoryScene:ctor(sect)
     outOfBMPanel:getChildByName("Y")
     :addTouchEventListener(self.backToSect)
 
-    csvFile = csv.open(cc.FileUtils:getInstance():fullPathForFilename("Story.csv"))
+    -- local path = cc.FileUtils:getInstance():fullPathForFilename("Story.csv")
+    -- csvFile = csv.open(path)
     parsedScript = self:parseStoryScript(currentSect[3])
     StoryScene:changeStoryBg(parsedScript[1][4])
     rootNode:runAction(cc.Sequence:create(
@@ -174,7 +176,23 @@ function StoryScene:parseStoryScript(sect)
     local script = {}
     local read = false
     local speakerID, speakerName, text, bg
-    for fields in csvFile:lines() do
+
+    -- for fields in csvFile:lines() do
+    -- 鬧鬼區 ---------------------------
+    -- dump(storyFile[1][1])
+    -- print(string.byte(storyFile[1][1], 1, -1))
+    -- dump(string.byte(storyFile[2][1]))
+    -- dump(string.byte(storyFile[5][1]))
+    -- dump(string.byte(storyFile[13][1]))
+    -- dump(string.byte(storyFile[15][1]))
+    -- dump(string.byte("'"))
+    -- dump("L")
+    -- dump(string.byte("L"))
+    -- dump(storyFile[1][1] == "L")
+    -- dump("L" == "L")
+    ------------------------------------
+    for _, fields in ipairs(storyFile) do
+        -- dump(fields)
         if read then -- 讀取該段落
             if fields[1] == "S" then -- 段落結束
                 return script
@@ -203,11 +221,12 @@ function StoryScene:parseStoryScript(sect)
                 })
             end
         else -- 還沒進到該段落
-            if fields[1] == "L" and fields[2] == sect then
+            if fields[2] == sect then
                 script["SectionTitle"] = fields[3]
                 script["DefaultBg"] = fields[4]
                 bg = fields[4]
                 read = true
+                print("enter section")
             end
         end
     end
