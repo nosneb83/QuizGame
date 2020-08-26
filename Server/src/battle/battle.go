@@ -83,7 +83,7 @@ func Battle1V1(players map[int]p, ch chan map[string]interface{}) {
 					playerCor[int(v["id"].(float64))] = true
 				} else {
 					playerCor[int(v["id"].(float64))] = false
-					players[int(v["id"].(float64))].Health -= 7.0
+					players[int(v["id"].(float64))].Health -= 8.0
 					bothCorrect = false
 				}
 				// 找出答比較慢的人
@@ -96,13 +96,17 @@ func Battle1V1(players map[int]p, ch chan map[string]interface{}) {
 				players[int(slowestAns["id"].(float64))].Health -= 3.0
 			}
 			// 處理完畢, 通知client演出
-			loser := &player.Player{ID: -1, Health: 0.0}
+			var loser p
 			for _, v := range players {
 				if v.Health <= 0.0 {
-					if loser.ID != -1 && loser.Health == v.Health { // 平手
-						loser = &player.Player{ID: -2, Health: 0.0}
-					} else {
+					if loser == nil {
 						loser = v
+					} else { // 雙方都歸零
+						if v.Health < loser.Health {
+							loser = v
+						} else if v.Health == loser.Health { // 平手
+							loser = &player.Player{ID: -1, Health: 0.0}
+						}
 					}
 				}
 				msgSend, _ := json.Marshal(map[string]interface{}{
@@ -117,7 +121,7 @@ func Battle1V1(players map[int]p, ch chan map[string]interface{}) {
 			// 清空答案
 			receivedAnswer = receivedAnswer[:0]
 			// 判斷是否gameover
-			if loser.ID != -1 {
+			if loser != nil {
 				time.Sleep(2 * time.Second)
 				for _, v := range players {
 					msgSend, _ := json.Marshal(map[string]interface{}{
@@ -132,7 +136,7 @@ func Battle1V1(players map[int]p, ch chan map[string]interface{}) {
 					fmt.Println("Player ID:", v.ID, ", Health:", v.Health)
 				}
 				// 出下一題
-				time.Sleep(4 * time.Second)
+				time.Sleep(3 * time.Second)
 				sendQuestion(players)
 			}
 		}

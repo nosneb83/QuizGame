@@ -10,7 +10,7 @@ local quesLayout, ansLayout -- layout
 local playerO, playerX, opponentO, opponentX -- 雙方頭像OX
 local domainText -- 題目類型&領域
 local qText, qText2, qText3 -- 題目文字
-local correctAns -- 當前題目的正確答案
+local correctAns, correctAnsStr -- 當前題目的正確答案, 答案string
 local ansPnlTF, ansPnlCH -- 選項panel
 local ansBtnO, ansBtnX, ansBtnA, ansBtnB, ansBtnC, ansBtnD -- 選項按鈕
 local selects = {} -- 選項選擇框
@@ -19,7 +19,7 @@ local feedbackT, feedbackF -- 答對答錯文字
 local sfxQues, sfxCorrect, sfxWrong -- 答題音效
 local enterCountdownText -- 開場倒數文字
 local countdownText, timeBar -- 倒數文字
-local countdownNum -- 倒數秒數
+local countdownNum, countdownSpd -- 倒數秒數, 倒數速度
 local playerHealthBar, opponentHealthBar, healthRec -- 血條
 local isWaiting = false -- 是否正在等待另一名玩家
 local skillBtn, skillBtnMask -- 開技能的按鈕, 遮罩
@@ -27,7 +27,7 @@ local skillBtn, skillBtnMask -- 開技能的按鈕, 遮罩
 local isBehind = false -- 玩家是否正在落後
 local vicLayer, defLayer -- 勝負結算畫面
 local waitLayer -- 等待畫面
-local dmgSpd, easeAmount = 1.5, 3 -- 扣血動畫速度, 平滑度
+local dmgSpd, easeAmount = 1.2, 3 -- 扣血動畫速度, 平滑度
 
 function BattleScene:ctor()
     rootNode = cc.CSLoader:createNode("Battle/BattleScene.csb")
@@ -317,13 +317,14 @@ end
 -- 答題倒數
 function BattleScene:startCountdown()
     countdownNum = 10
+    countdownSpd = 1
     countdownText:setString(string.format("%.2f", countdownNum))
     timeBar:setScaleX(1)
     rootNode:resume()
 end
 function BattleScene:countdownUpdate(dt)
     if countdownNum == nil then return end
-    countdownNum = math.max(0, countdownNum - dt)
+    countdownNum = math.max(0, countdownNum - dt * countdownSpd)
     -- 倒數數字
     countdownText:setString(string.format("%.2f", countdownNum))
     timeBar:setScaleX(math.max(0, countdownNum / 10))
@@ -351,12 +352,30 @@ function BattleScene:stopCountdown()
     return timeUsed
 end
 
--- 技能
+-- 開技能
 function BattleScene:skillOnClick(type)
     if type == ccui.TouchEventType.ended then
+        -- reset技能按鈕
         player.skillGauge = 0
         BattleScene:setSkillBtnGauge(0)
         BattleScene:setSkillBtnEnabled(false)
+
+        -------------------------
+        -- 技能: 找出答案/二選一
+        -------------------------
+        -- 秒答/減緩倒數速度
+        if isBehind then
+            -- 直接答對
+            if correctAnsStr == "O" then BattleScene:answerO(2)
+            elseif correctAnsStr == "X" then BattleScene:answerX(2)
+            elseif correctAnsStr == "1" then BattleScene:answerA(2)
+            elseif correctAnsStr == "2" then BattleScene:answerB(2)
+            elseif correctAnsStr == "3" then BattleScene:answerC(2)
+            elseif correctAnsStr == "4" then BattleScene:answerD(2)
+            end
+        else
+            countdownSpd = 0.5
+        end
         -- 顯示答案選項
         ansBtnO:setVisible(correctAns == 1)
         ansBtnX:setVisible(correctAns == 2)
@@ -468,6 +487,8 @@ function BattleScene:showQuestion(jsonObj)
     for _, v in ipairs(selects) do
         v:setVisible(false)
     end
+    -- 偵測是否落後
+    isBehind = player.health < opponent.health
     -- 題型
     local qType, domain
     if jsonObj["qtype"] == "TF" then -- 是非題
@@ -477,8 +498,10 @@ function BattleScene:showQuestion(jsonObj)
         qText3:setString("")
         if jsonObj["ans"][1] == "O" then
             correctAns = 1
+            correctAnsStr = "O"
         else
             correctAns = 2
+            correctAnsStr = "X"
         end
         self:showAnsPnl(ansPnlTF, ansPnlCH)
         self:setAnsBtnsEnabled(true, ansBtnO, ansBtnX)
@@ -494,7 +517,11 @@ function BattleScene:showQuestion(jsonObj)
         ansBtnC:setTitleText(jsonObj["ans"][3])
         ansBtnD:setTitleText(jsonObj["ans"][4])
         for k, v in ipairs(jsonObj["ans"]) do
-            if v == ansStr then correctAns = k break end
+            if v == ansStr then
+                correctAns = k
+                correctAnsStr = tostring(k)
+                break
+            end
         end
         self:showAnsPnl(ansPnlCH, ansPnlTF)
         self:setAnsBtnsEnabled(true, ansBtnA, ansBtnB, ansBtnC, ansBtnD)
@@ -512,7 +539,11 @@ function BattleScene:showQuestion(jsonObj)
         ansBtnC:setTitleText(jsonObj["ans"][3])
         ansBtnD:setTitleText(jsonObj["ans"][4])
         for k, v in ipairs(jsonObj["ans"]) do
-            if v == ansStr then correctAns = k break end
+            if v == ansStr then
+                correctAns = k
+                correctAnsStr = tostring(k)
+                break
+            end
         end
         self:showAnsPnl(ansPnlCH, ansPnlTF)
         self:setAnsBtnsEnabled(true, ansBtnA, ansBtnB, ansBtnC, ansBtnD)
@@ -535,8 +566,6 @@ function BattleScene:showQuestion(jsonObj)
     self:hideOX()
     -- 開始倒數
     self:startCountdown()
-    -- 偵測是否落後
-    isBehind = player.health < opponent.health
 end
 
 -- 聯想題顯示提示
