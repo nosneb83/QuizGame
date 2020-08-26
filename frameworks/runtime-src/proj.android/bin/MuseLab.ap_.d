@@ -1,11 +1,17 @@
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\bin\MuseLab.ap_ \
  : C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\res\drawable-hdpi\icon.png \
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\res\drawable-hdpi\icon_muselab.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\res\drawable-ldpi\icon.png \
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\res\drawable-ldpi\icon_muselab.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\res\drawable-mdpi\icon.png \
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\res\drawable-mdpi\icon_muselab.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\res\values\strings.xml \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\bin\res\drawable-hdpi\icon.png \
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\bin\res\drawable-hdpi\icon_muselab.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\bin\res\drawable-ldpi\icon.png \
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\bin\res\drawable-ldpi\icon_muselab.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\bin\res\drawable-mdpi\icon.png \
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\bin\res\drawable-mdpi\icon_muselab.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\config.json \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\src \
