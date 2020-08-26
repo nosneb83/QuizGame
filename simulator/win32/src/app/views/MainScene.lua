@@ -12,6 +12,8 @@ local menuBtnPos = {}
 local menuBtnAnimFunc
 local chatLayer, chatInput-- 聊天室Layer, InputField
 local msgList, msgPrefab -- 訊息列表, prefab
+local isChatting, hasNewMsg -- 聊天中, 有新訊息
+local chatroomBtn
 
 function MainScene:ctor()
     rootNode = cc.CSLoader:createNode("MainScene/MainScene.csb")
@@ -97,13 +99,17 @@ function MainScene:ctor()
     chatLayer = cc.CSLoader:createNode("MainScene/ChatroomLayer.csb")
     rootNode:addChild(chatLayer)
     chatLayer:setVisible(false)
-    rootNode:getChildByName("ChatroomBtn"):addTouchEventListener(self.openChatroom)
+    chatroomBtn = rootNode:getChildByName("ChatroomBtn")
+    chatroomBtn:setPressedActionEnabled(true)
+    chatroomBtn:setZoomScale(-0.1)
+    chatroomBtn:addTouchEventListener(self.openChatroom)
     chatLayer:getChildByName("Btn_return"):addTouchEventListener(self.closeChatroom)
     chatLayer:getChildByName("ChatPanel"):getChildByName("SendBtn")
     :addTouchEventListener(self.chat)
     chatInput = chatLayer:getChildByName("ChatPanel"):getChildByName("InputField")
     msgList = chatLayer:getChildByName("ChatPanel"):getChildByName("MsgList")
     msgPrefab = chatLayer:getChildByName("MsgPrefab")
+    isChatting, hasNewMsg = false, false
 
     -- socket設定
     local function ReceiveCallback(msg)
@@ -184,11 +190,14 @@ end
 -- 開啟/關閉聊天室
 function MainScene:openChatroom(type)
     if type == ccui.TouchEventType.ended then
+        isChatting, hasNewMsg = true, false
+        MainScene:setChatIcon()
         chatLayer:setVisible(true)
     end
 end
 function MainScene:closeChatroom(type)
     if type == ccui.TouchEventType.ended then
+        isChatting = false
         chatLayer:setVisible(false)
     end
 end
@@ -207,11 +216,26 @@ function MainScene:chat(type)
     end
 end
 
+-- 聊天室按鈕圖案
+function MainScene:setChatIcon()
+    if hasNewMsg then
+        chatroomBtn:loadTextureNormal("MainScene/Chatroom_icon.png")
+        chatroomBtn:loadTexturePressed("MainScene/Chatroom_icon_2.png")
+    else
+        chatroomBtn:loadTextureNormal("MainScene/Chatroom_icon_3.png")
+        chatroomBtn:loadTexturePressed("MainScene/Chatroom_icon_4.png")
+    end
+end
+
 -- 處理server訊息
 function MainScene:handleOp(jsonObj)
     dump(jsonObj)
     local op = jsonObj["op"]
     if op == "CHAT" then -- 顯示聊天訊息
+        if isChatting == false then
+            hasNewMsg = true
+            self:setChatIcon()
+        end
         local msg = jsonObj["name"] .. " : " .. jsonObj["msg"]
         local msgItem = msgPrefab:clone()
         msgItem:getChildByName("Msg"):setString(msg)

@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="173d907e-18cf-4cc1-bf3d-391db59449f3" name="Default Changelist" comment="" />
+    <list default="true" id="173d907e-18cf-4cc1-bf3d-391db59449f3" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../QuizGame.ccs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../QuizGame.ccs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../cocosstudio/MainScene/MainScene.csd" beforeDir="false" afterPath="$PROJECT_DIR$/../../../cocosstudio/MainScene/MainScene.csd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gen/org/cocos2dx/QuizGame/BuildConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/gen/org/cocos2dx/QuizGame/BuildConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj.win32/.vs/QuizGame/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/../proj.win32/.vs/QuizGame/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj.win32/.vs/QuizGame/v16/Browse.VC.db" beforeDir="false" afterPath="$PROJECT_DIR$/../proj.win32/.vs/QuizGame/v16/Browse.VC.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../proj.win32/Debug.win32/QuizGame.log" beforeDir="false" afterPath="$PROJECT_DIR$/../proj.win32/Debug.win32/QuizGame.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../res/MainScene/MainScene.csb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../res/MainScene/MainScene.csb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../simulator/win32/res/MainScene/MainScene.csb" beforeDir="false" afterPath="$PROJECT_DIR$/../../../simulator/win32/res/MainScene/MainScene.csb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../simulator/win32/src/app/views/MainScene.lua" beforeDir="false" afterPath="$PROJECT_DIR$/../../../simulator/win32/src/app/views/MainScene.lua" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/app/views/MainScene.lua" beforeDir="false" afterPath="$PROJECT_DIR$/../../../src/app/views/MainScene.lua" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,7 +25,11 @@
     <option name="REMEMBER_PASSWORDS" value="true" />
     <option name="BUILD_TARGET_KEY" value="apk" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
   <component name="ProjectId" id="1fJIJYYO4J9e8uX0gVFsUTcOPB7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -65,10 +81,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="211" y="63" key="IDE.errors.dialog/0.0.1280.680/1920.-857.1080.1880@0.0.1280.680" timestamp="1595989097415" />
-    <state x="132" y="0" key="SettingsEditor" timestamp="1595990249242">
+    <state x="132" y="0" key="SettingsEditor" timestamp="1598411331424">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="132" y="0" key="SettingsEditor/0.0.1280.680/1920.-857.1080.1880@0.0.1280.680" timestamp="1595990249242" />
+    <state x="132" y="0" key="SettingsEditor/0.0.1280.680/1920.-857.1080.1880@0.0.1280.680" timestamp="1598411331424" />
     <state x="315" y="144" key="com.intellij.ide.util.TipDialog" timestamp="1595990220376">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

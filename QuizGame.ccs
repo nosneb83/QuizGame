@@ -228,6 +228,9 @@
             <Image Name="textbox.png" />
             <Image Name="UI_Chatting_room_sample.png" />
           </Folder>
+          <Image Name="Chatroom_icon_2.png" />
+          <Image Name="Chatroom_icon_3.png" />
+          <Image Name="Chatroom_icon_4.png" />
         </Folder>
         <Folder Name="Shop">
           <Image Name="rect.png" />

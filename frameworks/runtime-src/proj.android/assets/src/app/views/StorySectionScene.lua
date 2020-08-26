@@ -40,6 +40,8 @@ function StorySectionScene:ctor(chap)
     :addTouchEventListener(self.sect)
     rootNode:getChildByName("SectionBtns"):getChildByName("Btn_Sect4")
     :addTouchEventListener(self.sect)
+    rootNode:getChildByName("SectionBtns"):getChildByName("Btn_Sect5")
+    :addTouchEventListener(self.sect)
 
     -- socket設定
     local function ReceiveCallback(msg)
@@ -76,20 +78,11 @@ function StorySectionScene:sect(type)
             op = "PAY_BOOKMARK",
             id = player.id
         }
-        socket:send(json.encode(jsonObj))
-        player.bm = player.bm - 1
+        -- socket:send(json.encode(jsonObj))
+        -- player.bm = player.bm - 1
         -- 進入劇情
-        local sectStr = ""
-        if self:getTag() == 1 then
-            sectStr = "0_1"
-        elseif self:getTag() == 2 then
-            sectStr = "0_1_1"
-        elseif self:getTag() == 3 then
-            sectStr = "0_1_2"
-        elseif self:getTag() == 4 then
-            sectStr = "0_1_3"
-        end
-        table.insert(currentChap, sectStr) -- 段落
+        local sectStr = "0_1_" .. tostring(self:getTag())
+        table.insert(currentChap, sectStr) -- 段落6
         local scene = require("app/views/StoryScene.lua"):create(currentChap)
         cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
     end

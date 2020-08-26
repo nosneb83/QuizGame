@@ -10,6 +10,10 @@ local bmBtns = {}
 local menuBtns = {}
 local menuBtnPos = {}
 local menuBtnAnimFunc
+local chatLayer, chatInput-- 聊天室Layer, InputField
+local msgList, msgPrefab -- 訊息列表, prefab
+local isChatting, hasNewMsg -- 聊天中, 有新訊息
+local chatroomBtn
 
 function MainScene:ctor()
     rootNode = cc.CSLoader:createNode("MainScene/MainScene.csb")
@@ -91,10 +95,40 @@ function MainScene:ctor()
     local menuRightBtn = rootNode:getChildByName("Btns"):getChildByName("Btn_right")
     menuRightBtn:addTouchEventListener(self.menuRight)
 
+    -- 聊天室Layer
+    chatLayer = cc.CSLoader:createNode("MainScene/ChatroomLayer.csb")
+    rootNode:addChild(chatLayer)
+    chatLayer:setVisible(false)
+    chatroomBtn = rootNode:getChildByName("ChatroomBtn")
+    chatroomBtn:setPressedActionEnabled(true)
+    chatroomBtn:setZoomScale(-0.1)
+    chatroomBtn:addTouchEventListener(self.openChatroom)
+    chatLayer:getChildByName("Btn_return"):addTouchEventListener(self.closeChatroom)
+    chatLayer:getChildByName("ChatPanel"):getChildByName("SendBtn")
+    :addTouchEventListener(self.chat)
+    chatInput = chatLayer:getChildByName("ChatPanel"):getChildByName("InputField")
+    msgList = chatLayer:getChildByName("ChatPanel"):getChildByName("MsgList")
+    msgPrefab = chatLayer:getChildByName("MsgPrefab")
+    isChatting, hasNewMsg = false, false
+
+    -- socket設定
+    local function ReceiveCallback(msg)
+        -- 把每個{}分割開
+        local opStrs = string.splitAfter(msg, "}")
+        table.remove(opStrs, #opStrs)
+        -- 一個一個輪流decode
+        for i = 1, #opStrs do
+            local jsonObj = json.decode(opStrs[i])
+            self:handleOp(jsonObj)
+        end
+    end
+    socket:setReceiveCallback(ReceiveCallback)
+
     -- 更新UI
     self:updateUI()
 end
 
+-- 更新UI
 function MainScene:updateUI()
     nameText:setString(player.name)
     premText:setString("+" .. tostring(math.min(999, player.bmp)))
@@ -104,33 +138,30 @@ function MainScene:updateUI()
     end
 end
 
+-- 進入各頁面
 function MainScene:enterPlayerScene(type)
     if type == ccui.TouchEventType.ended then
         print("個人頁面")
     end
 end
-
 function MainScene:enterLabScene(type)
     if type == ccui.TouchEventType.ended then
         local scene = require("app/views/CharScene.lua"):create()
         cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
     end
 end
-
 function MainScene:enterBattleScene(type)
     if type == ccui.TouchEventType.ended then
         local scene = require("app/views/BattleModeScene.lua"):create()
         cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
     end
 end
-
 function MainScene:enterKachaScene(type)
     if type == ccui.TouchEventType.ended then
         local scene = require("app/views/ShopScene.lua"):create()
         cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
     end
 end
-
 function MainScene:enterStoryScene(type)
     if type == ccui.TouchEventType.ended then
         local scene = require("app/views/StoryMenuScene.lua"):create()
@@ -138,6 +169,7 @@ function MainScene:enterStoryScene(type)
     end
 end
 
+-- 選單滾動
 function MainScene:menuLeft(type)
     if type == ccui.TouchEventType.ended then
         for i = 1, 5 do
@@ -146,13 +178,68 @@ function MainScene:menuLeft(type)
         table.insert(menuBtns, 1, table.remove(menuBtns))
     end
 end
-
 function MainScene:menuRight(type)
     if type == ccui.TouchEventType.ended then
         for i = 1, 5 do
             menuBtnAnimFunc(menuBtns[i], (i - 2) % 5 + 1)
         end
         table.insert(menuBtns, table.remove(menuBtns, 1))
+    end
+end
+
+-- 開啟/關閉聊天室
+function MainScene:openChatroom(type)
+    if type == ccui.TouchEventType.ended then
+        isChatting, hasNewMsg = true, false
+        MainScene:setChatIcon()
+        chatLayer:setVisible(true)
+    end
+end
+function MainScene:closeChatroom(type)
+    if type == ccui.TouchEventType.ended then
+        isChatting = false
+        chatLayer:setVisible(false)
+    end
+end
+
+-- 聊天室送出訊息
+function MainScene:chat(type)
+    if type == ccui.TouchEventType.ended then
+        if chatInput:getString() == "" then return end
+        local jsonObj = {
+            op = "CHAT",
+            name = player.name,
+            msg = chatInput:getString()
+        }
+        chatInput:setString("")
+        socket:send(json.encode(jsonObj))
+    end
+end
+
+-- 聊天室按鈕圖案
+function MainScene:setChatIcon()
+    if hasNewMsg then
+        chatroomBtn:loadTextureNormal("MainScene/Chatroom_icon.png")
+        chatroomBtn:loadTexturePressed("MainScene/Chatroom_icon_2.png")
+    else
+        chatroomBtn:loadTextureNormal("MainScene/Chatroom_icon_3.png")
+        chatroomBtn:loadTexturePressed("MainScene/Chatroom_icon_4.png")
+    end
+end
+
+-- 處理server訊息
+function MainScene:handleOp(jsonObj)
+    dump(jsonObj)
+    local op = jsonObj["op"]
+    if op == "CHAT" then -- 顯示聊天訊息
+        if isChatting == false then
+            hasNewMsg = true
+            self:setChatIcon()
+        end
+        local msg = jsonObj["name"] .. " : " .. jsonObj["msg"]
+        local msgItem = msgPrefab:clone()
+        msgItem:getChildByName("Msg"):setString(msg)
+        msgList:pushBackCustomItem(msgItem)
     end
 end
 
