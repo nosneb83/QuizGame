@@ -6,11 +6,22 @@ local rootNode
 local menuBtns = {}
 local menuBtnPos = {}
 local menuBtnAnimFunc
+local chars -- 立繪
 
 function BattleModeScene:ctor()
     rootNode = cc.CSLoader:createNode("BattleMode/BattleModeScene.csb")
     self:addChild(rootNode)
     rootNode:getChildByName("Btn_return"):addTouchEventListener(self.returnMain)
+    
+    -- 立繪
+    chars = {
+        rootNode:getChildByName("Chars"):getChildByName("Teko"),
+        rootNode:getChildByName("Chars"):getChildByName("Same"),
+        rootNode:getChildByName("Chars"):getChildByName("Luluta")
+    }
+    for k, v in ipairs(chars) do
+        v:setVisible(k == player.char)
+    end
 
     -- 選單按鈕
     menuBtns = {
@@ -47,21 +58,21 @@ function BattleModeScene:ctor()
             btn:runAction(cc.Spawn:create(
             cc.MoveTo:create(menuAnimDur, menuBtnPos[2]),
             cc.ScaleTo:create(menuAnimDur, 0.6),
-            cc.FadeTo:create(menuAnimDur, 204)
+            cc.FadeTo:create(menuAnimDur, 229.5)
             ))
         elseif to == 3 then
             btn:runAction(cc.Sequence:create(
             cc.Spawn:create(
             cc.MoveTo:create(menuAnimDur, menuBtnPos[3]),
             cc.ScaleTo:create(menuAnimDur, 1),
-            cc.FadeTo:create(menuAnimDur, 204)
+            cc.FadeTo:create(menuAnimDur, 229.5)
             ),
             cc.CallFunc:create(function() btn:setEnabled(true) end)))
         elseif to == 4 then
             btn:runAction(cc.Spawn:create(
             cc.MoveTo:create(menuAnimDur, menuBtnPos[4]),
             cc.ScaleTo:create(menuAnimDur, 0.6),
-            cc.FadeTo:create(menuAnimDur, 204)
+            cc.FadeTo:create(menuAnimDur, 229.5)
             ))
         elseif to == 5 then
             btn:runAction(cc.Spawn:create(

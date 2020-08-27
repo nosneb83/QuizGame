@@ -13,10 +13,10 @@ type p = *player.Player
 
 // DB連線資訊
 const (
-	USERNAME = "root"
+	USERNAME = "benson"
 	PASSWORD = "bensonli"
 	NETWORK  = "tcp"
-	SERVER   = "127.0.0.1"
+	SERVER   = "172.29.18.171"
 	PORT     = 3306
 	DATABASE = "game"
 )
@@ -55,6 +55,7 @@ func CreateTablePlayers() {
 		account 		VARCHAR(20) NOT NULL DEFAULT '',
 		password 		VARCHAR(20) NOT NULL DEFAULT '',
 		name 			VARCHAR(20) NOT NULL DEFAULT '',
+		currentchar		INT NOT NULL DEFAULT 1,
 		bookmark 		INT NOT NULL DEFAULT 0,
 		bookmarkprem 	INT NOT NULL DEFAULT 0,
 		coin 			INT NOT NULL DEFAULT 0,
@@ -145,16 +146,17 @@ func CheckAccount(ac string, pw string) int {
 
 // FetchPlayerData 從DB讀取玩家資料
 func FetchPlayerData(ac string, player p) {
-	sql := `SELECT id, name, bookmark, bookmarkprem, coin FROM players WHERE account = ?`
+	sql := `SELECT id, name, currentchar, bookmark, bookmarkprem, coin FROM players WHERE account = ?`
 	row := db.QueryRow(sql, ac)
-	var id, bm, bmp, coin int
+	var id, char, bm, bmp, coin int
 	var name string
-	if err := row.Scan(&id, &name, &bm, &bmp, &coin); err != nil {
+	if err := row.Scan(&id, &name, &char, &bm, &bmp, &coin); err != nil {
 		fmt.Println("讀取玩家資料失敗")
 		return
 	}
 	player.ID = id
 	player.Name = name
+	player.Char = char
 	player.Bookmark = bm
 	player.BookmarkPrem = bmp
 	player.Coin = coin
@@ -180,6 +182,14 @@ func UpdateBMP(player p) {
 func UpdateCoin(player p) {
 	sql := `UPDATE players SET coin = ? WHERE id = ?`
 	if _, err := db.Exec(sql, player.Coin, player.ID); err != nil {
+		fmt.Println("Update failed:", err)
+	}
+}
+
+// SetChar 換角
+func SetChar(player p) {
+	sql := `UPDATE players SET currentchar = ? WHERE id = ?`
+	if _, err := db.Exec(sql, player.Char, player.ID); err != nil {
 		fmt.Println("Update failed:", err)
 	}
 }

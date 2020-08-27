@@ -6,6 +6,7 @@ type Player struct {
 	Ch           chan string // 傳訊息給此玩家用此channel
 	ID           int         // 玩家ID
 	Name         string      // 暱稱
+	Char         int         // 當前選擇的角色
 	Room         int         // 所處房號
 	Health       float64     // 血量
 	Mainstory    int         //

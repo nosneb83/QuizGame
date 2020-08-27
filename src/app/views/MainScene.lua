@@ -15,11 +15,13 @@ local chatLayer, chatInput-- 聊天室Layer, InputField
 local msgList, msgPrefab -- 訊息列表, prefab
 local isChatting, hasNewMsg -- 聊天中, 有新訊息
 local chatroomBtn
+local chars -- 立繪
 
 function MainScene:ctor()
     rootNode = cc.CSLoader:createNode("MainScene/MainScene.csb")
     self:addChild(rootNode)
 
+    -- 玩家狀態列
     local statusBar = rootNode:getChildByName("StatusBar")
     nameText = statusBar:getChildByName("NameText")
     premText = statusBar:getChildByName("PremText")
@@ -31,6 +33,16 @@ function MainScene:ctor()
         statusBar:getChildByName("Bookmark4"),
         statusBar:getChildByName("Bookmark5")
     }
+
+    -- 立繪
+    chars = {
+        rootNode:getChildByName("Chars"):getChildByName("Teko"),
+        rootNode:getChildByName("Chars"):getChildByName("Same"),
+        rootNode:getChildByName("Chars"):getChildByName("Luluta")
+    }
+    for k, v in ipairs(chars) do
+        v:setVisible(k == player.char)
+    end
 
     -- 選單按鈕
     menuBtns = {

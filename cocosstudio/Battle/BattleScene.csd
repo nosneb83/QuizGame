@@ -19,15 +19,55 @@
                 <PreSize X="1.0384" Y="1.0001" />
                 <FileData Type="Normal" Path="Battle/bg.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="PlayerIcon" ActionTag="77535611" Tag="125" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="81.1600" RightMargin="472.8400" TopMargin="27.0801" BottomMargin="1086.9199" LeftEage="54" RightEage="54" TopEage="54" BottomEage="54" Scale9OriginX="54" Scale9OriginY="54" Scale9Width="58" Scale9Height="58" ctype="ImageViewObjectData">
+              <AbstractNodeData Name="PlayerIcon" ActionTag="96051681" Tag="640" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="81.1600" RightMargin="472.8400" TopMargin="27.0801" BottomMargin="1086.9199" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
                 <Size X="166.0000" Y="166.0000" />
+                <Children>
+                  <AbstractNodeData Name="Teko" ActionTag="-2147186232" Tag="641" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftEage="98" RightEage="98" TopEage="98" BottomEage="98" Scale9OriginX="98" Scale9OriginY="98" Scale9Width="101" Scale9Height="101" ctype="ImageViewObjectData">
+                    <Size X="166.0000" Y="166.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="83.0000" Y="83.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5000" Y="0.5000" />
+                    <PreSize X="1.0000" Y="1.0000" />
+                    <FileData Type="Normal" Path="Char/Img/Teko_S.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Same" ActionTag="-468822066" Tag="642" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="0.0000" RightMargin="0.0000" TopMargin="0.0041" BottomMargin="-0.0041" LeftEage="169" RightEage="169" TopEage="225" BottomEage="225" Scale9OriginX="169" Scale9OriginY="225" Scale9Width="372" Scale9Height="260" ctype="ImageViewObjectData">
+                    <Size X="166.0000" Y="166.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="83.0000" Y="82.9959" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5000" Y="0.5000" />
+                    <PreSize X="1.0000" Y="1.0000" />
+                    <FileData Type="Normal" Path="Char/Img/Same_S.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Luluta" ActionTag="1919506875" Alpha="247" Tag="794" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="132" Scale9Height="140" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                    <Size X="166.0000" Y="166.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="83.0000" Y="83.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5000" Y="0.5000" />
+                    <PreSize X="1.0000" Y="1.0000" />
+                    <TextColor A="255" R="65" G="65" B="70" />
+                    <DisabledFileData Type="Normal" Path="Char/Img/LULUTA_S.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="Char/Img/LULUTA_S.png" Plist="" />
+                    <NormalFileData Type="Normal" Path="Char/Img/LULUTA_S.png" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="164.1600" Y="1169.9199" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.2280" Y="0.9140" />
                 <PreSize X="0.2306" Y="0.1297" />
-                <FileData Type="Normal" Path="Battle/Player_2.png" Plist="" />
+                <SingleColor A="255" R="150" G="200" B="255" />
+                <FirstColor A="255" R="150" G="200" B="255" />
+                <EndColor A="255" R="255" G="255" B="255" />
+                <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="PlayerO" ActionTag="1218660698" VisibleForFrame="False" Alpha="204" Tag="135" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="81.6600" RightMargin="473.3400" TopMargin="27.5801" BottomMargin="1087.4199" LeftEage="54" RightEage="54" TopEage="54" BottomEage="54" Scale9OriginX="54" Scale9OriginY="54" Scale9Width="57" Scale9Height="57" ctype="ImageViewObjectData">
                 <Size X="165.0000" Y="165.0000" />
@@ -81,15 +121,55 @@
                 <PreSize X="0.0694" Y="0.3906" />
                 <FileData Type="Normal" Path="Battle/HPbar_null.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="OpponentIcon" ActionTag="913892806" Tag="126" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="473.3400" RightMargin="81.6600" TopMargin="27.5801" BottomMargin="1087.4199" LeftEage="54" RightEage="54" TopEage="54" BottomEage="54" Scale9OriginX="54" Scale9OriginY="54" Scale9Width="57" Scale9Height="57" ctype="ImageViewObjectData">
-                <Size X="165.0000" Y="165.0000" />
+              <AbstractNodeData Name="OpponentIcon" ActionTag="1199601494" Tag="646" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="472.8400" RightMargin="81.1600" TopMargin="27.0801" BottomMargin="1086.9199" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+                <Size X="166.0000" Y="166.0000" />
+                <Children>
+                  <AbstractNodeData Name="Teko" ActionTag="-1804758542" Tag="647" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftEage="98" RightEage="98" TopEage="98" BottomEage="98" Scale9OriginX="98" Scale9OriginY="98" Scale9Width="101" Scale9Height="101" ctype="ImageViewObjectData">
+                    <Size X="166.0000" Y="166.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="83.0000" Y="83.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5000" Y="0.5000" />
+                    <PreSize X="1.0000" Y="1.0000" />
+                    <FileData Type="Normal" Path="Char/Img/Teko_S.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Same" ActionTag="1033790650" Tag="648" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="0.0000" RightMargin="0.0000" TopMargin="0.0041" BottomMargin="-0.0041" LeftEage="169" RightEage="169" TopEage="225" BottomEage="225" Scale9OriginX="169" Scale9OriginY="225" Scale9Width="372" Scale9Height="260" ctype="ImageViewObjectData">
+                    <Size X="166.0000" Y="166.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="83.0000" Y="82.9959" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5000" Y="0.5000" />
+                    <PreSize X="1.0000" Y="1.0000" />
+                    <FileData Type="Normal" Path="Char/Img/Same_S.png" Plist="" />
+                  </AbstractNodeData>
+                  <AbstractNodeData Name="Luluta" ActionTag="192949109" Alpha="247" Tag="795" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="132" Scale9Height="140" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                    <Size X="166.0000" Y="166.0000" />
+                    <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                    <Position X="83.0000" Y="83.0000" />
+                    <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                    <CColor A="255" R="255" G="255" B="255" />
+                    <PrePosition X="0.5000" Y="0.5000" />
+                    <PreSize X="1.0000" Y="1.0000" />
+                    <TextColor A="255" R="65" G="65" B="70" />
+                    <DisabledFileData Type="Normal" Path="Char/Img/LULUTA_S.png" Plist="" />
+                    <PressedFileData Type="Normal" Path="Char/Img/LULUTA_S.png" Plist="" />
+                    <NormalFileData Type="Normal" Path="Char/Img/LULUTA_S.png" Plist="" />
+                    <OutlineColor A="255" R="255" G="0" B="0" />
+                    <ShadowColor A="255" R="110" G="110" B="110" />
+                  </AbstractNodeData>
+                </Children>
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="555.8400" Y="1169.9199" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.7720" Y="0.9140" />
-                <PreSize X="0.2292" Y="0.1289" />
-                <FileData Type="Normal" Path="Battle/player_1.png" Plist="" />
+                <PreSize X="0.2306" Y="0.1297" />
+                <SingleColor A="255" R="150" G="200" B="255" />
+                <FirstColor A="255" R="150" G="200" B="255" />
+                <EndColor A="255" R="255" G="255" B="255" />
+                <ColorVector ScaleY="1.0000" />
               </AbstractNodeData>
               <AbstractNodeData Name="OpponentO" ActionTag="969197720" VisibleForFrame="False" Alpha="204" Tag="138" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="473.3400" RightMargin="81.6600" TopMargin="27.5801" BottomMargin="1087.4199" LeftEage="54" RightEage="54" TopEage="54" BottomEage="54" Scale9OriginX="54" Scale9OriginY="54" Scale9Width="57" Scale9Height="57" ctype="ImageViewObjectData">
                 <Size X="165.0000" Y="165.0000" />

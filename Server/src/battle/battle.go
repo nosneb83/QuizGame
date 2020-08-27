@@ -37,7 +37,8 @@ func Battle1V1(players map[int]p, ch chan map[string]interface{}) {
 		msgSend, _ := json.Marshal(map[string]interface{}{
 			"op":   "BATTLE_INIT",
 			"id":   v.ID,
-			"name": v.Name})
+			"name": v.Name,
+			"char": v.Char})
 		for _, vv := range players {
 			vv.Ch <- string(msgSend)
 		}

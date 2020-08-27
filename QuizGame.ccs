@@ -72,6 +72,12 @@
             <Image Name="mask.png" />
             <Image Name="Skill_BG.png" />
             <Image Name="Skill_icon.png" />
+            <Image Name="Confuse_Orange.png" />
+            <Image Name="Confuse_Orange_2.png" />
+            <Image Name="Confuse_Red.png" />
+            <Image Name="Stop_Orange.png" />
+            <Image Name="Stop_orange_2.png" />
+            <Image Name="Stop_Red.png" />
           </Folder>
           <Image Name="O.png" />
           <Image Name="X.png" />
@@ -109,6 +115,10 @@
             <Image Name="About_BG.png" />
             <Image Name="Name_BG.png" />
             <Image Name="Small_BG.png" />
+            <Image Name="BG_black.png" />
+            <Image Name="botton.png" />
+            <Image Name="botton_2.png" />
+            <Image Name="Hotel-suite-living-room.png" />
           </Folder>
           <Folder Name="Chara_UI_Skill">
             <Image Name="botton.png" />
@@ -138,16 +148,24 @@
             <Image Name="YangP_S.png" />
           </Folder>
           <Folder Name="Up_bar">
-            <Image Name="1.png" />
-            <Image Name="2.png" />
             <Image Name="3.png" />
             <Image Name="BG.png" />
+            <Image Name="3_2.png" />
+            <Image Name="4.png" />
           </Folder>
           <Image Name="Chara_Main_kitsuna.png" />
-          <Image Name="Chara_Main_sample.png" />
           <Image Name="Chara_Skill_sample.png" />
           <Project Name="CharScene.csd" Type="Scene" />
-          <Image Name="Teko.png" />
+          <Image Name="Chara_Main_sample_new.png" />
+          <Project Name="IntroLayer1.csd" Type="Layer" />
+          <Project Name="IntroLayer2.csd" Type="Layer" />
+          <Project Name="SkillLayer1.csd" Type="Layer" />
+          <Project Name="SkillLayer2.csd" Type="Layer" />
+          <Project Name="RelatLayer1.csd" Type="Layer" />
+          <Project Name="RelatLayer2.csd" Type="Layer" />
+          <Project Name="IntroLayer3.csd" Type="Layer" />
+          <Project Name="RelatLayer3.csd" Type="Layer" />
+          <Project Name="SkillLayer3.csd" Type="Layer" />
         </Folder>
         <Folder Name="Default">
           <Image Name="arrow_l.png" />

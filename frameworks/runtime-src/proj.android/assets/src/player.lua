@@ -1,12 +1,18 @@
 local Player = class("Player")
 
 function Player:ctor()
-    -- print("create player")
+    self.id = 0
+    self.name = ""
+    self.char = 1
+    self.bm = 0
+    self.bmp = 0
+    self.coin = 0
 end
 
 function Player:loginInit(jsonObj)
     self.id = jsonObj["id"]
     self.name = jsonObj["name"]
+    self.char = jsonObj["char"]
     self.bm = jsonObj["bm"]
     self.bmp = jsonObj["bmp"]
     self.coin = jsonObj["coin"]

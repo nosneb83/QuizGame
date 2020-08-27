@@ -7,6 +7,7 @@ local opponent = require("player.lua"):new()
 
 local rootNode
 local quesLayout, ansLayout -- layout
+local playerIcon, opponentIcon -- 雙方頭像
 local playerO, playerX, opponentO, opponentX -- 雙方頭像OX
 local domainText -- 題目類型&領域
 local qText, qText2, qText3 -- 題目文字
@@ -110,22 +111,24 @@ function BattleScene:ctor()
     rootNode:addChild(waitLayer)
     waitLayer:getChildByName("Bg"):runAction(cc.RepeatForever:create(cc.RotateBy:create(40, 360)))
 
-    -- 頭像答對答錯OX
+    -- 雙方頭像
     local staticPanel = rootNode:getChildByName("StaticPanel")
+    playerIcon = {
+        staticPanel:getChildByName("PlayerIcon"):getChildByName("Teko"),
+        staticPanel:getChildByName("PlayerIcon"):getChildByName("Same"),
+        staticPanel:getChildByName("PlayerIcon"):getChildByName("Luluta")
+    }
+    opponentIcon = {
+        staticPanel:getChildByName("OpponentIcon"):getChildByName("Teko"),
+        staticPanel:getChildByName("OpponentIcon"):getChildByName("Same"),
+        staticPanel:getChildByName("OpponentIcon"):getChildByName("Luluta")
+    }
+
+    -- 頭像答對答錯OX
     playerO = staticPanel:getChildByName("PlayerO")
     playerX = staticPanel:getChildByName("PlayerX")
     opponentO = staticPanel:getChildByName("OpponentO")
     opponentX = staticPanel:getChildByName("OpponentX")
-
-    -- 設定頭像
-    if player.id == 2 then
-        -- local playerIcon = rootNode:getChildByName("StaticPanel"):getChildByName("PlayerIcon")
-        -- local opponentIcon = rootNode:getChildByName("StaticPanel"):getChildByName("OpponentIcon")
-        -- local p1x, p1y = playerIcon:getPosition()
-        -- local p2x, p2y = opponentIcon:getPosition()
-        -- playerIcon:setPosition(p2x, p2y)
-        -- opponentIcon:setPosition(p1x, p1y)
-    end
 
     -- socket設定
     local function ReceiveCallback(msg)
@@ -450,12 +453,18 @@ function BattleScene:handleOp(jsonObj)
             print("not waiting")
             self:showQuestion(jsonObj)
         end
-    elseif op == "BATTLE_INIT" then -- 設定雙方暱稱
+    elseif op == "BATTLE_INIT" then -- 設定雙方資訊
         local staticPanel = rootNode:getChildByName("StaticPanel")
         if jsonObj["id"] == player.id then
             staticPanel:getChildByName("PlayerName"):setString(jsonObj["name"])
+            for k, v in ipairs(playerIcon) do
+                v:setVisible(k == jsonObj["char"])
+            end
         else
             staticPanel:getChildByName("OpponentName"):setString(jsonObj["name"])
+            for k, v in ipairs(opponentIcon) do
+                v:setVisible(k == jsonObj["char"])
+            end
         end
     elseif op == "BATTLE_RESULT" then -- 演出雙方扣血
         dump(jsonObj)

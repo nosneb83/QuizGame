@@ -15,11 +15,13 @@ local chatLayer, chatInput-- 聊天室Layer, InputField
 local msgList, msgPrefab -- 訊息列表, prefab
 local isChatting, hasNewMsg -- 聊天中, 有新訊息
 local chatroomBtn
+local chars -- 立繪
 
 function MainScene:ctor()
     rootNode = cc.CSLoader:createNode("MainScene/MainScene.csb")
     self:addChild(rootNode)
 
+    -- 玩家狀態列
     local statusBar = rootNode:getChildByName("StatusBar")
     nameText = statusBar:getChildByName("NameText")
     premText = statusBar:getChildByName("PremText")
@@ -31,6 +33,16 @@ function MainScene:ctor()
         statusBar:getChildByName("Bookmark4"),
         statusBar:getChildByName("Bookmark5")
     }
+
+    -- 立繪
+    chars = {
+        rootNode:getChildByName("Chars"):getChildByName("Teko"),
+        rootNode:getChildByName("Chars"):getChildByName("Same"),
+        rootNode:getChildByName("Chars"):getChildByName("Luluta")
+    }
+    for k, v in ipairs(chars) do
+        v:setVisible(k == player.char)
+    end
 
     -- 選單按鈕
     menuBtns = {
@@ -67,21 +79,21 @@ function MainScene:ctor()
             btn:runAction(cc.Spawn:create(
             cc.MoveTo:create(menuAnimDur, menuBtnPos[2]),
             cc.ScaleTo:create(menuAnimDur, 0.6),
-            cc.FadeTo:create(menuAnimDur, 204)
+            cc.FadeTo:create(menuAnimDur, 229.5)
             ))
         elseif to == 3 then
             btn:runAction(cc.Sequence:create(
             cc.Spawn:create(
             cc.MoveTo:create(menuAnimDur, menuBtnPos[3]),
             cc.ScaleTo:create(menuAnimDur, 1),
-            cc.FadeTo:create(menuAnimDur, 204)
+            cc.FadeTo:create(menuAnimDur, 229.5)
             ),
             cc.CallFunc:create(function() btn:setEnabled(true) end)))
         elseif to == 4 then
             btn:runAction(cc.Spawn:create(
             cc.MoveTo:create(menuAnimDur, menuBtnPos[4]),
             cc.ScaleTo:create(menuAnimDur, 0.6),
-            cc.FadeTo:create(menuAnimDur, 204)
+            cc.FadeTo:create(menuAnimDur, 229.5)
             ))
         elseif to == 5 then
             btn:runAction(cc.Spawn:create(

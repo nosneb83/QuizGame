@@ -40,7 +40,7 @@
             <PreSize X="0.4941" Y="0.2085" />
             <FileData Type="Normal" Path="chat_bubble.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Char" ActionTag="-2052673995" Tag="89" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="237.6360" RightMargin="0.0360" TopMargin="82.2400" BottomMargin="54.8480" LeftEage="167" RightEage="167" TopEage="397" BottomEage="397" Scale9OriginX="167" Scale9OriginY="397" Scale9Width="175" Scale9Height="412" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Char" ActionTag="-2052673995" VisibleForFrame="False" Tag="89" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="237.6360" RightMargin="0.0360" TopMargin="82.2400" BottomMargin="54.8480" LeftEage="167" RightEage="167" TopEage="397" BottomEage="397" Scale9OriginX="167" Scale9OriginY="397" Scale9Width="175" Scale9Height="412" ctype="ImageViewObjectData">
             <Size X="482.3280" Y="1142.9120" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="478.8000" Y="626.3040" />
@@ -49,6 +49,51 @@
             <PrePosition X="0.6650" Y="0.4893" />
             <PreSize X="0.6699" Y="0.8929" />
             <FileData Type="Normal" Path="character.png" Plist="" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Chars" ActionTag="-1622379906" Tag="663" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="403.9920" RightMargin="115.9920" TopMargin="475.9680" BottomMargin="603.9680" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+            <Size X="200.0160" Y="200.0640" />
+            <Children>
+              <AbstractNodeData Name="Teko" ActionTag="1728614345" Tag="664" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-157.4920" RightMargin="-157.4920" TopMargin="-241.4680" BottomMargin="-241.4680" LeftEage="169" RightEage="169" TopEage="225" BottomEage="225" Scale9OriginX="169" Scale9OriginY="225" Scale9Width="177" Scale9Height="233" ctype="ImageViewObjectData">
+                <Size X="515.0000" Y="683.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="100.0080" Y="100.0320" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.5000" />
+                <PreSize X="2.5748" Y="3.4139" />
+                <FileData Type="Normal" Path="Char/Img/Teko.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Same" ActionTag="1282213403" Tag="665" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-169.0269" RightMargin="-169.0270" TopMargin="-316.4258" BottomMargin="-316.4356" LeftEage="169" RightEage="169" TopEage="225" BottomEage="225" Scale9OriginX="169" Scale9OriginY="225" Scale9Width="954" Scale9Height="1550" ctype="ImageViewObjectData">
+                <Size X="538.0699" Y="832.9254" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="100.0081" Y="100.0271" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.5000" />
+                <PreSize X="2.6901" Y="4.1633" />
+                <FileData Type="Normal" Path="Char/Img/Same.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Luluta" ActionTag="-1417421510" Tag="737" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-112.7872" RightMargin="-241.9242" TopMargin="-230.8788" BottomMargin="-187.2285" LeftEage="169" RightEage="169" TopEage="125" BottomEage="125" Scale9OriginX="169" Scale9OriginY="125" Scale9Width="3" Scale9Height="130" ctype="ImageViewObjectData">
+                <Size X="554.7274" Y="618.1713" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="164.5765" Y="121.8572" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.8228" Y="0.6091" />
+                <PreSize X="2.7734" Y="3.0899" />
+                <FileData Type="Normal" Path="Char/Img/LULUTA.png" Plist="" />
+              </AbstractNodeData>
+            </Children>
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="504.0000" Y="704.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.7000" Y="0.5500" />
+            <PreSize X="0.2778" Y="0.1563" />
+            <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
           <AbstractNodeData Name="Btn_return" ActionTag="135784883" Tag="76" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="17.7840" RightMargin="608.1840" TopMargin="15.6801" BottomMargin="1193.2799" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="64" Scale9Height="49" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="94.0320" Y="71.0400" />
@@ -112,7 +157,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Btn_room" ActionTag="-923243563" Alpha="229" Tag="94" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="185.0000" RightMargin="-235.0000" TopMargin="-25.0000" BottomMargin="-25.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="220" Scale9Height="228" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Btn_room" ActionTag="-923243563" Alpha="229" Tag="94" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="185.0000" RightMargin="-235.0000" TopMargin="-25.0000" BottomMargin="-25.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="220" Scale9Height="228" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="250.0000" Y="250.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="310.0000" Y="100.0000" />

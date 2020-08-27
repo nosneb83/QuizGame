@@ -16,7 +16,52 @@
             <PreSize X="1.0389" Y="1.0014" />
             <FileData Type="Normal" Path="MainScene/main_bg.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="Char" ActionTag="777345549" Tag="50" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="237.6360" RightMargin="0.0360" TopMargin="82.2400" BottomMargin="54.8480" LeftEage="167" RightEage="167" TopEage="397" BottomEage="397" Scale9OriginX="167" Scale9OriginY="397" Scale9Width="175" Scale9Height="412" ctype="ImageViewObjectData">
+          <AbstractNodeData Name="Chars" ActionTag="1644719373" Tag="535" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="403.9920" RightMargin="115.9920" TopMargin="475.9680" BottomMargin="603.9680" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
+            <Size X="200.0160" Y="200.0640" />
+            <Children>
+              <AbstractNodeData Name="Teko" ActionTag="-1523910575" Tag="536" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-157.4920" RightMargin="-157.4920" TopMargin="-241.4680" BottomMargin="-241.4680" LeftEage="169" RightEage="169" TopEage="225" BottomEage="225" Scale9OriginX="169" Scale9OriginY="225" Scale9Width="177" Scale9Height="233" ctype="ImageViewObjectData">
+                <Size X="515.0000" Y="683.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="100.0080" Y="100.0320" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.5000" />
+                <PreSize X="2.5748" Y="3.4139" />
+                <FileData Type="Normal" Path="Char/Img/Teko.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Same" ActionTag="-753462631" Tag="537" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-169.0269" RightMargin="-169.0270" TopMargin="-316.4258" BottomMargin="-316.4356" LeftEage="169" RightEage="169" TopEage="225" BottomEage="225" Scale9OriginX="169" Scale9OriginY="225" Scale9Width="954" Scale9Height="1550" ctype="ImageViewObjectData">
+                <Size X="538.0699" Y="832.9254" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="100.0081" Y="100.0271" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.5000" Y="0.5000" />
+                <PreSize X="2.6901" Y="4.1633" />
+                <FileData Type="Normal" Path="Char/Img/Same.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Luluta" ActionTag="1582700837" Tag="736" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-112.7872" RightMargin="-241.9242" TopMargin="-230.8788" BottomMargin="-187.2285" LeftEage="169" RightEage="169" TopEage="125" BottomEage="125" Scale9OriginX="169" Scale9OriginY="125" Scale9Width="3" Scale9Height="130" ctype="ImageViewObjectData">
+                <Size X="554.7274" Y="618.1713" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="164.5765" Y="121.8572" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="255" G="255" B="255" />
+                <PrePosition X="0.8228" Y="0.6091" />
+                <PreSize X="2.7734" Y="3.0899" />
+                <FileData Type="Normal" Path="Char/Img/LULUTA.png" Plist="" />
+              </AbstractNodeData>
+            </Children>
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="504.0000" Y="704.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.7000" Y="0.5500" />
+            <PreSize X="0.2778" Y="0.1563" />
+            <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Char" ActionTag="777345549" VisibleForFrame="False" Tag="50" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="237.6360" RightMargin="0.0360" TopMargin="82.2400" BottomMargin="54.8480" LeftEage="167" RightEage="167" TopEage="397" BottomEage="397" Scale9OriginX="167" Scale9OriginY="397" Scale9Width="175" Scale9Height="412" ctype="ImageViewObjectData">
             <Size X="482.3280" Y="1142.9120" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="478.8000" Y="626.3040" />

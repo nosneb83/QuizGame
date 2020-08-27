@@ -82,6 +82,12 @@ func handleConnection(conn net.Conn) {
 		case "LOGIN":
 			isLogin = playerLogin(jsonObj["ac"].(string), jsonObj["pw"].(string), player)
 
+		// 換角
+		case "SET_CHAR":
+			player.Char = int(jsonObj["char"].(float64))
+			db.SetChar(player)
+			player.Ch <- string(msgRecv)
+
 		// 戰鬥
 		case "ENTER_ROOM":
 			battleCh = battle.Join1V1(player)
@@ -169,6 +175,7 @@ func playerLogin(ac string, pw string, player p) bool {
 			"op":   "LOGIN_SUCCESS",
 			"id":   player.ID,
 			"name": player.Name,
+			"char": player.Char,
 			"bm":   player.Bookmark,
 			"bmp":  player.BookmarkPrem,
 			"coin": player.Coin})
