@@ -68,7 +68,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Btn_lab" ActionTag="1587235689" Alpha="204" Tag="79" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-235.0000" RightMargin="185.0000" TopMargin="-25.0000" BottomMargin="-25.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="220" Scale9Height="228" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Btn_lab" ActionTag="1587235689" Alpha="229" Tag="79" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-235.0000" RightMargin="185.0000" TopMargin="-25.0000" BottomMargin="-25.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="220" Scale9Height="228" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="250.0000" Y="250.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="-110.0000" Y="100.0000" />
@@ -83,7 +83,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Btn_battle" ActionTag="39560346" Alpha="204" Tag="80" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-25.0000" RightMargin="-25.0000" TopMargin="-25.0000" BottomMargin="-25.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="220" Scale9Height="228" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Btn_battle" ActionTag="39560346" Alpha="229" Tag="80" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-25.0000" RightMargin="-25.0000" TopMargin="-25.0000" BottomMargin="-25.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="220" Scale9Height="228" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="250.0000" Y="250.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="100.0000" Y="100.0000" />
@@ -98,7 +98,7 @@
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Btn_kacha" ActionTag="661158261" Alpha="204" Tag="81" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="185.0000" RightMargin="-235.0000" TopMargin="-25.0000" BottomMargin="-25.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="220" Scale9Height="228" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Btn_kacha" ActionTag="661158261" Alpha="229" Tag="81" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="185.0000" RightMargin="-235.0000" TopMargin="-25.0000" BottomMargin="-25.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="220" Scale9Height="228" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="250.0000" Y="250.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="310.0000" Y="100.0000" />
@@ -252,78 +252,78 @@
                 <PreSize X="0.9180" Y="0.5480" />
                 <FileData Type="Normal" Path="MainScene/statusBar/Status_BG.png" Plist="" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Bookmark1" ActionTag="-349178855" Tag="177" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="89.9482" RightMargin="484.1638" TopMargin="67.6399" BottomMargin="10.1041" FontSize="14" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="9" Scale9Height="28" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="25.0000" Y="50.0000" />
+              <AbstractNodeData Name="Bookmark1" ActionTag="-349178855" Tag="177" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="92.9482" RightMargin="487.1638" TopMargin="65.1399" BottomMargin="7.6041" FontSize="14" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="3" Scale9Height="33" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="19.0000" Y="55.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="102.4482" Y="35.1041" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.1710" Y="0.2748" />
-                <PreSize X="0.0417" Y="0.3914" />
+                <PreSize X="0.0317" Y="0.4305" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Normal" Path="MainScene/statusBar/bookmark_2.png" Plist="" />
-                <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
-                <NormalFileData Type="Normal" Path="MainScene/statusBar/bookmark.png" Plist="" />
+                <DisabledFileData Type="Normal" Path="MainScene/statusBar/bookmark_3.png" Plist="" />
+                <PressedFileData Type="Normal" Path="MainScene/statusBar/bookmark_4.png" Plist="" />
+                <NormalFileData Type="Normal" Path="MainScene/statusBar/bookmark_4.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Bookmark2" ActionTag="1271045969" Tag="178" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="119.9037" RightMargin="454.2083" TopMargin="67.6399" BottomMargin="10.1041" FontSize="14" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="9" Scale9Height="28" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="25.0000" Y="50.0000" />
+              <AbstractNodeData Name="Bookmark2" ActionTag="1271045969" Tag="178" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="122.9037" RightMargin="457.2083" TopMargin="65.1399" BottomMargin="7.6041" FontSize="14" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="3" Scale9Height="33" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="19.0000" Y="55.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="132.4037" Y="35.1041" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.2210" Y="0.2748" />
-                <PreSize X="0.0417" Y="0.3914" />
+                <PreSize X="0.0317" Y="0.4305" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Normal" Path="MainScene/statusBar/bookmark_2.png" Plist="" />
-                <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
-                <NormalFileData Type="Normal" Path="MainScene/statusBar/bookmark.png" Plist="" />
+                <DisabledFileData Type="Normal" Path="MainScene/statusBar/bookmark_3.png" Plist="" />
+                <PressedFileData Type="Normal" Path="MainScene/statusBar/bookmark_4.png" Plist="" />
+                <NormalFileData Type="Normal" Path="MainScene/statusBar/bookmark_4.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Bookmark3" ActionTag="-891935498" Tag="179" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="149.8593" RightMargin="424.2527" TopMargin="67.6399" BottomMargin="10.1041" FontSize="14" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="9" Scale9Height="28" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="25.0000" Y="50.0000" />
+              <AbstractNodeData Name="Bookmark3" ActionTag="-891935498" Tag="179" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="152.8593" RightMargin="427.2527" TopMargin="65.1399" BottomMargin="7.6041" FontSize="14" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="3" Scale9Height="33" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="19.0000" Y="55.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="162.3593" Y="35.1041" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.2710" Y="0.2748" />
-                <PreSize X="0.0417" Y="0.3914" />
+                <PreSize X="0.0317" Y="0.4305" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Normal" Path="MainScene/statusBar/bookmark_2.png" Plist="" />
-                <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
-                <NormalFileData Type="Normal" Path="MainScene/statusBar/bookmark.png" Plist="" />
+                <DisabledFileData Type="Normal" Path="MainScene/statusBar/bookmark_3.png" Plist="" />
+                <PressedFileData Type="Normal" Path="MainScene/statusBar/bookmark_4.png" Plist="" />
+                <NormalFileData Type="Normal" Path="MainScene/statusBar/bookmark_4.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Bookmark4" ActionTag="810632582" Tag="180" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="179.8150" RightMargin="394.2971" TopMargin="67.6399" BottomMargin="10.1041" FontSize="14" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="9" Scale9Height="28" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="25.0000" Y="50.0000" />
+              <AbstractNodeData Name="Bookmark4" ActionTag="810632582" Tag="180" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="182.8150" RightMargin="397.2971" TopMargin="65.1399" BottomMargin="7.6041" FontSize="14" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="3" Scale9Height="33" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="19.0000" Y="55.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="192.3150" Y="35.1041" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.3210" Y="0.2748" />
-                <PreSize X="0.0417" Y="0.3914" />
+                <PreSize X="0.0317" Y="0.4305" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Normal" Path="MainScene/statusBar/bookmark_2.png" Plist="" />
-                <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
-                <NormalFileData Type="Normal" Path="MainScene/statusBar/bookmark.png" Plist="" />
+                <DisabledFileData Type="Normal" Path="MainScene/statusBar/bookmark_3.png" Plist="" />
+                <PressedFileData Type="Normal" Path="MainScene/statusBar/bookmark_4.png" Plist="" />
+                <NormalFileData Type="Normal" Path="MainScene/statusBar/bookmark_4.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>
-              <AbstractNodeData Name="Bookmark5" ActionTag="1475665288" Tag="181" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="209.7706" RightMargin="364.3414" TopMargin="67.6399" BottomMargin="10.1041" FontSize="14" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="9" Scale9Height="28" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-                <Size X="25.0000" Y="50.0000" />
+              <AbstractNodeData Name="Bookmark5" ActionTag="1475665288" Tag="181" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="212.7706" RightMargin="367.3414" TopMargin="65.1399" BottomMargin="7.6041" FontSize="14" Scale9Enable="True" LeftEage="8" RightEage="8" TopEage="11" BottomEage="11" Scale9OriginX="8" Scale9OriginY="11" Scale9Width="3" Scale9Height="33" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="19.0000" Y="55.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="222.2706" Y="35.1041" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
                 <CColor A="255" R="255" G="255" B="255" />
                 <PrePosition X="0.3710" Y="0.2748" />
-                <PreSize X="0.0417" Y="0.3914" />
+                <PreSize X="0.0317" Y="0.4305" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Normal" Path="MainScene/statusBar/bookmark_2.png" Plist="" />
-                <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
-                <NormalFileData Type="Normal" Path="MainScene/statusBar/bookmark.png" Plist="" />
+                <DisabledFileData Type="Normal" Path="MainScene/statusBar/bookmark_3.png" Plist="" />
+                <PressedFileData Type="Normal" Path="MainScene/statusBar/bookmark_4.png" Plist="" />
+                <NormalFileData Type="Normal" Path="MainScene/statusBar/bookmark_4.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>

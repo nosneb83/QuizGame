@@ -214,6 +214,8 @@
             <Image Name="Coin_icon.png" />
             <Image Name="Name_BG.png" />
             <Image Name="Status_BG.png" />
+            <Image Name="bookmark_3.png" />
+            <Image Name="bookmark_4.png" />
           </Folder>
           <Image Name="main_bg.png" />
           <Project Name="MainScene.csd" Type="Scene" />

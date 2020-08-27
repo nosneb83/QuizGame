@@ -168,6 +168,22 @@ func UpdateBookmark(player p) {
 	}
 }
 
+// UpdateBMP 更新玩家有償書籤數量
+func UpdateBMP(player p) {
+	sql := `UPDATE players SET bookmarkprem = ? WHERE id = ?`
+	if _, err := db.Exec(sql, player.BookmarkPrem, player.ID); err != nil {
+		fmt.Println("Update failed:", err)
+	}
+}
+
+// UpdateCoin 更新玩家金幣數量
+func UpdateCoin(player p) {
+	sql := `UPDATE players SET coin = ? WHERE id = ?`
+	if _, err := db.Exec(sql, player.Coin, player.ID); err != nil {
+		fmt.Println("Update failed:", err)
+	}
+}
+
 ////////////////////////
 // from xuchao's blog //
 ////////////////////////

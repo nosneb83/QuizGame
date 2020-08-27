@@ -111,6 +111,33 @@ func handleConnection(conn net.Conn) {
 				player.Ch <- string(msgSend)
 			}
 
+		// 商城
+		case "BUY_COIN":
+			player.Coin += int(jsonObj["amount"].(float64))
+			db.UpdateCoin(player)
+			msgSend, _ := json.Marshal(map[string]interface{}{
+				"op":   "UPDATE_COIN",
+				"coin": player.Coin})
+			player.Ch <- string(msgSend)
+		case "BUY_BMP":
+			buyAmount := int(jsonObj["amount"].(float64))
+			if player.Coin < buyAmount*100 { // 錢不夠
+				msgSend, _ := json.Marshal(map[string]interface{}{
+					"op":  "UPDATE_BMP",
+					"err": "COIN_NOT_ENOUGH"})
+				player.Ch <- string(msgSend)
+				break
+			}
+			player.Coin -= buyAmount * 100
+			player.BookmarkPrem += buyAmount
+			db.UpdateCoin(player)
+			db.UpdateBMP(player)
+			msgSend, _ := json.Marshal(map[string]interface{}{
+				"op":   "UPDATE_BMP",
+				"coin": player.Coin,
+				"bmp":  player.BookmarkPrem})
+			player.Ch <- string(msgSend)
+
 		// 聊天
 		case "CHAT":
 			for _, v := range Players {
