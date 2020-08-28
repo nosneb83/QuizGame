@@ -116,6 +116,10 @@ function BattleScene:ctor()
     waitLayer = cc.CSLoader:createNode("Battle/WaitingRoom/WaitingLayer.csb")
     rootNode:addChild(waitLayer)
     waitLayer:getChildByName("Bg"):runAction(cc.RepeatForever:create(cc.RotateBy:create(40, 360)))
+    waitLayer:getChildByName("Btn_return"):addTouchEventListener(function()
+        self:returnMain(2)
+        socket:send(json.encode({ op = "LEAVE_WAITING" }))
+    end)
 
     -- 雙方頭像
     local staticPanel = rootNode:getChildByName("StaticPanel")

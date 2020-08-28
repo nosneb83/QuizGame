@@ -53,6 +53,9 @@ func handleConnection(conn net.Conn) {
 		n, _ := conn.Read(buf)
 		if n == 0 { // 離線
 			if isLogin {
+				if player.IsBattling {
+					battle.LeaveBattle(player, battleCh)
+				}
 				playerLogout(player)
 			}
 			return
@@ -91,14 +94,19 @@ func handleConnection(conn net.Conn) {
 		// 戰鬥
 		case "ENTER_ROOM":
 			battleCh = battle.Join1V1(player)
+		case "LEAVE_WAITING":
+			battle.LeaveWaitingRoom(player.ID)
 		case "ANSWER":
 			battleCh <- jsonObj
 		case "SURRENDER":
 			battleCh <- jsonObj
 		case "SKILL_SHUFFLE":
 			battleCh <- jsonObj
-		case "ADD_BOOKMARK":
+		case "ADD_BOOKMARK": // 獲勝加書籤
 			player.Bookmark++
+			if player.Bookmark > 5 {
+				player.Bookmark = 5
+			}
 			db.UpdateBookmark(player)
 			msgSend, _ := json.Marshal(map[string]interface{}{
 				"op":  "ADD_BOOKMARK",

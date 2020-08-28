@@ -10,6 +10,7 @@ type Player struct {
 	Room         int         // 所處房號
 	Health       float64     // 血量
 	Shuffle      bool        // 是否需要打亂題目
+	IsBattling   bool        // 是否正在戰鬥
 	Mainstory    int         //
 	Char1unlock  int         //
 	Char1relat   int         //

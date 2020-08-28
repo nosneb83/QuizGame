@@ -34,6 +34,7 @@ var questionList []questions.QuestionObj
 func Battle1V1(players map[int]p, ch chan map[string]interface{}) {
 	// 廣播雙方暱稱
 	for _, v := range players {
+		v.IsBattling = true
 		msgSend, _ := json.Marshal(map[string]interface{}{
 			"op":   "BATTLE_INIT",
 			"id":   v.ID,
@@ -133,6 +134,7 @@ func Battle1V1(players map[int]p, ch chan map[string]interface{}) {
 			if loser != nil {
 				time.Sleep(2 * time.Second)
 				for _, v := range players {
+					v.IsBattling = false
 					msgSend, _ := json.Marshal(map[string]interface{}{
 						"op":  "BATTLE_OVER",
 						"win": v.ID != loser.ID})
@@ -171,4 +173,12 @@ func sendQuestion(players map[int]p) {
 // LeaveWaitingRoom 等待中離線
 func LeaveWaitingRoom(id int) {
 	delete(waitingRoom1V1, id)
+}
+
+// LeaveBattle 戰鬥中離線
+func LeaveBattle(player p, battleCh chan map[string]interface{}) {
+	jsonObj := map[string]interface{}{
+		"op": "SURRENDER",
+		"id": float64(player.ID)}
+	battleCh <- jsonObj
 }
