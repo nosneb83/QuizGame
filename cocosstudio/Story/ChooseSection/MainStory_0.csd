@@ -332,6 +332,59 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
+          <AbstractNodeData Name="OutOfBM" ActionTag="1579875616" VisibleForFrame="False" Tag="1049" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="170.8920" RightMargin="170.8920" TopMargin="499.0720" BottomMargin="499.0720" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="-15" Scale9OriginY="-11" Scale9Width="30" Scale9Height="22" ctype="PanelObjectData">
+            <Size X="378.2160" Y="281.8560" />
+            <Children>
+              <AbstractNodeData Name="Bg" ActionTag="227951765" Tag="1050" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" RightMargin="0.0011" TopMargin="0.0481" LeftEage="14" RightEage="14" TopEage="11" BottomEage="11" Scale9OriginX="14" Scale9OriginY="11" Scale9Width="322" Scale9Height="236" ctype="ImageViewObjectData">
+                <Size X="378.2149" Y="281.8079" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="189.1075" Y="140.9039" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="178" G="214" B="255" />
+                <PrePosition X="0.5000" Y="0.4999" />
+                <PreSize X="1.0000" Y="0.9998" />
+                <FileData Type="Normal" Path="Char/Chara_UI_Main/About_BG.png" Plist="" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Text" ActionTag="-1176685194" Tag="1051" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="79.1075" RightMargin="79.1086" TopMargin="52.5905" BottomMargin="165.2655" FontSize="48" LabelText="書籤沒啦!!" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ShadowEnabled="True" ctype="TextObjectData">
+                <Size X="220.0000" Y="64.0000" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="189.1075" Y="197.2655" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="51" G="51" B="51" />
+                <PrePosition X="0.5000" Y="0.6999" />
+                <PreSize X="0.5817" Y="0.2271" />
+                <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="191" G="191" B="191" />
+              </AbstractNodeData>
+              <AbstractNodeData Name="Y" ActionTag="135330787" Tag="1052" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="71.1611" RightMargin="71.1622" TopMargin="171.5000" BottomMargin="30.5480" TouchEnable="True" FontSize="48" ButtonText="好吧qq" Scale9Enable="True" LeftEage="2" RightEage="2" TopEage="2" BottomEage="2" Scale9OriginX="2" Scale9OriginY="2" Scale9Width="42" Scale9Height="32" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+                <Size X="235.8926" Y="79.8080" />
+                <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+                <Position X="189.1075" Y="70.4520" />
+                <Scale ScaleX="1.0000" ScaleY="1.0000" />
+                <CColor A="255" R="229" G="241" B="255" />
+                <PrePosition X="0.5000" Y="0.2500" />
+                <PreSize X="0.6237" Y="0.2832" />
+                <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
+                <TextColor A="255" R="65" G="65" B="70" />
+                <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+                <PressedFileData Type="Default" Path="Default/Button_Press.png" Plist="" />
+                <NormalFileData Type="Default" Path="Default/Button_Normal.png" Plist="" />
+                <OutlineColor A="255" R="255" G="0" B="0" />
+                <ShadowColor A="255" R="110" G="110" B="110" />
+              </AbstractNodeData>
+            </Children>
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="360.0000" Y="640.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.5000" />
+            <PreSize X="0.5253" Y="0.2202" />
+            <SingleColor A="255" R="150" G="200" B="255" />
+            <FirstColor A="255" R="150" G="200" B="255" />
+            <EndColor A="255" R="255" G="255" B="255" />
+            <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
         </Children>
       </ObjectData>
     </Content>

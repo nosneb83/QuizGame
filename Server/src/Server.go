@@ -109,8 +109,17 @@ func handleConnection(conn net.Conn) {
 				player.Bookmark--
 				db.UpdateBookmark(player)
 				msgSend, _ := json.Marshal(map[string]interface{}{
-					"op": "PLAY_STORY",
-					"bm": player.Bookmark})
+					"op":  "PLAY_STORY",
+					"bm":  player.Bookmark,
+					"bmp": player.BookmarkPrem})
+				player.Ch <- string(msgSend)
+			} else if player.BookmarkPrem > 0 { // 書籤還有
+				player.BookmarkPrem--
+				db.UpdateBMP(player)
+				msgSend, _ := json.Marshal(map[string]interface{}{
+					"op":  "PLAY_STORY",
+					"bm":  player.Bookmark,
+					"bmp": player.BookmarkPrem})
 				player.Ch <- string(msgSend)
 			} else { // 書籤沒了
 				msgSend, _ := json.Marshal(map[string]interface{}{

@@ -4,11 +4,14 @@ end)
 
 local rootNode
 local currentChap -- 當前所在章節
+local currentSect
 local premText
 local bmBtns = {}
+local outOfBMPanel -- 書籤沒了panel
 
 function StorySectionScene:ctor(chap)
     currentChap = chap
+    dump(currentChap)
     rootNode = cc.CSLoader:createNode("Story/ChooseSection/" .. currentChap[2] .. ".csb")
     self:addChild(rootNode)
     rootNode:getChildByName("Btn_return")
@@ -40,6 +43,11 @@ function StorySectionScene:ctor(chap)
     :addTouchEventListener(self.sect)
     rootNode:getChildByName("SectionBtns"):getChildByName("Btn_Sect5")
     :addTouchEventListener(self.sect)
+
+    -- 書籤沒了panel
+    outOfBMPanel = rootNode:getChildByName("OutOfBM")
+    outOfBMPanel:getChildByName("Y")
+    :addTouchEventListener(function() outOfBMPanel:setVisible(false) end)
 
     -- socket設定
     local function ReceiveCallback(msg)
@@ -77,27 +85,36 @@ function StorySectionScene:backToStory(type)
 end
 function StorySectionScene:sect(type)
     if type == ccui.TouchEventType.ended then
-        if player.bm == 0 then return end
-        local sectStr = "0_1_" .. tostring(self:getTag())
+        -- 檢查有沒有讀到劇本
+        print("len(storyFile) = " .. tostring(#storyFile))
+        -- 段落編號
+        currentSect = "0_1_" .. tostring(self:getTag())
         -- 叫server扣書籤
-        -- local jsonObj = {
-        --     op = "PAY_BOOKMARK",
-        --     id = player.id,
-        --     sect = sectStr
-        -- }
-        -- socket:send(json.encode(jsonObj))
-        -- player.bm = player.bm - 1
-        -- self:updateUI()
-        -- 進入劇情
-        table.insert(currentChap, sectStr) -- 段落6
-        local scene = require("app/views/StoryScene.lua"):create(currentChap)
-        cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
+        local jsonObj = {
+            op = "PAY_BOOKMARK",
+            id = player.id,
+            sect = currentSect
+        }
+        socket:send(json.encode(jsonObj))
     end
 end
 
 -- Handle Server Op
 function StorySectionScene:handleOp(jsonObj)
     dump(jsonObj)
+    local op = jsonObj["op"]
+    if op == "PLAY_STORY" then
+        player.bm = jsonObj["bm"]
+        player.bmp = jsonObj["bmp"]
+        self:updateUI()
+        -- 進入劇情
+        table.insert(currentChap, currentSect)
+        local scene = require("app/views/StoryScene.lua"):create(currentChap)
+        cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
+    elseif op == "OUT_OF_BOOKMARK" then
+        -- 告訴玩家書籤沒了
+        outOfBMPanel:setVisible(true)
+    end
 end
 
 return StorySectionScene

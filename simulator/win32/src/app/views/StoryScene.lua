@@ -143,23 +143,12 @@ end
 function StoryScene:nextSect(type)
     if type == ccui.TouchEventType.ended then
         contPanel:setVisible(false)
-        -- 檢查還有沒有書籤
-        if player.bm > 0 then
-            -- 叫server扣書籤
-            local jsonObj = {
-                op = "PAY_BOOKMARK",
-                id = player.id
-            }
-            -- socket:send(json.encode(jsonObj))
-            -- player.bm = player.bm - 1
-            -- 播下一段劇情
-            btnNext:setEnabled(true)
-            currentSect[3] = nextSectStr
-            StoryScene:nextDialog()
-        else
-            -- 告訴玩家書籤沒了
-            outOfBMPanel:setVisible(true)
-        end
+        -- 叫server扣書籤
+        local jsonObj = {
+            op = "PAY_BOOKMARK",
+            id = player.id
+        }
+        socket:send(json.encode(jsonObj))
     end
 end
 function StoryScene:backToSect(type)
@@ -317,6 +306,18 @@ end
 -- Handle Server Op
 function StoryScene:handleOp(jsonObj)
     dump(jsonObj)
+    local op = jsonObj["op"]
+    if op == "PLAY_STORY" then
+        player.bm = jsonObj["bm"]
+        player.bmp = jsonObj["bmp"]
+        -- 播下一段劇情
+        btnNext:setEnabled(true)
+        currentSect[3] = nextSectStr
+        self:nextDialog()
+    elseif op == "OUT_OF_BOOKMARK" then
+        -- 告訴玩家書籤沒了
+        outOfBMPanel:setVisible(true)
+    end
 end
 
 return StoryScene
