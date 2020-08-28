@@ -62,9 +62,9 @@ func handleConnection(conn net.Conn) {
 		}
 
 		msgRecv = string(buf[:n])
-		if msgRecv == "0" { // heartbeat
-			continue
-		}
+		// if msgRecv == "0" { // heartbeat
+		// 	continue
+		// }
 		fmt.Println(msgRecv) // server印出訊息
 
 		///////////////
