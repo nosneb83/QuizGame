@@ -70,26 +70,26 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="AheadEfx" ActionTag="2011135299" Tag="421" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="48.5000" RightMargin="48.5000" TopMargin="339.2050" BottomMargin="253.7950" FontSize="24" LabelText="領先狀態&#xA;本題消耗時間變為原本的1/5" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="303.0000" Y="64.0000" />
+          <AbstractNodeData Name="AheadEfx" ActionTag="2011135299" Tag="421" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="65.5000" RightMargin="65.5000" TopMargin="339.2050" BottomMargin="253.7950" FontSize="24" LabelText="領先狀態&#xA;4秒內時間流逝減緩為1/3" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="269.0000" Y="64.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="200.0000" Y="285.7950" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="26" G="26" B="26" />
             <PrePosition X="0.5000" Y="0.4350" />
-            <PreSize X="0.7575" Y="0.0974" />
+            <PreSize X="0.6725" Y="0.0974" />
             <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="BehindEfx" ActionTag="-315980178" Tag="420" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="96.0000" RightMargin="96.0000" TopMargin="444.3250" BottomMargin="148.6750" FontSize="24" LabelText="落後狀態&#xA;本題的消耗時間為0" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="208.0000" Y="64.0000" />
+          <AbstractNodeData Name="BehindEfx" ActionTag="-315980178" Tag="420" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="120.5000" RightMargin="120.5000" TopMargin="444.3250" BottomMargin="148.6750" FontSize="24" LabelText="落後狀態&#xA;4秒內時間凍結" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="159.0000" Y="64.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="200.0000" Y="180.6750" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="26" G="26" B="26" />
             <PrePosition X="0.5000" Y="0.2750" />
-            <PreSize X="0.5200" Y="0.0974" />
+            <PreSize X="0.3975" Y="0.0974" />
             <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />

@@ -98,7 +98,7 @@
           <AbstractNodeData Name="Btns" ActionTag="326969823" Tag="78" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="260.0000" RightMargin="260.0000" TopMargin="988.0000" BottomMargin="92.0000" TouchEnable="True" ClipAble="False" BackColorAlpha="102" ColorAngle="90.0000" Scale9Width="1" Scale9Height="1" ctype="PanelObjectData">
             <Size X="200.0000" Y="200.0000" />
             <Children>
-              <AbstractNodeData Name="Btn_player" ActionTag="119389346" Alpha="0" Tag="77" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-345.0000" RightMargin="295.0000" TopMargin="-25.0000" BottomMargin="-25.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="220" Scale9Height="228" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+              <AbstractNodeData Name="Btn_shop" ActionTag="119389346" Alpha="0" Tag="77" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-345.0000" RightMargin="295.0000" TopMargin="-25.0000" BottomMargin="-25.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="220" Scale9Height="228" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
                 <Size X="250.0000" Y="250.0000" />
                 <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
                 <Position X="-220.0000" Y="100.0000" />
@@ -107,9 +107,9 @@
                 <PrePosition X="-1.1000" Y="0.5000" />
                 <PreSize X="1.2500" Y="1.2500" />
                 <TextColor A="255" R="65" G="65" B="70" />
-                <DisabledFileData Type="Normal" Path="MainScene/btn/player.png" Plist="" />
-                <PressedFileData Type="Normal" Path="MainScene/btn/player_2.png" Plist="" />
-                <NormalFileData Type="Normal" Path="MainScene/btn/player.png" Plist="" />
+                <DisabledFileData Type="Normal" Path="MainScene/btn/shop.png" Plist="" />
+                <PressedFileData Type="Normal" Path="MainScene/btn/shop_2.png" Plist="" />
+                <NormalFileData Type="Normal" Path="MainScene/btn/shop.png" Plist="" />
                 <OutlineColor A="255" R="255" G="0" B="0" />
                 <ShadowColor A="255" R="110" G="110" B="110" />
               </AbstractNodeData>

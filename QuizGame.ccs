@@ -216,6 +216,8 @@
             <Image Name="player_2.png" />
             <Image Name="story.png" />
             <Image Name="story_2.png" />
+            <Image Name="shop.png" />
+            <Image Name="shop_2.png" />
           </Folder>
           <Folder Name="Settings">
             <Image Name="Bar.png" />
@@ -257,12 +259,14 @@
           <Image Name="Chatroom_icon_4.png" />
         </Folder>
         <Folder Name="Shop">
-          <Image Name="rect.png" />
-          <Image Name="rect_2.png" />
           <Image Name="Shibara.png" />
           <Image Name="Shop_BG.png" />
           <Image Name="Shop_sample.png" />
           <Project Name="ShopScene.csd" Type="Scene" />
+          <Project Name="KachaScene.csd" Type="Scene" />
+          <Image Name="BG.png" />
+          <Image Name="rect.png" />
+          <Image Name="rect_2.png" />
         </Folder>
         <Folder Name="Story">
           <Folder Name="ChooseSection">

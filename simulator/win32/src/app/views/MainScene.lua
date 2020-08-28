@@ -46,13 +46,13 @@ function MainScene:ctor()
 
     -- 選單按鈕
     menuBtns = {
-        rootNode:getChildByName("Btns"):getChildByName("Btn_player"),
+        rootNode:getChildByName("Btns"):getChildByName("Btn_shop"),
         rootNode:getChildByName("Btns"):getChildByName("Btn_lab"),
         rootNode:getChildByName("Btns"):getChildByName("Btn_battle"),
         rootNode:getChildByName("Btns"):getChildByName("Btn_kacha"),
         rootNode:getChildByName("Btns"):getChildByName("Btn_story")
     }
-    menuBtns[1]:addTouchEventListener(self.enterPlayerScene)
+    menuBtns[1]:addTouchEventListener(self.enterShopScene)
     menuBtns[2]:addTouchEventListener(self.enterLabScene)
     menuBtns[3]:addTouchEventListener(self.enterBattleScene)
     menuBtns[4]:addTouchEventListener(self.enterKachaScene)
@@ -64,6 +64,7 @@ function MainScene:ctor()
         cc.p(menuBtns[4]:getPosition()),
         cc.p(menuBtns[5]:getPosition())
     }
+
     -- 選單按鈕左右滾動效果
     local menuAnimDur = 0.5 -- 選單按鈕滾動速度(時間長度)
     menuBtnAnimFunc = function(btn, to)
@@ -107,6 +108,18 @@ function MainScene:ctor()
     menuLeftBtn:addTouchEventListener(self.menuLeft)
     local menuRightBtn = rootNode:getChildByName("Btns"):getChildByName("Btn_right")
     menuRightBtn:addTouchEventListener(self.menuRight)
+
+    -- 主選單位置
+    if mainPageBtn > 0 then
+        menuAnimDur = 0
+        for i = 1, mainPageBtn do
+            for i = 1, 5 do
+                menuBtnAnimFunc(menuBtns[i], (i - 2) % 5 + 1)
+            end
+            table.insert(menuBtns, table.remove(menuBtns, 1))
+        end
+        menuAnimDur = 0.5
+    end
 
     -- 聊天室Layer
     chatLayer = cc.CSLoader:createNode("MainScene/ChatroomLayer.csb")
@@ -160,9 +173,10 @@ function MainScene:updateUI()
 end
 
 -- 進入各頁面
-function MainScene:enterPlayerScene(type)
+function MainScene:enterShopScene(type)
     if type == ccui.TouchEventType.ended then
-        print("個人頁面")
+        local scene = require("app/views/ShopScene.lua"):create()
+        cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
     end
 end
 function MainScene:enterLabScene(type)
@@ -179,7 +193,7 @@ function MainScene:enterBattleScene(type)
 end
 function MainScene:enterKachaScene(type)
     if type == ccui.TouchEventType.ended then
-        local scene = require("app/views/ShopScene.lua"):create()
+        local scene = require("app/views/KachaScene.lua"):create()
         cc.Director:getInstance():replaceScene(cc.TransitionFade:create(sceneTransTime, scene))
     end
 end
@@ -197,6 +211,7 @@ function MainScene:menuLeft(type)
             menuBtnAnimFunc(menuBtns[i], i % 5 + 1)
         end
         table.insert(menuBtns, 1, table.remove(menuBtns))
+        mainPageBtn = (mainPageBtn - 1) % 5
     end
 end
 function MainScene:menuRight(type)
@@ -205,6 +220,7 @@ function MainScene:menuRight(type)
             menuBtnAnimFunc(menuBtns[i], (i - 2) % 5 + 1)
         end
         table.insert(menuBtns, table.remove(menuBtns, 1))
+        mainPageBtn = (mainPageBtn + 1) % 5
     end
 end
 
