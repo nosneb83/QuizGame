@@ -472,6 +472,10 @@ function BattleScene:gameover(win)
     self:stopCountdown()
     if win then
         vicLayer:setVisible(true)
+        local jsonObj = {
+            op = "ADD_BOOKMARK"
+        }
+        socket:send(json.encode(jsonObj))
     else
         defLayer:setVisible(true)
     end
@@ -536,6 +540,10 @@ function BattleScene:handleOp(jsonObj)
     elseif op == "BATTLE_OVER" then -- 演出勝負
         dump(jsonObj)
         self:gameover(jsonObj["win"])
+    elseif op == "ADD_BOOKMARK" then -- 贏了加書籤
+        dump(jsonObj)
+        player.bm = jsonObj["bm"]
+        player.bmp = jsonObj["bmp"]
     end
 end
 
