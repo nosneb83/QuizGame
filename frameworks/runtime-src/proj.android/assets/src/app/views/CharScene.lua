@@ -4,6 +4,7 @@ end)
 
 local rootNode
 local chars -- 立繪
+local charSetBtns -- 設定角色的按鈕
 local tabs -- 分頁按鈕
 local layers -- 角色資訊頁面
 local currentShowingChar -- 現在顯示的角色
@@ -18,7 +19,8 @@ function CharScene:ctor()
     -- 立繪
     chars = {
         rootNode:getChildByName("Chars"):getChildByName("Teko"),
-        rootNode:getChildByName("Chars"):getChildByName("Same")
+        rootNode:getChildByName("Chars"):getChildByName("Same"),
+        rootNode:getChildByName("Chars"):getChildByName("Luluta")
     }
 
     -- 分頁按鈕
@@ -38,21 +40,38 @@ function CharScene:ctor()
         cc.CSLoader:createNode("Char/RelatLayer1.csb"),
         cc.CSLoader:createNode("Char/IntroLayer2.csb"),
         cc.CSLoader:createNode("Char/SkillLayer2.csb"),
-        cc.CSLoader:createNode("Char/RelatLayer2.csb")
+        cc.CSLoader:createNode("Char/RelatLayer2.csb"),
+        cc.CSLoader:createNode("Char/IntroLayer3.csb"),
+        cc.CSLoader:createNode("Char/SkillLayer3.csb"),
+        cc.CSLoader:createNode("Char/RelatLayer3.csb")
     }
-    rootNode:getChildByName("CharInfo"):addChild(layers[1])
-    rootNode:getChildByName("CharInfo"):addChild(layers[2])
-    rootNode:getChildByName("CharInfo"):addChild(layers[3])
-    rootNode:getChildByName("CharInfo"):addChild(layers[4])
-    rootNode:getChildByName("CharInfo"):addChild(layers[5])
-    rootNode:getChildByName("CharInfo"):addChild(layers[6])
+    for _, v in ipairs(layers) do
+        rootNode:getChildByName("CharInfo"):addChild(v)
+    end
+
+    -- 設定角色的按鈕
+    charSetBtns = {
+        layers[1]:getChildByName("SetCharBtn"),
+        layers[4]:getChildByName("SetCharBtn"),
+        layers[7]:getChildByName("SetCharBtn")
+    }
+    for _, v in ipairs(charSetBtns) do
+        v:addTouchEventListener(self.setChar)
+    end
+    charSetBtns[player.char]:setEnabled(false)
+    charSetBtns[player.char]:setTitleText("使用中")
+
+    -- 顯示當前玩家角色的頁面
     self:showChar(player.char)
 
+    -- 切換顯示的角色資訊
     rootNode:getChildByName("CharMenu"):getChildByName("Teko")
     :addTouchEventListener(self.chooseChar)
     rootNode:getChildByName("CharMenu"):getChildByName("Same")
     :addTouchEventListener(self.chooseChar)
-    
+    rootNode:getChildByName("CharMenu"):getChildByName("Luluta")
+    :addTouchEventListener(self.chooseChar)
+
     -- socket設定
     local function ReceiveCallback(msg)
         -- 把每個{}分割開
@@ -107,13 +126,30 @@ function CharScene:switchTab(type)
         end
     end
 end
+function CharScene:setChar(type)
+    if type == ccui.TouchEventType.ended then
+        local jsonObj = {
+            op = "SET_CHAR",
+            char = self:getTag()
+        }
+        socket:send(json.encode(jsonObj))
+    end
+end
 
 -- 處理server訊息
 function CharScene:handleOp(jsonObj)
     dump(jsonObj)
     local op = jsonObj["op"]
-    if op == "CHAT" then
-        
+    if op == "SET_CHAR" then
+        player.char = jsonObj["char"]
+        for k, v in ipairs(charSetBtns) do
+            v:setEnabled(k ~= player.char)
+            if k == player.char then
+                v:setTitleText("使用中")
+            else
+                v:setTitleText("設定角色")
+            end
+        end
     end
 end
 

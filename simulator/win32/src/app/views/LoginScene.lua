@@ -66,6 +66,7 @@ function LoginScene:onCreate()
     socket:connect("172.29.18.171", "8888") -- benson
     -- socket:connect("172.29.18.163", "8888") -- 測試機
     -- socket:connect("127.0.0.1", "8888")
+    socket:setHeartBeat()
 end
 
 function LoginScene:login(type)

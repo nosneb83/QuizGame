@@ -6,11 +6,22 @@ local rootNode
 local menuBtns = {}
 local menuBtnPos = {}
 local menuBtnAnimFunc
+local chars -- 立繪
 
 function BattleModeScene:ctor()
     rootNode = cc.CSLoader:createNode("BattleMode/BattleModeScene.csb")
     self:addChild(rootNode)
     rootNode:getChildByName("Btn_return"):addTouchEventListener(self.returnMain)
+    
+    -- 立繪
+    chars = {
+        rootNode:getChildByName("Chars"):getChildByName("Teko"),
+        rootNode:getChildByName("Chars"):getChildByName("Same"),
+        rootNode:getChildByName("Chars"):getChildByName("Luluta")
+    }
+    for k, v in ipairs(chars) do
+        v:setVisible(k == player.char)
+    end
 
     -- 選單按鈕
     menuBtns = {

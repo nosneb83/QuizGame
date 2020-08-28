@@ -67,11 +67,19 @@ C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\re
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Battle\opinion\ring.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Battle\Skill\Cir_Orange.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Battle\Skill\Cir_Orange_2.png \
-C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Battle\Skill\Cir_red.png \
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Battle\Skill\Cir_Red.png \
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Battle\Skill\Confuse_Orange.png \
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Battle\Skill\Confuse_Orange_2.png \
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Battle\Skill\Confuse_Red.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Battle\Skill\mask.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Battle\Skill\Skill_BG.png \
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Battle\Skill\Stop_Orange.png \
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Battle\Skill\Stop_Orange_2.png \
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Battle\Skill\Stop_Red.png \
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Battle\Skill\time_stop.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Battle\Time\timebar.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Battle\Time\timebar_2.png \
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Battle\Time\timebar_w.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Battle\WaitingRoom\Bg_cut.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Battle\WaitingRoom\Waiting.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Battle\WaitingRoom\WaitingLayer.csb \
@@ -98,10 +106,13 @@ C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\re
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\IntroLayer.csb \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\IntroLayer1.csb \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\IntroLayer2.csb \
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\IntroLayer3.csb \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\RelatLayer1.csb \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\RelatLayer2.csb \
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\RelatLayer3.csb \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\SkillLayer1.csb \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\SkillLayer2.csb \
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\SkillLayer3.csb \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\Up_bar \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\Chara_UI_kitsuna\bar.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\Chara_UI_kitsuna\greenbar.png \
@@ -113,6 +124,7 @@ C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\re
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\Chara_UI_Main\Hotel-suite-living-room.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\Chara_UI_Main\Name_BG.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\Chara_UI_Main\Small_BG.png \
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\Chara_UI_Main\Using_Chara.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\Chara_UI_Skill\botton.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\Chara_UI_Skill\botton_2.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\Chara_UI_Skill\W_BG_Big.png \
@@ -120,6 +132,7 @@ C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\re
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\Chara_UI_Skill\W_BG_Small.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\Down\BG.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\Img\LULUTA.png \
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\Img\LULUTA_S.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\Img\Palung.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\Img\Same.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Char\Img\Same_S.png \
@@ -176,6 +189,8 @@ C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\re
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\MainScene\btn\lab_2.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\MainScene\btn\player.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\MainScene\btn\player_2.png \
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\MainScene\btn\shop.png \
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\MainScene\btn\shop_2.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\MainScene\btn\story.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\MainScene\btn\story_2.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\MainScene\Chat\BG_Big.png \
@@ -200,6 +215,8 @@ C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\re
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\SFX\Quiz-Question02-mp3\Quiz-Question02-1.mp3 \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\SFX\Quiz-Results01-mp3\Quiz-Results01-1.mp3 \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\SFX\Quiz-Wrong_Buzzer01-mp3\Quiz-Wrong_Buzzer01-1.mp3 \
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Shop\BG.png \
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Shop\KachaScene.csb \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Shop\rect.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Shop\rect_2.png \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\res\Shop\ShopScene.csb \
@@ -264,6 +281,7 @@ C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\sr
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\src\app\views\BattleModeScene.lua \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\src\app\views\BattleScene.lua \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\src\app\views\CharScene.lua \
+C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\src\app\views\KachaScene.lua \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\src\app\views\LoginScene.lua \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\src\app\views\MainScene.lua \
 C:\Benson\QuizGameProject\QuizGame\frameworks\runtime-src\proj.android\assets\src\app\views\ShopScene.lua \

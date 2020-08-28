@@ -206,4 +206,12 @@ function LuaTcpSocket:reconnect()
     return self:connect(self.lastIp, self.lastPort)
 end
 
+function LuaTcpSocket:setHeartBeat()
+    self.heartbeatScheduler = scheduler:scheduleScriptFunc(function(dt)
+        if self.status == NET_STATUS.connected then
+            self:send(0, "")
+        end
+    end, 3, false)
+end
+
 return LuaTcpSocket
