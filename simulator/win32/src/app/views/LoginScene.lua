@@ -5,6 +5,7 @@ LoginScene.RESOURCE_FILENAME = "Login/LoginScene.csb"
 socket = require("LuaTcpSocket"):new():init()
 cc.exports.player = require("player.lua"):new()
 cc.exports.sceneTransTime = 0.7
+cc.exports.mainPageBtn = 0
 
 local rootNode
 local startBtn

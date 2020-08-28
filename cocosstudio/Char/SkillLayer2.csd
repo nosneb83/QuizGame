@@ -70,26 +70,26 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="AheadEfx" ActionTag="2011135299" Tag="421" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="23.0000" RightMargin="23.0000" TopMargin="342.2050" BottomMargin="256.7950" FontSize="22" LabelText="領先狀態&#xA;發動後下一題讓對手的文字順序混亂" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="354.0000" Y="58.0000" />
+          <AbstractNodeData Name="AheadEfx" ActionTag="2011135299" Tag="421" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="78.0000" RightMargin="78.0000" TopMargin="342.2050" BottomMargin="256.7950" FontSize="22" LabelText="領先狀態&#xA;對手下一題的題目被打亂" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="244.0000" Y="58.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="200.0000" Y="285.7950" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="26" G="26" B="26" />
             <PrePosition X="0.5000" Y="0.4350" />
-            <PreSize X="0.8850" Y="0.0883" />
+            <PreSize X="0.6100" Y="0.0883" />
             <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="BehindEfx" ActionTag="-315980178" Tag="420" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="23.0000" RightMargin="23.0000" TopMargin="447.3250" BottomMargin="151.6750" FontSize="22" LabelText="落後狀態&#xA;發動後下兩題讓對手的文字順序混亂" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
-            <Size X="354.0000" Y="58.0000" />
+          <AbstractNodeData Name="BehindEfx" ActionTag="-315980178" Tag="420" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="46.5000" RightMargin="46.5000" TopMargin="447.3250" BottomMargin="151.6750" FontSize="22" LabelText="落後狀態&#xA;對手下一題的題目&amp;選項被打亂" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
+            <Size X="307.0000" Y="58.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="200.0000" Y="180.6750" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="26" G="26" B="26" />
             <PrePosition X="0.5000" Y="0.2750" />
-            <PreSize X="0.8850" Y="0.0883" />
+            <PreSize X="0.7675" Y="0.0883" />
             <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />

@@ -6,15 +6,15 @@
       <ObjectData Name="Scene" Tag="320" ctype="GameNodeObjectData">
         <Size X="720.0000" Y="1280.0000" />
         <Children>
-          <AbstractNodeData Name="Bg" ActionTag="1048232683" Tag="321" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-15.9323" RightMargin="-15.9323" TopMargin="-4.1753" BottomMargin="-4.1754" LeftEage="253" RightEage="253" TopEage="434" BottomEage="434" Scale9OriginX="253" Scale9OriginY="434" Scale9Width="262" Scale9Height="448" ctype="ImageViewObjectData">
-            <Size X="751.8645" Y="1288.3507" />
+          <AbstractNodeData Name="Bg" ActionTag="1048232683" Tag="321" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="-15.9323" RightMargin="-15.9323" TopMargin="-4.1755" BottomMargin="-4.1755" LeftEage="253" RightEage="253" TopEage="434" BottomEage="434" Scale9OriginX="253" Scale9OriginY="434" Scale9Width="262" Scale9Height="448" ctype="ImageViewObjectData">
+            <Size X="751.8646" Y="1288.3511" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="360.0000" Y="640.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.5000" Y="0.5000" />
             <PreSize X="1.0443" Y="1.0065" />
-            <FileData Type="Normal" Path="Shop/Shop_BG.png" Plist="" />
+            <FileData Type="Normal" Path="Shop/BG.png" Plist="" />
           </AbstractNodeData>
           <AbstractNodeData Name="Btn_return" ActionTag="-137346392" Tag="327" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="17.7840" RightMargin="608.1840" TopMargin="15.6801" BottomMargin="1193.2799" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="64" Scale9Height="49" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="94.0320" Y="71.0400" />
@@ -228,14 +228,14 @@
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
           </AbstractNodeData>
-          <AbstractNodeData Name="BuyCoin1" ActionTag="795018534" Tag="1" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="46.8000" RightMargin="385.2000" TopMargin="662.4000" BottomMargin="534.4000" TouchEnable="True" FontSize="36" ButtonText="金幣 +100" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="370" Scale9Height="78" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="288.0000" Y="83.2000" />
+          <AbstractNodeData Name="BuyCoin1" ActionTag="795018534" Tag="1" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="28.8000" RightMargin="367.2000" TopMargin="665.6000" BottomMargin="537.6000" TouchEnable="True" FontSize="36" ButtonText="代幣 +100" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="370" Scale9Height="78" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="324.0000" Y="76.8000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="190.8000" Y="576.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.2650" Y="0.4500" />
-            <PreSize X="0.4000" Y="0.0650" />
+            <PreSize X="0.4500" Y="0.0600" />
             <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
@@ -244,14 +244,14 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="BuyCoin2" ActionTag="-1805033488" Tag="10" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="46.8000" RightMargin="385.2000" TopMargin="764.8000" BottomMargin="432.0000" TouchEnable="True" FontSize="36" ButtonText="金幣 +1000" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="370" Scale9Height="78" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="288.0000" Y="83.2000" />
+          <AbstractNodeData Name="BuyCoin2" ActionTag="-1805033488" Tag="10" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="28.8000" RightMargin="367.2000" TopMargin="768.0000" BottomMargin="435.2000" TouchEnable="True" FontSize="36" ButtonText="代幣 +1000" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="370" Scale9Height="78" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="324.0000" Y="76.8000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="190.8000" Y="473.6000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.2650" Y="0.3700" />
-            <PreSize X="0.4000" Y="0.0650" />
+            <PreSize X="0.4500" Y="0.0600" />
             <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
@@ -260,14 +260,14 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="BuyBookmark1" ActionTag="1287969926" Tag="1" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="46.8000" RightMargin="385.2000" TopMargin="918.4000" BottomMargin="278.4000" TouchEnable="True" FontSize="36" ButtonText="書籤 +1" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="370" Scale9Height="78" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="288.0000" Y="83.2000" />
+          <AbstractNodeData Name="BuyBookmark1" ActionTag="1287969926" Tag="1" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="28.8000" RightMargin="367.2000" TopMargin="921.6000" BottomMargin="281.6000" TouchEnable="True" FontSize="36" ButtonText="書籤 +1" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="370" Scale9Height="78" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="324.0000" Y="76.8000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="190.8000" Y="320.0000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.2650" Y="0.2500" />
-            <PreSize X="0.4000" Y="0.0650" />
+            <PreSize X="0.4500" Y="0.0600" />
             <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
@@ -276,14 +276,14 @@
             <OutlineColor A="255" R="255" G="0" B="0" />
             <ShadowColor A="255" R="110" G="110" B="110" />
           </AbstractNodeData>
-          <AbstractNodeData Name="BuyBookmark2" ActionTag="516191425" Tag="10" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="46.8000" RightMargin="385.2000" TopMargin="1020.8000" BottomMargin="176.0000" TouchEnable="True" FontSize="36" ButtonText="書籤 +10" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="370" Scale9Height="78" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
-            <Size X="288.0000" Y="83.2000" />
+          <AbstractNodeData Name="BuyBookmark2" ActionTag="516191425" Tag="10" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftMargin="28.8000" RightMargin="367.2000" TopMargin="1024.0000" BottomMargin="179.2000" TouchEnable="True" FontSize="36" ButtonText="書籤 +10" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="370" Scale9Height="78" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+            <Size X="324.0000" Y="76.8000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="190.8000" Y="217.6000" />
             <Scale ScaleX="1.0000" ScaleY="1.0000" />
             <CColor A="255" R="255" G="255" B="255" />
             <PrePosition X="0.2650" Y="0.1700" />
-            <PreSize X="0.4000" Y="0.0650" />
+            <PreSize X="0.4500" Y="0.0600" />
             <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
             <TextColor A="255" R="65" G="65" B="70" />
             <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
