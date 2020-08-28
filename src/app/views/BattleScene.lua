@@ -4,6 +4,7 @@ end)
 
 require("json")
 local opponent = require("player.lua"):new()
+local utf8 = require('utf8_simple')
 
 local rootNode
 local quesLayout, ansLayout -- layout
@@ -420,10 +421,17 @@ function BattleScene:skillOnClick(type)
                     ansBtnD:setVisible(true)
                 end
             end
+
         elseif player.char == 2 then
             -------------------------
             -- 技能: 對方題目打亂
             -------------------------
+            local jsonObj = {
+                op = "SKILL_SHUFFLE",
+                selfID = player.id
+            }
+            socket:send(json.encode(jsonObj))
+
         elseif player.char == 3 then
             -------------------------
             -- 技能: 倒數緩速/凍結
@@ -539,6 +547,18 @@ function BattleScene:showQuestion(jsonObj)
     end
     -- 偵測是否落後
     isBehind = player.health < opponent.health
+    -- 技能: 打亂題目
+    if jsonObj["shuffle"] then
+        jsonObj["ques"][1] = self:shuffleStr(jsonObj["ques"][1])
+        jsonObj["ques"][2] = self:shuffleStr(jsonObj["ques"][2])
+        jsonObj["ques"][3] = self:shuffleStr(jsonObj["ques"][3])
+        if isBehind then
+            jsonObj["ans"][1] = self:shuffleStr(jsonObj["ans"][1])
+            jsonObj["ans"][2] = self:shuffleStr(jsonObj["ans"][2])
+            jsonObj["ans"][3] = self:shuffleStr(jsonObj["ans"][3])
+            jsonObj["ans"][4] = self:shuffleStr(jsonObj["ans"][4])
+        end
+    end
     -- 題型
     local qType, domain
     if jsonObj["qtype"] == "TF" then -- 是非題
@@ -710,6 +730,18 @@ function BattleScene:shuffleAns(list)
         local j = math.random(i)
         list[i], list[j] = list[j], list[i]
     end
+end
+
+-- 打亂字串
+function BattleScene:shuffleStr(str)
+    if str == nil then return "" end
+    local letters = {}
+    for i, letter, b in utf8.chars(str) do
+        table.insert(letters, { letter = letter, rnd = math.random() })
+    end
+    table.sort(letters, function(a, b) return a.rnd < b.rnd end)
+    for i, v in ipairs(letters) do letters[i] = v.letter end
+    return table.concat(letters)
 end
 
 return BattleScene

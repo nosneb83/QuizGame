@@ -95,6 +95,8 @@ func handleConnection(conn net.Conn) {
 			battleCh <- jsonObj
 		case "SURRENDER":
 			battleCh <- jsonObj
+		case "SKILL_SHUFFLE":
+			battleCh <- jsonObj
 
 		// 劇情
 		case "FETCH_STORY":

@@ -55,7 +55,7 @@ func Battle1V1(players map[int]p, ch chan map[string]interface{}) {
 	receivedAnswer := make([]map[string]interface{}, 0, 2)
 	for {
 		jsonObj := <-ch
-		if jsonObj["op"] == "SURRENDER" {
+		if jsonObj["op"] == "SURRENDER" { // 投降
 			for _, v := range players {
 				msgSend, _ := json.Marshal(map[string]interface{}{
 					"op":     "BATTLE_RESULT",
@@ -68,6 +68,14 @@ func Battle1V1(players map[int]p, ch chan map[string]interface{}) {
 				v.Ch <- string(msgSend)
 			}
 			break
+		} else if jsonObj["op"] == "SKILL_SHUFFLE" { // 技能: 打亂題目
+			for _, v := range players {
+				fmt.Println("selfID =", jsonObj["selfID"])
+				if v.ID != int(jsonObj["selfID"].(float64)) {
+					v.Shuffle = true
+				}
+			}
+			continue
 		}
 		receivedAnswer = append(receivedAnswer, jsonObj)
 		// 計算雙方扣血
@@ -146,14 +154,16 @@ func Battle1V1(players map[int]p, ch chan map[string]interface{}) {
 
 func sendQuestion(players map[int]p) {
 	randQuestion := questionList[rand.Intn(len(questionList))]
-	q, _ := json.Marshal(map[string]interface{}{
-		"op":     "SEND_QUESTION",
-		"domain": randQuestion.Domain,
-		"difcty": randQuestion.Difcty,
-		"qtype":  randQuestion.QType,
-		"ques":   randQuestion.Ques,
-		"ans":    randQuestion.Ans})
 	for _, v := range players {
+		q, _ := json.Marshal(map[string]interface{}{
+			"op":      "SEND_QUESTION",
+			"domain":  randQuestion.Domain,
+			"difcty":  randQuestion.Difcty,
+			"qtype":   randQuestion.QType,
+			"ques":    randQuestion.Ques,
+			"ans":     randQuestion.Ans,
+			"shuffle": v.Shuffle})
+		v.Shuffle = false
 		v.Ch <- string(q)
 	}
 }

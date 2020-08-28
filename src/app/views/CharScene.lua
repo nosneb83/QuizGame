@@ -58,7 +58,8 @@ function CharScene:ctor()
     for _, v in ipairs(charSetBtns) do
         v:addTouchEventListener(self.setChar)
     end
-    charSetBtns[player.char]:setVisible(false)
+    charSetBtns[player.char]:setEnabled(false)
+    charSetBtns[player.char]:setTitleText("使用中")
 
     -- 顯示當前玩家角色的頁面
     self:showChar(player.char)
@@ -70,7 +71,7 @@ function CharScene:ctor()
     :addTouchEventListener(self.chooseChar)
     rootNode:getChildByName("CharMenu"):getChildByName("Luluta")
     :addTouchEventListener(self.chooseChar)
-    
+
     -- socket設定
     local function ReceiveCallback(msg)
         -- 把每個{}分割開
@@ -141,8 +142,13 @@ function CharScene:handleOp(jsonObj)
     local op = jsonObj["op"]
     if op == "SET_CHAR" then
         player.char = jsonObj["char"]
-        for k, v in ipairs(charSetBtns) do 
-            v:setVisible(k ~= player.char)
+        for k, v in ipairs(charSetBtns) do
+            v:setEnabled(k ~= player.char)
+            if k == player.char then
+                v:setTitleText("使用中")
+            else
+                v:setTitleText("設定角色")
+            end
         end
     end
 end

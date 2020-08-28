@@ -104,7 +104,7 @@
             <PreSize X="0.6250" Y="0.0913" />
             <FontResource Type="Normal" Path="font/msjh.ttc" Plist="" />
             <TextColor A="255" R="0" G="0" B="0" />
-            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
+            <DisabledFileData Type="Normal" Path="Char/Chara_UI_Main/Using_Chara.png" Plist="" />
             <PressedFileData Type="Normal" Path="Char/Chara_UI_Main/botton_2.png" Plist="" />
             <NormalFileData Type="Normal" Path="Char/Chara_UI_Main/botton.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />
