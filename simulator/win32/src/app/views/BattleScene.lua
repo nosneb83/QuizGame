@@ -20,7 +20,8 @@ local feedbackT, feedbackF -- 答對答錯文字
 local sfxQues, sfxCorrect, sfxWrong -- 答題音效
 local enterCountdownText -- 開場倒數文字
 local countdownText, timeBar -- 倒數文字
-local countdownNum, countdownSpd -- 倒數秒數, 倒數速度
+local countdownNum -- 倒數秒數
+local countdownSpd = 1 -- 倒數速度
 local playerHealthBar, opponentHealthBar, healthRec -- 血條
 local isWaiting = false -- 是否正在等待另一名玩家
 local skillBtn, skillBtnMask -- 開技能的按鈕, 遮罩
@@ -30,6 +31,10 @@ local vicLayer, defLayer -- 勝負結算畫面
 local waitLayer -- 等待畫面
 local dmgSpd, easeAmount = 1.2, 3 -- 扣血動畫速度, 平滑度
 
+-- 技能相關 --
+local freezeTime = 0
+local freezeImg
+-------------
 function BattleScene:ctor()
     rootNode = cc.CSLoader:createNode("Battle/BattleScene.csb")
     self:addChild(rootNode)
@@ -129,6 +134,12 @@ function BattleScene:ctor()
     playerX = staticPanel:getChildByName("PlayerX")
     opponentO = staticPanel:getChildByName("OpponentO")
     opponentX = staticPanel:getChildByName("OpponentX")
+
+    -- 設定技能按鈕圖片
+    self:setSkillBtnTexture(true)
+
+    -- 凍結框
+    freezeImg = rootNode:getChildByName("Freeze")
 
     -- socket設定
     local function ReceiveCallback(msg)
@@ -242,8 +253,13 @@ end
 -- 顯示頭像OX
 function BattleScene:showOX(id, cor)
     if id == player.id then
-        if cor then playerO:setVisible(true)
-        else playerX:setVisible(true) end
+        if cor then
+            playerO:setVisible(true)
+            cc.SimpleAudioEngine:getInstance():playEffect("SFX/Quiz-Buzzer01-mp3/Quiz-Buzzer01-1.mp3")
+        else
+            playerX:setVisible(true)
+            cc.SimpleAudioEngine:getInstance():playEffect("SFX/Quiz-Wrong_Buzzer01-mp3/Quiz-Wrong_Buzzer01-1.mp3")
+        end
     else
         if cor then opponentO:setVisible(true)
         else opponentX:setVisible(true) end
@@ -320,7 +336,6 @@ end
 -- 答題倒數
 function BattleScene:startCountdown()
     countdownNum = 10
-    countdownSpd = 1
     countdownText:setString(string.format("%.2f", countdownNum))
     timeBar:setScaleX(1)
     rootNode:resume()
@@ -340,6 +355,11 @@ function BattleScene:countdownUpdate(dt)
     --     self:surrender()
     --     return
     -- end
+    -- 凍結技能判斷
+    if freezeTime > 0 then
+        freezeTime = freezeTime - dt
+        if freezeTime <= 0 then self:setFreeze(false) end
+    end
     -- 時間用盡時視為答錯
     if countdownNum == 0 then
         self:answer(5)
@@ -363,45 +383,66 @@ function BattleScene:skillOnClick(type)
         BattleScene:setSkillBtnGauge(0)
         BattleScene:setSkillBtnEnabled(false)
 
-        -------------------------
-        -- 技能: 找出答案/二選一
-        -------------------------
-        -- 秒答/減緩倒數速度
-        if isBehind then
-            -- 直接答對
-            if correctAnsStr == "O" then BattleScene:answerO(2)
-            elseif correctAnsStr == "X" then BattleScene:answerX(2)
-            elseif correctAnsStr == "1" then BattleScene:answerA(2)
-            elseif correctAnsStr == "2" then BattleScene:answerB(2)
-            elseif correctAnsStr == "3" then BattleScene:answerC(2)
-            elseif correctAnsStr == "4" then BattleScene:answerD(2)
+        if player.char == 1 then
+            -------------------------
+            -- 技能: 二選一/秒答
+            -------------------------
+            -- 落後秒答
+            if isBehind then
+                if correctAnsStr == "O" then BattleScene:answerO(2)
+                elseif correctAnsStr == "X" then BattleScene:answerX(2)
+                elseif correctAnsStr == "1" then BattleScene:answerA(2)
+                elseif correctAnsStr == "2" then BattleScene:answerB(2)
+                elseif correctAnsStr == "3" then BattleScene:answerC(2)
+                elseif correctAnsStr == "4" then BattleScene:answerD(2)
+                end
             end
-        else
-            countdownSpd = 0.5
-        end
-        -- 顯示答案選項
-        ansBtnO:setVisible(correctAns == 1)
-        ansBtnX:setVisible(correctAns == 2)
-        ansBtnA:setVisible(correctAns == 1)
-        ansBtnB:setVisible(correctAns == 2)
-        ansBtnC:setVisible(correctAns == 3)
-        ansBtnD:setVisible(correctAns == 4)
-        -- 領先時多顯示一個選項
-        if isBehind == false then
-            local rand = math.random(3)
-            if rand == correctAns then rand = 4 end
-            if rand == 1 then
-                ansBtnO:setVisible(true)
-                ansBtnA:setVisible(true)
-            elseif rand == 2 then
-                ansBtnX:setVisible(true)
-                ansBtnB:setVisible(true)
-            elseif rand == 3 then
-                ansBtnC:setVisible(true)
-            elseif rand == 4 then
-                ansBtnD:setVisible(true)
+            -- 顯示答案選項
+            ansBtnO:setVisible(correctAns == 1)
+            ansBtnX:setVisible(correctAns == 2)
+            ansBtnA:setVisible(correctAns == 1)
+            ansBtnB:setVisible(correctAns == 2)
+            ansBtnC:setVisible(correctAns == 3)
+            ansBtnD:setVisible(correctAns == 4)
+            -- 領先時多顯示一個選項
+            if isBehind == false then
+                local rand = math.random(3)
+                if rand == correctAns then rand = 4 end
+                if rand == 1 then
+                    ansBtnO:setVisible(true)
+                    ansBtnA:setVisible(true)
+                elseif rand == 2 then
+                    ansBtnX:setVisible(true)
+                    ansBtnB:setVisible(true)
+                elseif rand == 3 then
+                    ansBtnC:setVisible(true)
+                elseif rand == 4 then
+                    ansBtnD:setVisible(true)
+                end
             end
+        elseif player.char == 2 then
+            -------------------------
+            -- 技能: 對方題目打亂
+            -------------------------
+        elseif player.char == 3 then
+            -------------------------
+            -- 技能: 倒數緩速/凍結
+            -------------------------
+            BattleScene:setFreeze(true)
         end
+    end
+end
+function BattleScene:setFreeze(freeze)
+    if freeze then
+        freezeTime = 4
+        freezeImg:setVisible(true) -- 顯示冰框
+        timeBar:setColor(cc.c3b(152, 217, 254)) -- 時間條藍色
+        if isBehind then countdownSpd = 0
+        else countdownSpd = 0.33 end
+    else
+        freezeImg:setVisible(false) -- 隱藏冰框
+        timeBar:setColor(cc.c3b(255, 241, 0)) -- 時間條黃色
+        countdownSpd = 1
     end
 end
 
@@ -609,6 +650,38 @@ function BattleScene:setAnsBtnsEnabled(enabled, ...)
     self:setSkillBtnEnabled(enabled)
 end
 
+-- 設定技能按鈕圖片
+function BattleScene:setSkillBtnTexture(isInit)
+    if isBehind then
+        if player.char == 1 then
+            skillBtn:loadTextureNormal("Battle/Skill/Cir_Red.png")
+        elseif player.char == 2 then
+            skillBtn:loadTextureNormal("Battle/Skill/Confuse_Red.png")
+        elseif player.char == 3 then
+            skillBtn:loadTextureNormal("Battle/Skill/Stop_Red.png")
+        end
+    else
+        if player.char == 1 then
+            skillBtn:loadTextureNormal("Battle/Skill/Cir_Orange.png")
+        elseif player.char == 2 then
+            skillBtn:loadTextureNormal("Battle/Skill/Confuse_Orange.png")
+        elseif player.char == 3 then
+            skillBtn:loadTextureNormal("Battle/Skill/Stop_Orange.png")
+        end
+    end
+    if isInit == false then return end
+    if player.char == 1 then
+        skillBtn:loadTexturePressed("Battle/Skill/Cir_Orange_2.png")
+        skillBtn:loadTextureDisabled("Battle/Skill/Cir_Orange_2.png")
+    elseif player.char == 2 then
+        skillBtn:loadTexturePressed("Battle/Skill/Confuse_Orange_2.png")
+        skillBtn:loadTextureDisabled("Battle/Skill/Confuse_Orange_2.png")
+    elseif player.char == 3 then
+        skillBtn:loadTexturePressed("Battle/Skill/Stop_Orange_2.png")
+        skillBtn:loadTextureDisabled("Battle/Skill/Stop_Orange_2.png")
+    end
+end
+
 -- 設定技能按鈕狀態
 function BattleScene:setSkillBtnGauge(time) -- 設定遮罩
     if time == nil then time = dmgSpd end
@@ -619,11 +692,12 @@ end
 function BattleScene:setSkillBtnEnabled(enabled) -- 設定可不可用
     if enabled == false then skillBtn:setEnabled(false) return end
     if player.skillGauge >= player.skillCD then
-        if isBehind then -- 落後時按鈕為紅色
-            skillBtn:loadTextureNormal("Battle/Skill/Cir_red.png")
-        else
-            skillBtn:loadTextureNormal("Battle/Skill/Cir_Orange.png")
-        end
+        -- if isBehind then -- 落後時按鈕為紅色
+        --     skillBtn:loadTextureNormal("Battle/Skill/Cir_red.png")
+        -- else
+        --     skillBtn:loadTextureNormal("Battle/Skill/Cir_Orange.png")
+        -- end
+        self:setSkillBtnTexture(false)
         skillBtn:setEnabled(true)
     else
         skillBtn:setEnabled(false)

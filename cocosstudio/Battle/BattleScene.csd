@@ -351,10 +351,10 @@
                 <AnchorPoint ScaleY="0.5000" />
                 <Position X="65.5599" Y="-17.3158" />
                 <Scale ScaleX="1.0000" ScaleY="1.0000" />
-                <CColor A="255" R="255" G="255" B="255" />
+                <CColor A="255" R="255" G="241" B="0" />
                 <PrePosition X="0.0963" Y="-0.0400" />
                 <PreSize X="0.8075" Y="0.0947" />
-                <FileData Type="Normal" Path="Battle/Time/timebar.png" Plist="" />
+                <FileData Type="Normal" Path="Battle/Time/timebar_w.png" Plist="" />
               </AbstractNodeData>
               <AbstractNodeData Name="TimeText" ActionTag="-509095772" Tag="109" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" LeftMargin="293.5598" RightMargin="293.5602" TopMargin="433.3763" BottomMargin="-38.4803" FontSize="42" LabelText="9.99" HorizontalAlignmentType="HT_Center" VerticalAlignmentType="VT_Center" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="TextObjectData">
                 <Size X="94.0000" Y="38.0000" />
@@ -699,6 +699,16 @@
             <FirstColor A="255" R="150" G="200" B="255" />
             <EndColor A="255" R="255" G="255" B="255" />
             <ColorVector ScaleY="1.0000" />
+          </AbstractNodeData>
+          <AbstractNodeData Name="Freeze" ActionTag="-1772444276" VisibleForFrame="False" Alpha="229" Tag="796" IconVisible="False" PositionPercentXEnabled="True" PositionPercentYEnabled="True" PercentWidthEnable="True" PercentHeightEnable="True" PercentWidthEnabled="True" PercentHeightEnabled="True" LeftEage="253" RightEage="253" TopEage="434" BottomEage="434" Scale9OriginX="253" Scale9OriginY="434" Scale9Width="262" Scale9Height="448" ctype="ImageViewObjectData">
+            <Size X="720.0000" Y="1280.0000" />
+            <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
+            <Position X="360.0000" Y="640.0000" />
+            <Scale ScaleX="1.0000" ScaleY="1.0000" />
+            <CColor A="255" R="255" G="255" B="255" />
+            <PrePosition X="0.5000" Y="0.5000" />
+            <PreSize X="1.0000" Y="1.0000" />
+            <FileData Type="Normal" Path="Battle/Skill/time_stop.png" Plist="" />
           </AbstractNodeData>
         </Children>
       </ObjectData>

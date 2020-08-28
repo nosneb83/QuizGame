@@ -63,6 +63,8 @@
           <Folder Name="Time">
             <Image Name="timebar.png" />
             <Image Name="timebar_2.png" />
+            <Image Name="TIME_BAR.png" />
+            <Image Name="timebar_w.png" />
           </Folder>
           <Image Name="nametag.png" />
           <Folder Name="Skill">
@@ -78,6 +80,7 @@
             <Image Name="Stop_Orange.png" />
             <Image Name="Stop_orange_2.png" />
             <Image Name="Stop_Red.png" />
+            <Image Name="time_stop.png" />
           </Folder>
           <Image Name="O.png" />
           <Image Name="X.png" />
