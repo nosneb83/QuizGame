@@ -21,8 +21,12 @@ function LoginScene:onCreate()
     startBtn:addTouchEventListener(self.login)
 
     acInput = rootNode:getChildByName("Input"):getChildByName("UserIDInput")
+    acInput:setMaxLengthEnabled(true)
+    acInput:setMaxLength(12)
     pwInput = rootNode:getChildByName("Input"):getChildByName("PasswordInput")
     pwInput:setPasswordEnabled(true)
+    pwInput:setMaxLengthEnabled(true)
+    pwInput:setMaxLength(20)
 
     promptPanel = rootNode:getChildByName("Prompt")
     promptText = promptPanel:getChildByName("Text")
@@ -43,6 +47,8 @@ function LoginScene:onCreate()
 
     namePanel = rootNode:getChildByName("InputPrompt")
     nameInput = namePanel:getChildByName("NameInput")
+    nameInput:setMaxLengthEnabled(true)
+    nameInput:setMaxLength(8)
     namePanel:getChildByName("Y"):addTouchEventListener(self.nickname)
 
     -- socket設定
@@ -82,6 +88,9 @@ end
 
 function LoginScene:nickname(type)
     if type == ccui.TouchEventType.ended then
+        if nameInput:getString() == "" then
+            nameInput:setString("尤教授")
+        end
         local jsonObj = {
             op = "REGISTER",
             ac = acInput:getString(),

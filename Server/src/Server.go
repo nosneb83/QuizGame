@@ -97,6 +97,14 @@ func handleConnection(conn net.Conn) {
 			battleCh <- jsonObj
 		case "SKILL_SHUFFLE":
 			battleCh <- jsonObj
+		case "ADD_BOOKMARK":
+			player.Bookmark++
+			db.UpdateBookmark(player)
+			msgSend, _ := json.Marshal(map[string]interface{}{
+				"op":  "ADD_BOOKMARK",
+				"bm":  player.Bookmark,
+				"bmp": player.BookmarkPrem})
+			player.Ch <- string(msgSend)
 
 		// 劇情
 		case "FETCH_STORY":
